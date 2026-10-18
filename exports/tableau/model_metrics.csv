@@ -1,0 +1,55 @@
+task,model,features,metric,value,sd,evaluation
+TS regression,Global median,family only,MAE,148.26720222211517,13.662231804085442,GroupKFold 5x3
+TS regression,Global median,family only,RMSE,243.8580960049372,33.801446433703674,GroupKFold 5x3
+TS regression,Global median,family only,R2,-0.0326881931810537,0.0252735427618069,GroupKFold 5x3
+TS regression,Family median (baseline),family only,MAE,114.80521842923665,9.572813436298338,GroupKFold 5x3
+TS regression,Family median (baseline),family only,RMSE,177.82744006400304,24.13025621704489,GroupKFold 5x3
+TS regression,Family median (baseline),family only,R2,0.4127919252089028,0.2422066542482869,GroupKFold 5x3
+TS regression,Ridge,composition,MAE,141.89430925034887,15.8859315963851,GroupKFold 5x3
+TS regression,Ridge,composition,RMSE,244.2420621664275,36.41715986139751,GroupKFold 5x3
+TS regression,Ridge,composition,R2,-0.0526744057811124,0.2079983746096042,GroupKFold 5x3
+TS regression,Ridge,composition+family,MAE,114.29466055380055,12.63783755664915,GroupKFold 5x3
+TS regression,Ridge,composition+family,RMSE,178.31926707090844,33.33261179414871,GroupKFold 5x3
+TS regression,Ridge,composition+family,R2,0.3983084961691461,0.2912981800356589,GroupKFold 5x3
+TS regression,Random forest,composition,MAE,72.94875757334349,7.749481533834569,GroupKFold 5x3
+TS regression,Random forest,composition,RMSE,148.40785698541916,29.27362237130077,GroupKFold 5x3
+TS regression,Random forest,composition,R2,0.6143753741674416,0.0910749504530209,GroupKFold 5x3
+TS regression,Random forest,composition+family,MAE,57.79161770482435,6.536388662863138,GroupKFold 5x3
+TS regression,Random forest,composition+family,RMSE,113.51736450021032,24.934522530009943,GroupKFold 5x3
+TS regression,Random forest,composition+family,R2,0.7624572259695099,0.1009145613785611,GroupKFold 5x3
+TS regression,Gradient boosting,composition,MAE,72.11433360727155,6.865918727484508,GroupKFold 5x3
+TS regression,Gradient boosting,composition,RMSE,144.79957937711026,24.61850317175181,GroupKFold 5x3
+TS regression,Gradient boosting,composition,R2,0.6266406330309312,0.100603766017509,GroupKFold 5x3
+TS regression,Gradient boosting,composition+family,MAE,56.70783244467714,6.525758449258982,GroupKFold 5x3
+TS regression,Gradient boosting,composition+family,RMSE,110.01383009158864,21.93488362150209,GroupKFold 5x3
+TS regression,Gradient boosting,composition+family,R2,0.7806695842642492,0.0753655161132841,GroupKFold 5x3
+TS regression,Gradient boosting (tuned),composition+family,MAE,56.64292090297767,6.938482936352399,GroupKFold 5x3
+TS regression,Gradient boosting (tuned),composition+family,RMSE,111.11298228989894,22.27274895961178,GroupKFold 5x3
+TS regression,Gradient boosting (tuned),composition+family,R2,0.775470469698179,0.0783313997804951,GroupKFold 5x3
+Strength class,Family majority (baseline),composition+family,macro_F1,0.61326294714714,0.0911671497845466,GroupKFold 5x3
+Strength class,Family majority (baseline),composition+family,balanced_accuracy,0.6128484838062271,0.1150087483144777,GroupKFold 5x3
+Strength class,Family majority (baseline),composition+family,accuracy,0.6355873224247578,0.0286507134629696,GroupKFold 5x3
+Strength class,Family majority (baseline),composition+family,macro_F1 (pooled OOF),0.6383310313221141,,OOF seed 0
+Strength class,Logistic regression (balanced),composition+family,macro_F1,0.707370727168568,0.072177268651811,GroupKFold 5x3
+Strength class,Logistic regression (balanced),composition+family,balanced_accuracy,0.7881508878473417,0.0715436964291128,GroupKFold 5x3
+Strength class,Logistic regression (balanced),composition+family,accuracy,0.7671316879237849,0.0281009125650869,GroupKFold 5x3
+Strength class,Logistic regression (balanced),composition+family,macro_F1 (pooled OOF),0.7025556490834268,,OOF seed 0
+Strength class,Gradient boosting (balanced),composition+family,macro_F1,0.8868232725182676,0.050958901580507,GroupKFold 5x3
+Strength class,Gradient boosting (balanced),composition+family,balanced_accuracy,0.9032410173924756,0.0541143106705103,GroupKFold 5x3
+Strength class,Gradient boosting (balanced),composition+family,accuracy,0.8924130885069523,0.021216973840247,GroupKFold 5x3
+Strength class,Gradient boosting (balanced),composition+family,macro_F1 (pooled OOF),0.884508432600397,,OOF seed 0
+Strength class,"GBM regressor, thresholded",composition+family,macro_F1 (pooled OOF),0.8674971610265727,,OOF seed 0
+Leakage demo,Gradient boosting,"Listing rows incl. imputed TS, random KFold",MAE,59.00574319646272,5.145577221653257,"Listing rows incl. imputed TS, random KFold"
+Leakage demo,Gradient boosting,"Listing rows incl. imputed TS, random KFold",R2,0.7214106070483112,0.0694198888401091,"Listing rows incl. imputed TS, random KFold"
+Leakage demo,Gradient boosting,"Listing rows, imputed dropped, random KFold",MAE,38.47234186415631,3.681006102614162,"Listing rows, imputed dropped, random KFold"
+Leakage demo,Gradient boosting,"Listing rows, imputed dropped, random KFold",R2,0.8813802407460396,0.0342809259657287,"Listing rows, imputed dropped, random KFold"
+Leakage demo,Gradient boosting,"One row per grade, random KFold",MAE,53.9236152176202,5.421173594731407,"One row per grade, random KFold"
+Leakage demo,Gradient boosting,"One row per grade, random KFold",R2,0.8057496758760558,0.0452794897016372,"One row per grade, random KFold"
+Leakage demo,Gradient boosting,"One row per grade, GroupKFold (used)",MAE,56.707832444677145,6.525758449258982,"One row per grade, GroupKFold (used)"
+Leakage demo,Gradient boosting,"One row per grade, GroupKFold (used)",R2,0.7806695842642492,0.0753655161132841,"One row per grade, GroupKFold (used)"
+TS regression,Ceiling: composition-group mean (oracle),exact composition,MAE,9.9075936123693,,"in-sample, optimistic"
+TS regression,Ceiling: composition-group mean (oracle),exact composition,RMSE,54.36518084472001,,"in-sample, optimistic"
+TS regression,Ceiling: composition-group mean (oracle),exact composition,R2,0.9496849842241408,,"in-sample, optimistic"
+Prediction interval (80%),Quantile GBM + cross-conformal,composition+family,coverage_raw,0.6128798842257598,,OOF seed 0
+Prediction interval (80%),Quantile GBM + cross-conformal,composition+family,coverage_calibrated,0.7981186685962374,,OOF seed 0
+Prediction interval (80%),Quantile GBM + cross-conformal,composition+family,mean_width_calibrated,203.54061571299945,,OOF seed 0
