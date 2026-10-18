@@ -8,6 +8,7 @@ seaborn>=0.13
 joblib>=1.4
 shap>=0.46
 umap-learn>=0.5
+squarify>=0.4
 
 # Notebooks
 jupyter>=1.0
