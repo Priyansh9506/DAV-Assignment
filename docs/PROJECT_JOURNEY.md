@@ -125,3 +125,45 @@ Pending: EDA, models, findings (Phase 2); exports (Phase 3); app (Phase 4); Tabl
 - Substitute engine: nearest neighbours on transformed + standardized composition. The transform is chosen by held-out family agreement and |ΔTS| of the nearest non-identical neighbour.
 
 **Deliberate exclusions:** TS is never a feature for class. Strength numbers embedded in designations (e.g. "S460N", "Grade 60-40-18") are never parsed into features: that would leak the target through the name.
+
+---
+
+## Phase 6: visual-analytics suite (branch `feature/visual-analytics`)
+
+**Why:** the course brief asks for a visualization-intensive project across Python, Tableau and KNIME. This
+branch adds a 34-figure notebook, Tableau helper exports, two step-by-step guides and a reusable Claude Code
+prompt. It does not change the cleaning or the models on `main`.
+
+**Plan → build:** the prompt in `docs/CLAUDE_CODE_PROMPT.md` lists the mandatory techniques: five-number
+summary and descriptive stats, binning, chi-square, regression, PCA, k-means, circular migration (chord) plots,
+ring/donut, circular columns, treemap, radar and waterfall. Each one is implemented in
+`src/analysis/visual_stats.py` (numbers) and `src/analysis/viz_suite.py` (figures), and orchestrated by
+`notebooks/04_visual_analytics.ipynb`.
+
+**Key numbers (printed by notebook 04 / `exports/knime/viz_expected_values.csv`):**
+
+| Technique | Result |
+|---|---|
+| Five-number summary, TS (n = 1382) | 140 / 510 / 610 / 720 / 2450 MPa; IQR 210; 75 Tukey outliers |
+| Binning, TS into 5 bins | equal width 671 / 650 / 36 / 18 / 7; equal frequency 318 / 284 / 240 / 268 / 272 |
+| Chi-square, family group × strength class | χ² = 548.7, df = 10, Cramér's V = 0.45 (permutation p = 0.0005) |
+| Chi-square, family group × default liquidus | χ² = 632.0, df = 5, V = 0.67 (strongest association) |
+| Chi-square validity | 4 of 5 tables break Cochran's rule (low class has 23 grades); a Monte-Carlo permutation p-value is reported for every test |
+| Simple OLS, carbon steels (n = 196) | TS = 429.2 + 428.6·C, R² = 0.508 |
+| Multiple OLS, carbon & low-alloy (n = 574) | R² = 0.326; C, Si, V, Ni, Cr positive and significant; Mn not significant; Mo borderline negative |
+| PCA (log1p + z-score composition) | PC1 15.0 %, PC2 11.8 %; 12 components for 80 % |
+| k-means (visual profiling) | k = 8 (best silhouette 0.317 within 4–8); sizes 704 / 377 / 84 / 73 / 65 / 43 / 25 / 18 |
+| Waterfalls | 2672 → 2610 → 1389 → 1382 rows; AISI 4140 CE = 0.781 (C 0.405, Cr/5 0.190, Mn/6 0.146, Mo/5 0.040) |
+
+**Tableau / KNIME support:** `python -m src.analysis.viz_exports` writes 22 helper CSVs to
+`exports/tableau/viz/` (chord ribbons and arcs, radar polygons with grid, radial-bar polygons, waterfall
+start/end, chi-square cells, regression coefficients, PCA + k-means scores) and
+`exports/knime/viz_expected_values.csv`. The KNIME Python View scripts in `docs/knime_python_views/` were tested
+against a stub of KNIME's `knime.scripting.io` API with the real data.
+
+**Tests:** `tests/unit/test_visual_stats.py` covers the five-number summary, chi-square, OLS against
+`numpy.polyfit`, waterfall layout, and chord, radar and radial-bar geometry. Full suite: 58 passed.
+
+**Status:** done: notebook 04, exports, Tableau guide, KNIME guide, prompt. Pending (not on this branch):
+FastAPI app wiring and frontend pages, `reports/FINDINGS.md`, README, and building the Tableau workbook /
+KNIME workflow themselves by following the guides.
