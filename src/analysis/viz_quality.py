@@ -20,7 +20,7 @@ def cleaning_funnel(log: CleaningLog, n_measured: int):
     labels, values = zip(*stages)
     fig, ax = plt.subplots(figsize=(8.6, 3.6))
     y = np.arange(len(values))[::-1]
-    ax.barh(y, values, height=0.56, color=P.BLUE)
+    ax.barh(y, values, height=0.56, color=P.SKY)
     for yi, v in zip(y, values):
         ax.text(v + 25, yi, f"{v:,}", va="center", color=P.INK, fontsize=10)
     ax.set_yticks(y, labels)
@@ -47,7 +47,7 @@ def twin_breakdown(listings: pd.DataFrame):
     order = ["Twin pair, both measured", "Twin pair, one imputed\n(measured twin recovers TS)",
              "Single listing, measured", "Twin pair, both imputed", "Single listing, imputed"]
     cats = cats.reindex(order).fillna(0).astype(int)
-    colors = [P.BLUE, P.AQUA, P.BLUE, P.ORANGE, P.ORANGE]
+    colors = [P.SKY, P.FLAME, P.SKY, P.PINK, P.PINK]
     fig, ax = plt.subplots(figsize=(8.6, 3.9))
     y = np.arange(len(cats))[::-1]
     ax.barh(y, cats.values, height=0.56, color=colors)
@@ -72,9 +72,9 @@ def liquidus_default(ev: LiquidusEvidence):
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.6), gridspec_kw={"width_ratios": [1.35, 1]})
     ax = axes[0]
     nd, d = low[~low["is_default"]], low[low["is_default"]]
-    ax.scatter(nd["C"], nd["liquidus_c"], s=26, color=P.BLUE, linewidths=0.6, label=f"Other recorded values (n={len(nd)})", zorder=3)
+    ax.scatter(nd["C"], nd["liquidus_c"], s=26, color=P.SKY, linewidths=0.6, label=f"Other recorded values (n={len(nd)})", zorder=3)
     jitter = np.random.default_rng(0).uniform(-1.2, 1.2, len(d))
-    ax.scatter(d["C"], d["liquidus_c"] + jitter, s=26, color=P.ORANGE, linewidths=0.6,
+    ax.scatter(d["C"], d["liquidus_c"] + jitter, s=26, color=P.PINK, linewidths=0.6,
                label=f"Recorded 1460 °C (n={len(d)}, jittered ±1 °C)", zorder=3)
     cgrid = np.linspace(0, 1.0, 50)
     ax.plot(cgrid, 1536 - 78 * cgrid - 7.6 * 0.25 - 4.9 * 0.8 - 34 * 0.02 - 30 * 0.02, color=P.INK_2, lw=1.4,
@@ -89,7 +89,7 @@ def liquidus_default(ev: LiquidusEvidence):
     ax = axes[1]
     fam = ev.by_family.sort_values("share_1460")
     yy = np.arange(len(fam))
-    ax.barh(yy, fam["share_1460"] * 100, height=0.6, color=P.ORANGE)
+    ax.barh(yy, fam["share_1460"] * 100, height=0.6, color=P.PINK)
     for yi, (s, n) in enumerate(zip(fam["share_1460"], fam["n"])):
         ax.text(s * 100 + 1.5, yi, f"{s:.0%}  (n={n})", va="center", fontsize=8.5, color=P.INK_2)
     ax.set_yticks(yy, fam.index.str.replace("_", " "))
@@ -109,8 +109,8 @@ def processing_variants(ie: IrreducibleError, top: int = 16):
     fig, ax = plt.subplots(figsize=(10, 6.2))
     y = np.arange(len(g))
     ax.hlines(y, g["ts_min"], g["ts_max"], color=P.AXIS, lw=6, zorder=1)
-    ax.scatter(g["ts_min"], y, color=P.BLUE, s=48, zorder=3, label="Lowest TS in group")
-    ax.scatter(g["ts_max"], y, color=P.ORANGE, s=48, zorder=3, label="Highest TS in group")
+    ax.scatter(g["ts_min"], y, color=P.SKY, s=48, zorder=3, label="Lowest TS in group")
+    ax.scatter(g["ts_max"], y, color=P.PINK, s=48, zorder=3, label="Highest TS in group")
     labels = [f"{ex[:46]}{'…' if len(ex) > 46 else ''}  ({n} grades)" for ex, n in zip(g["example"], g["n"])]
     ax.set_yticks(y, labels)
     ax.tick_params(axis="y", labelcolor=P.INK_2, labelsize=8.5)

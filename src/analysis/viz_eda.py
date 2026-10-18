@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import matplotlib.pyplot as plt
+from matplotlib.colors import to_rgba
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -28,9 +29,9 @@ def strength_by_family(grades: pd.DataFrame):
     for yi, d in zip(y, data):
         ax.scatter(d, yi + rng.uniform(-0.18, 0.18, len(d)), s=7, color=P.MUTED, alpha=0.45, linewidths=0, zorder=2)
     bp = ax.boxplot(data, positions=y, vert=False, widths=0.55, patch_artist=True, showfliers=False,
-                    medianprops={"color": P.INK, "linewidth": 2}, whiskerprops={"color": P.BLUE, "linewidth": 1.2},
-                    capprops={"color": P.BLUE, "linewidth": 1.2},
-                    boxprops={"facecolor": (0.22, 0.53, 0.9, 0.28), "edgecolor": P.BLUE, "linewidth": 1.2})
+                    medianprops={"color": P.INK, "linewidth": 2}, whiskerprops={"color": P.SKY, "linewidth": 1.2},
+                    capprops={"color": P.SKY, "linewidth": 1.2},
+                    boxprops={"facecolor": to_rgba(P.SKY, 0.28), "edgecolor": P.SKY, "linewidth": 1.2})
     for yi, d in zip(y, data):
         ax.text(2560, yi, f"n={len(d)}", va="center", ha="left", fontsize=8.5, color=P.MUTED)
     ax.set_yticks(y, order)
@@ -50,7 +51,7 @@ def carbon_paradox(grades: pd.DataFrame, ce: dict):
     grp = family_group(m["family"])
     fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.8), sharey=True)
     ax = axes[0]
-    for name, color in [("Other", P.OTHER), ("Carbon & low-alloy", P.BLUE), ("Cast iron", P.ORANGE)]:
+    for name, color in [("Other", P.OTHER), ("Carbon & low-alloy", P.SKY), ("Cast iron", P.PINK)]:
         s = m[(grp == name) if name != "Other" else ~grp.isin(["Carbon & low-alloy", "Cast iron"])]
         ax.scatter(s["C"], s[TS], s=16, color=color, linewidths=0.4, label=f"{name if name != 'Other' else 'All other families'} (n={len(s)})",
                    zorder=3 if name != "Other" else 2)
@@ -66,7 +67,7 @@ def carbon_paradox(grades: pd.DataFrame, ce: dict):
     other_plain = plain[plain["family"] != "carbon"]
     ax.scatter(other_plain["C"], other_plain[TS], s=16, color=P.OTHER, linewidths=0.4,
                label=f"Low-alloy families (n={len(other_plain)})", zorder=2)
-    ax.scatter(carbon["C"], carbon[TS], s=18, color=P.BLUE, linewidths=0.4, label=f"Carbon / non-alloy (n={len(carbon)})", zorder=3)
+    ax.scatter(carbon["C"], carbon[TS], s=18, color=P.SKY, linewidths=0.4, label=f"Carbon / non-alloy (n={len(carbon)})", zorder=3)
     ts_fit = stats.theilslopes(carbon[TS], carbon["C"])
     xx = np.linspace(0, carbon["C"].max(), 50)
     ax.plot(xx, ts_fit.intercept + ts_fit.slope * xx, color=P.INK, lw=1.6, zorder=4,
@@ -148,7 +149,7 @@ def ce_small_multiples(grades: pd.DataFrame, ce_tab: pd.DataFrame):
     fig, axes = plt.subplots(1, 3, figsize=(13.5, 4.4), sharey=True)
     for ax, name in zip(axes, panels):
         s = E.subset(m, E.FAMILY_GROUPS[name])
-        ax.scatter(s["carbon_equivalent"], s[TS], s=14, color=P.BLUE, linewidths=0.3)
+        ax.scatter(s["carbon_equivalent"], s[TS], s=14, color=P.SKY, linewidths=0.3)
         r = ce_tab.loc[name]
         ax.set_title(f"{name}: ρ = {r['rho_CE']:.2f}", fontsize=11.5)
         P.subtitle(ax, f"n = {int(r['n'])}")
@@ -170,7 +171,7 @@ def design_space(grades: pd.DataFrame, ds: dict):
     rng = np.random.default_rng(3)
     other = m[~grp.isin(show)]
     ax.scatter(other["liquidus_c"], other[TS], s=14, color=P.OTHER, linewidths=0, label=f"Other families (n={len(other)})", zorder=2)
-    for name, color in zip(show, [P.BLUE, P.ORANGE, P.AQUA]):
+    for name, color in zip(show, [P.SKY, P.PINK, P.FLAME]):
         s = m[grp == name]
         d, nd = s[s["liquidus_is_default"]], s[~s["liquidus_is_default"]]
         ax.scatter(nd["liquidus_c"], nd[TS], s=18, color=color, linewidths=0.4, label=f"{name} (n={len(s)})", zorder=3)
@@ -196,7 +197,7 @@ def class_drivers(sep: pd.DataFrame, grades: pd.DataFrame, top: int = 10):
     fig, axes = plt.subplots(1, 2, figsize=(13.5, 5), gridspec_kw={"width_ratios": [1, 1.25]})
     ax = axes[0]
     s = sep.head(top).iloc[::-1]
-    ax.barh(range(len(s)), s["epsilon_sq"], height=0.6, color=P.BLUE)
+    ax.barh(range(len(s)), s["epsilon_sq"], height=0.6, color=P.SKY)
     for i, (feat, r) in enumerate(s.iterrows()):
         meds = (r["median_low"], r["median_medium"], r["median_high"])
         if max(meds) > 0:
@@ -247,8 +248,8 @@ def imputation_sensitivity(listings: pd.DataFrame, grades: pd.DataFrame, sens: p
     fig, ax = plt.subplots(figsize=(10.5, 4.6))
     naive = listings["tensile_strength_raw"]
     meas = grades[TS].dropna()
-    ax.hist(naive, bins=bins, histtype="step", color=P.ORANGE, lw=2, label=f"Naive: every listing, imputed kept (n={len(naive)})")
-    ax.hist(meas, bins=bins, histtype="step", color=P.BLUE, lw=2, label=f"Used: one row per grade, measured only (n={len(meas)})")
+    ax.hist(naive, bins=bins, histtype="step", color=P.PINK, lw=2, label=f"Naive: every listing, imputed kept (n={len(naive)})")
+    ax.hist(meas, bins=bins, histtype="step", color=P.SKY, lw=2, label=f"Used: one row per grade, measured only (n={len(meas)})")
     peak = naive.round(0).value_counts().idxmax()
     ax.annotate(f"Imputed spike at {peak:.0f} MPa", xy=(peak, np.histogram(naive, bins=bins)[0].max()),
                 xytext=(1000, np.histogram(naive, bins=bins)[0].max() * 0.9), color=P.INK_2, fontsize=9,

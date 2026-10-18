@@ -6,6 +6,8 @@ exact same shapes are exported for Tableau (which has no native chord or radar c
 """
 from __future__ import annotations
 
+import textwrap
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -14,6 +16,7 @@ import squarify
 from matplotlib.colors import to_rgba
 from matplotlib.patches import Patch, PathPatch, Wedge
 from matplotlib.path import Path
+from matplotlib.transforms import offset_copy
 from scipy import stats
 from sklearn.metrics import silhouette_samples
 
@@ -24,13 +27,16 @@ from .features import FAMILY_GROUP_ORDER, family_group
 TS = V.TS
 GROUP_COLOR = dict(zip(FAMILY_GROUP_ORDER, P.SERIES))   # fixed order: colour follows the group, never its rank
 SCATTER_GROUPS = ["Carbon & low-alloy", "Stainless", "Cast iron"]   # ≤3 hues on scatters (all-pairs CVD rule)
-SCATTER_COLOR = dict(zip(SCATTER_GROUPS, [P.BLUE, P.ORANGE, P.AQUA]))
+SCATTER_COLOR = dict(zip(SCATTER_GROUPS, [P.SKY, P.PINK, P.FLAME]))
 
 
 def _title(fig, title: str, sub: str | None = None, y: float = 1.02):
-    fig.suptitle(title, x=0.01, y=y, ha="left", fontsize=14, fontweight="semibold", color=P.INK)
+    """Figure-level headline + subtitle; the subtitle is offset in points so it never collides with the title,
+    whatever the figure height."""
+    fig.suptitle(title, x=0.01, y=y, ha="left", va="bottom", fontsize=14.5, fontweight="bold", color=P.INK)
     if sub:
-        fig.text(0.01, y - 0.035, sub, ha="left", va="top", fontsize=10, color=P.INK_2)
+        fig.text(0.01, y, sub, ha="left", va="top", fontsize=10.2, color=P.INK_2,
+                 transform=offset_copy(fig.transFigure, fig=fig, y=-6, units="points"))
 
 
 def _clean_axis(ax):
@@ -50,13 +56,14 @@ FIVE_VARS = [TS, "liquidus_c", "carbon_equivalent", "alloying_total", "C", "Cr"]
 def five_number_boxes(df: pd.DataFrame, fns: pd.DataFrame):
     fig, axes = plt.subplots(len(FIVE_VARS), 1, figsize=(12, 1.7 * len(FIVE_VARS) + 0.6))
     rng = np.random.default_rng(0)
-    for ax, var in zip(axes, FIVE_VARS):
+    for ax, var, hue in zip(axes, FIVE_VARS, P.SERIES):
         s = df[var].dropna()
         r = fns.loc[var]
-        ax.scatter(s, rng.uniform(-0.28, 0.28, len(s)), s=5, color=P.MUTED, alpha=0.35, linewidths=0, zorder=1)
+        ax.scatter(s, rng.uniform(-0.28, 0.28, len(s)), s=6, color=hue, alpha=0.35, linewidths=0, zorder=1)
         ax.boxplot(s, vert=False, widths=0.5, positions=[0], patch_artist=True, showfliers=False,
-                   boxprops={"facecolor": to_rgba(P.BLUE, 0.25), "edgecolor": P.BLUE, "linewidth": 1.4},
-                   whiskerprops={"color": P.BLUE}, capprops={"color": P.BLUE}, medianprops={"color": P.INK, "linewidth": 2.2})
+                   boxprops={"facecolor": to_rgba(hue, 0.22), "edgecolor": hue, "linewidth": 1.8},
+                   whiskerprops={"color": hue, "linewidth": 1.4}, capprops={"color": hue, "linewidth": 1.4},
+                   medianprops={"color": P.GOLD, "linewidth": 2.6})
         lo_x, hi_x = s.min(), s.max()
         span = (hi_x - lo_x) or 1.0
         last_frac, level = -1.0, 0
@@ -74,19 +81,21 @@ def five_number_boxes(df: pd.DataFrame, fns: pd.DataFrame):
         ax.text(1.0, 1.0, f"IQR {r['IQR']:,.3g} · Tukey outliers {int(r['n_outliers'])} of {int(r['n'])}",
                 transform=ax.transAxes, ha="right", va="top", fontsize=8, color=P.MUTED)
     fig.tight_layout(h_pad=1.2)
-    _title(fig, "Five-number summary of the key variables",
-           "Box = Q1–Q3, white line = median, whiskers to 1.5×IQR; dots = every grade", y=1.04)
+    _title(fig, "Meet the numbers: the five-number portrait of 1,389 steels",
+           "Box = Q1–Q3, gold line = median, whiskers to 1.5×IQR; every dot is one grade", y=1.04)
     P.source_note(fig)
     return fig
 
 
 def distribution_grid(df: pd.DataFrame):
     fig, axes = plt.subplots(2, 3, figsize=(14, 7.6))
-    for ax, var in zip(axes.ravel(), FIVE_VARS):
+    for ax, var, hue in zip(axes.ravel(), FIVE_VARS, P.SERIES):
         s = df[var].dropna()
-        sns.histplot(s, bins=40, kde=True, ax=ax, color=P.BLUE, edgecolor=P.SURFACE, linewidth=0.4, alpha=0.75,
-                     line_kws={"linewidth": 2})
-        ax.axvline(s.mean(), color=P.ORANGE, lw=1.6, label=f"mean {s.mean():,.3g}")
+        sns.histplot(s, bins=40, kde=True, ax=ax, color=hue, edgecolor=P.SURFACE, linewidth=0.4, alpha=0.7,
+                     line_kws={"linewidth": 2.4})
+        if ax.lines:
+            P.glow(ax.lines[0], hue)
+        ax.axvline(s.mean(), color=P.GOLD, lw=1.8, label=f"mean {s.mean():,.3g}")
         ax.axvline(s.median(), color=P.INK, lw=1.6, label=f"median {s.median():,.3g}")
         label, unit = V.SUMMARY_VARS[var]
         ax.set_xlabel(f"{label} ({unit})")
@@ -94,7 +103,8 @@ def distribution_grid(df: pd.DataFrame):
         ax.set_title(f"{label}: skew {stats.skew(s):+.2f}", fontsize=11, pad=8)
         ax.legend(fontsize=8.5, loc="upper right")
     fig.tight_layout(h_pad=2.2, w_pad=1.6)
-    _title(fig, "Distributions: histograms with kernel density", "Most variables are right-skewed: mean > median", y=1.06)
+    _title(fig, "Lopsided by nature: a few grades carry most of the alloy",
+           "Histograms with kernel density; every variable is right-skewed (gold mean sits right of the white median)", y=1.06)
     P.source_note(fig)
     return fig
 
@@ -127,8 +137,15 @@ def ridgeline(df: pd.DataFrame):
     cb = fig.colorbar(sm, ax=ax, fraction=0.025, pad=0.01)
     cb.set_label("Family median TS (MPa)", color=P.INK_2)
     cb.outline.set_visible(False)
-    ax.set_title("Ridgeline: strength distribution of every family")
-    P.subtitle(ax, "Kernel density per family, sorted by median (white tick); colour = median")
+    top = order[-1]
+    top_base = (len(order) - 1) * step
+    ax.set_ylim(-0.4, top_base + 2.9)
+    P.callout(ax, f"{top}: median {meds[top]:,.0f} MPa, the undisputed heavyweight",
+              xy=(meds[top], top_base + 0.3), xytext=(meds[top] - 1150, top_base + 2.3), rad=-0.25)
+    bottom = order[0]
+    P.callout(ax, f"{bottom}: median {meds[bottom]:,.0f} MPa", xy=(meds[bottom], 0.3), xytext=(meds[bottom] + 650, 1.4), rad=0.3)
+    ax.set_title("Every family has its own strength signature")
+    P.subtitle(ax, "Kernel density per family, sorted by median (white tick); colour = median strength")
     P.source_note(fig)
     return fig
 
@@ -139,14 +156,15 @@ def ecdf_by_group(df: pd.DataFrame):
     for grp in FAMILY_GROUP_ORDER:
         s = np.sort(m.loc[m["family_group"] == grp, TS].values)
         if len(s):
-            ax.step(s, np.arange(1, len(s) + 1) / len(s), where="post", color=GROUP_COLOR[grp], lw=2,
-                    label=f"{grp} (n={len(s)})")
+            line, = ax.step(s, np.arange(1, len(s) + 1) / len(s), where="post", color=GROUP_COLOR[grp], lw=2.2,
+                            label=f"{grp} (n={len(s)})")
+            P.glow(line, GROUP_COLOR[grp])
     ax.axhline(0.5, color=P.AXIS, lw=1)
     ax.set_xlabel("Tensile strength (MPa)")
     ax.set_ylabel("Share of grades at or below")
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.0%}"))
     ax.legend(loc="lower right")
-    ax.set_title("Empirical cumulative distribution by family group")
+    ax.set_title("The race to strength: how fast each group climbs")
     P.subtitle(ax, "Read across at 50 % for each group's median; a curve further right = stronger group")
     P.source_note(fig)
     return fig
@@ -163,12 +181,12 @@ def violin_strip(df: pd.DataFrame):
     sns.stripplot(data=m, x="family_group", y=TS, order=order, color=P.INK_2, size=2.2, alpha=0.45, jitter=0.22, ax=ax)
     sns.boxplot(data=m, x="family_group", y=TS, order=order, width=0.12, showfliers=False, ax=ax,
                 boxprops={"facecolor": P.SURFACE, "edgecolor": P.INK}, whiskerprops={"color": P.INK},
-                capprops={"color": P.INK}, medianprops={"color": P.ORANGE, "linewidth": 2})
+                capprops={"color": P.INK}, medianprops={"color": P.GOLD, "linewidth": 2.4})
     ax.set_xlabel("")
     ax.set_ylabel("Tensile strength (MPa)")
     ax.tick_params(axis="x", labelcolor=P.INK_2)
-    ax.set_title("Violin + strip + box: shape, spread and every grade at once")
-    P.subtitle(ax, "Violin width = density; inner box = IQR with orange median")
+    ax.set_title("The shape of strength: every group, every grade")
+    P.subtitle(ax, "Violin width = density; inner box = IQR with gold median; dots = individual grades")
     P.source_note(fig)
     return fig
 
@@ -179,18 +197,22 @@ def violin_strip(df: pd.DataFrame):
 def binning_comparison(df: pd.DataFrame, comp: pd.DataFrame):
     ts = df[TS].dropna()
     fig, axes = plt.subplots(1, 2, figsize=(13.5, 4.8), sharey=True)
-    for ax, method, color in zip(axes, ["equal width", "equal frequency (quantile)"], [P.BLUE, P.ORANGE]):
+    for ax, method in zip(axes, ["equal width", "equal frequency (quantile)"]):
         c = comp[comp["method"] == method]
         widths = c["high"] - c["low"]
-        ax.bar(c["low"], c["n"], width=widths, align="edge", color=color, alpha=0.85, edgecolor=P.SURFACE, linewidth=2)
+        colors = [P.SEQ(v) for v in np.linspace(0.12, 0.95, len(c))]      # ordered bins -> ordered ramp
+        ax.bar(c["low"], c["n"], width=widths, align="edge", color=colors, alpha=0.95, edgecolor=P.SURFACE, linewidth=2)
         for _, r in c.iterrows():
             ax.text((r["low"] + r["high"]) / 2, r["n"] + 12, f"{r['n']}", ha="center", fontsize=9, color=P.INK)
         ax.set_xlabel("Tensile strength (MPa)")
         ax.set_title(f"{method.capitalize()}: 5 bins", fontsize=11.5)
         P.subtitle(ax, "Equal ranges, very unequal counts" if method == "equal width" else "Equal counts, very unequal ranges")
     axes[0].set_ylabel("Grades per bin")
+    ew = comp[comp["method"] == "equal width"].reset_index(drop=True)
+    P.callout(axes[0], f"Only {ew['n'].iloc[-1]} grades\nlive up here", xy=((ew["low"].iloc[-1] + ew["high"].iloc[-1]) / 2, ew["n"].iloc[-1] + 25),
+              xytext=(ew["low"].iloc[-2], ew["n"].max() * 0.55), rad=-0.3)
     fig.tight_layout(w_pad=2)
-    _title(fig, "Binning a skewed variable: equal width vs equal frequency",
+    _title(fig, "How you slice it changes the story: equal width vs equal frequency",
            f"Same {len(ts)} measured grades, same number of bins", y=1.07)
     P.source_note(fig)
     return fig
@@ -208,7 +230,7 @@ def band_stacks(df: pd.DataFrame):
             counts, colors = b[band].value_counts(), [GROUP_COLOR[c] for c in ct.columns]
         else:
             ct = pd.crosstab(m[band], m["strength_class_name"], normalize="index")[list(V.CLASS_NAMES.values())]
-            counts, colors = m[band].value_counts(), [P.AQUA, P.BLUE, P.ORANGE]
+            counts, colors = m[band].value_counts(), [P.SEQ(0.18), P.SEQ(0.55), P.SEQ(0.92)]   # low -> high
         left = np.zeros(len(ct))
         y = np.arange(len(ct))[::-1]
         for col, color in zip(ct.columns, colors):
@@ -226,7 +248,7 @@ def band_stacks(df: pd.DataFrame):
         ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=3, fontsize=8.5)
         ax.set_title(title, fontsize=12)
     fig.tight_layout(w_pad=4)
-    _title(fig, "Domain bins: metallurgical carbon bands and alloy-content bands",
+    _title(fig, "Cut chemistry the way metallurgists do: carbon bands and alloy bands",
            "Binning continuous chemistry into engineer-readable categories", y=1.07)
     P.source_note(fig)
     return fig
@@ -251,11 +273,14 @@ def chi_square_panels(results: list, show: int = 3):
         ax.grid(False)
         for s in ax.spines.values():
             s.set_visible(False)
+        i_max, j_max = np.unravel_index(np.nanargmax(np.abs(res.values)), res.shape)
+        ax.add_patch(plt.Rectangle((j_max - 0.5, i_max - 0.5), 1, 1, fill=False, edgecolor=P.GOLD, lw=2.6, zorder=5))
         ax.set_title(r.name, fontsize=11, pad=34)
         P.subtitle(ax, f"χ²={r.chi2:,.0f}, df={r.dof}, Cramér's V={r.cramers_v:.2f}, perm. p={r.p_permutation:.4f}", offset=16)
     fig.tight_layout(w_pad=2.5)
-    _title(fig, "Chi-square tests of independence: where the counts deviate",
-           "Cell = observed count (standardized residual). Red = more grades than independence predicts, blue = fewer",
+    _title(fig, "Not a coincidence: where the counts break independence",
+           "Cell = observed count (standardized residual). Pink = more grades than chance predicts, sky = fewer; "
+           "gold frame = the biggest surprise",
            y=1.1)
     P.source_note(fig)
     return fig
@@ -266,7 +291,8 @@ def cramers_lollipop(results: list):
     fig, ax = plt.subplots(figsize=(10.5, 4))
     y = np.arange(len(t))
     ax.hlines(y, 0, t["cramers_v"], color=P.AXIS, lw=3)
-    ax.scatter(t["cramers_v"], y, s=120, color=P.ORANGE, zorder=3)
+    ax.scatter(t["cramers_v"], y, s=170, c=[P.SEQ(0.25 + 0.75 * v) for v in t["cramers_v"]], zorder=3,
+               edgecolors=P.SURFACE, linewidths=2)
     for yi, (v, p, ok) in enumerate(zip(t["cramers_v"], t["p_permutation"], t["asymptotic_valid"])):
         flag = "" if ok else "  · sparse cells: rely on permutation p"
         ax.text(v + 0.02, yi, f"V={v:.2f} · perm. p={p:.4f}{flag}", va="center", fontsize=8.8, color=P.INK_2)
@@ -275,7 +301,7 @@ def cramers_lollipop(results: list):
     ax.set_xlim(0, 1.25)
     ax.set_xlabel("Cramér's V (0 = independent, 1 = perfectly associated)")
     ax.grid(axis="y", visible=False)
-    ax.set_title("Strength of association across all chi-square tests")
+    ax.set_title("How tight is each link? Cramér's V across five tests")
     P.subtitle(ax, "Every association is significant; Cramér's V shows how strong it is")
     P.source_note(fig)
     return fig
@@ -296,7 +322,7 @@ def correlation_clustermap(df: pd.DataFrame):
                        cbar_pos=(0.02, 0.83, 0.025, 0.14), tree_kws={"colors": P.MUTED})
     g.ax_heatmap.tick_params(colors=P.INK_2, labelsize=9)
     g.ax_cbar.tick_params(colors=P.MUTED)
-    g.figure.suptitle("Spearman correlation clustermap: elements that travel together",
+    g.figure.suptitle("Elements travel in gangs: Spearman correlation clustermap",
                       x=0.01, ha="left", y=1.02, fontsize=14, fontweight="semibold", color=P.INK)
     g.figure.text(0.01, 0.995, "Hierarchical clustering reorders rows and columns so correlated blocks sit together",
                   ha="left", va="top", fontsize=10, color=P.INK_2)
@@ -309,18 +335,22 @@ def simple_regression(reg: dict):
     band = V.simple_regression_bands(res, grid)
     fig, axes = plt.subplots(1, 2, figsize=(14, 5.2), gridspec_kw={"width_ratios": [1.6, 1]})
     ax = axes[0]
-    ax.fill_between(band["x"], band["pi_low"], band["pi_high"], color=to_rgba(P.BLUE, 0.12), label="95 % prediction band")
-    ax.fill_between(band["x"], band["ci_low"], band["ci_high"], color=to_rgba(P.BLUE, 0.35), label="95 % confidence band")
-    ax.scatter(c["C"], c[TS], s=20, color=P.BLUE, linewidths=0.4, zorder=3, label=f"Carbon steels (n={res.n})")
-    ax.plot(band["x"], band["fit"], color=P.ORANGE, lw=2.2, zorder=4,
-            label=f"TS = {res.coef[0]:.0f} + {res.coef[1]:.0f}·C")
+    ax.fill_between(band["x"], band["pi_low"], band["pi_high"], color=to_rgba(P.SKY, 0.12), label="95 % prediction band")
+    ax.fill_between(band["x"], band["ci_low"], band["ci_high"], color=to_rgba(P.SKY, 0.35), label="95 % confidence band")
+    ax.scatter(c["C"], c[TS], s=20, color=P.SKY, linewidths=0.4, zorder=3, label=f"Carbon steels (n={res.n})")
+    fit_line, = ax.plot(band["x"], band["fit"], color=P.PINK, lw=2.6, zorder=4,
+                        label=f"TS = {res.coef[0]:.0f} + {res.coef[1]:.0f}·C")
+    P.glow(fit_line, P.PINK, width=2.6)
+    x_c = float(band["x"].iloc[int(len(band) * 0.62)])
+    P.callout(ax, f"Every +0.1 % carbon\nbuys ≈ +{res.coef[1] / 10:.0f} MPa", xy=(x_c, res.coef[0] + res.coef[1] * x_c),
+              xytext=(x_c - 0.42, res.coef[0] + res.coef[1] * x_c + 230), rad=-0.25)
     ax.set_xlabel("Carbon (wt%)")
     ax.set_ylabel("Tensile strength (MPa)")
     ax.legend(loc="upper left", fontsize=9)
-    ax.set_title(f"Simple linear regression: R² = {res.r2:.2f}, p = {res.p[1]:.1e}")
+    ax.set_title(f"Carbon is the plain steel's strength dial (R² = {res.r2:.2f}, p = {res.p[1]:.1e})")
     P.subtitle(ax, f"+{res.coef[1] / 10:.0f} MPa per 0.1 % C (95 % CI {res.ci_low[1] / 10:.0f} to {res.ci_high[1] / 10:.0f})")
     ax = axes[1]
-    ax.scatter(res.fitted, res.resid, s=16, color=P.BLUE, linewidths=0.3)
+    ax.scatter(res.fitted, res.resid, s=16, color=P.SKY, linewidths=0.3)
     ax.axhline(0, color=P.AXIS, lw=1.2)
     ax.set_xlabel("Fitted TS (MPa)")
     ax.set_ylabel("Residual (MPa)")
@@ -339,7 +369,7 @@ def multiple_regression(reg: dict):
     y = np.arange(len(t))
     sig = t["p_value"] < 0.05
     ax.hlines(y, t["ci95_low"], t["ci95_high"], color=P.MUTED, lw=2)
-    ax.scatter(t["coef"][sig], y[sig.values], color=P.ORANGE, s=70, zorder=3, label="p < 0.05")
+    ax.scatter(t["coef"][sig], y[sig.values], color=P.PINK, s=70, zorder=3, label="p < 0.05")
     ax.scatter(t["coef"][~sig], y[~sig.values], facecolors=P.SURFACE, edgecolors=P.MUTED, s=70, zorder=3, label="not significant")
     ax.axvline(0, color=P.AXIS, lw=1.2)
     raw = res.table()
@@ -348,10 +378,10 @@ def multiple_regression(reg: dict):
     ax.set_xlabel("Standardized coefficient β (95 % CI)")
     ax.legend(loc="lower right", fontsize=8.5)
     ax.grid(axis="y", visible=False)
-    ax.set_title(f"Multiple regression, carbon & low-alloy steels (n={res.n})", fontsize=11.5)
+    ax.set_title(f"Who pushes strength up? Multiple regression (n={res.n})", fontsize=11.5)
     P.subtitle(ax, f"R² = {res.r2:.2f}, adj. R² = {res.adj_r2:.2f}, F = {res.f_stat:.1f} (p = {res.f_p:.1e})")
     ax = axes[1]
-    ax.scatter(res.fitted, res.resid, s=12, color=P.BLUE, linewidths=0)
+    ax.scatter(res.fitted, res.resid, s=12, color=P.SKY, linewidths=0)
     ax.axhline(0, color=P.AXIS, lw=1.2)
     ax.set_xlabel("Fitted TS (MPa)")
     ax.set_ylabel("Residual (MPa)")
@@ -359,8 +389,8 @@ def multiple_regression(reg: dict):
     P.subtitle(ax, "High-strength spring/maraging-type outliers above")
     ax = axes[2]
     (osm, osr), (slope, intercept, _) = stats.probplot(res.resid, dist="norm")
-    ax.scatter(osm, osr, s=12, color=P.BLUE, linewidths=0)
-    ax.plot(osm, slope * np.asarray(osm) + intercept, color=P.ORANGE, lw=1.8)
+    ax.scatter(osm, osr, s=12, color=P.SKY, linewidths=0)
+    ax.plot(osm, slope * np.asarray(osm) + intercept, color=P.PINK, lw=1.8)
     ax.set_xlabel("Theoretical normal quantile")
     ax.set_ylabel("Ordered residual (MPa)")
     ax.set_title("Normal Q-Q plot", fontsize=11.5)
@@ -375,7 +405,7 @@ def joint_hex(df: pd.DataFrame):
     plain = plain[plain["carbon_equivalent"] <= 1.6]
     g = sns.jointplot(data=plain, x="carbon_equivalent", y=TS, kind="hex", height=7.5, ratio=4,
                       joint_kws={"gridsize": 28, "cmap": P.SEQ_ON_DARK, "mincnt": 1, "edgecolors": P.SURFACE},
-                      marginal_kws={"color": P.BLUE, "edgecolor": P.SURFACE, "bins": 30})
+                      marginal_kws={"color": P.SKY, "edgecolor": P.SURFACE, "bins": 30})
     g.set_axis_labels("Carbon equivalent, IIW (wt%)", "Tensile strength (MPa)")
     rho = stats.spearmanr(plain["carbon_equivalent"], plain[TS])[0]
     g.figure.suptitle(f"Hexbin joint plot: CE vs strength in carbon & low-alloy steels (ρ = {rho:.2f})",
@@ -403,8 +433,10 @@ def pca_scree(pca: dict):
     fig, axes = plt.subplots(1, 2, figsize=(14, 4.8))
     ax = axes[0]
     x = np.arange(1, len(ev) + 1)
-    ax.bar(x, ev["explained_variance_ratio"] * 100, color=P.BLUE, edgecolor=P.SURFACE, linewidth=2, label="Each component")
-    ax.plot(x, ev["cumulative"] * 100, color=P.ORANGE, marker="o", ms=4, label="Cumulative")
+    ax.bar(x, ev["explained_variance_ratio"] * 100, color=[P.SEQ(v) for v in np.linspace(0.95, 0.15, len(ev))],
+           edgecolor=P.SURFACE, linewidth=2, label="Each component")
+    cum, = ax.plot(x, ev["cumulative"] * 100, color=P.SKY, marker="o", ms=4, label="Cumulative")
+    P.glow(cum, P.SKY)
     ax.axhline(80, color=P.AXIS, lw=1)
     ax.text(len(ev), 81.5, "80 %", ha="right", fontsize=8.5, color=P.MUTED)
     ax.set_xlabel("Principal component")
@@ -449,12 +481,18 @@ def pca_biplot(df: pd.DataFrame, pca: dict, n_arrows: int = 8):
         x, y = L.loc[el] * scale
         ax.annotate("", xy=(x, y), xytext=(0, 0), arrowprops={"arrowstyle": "-|>", "color": P.INK, "lw": 1.4})
         ax.text(x * 1.08, y * 1.08, el, color=P.INK, fontsize=10, fontweight="semibold", ha="center", va="center")
+    for el, story in [("Cr", "The stainless arm\n(Cr · Ni · N)"), ("V", "The tool-steel arm\n(V · W · Co)"),
+                      ("C", "The cast-iron pull\n(C)")]:
+        if el in L.index:
+            x, y = L.loc[el] * scale
+            offset = {"Cr": (0.1, 1.4, "right"), "V": (-0.4, 1.4, "right"), "C": (0.6, -2.4, "left")}[el]
+            P.callout(ax, story, xy=(x, y), xytext=(x + offset[0], y + offset[1]), ha=offset[2], rad=0.2, fontsize=9)
     ax.axhline(0, color=P.AXIS, lw=1)
     ax.axvline(0, color=P.AXIS, lw=1)
     ax.set_xlabel(f"PC1 ({ev.iloc[0]:.1%} of variance)")
     ax.set_ylabel(f"PC2 ({ev.iloc[1]:.1%} of variance)")
     ax.legend(loc="upper right")
-    ax.set_title("PCA biplot: grades (dots) and element loadings (arrows)")
+    ax.set_title("The chemistry map: three arms pull the steels apart")
     P.subtitle(ax, "Arrows point to where an element is high; stainless and cast iron pull away from plain steels")
     P.source_note(fig)
     return fig
@@ -465,10 +503,11 @@ def pca_biplot(df: pd.DataFrame, pca: dict, n_arrows: int = 8):
 # =============================================================================================
 def kmeans_elbow(scan: pd.DataFrame, k: int):
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.4))
-    for ax, col, color, title in [(axes[0], "inertia", P.BLUE, "Elbow: within-cluster sum of squares"),
-                                  (axes[1], "silhouette", P.ORANGE, "Silhouette score (higher = better separated)")]:
-        ax.plot(scan.index, scan[col], marker="o", color=color, ms=6)
-        ax.scatter([k], [scan.loc[k, col]], s=150, facecolors="none", edgecolors=P.INK, lw=1.8, zorder=3)
+    for ax, col, color, title in [(axes[0], "inertia", P.SKY, "Elbow: within-cluster sum of squares"),
+                                  (axes[1], "silhouette", P.PINK, "Silhouette score (higher = better separated)")]:
+        line, = ax.plot(scan.index, scan[col], marker="o", color=color, ms=6)
+        P.glow(line, color)
+        P.ring(ax, k, scan.loc[k, col], size=230)
         ax.set_xlabel("Number of clusters k")
         ax.set_title(title, fontsize=11.5)
         ax.set_xticks(scan.index)
@@ -509,15 +548,15 @@ def kmeans_small_multiples(sc: np.ndarray, labels: np.ndarray, names: dict):
     for ax, c in zip(axes.ravel(), sorted(names)):
         on = labels == c
         ax.scatter(sc[~on, 0], sc[~on, 1], s=4, color=P.OTHER, linewidths=0, alpha=0.5)
-        ax.scatter(sc[on, 0], sc[on, 1], s=8, color=P.BLUE, linewidths=0)
+        ax.scatter(sc[on, 0], sc[on, 1], s=9, color=P.SERIES[c % 8], linewidths=0)
         ax.set_title(f"{names[c]}  n={on.sum()}", fontsize=9.5)
         ax.set_xticks([])
         ax.set_yticks([])
     for ax in axes.ravel()[k:]:
         ax.axis("off")
     fig.tight_layout()
-    _title(fig, "K-means clusters on the PCA plane, one panel per cluster",
-           "Blue = cluster members, grey = all other grades (PC1 × PC2)", y=1.05)
+    _title(fig, "Eight chemical tribes, each lit up on the chemistry map",
+           "Coloured = cluster members, grey = every other grade (PC1 × PC2)", y=1.05)
     P.source_note(fig)
     return fig
 
@@ -537,8 +576,8 @@ def cluster_heatmap(df: pd.DataFrame, labels: np.ndarray, names: dict, X: np.nda
     ax.set_yticks(range(z.shape[0]), [f"{n}  · median TS {ts.iloc[i]:.0f}" for i, n in enumerate(z.index)], fontsize=8.5)
     ax.tick_params(axis="both", labelcolor=P.INK_2)
     ax.grid(False)
-    ax.set_title("Cluster fingerprints: mean standardized log-composition")
-    P.subtitle(ax, "Red = element well above the dataset average for that cluster; values shown where |z| ≥ 1")
+    ax.set_title("Cluster fingerprints: each tribe's chemical signature")
+    P.subtitle(ax, "Pink = element well above the dataset average, sky = well below; values shown where |z| ≥ 1")
     P.source_note(fig)
     return fig
 
@@ -607,12 +646,15 @@ def circular_migration(flows: pd.DataFrame, sources: list[str], targets: list[st
     arcs, rib = chord_geometry(flows, sources, targets)
     total = flows["value"].sum()
     fig, ax = plt.subplots(figsize=(12.5, 11))
+    biggest = rib.groupby("ribbon_id")["value"].first().idxmax()
     for rid, poly in rib.groupby("ribbon_id"):
         src = poly["source"].iloc[0]
-        ax.add_patch(PathPatch(Path(poly[["x", "y"]].to_numpy()), facecolor=to_rgba(source_colors[src], 0.55),
-                               edgecolor=to_rgba(source_colors[src], 0.9), lw=0.4))
+        star = rid == biggest
+        ax.add_patch(PathPatch(Path(poly[["x", "y"]].to_numpy()), facecolor=to_rgba(source_colors[src], 0.62),
+                               edgecolor=P.GOLD if star else to_rgba(source_colors[src], 0.95), lw=1.8 if star else 0.5,
+                               zorder=3 if star else 2))
     for a in arcs.itertuples():
-        color = source_colors.get(a.node, P.MUTED) if a.side == "source" else P.INK_2
+        color = source_colors.get(a.node, P.MUTED) if a.side == "source" else "#e9e4ff"
         ax.add_patch(Wedge((0, 0), 1.09, a.a0, a.a1, width=0.07, facecolor=color, edgecolor=P.SURFACE, lw=1))
         mid = np.radians((a.a0 + a.a1) / 2)
         if a.value / total < min_label_share:
@@ -624,8 +666,11 @@ def circular_migration(flows: pd.DataFrame, sources: list[str], targets: list[st
                 rotation=deg + 180 if left else deg, rotation_mode="anchor", fontsize=9, color=P.INK)
     ax.text(-1.0, 1.32, "FROM", fontsize=10, color=P.MUTED, fontweight="semibold", ha="center")
     ax.text(1.0, 1.32, "TO", fontsize=10, color=P.MUTED, fontweight="semibold", ha="center")
-    ax.set_xlim(-1.75, 1.75)
-    ax.set_ylim(-1.55, 1.45)
+    big = rib[rib["ribbon_id"] == biggest].iloc[0]
+    ax.text(0, -1.95, f"Gold outline = the biggest migration: {int(big['value']):,} from {big['source']} to {big['target']}",
+            ha="center", fontsize=9.5, color=P.INK_2)
+    ax.set_xlim(-1.85, 1.85)
+    ax.set_ylim(-2.05, 1.75)
     ax.set_aspect("equal")
     _clean_axis(ax)
     ax.set_title(title, fontsize=14)
@@ -668,8 +713,8 @@ def ring_chart(df: pd.DataFrame):
         x, y = 1.06 * np.cos(ang), 1.06 * np.sin(ang)
         ax.text(x, y, f"{lab} ({n})", ha="left" if x > 0 else "right", va="center", fontsize=8.6, color=P.INK_2)
     ax.text(0, 0, f"{len(df):,}\ngrades", ha="center", va="center", fontsize=17, fontweight="semibold", color=P.INK)
-    ax.set_title("Ring diagram: family groups (inner) and families (outer)", fontsize=14)
-    P.subtitle(ax, "Two-level donut / sunburst; arc length = number of grades")
+    ax.set_title("The cast: 1,389 grades, six families of steel", fontsize=14)
+    P.subtitle(ax, "Ring diagram: family groups (inner) and their families (outer); arc length = number of grades")
     P.source_note(fig)
     return fig
 
@@ -691,11 +736,14 @@ def radial_bar_geometry(values: pd.Series, inner: float = 0.35, max_len: float =
     return pd.DataFrame(rows)
 
 
-def circular_columns(values: pd.Series, colors: list, title: str, subtitle: str, unit: str, center: str):
+def circular_columns(values: pd.Series, colors: list, title: str, subtitle: str, unit: str, center: str,
+                     champion_note: str | None = None):
     geo = radial_bar_geometry(values)
     fig, ax = plt.subplots(figsize=(11.5, 11.5))
-    for (label, poly), color in zip(geo.groupby("bar", sort=False), colors):
-        ax.add_patch(PathPatch(Path(poly[["x", "y"]].to_numpy()), facecolor=color, edgecolor=P.SURFACE, lw=1))
+    for i, ((label, poly), color) in enumerate(zip(geo.groupby("bar", sort=False), colors)):
+        patch = PathPatch(Path(poly[["x", "y"]].to_numpy()), facecolor=color, edgecolor=P.GOLD if i == 0 and champion_note else P.SURFACE,
+                          lw=2.2 if i == 0 and champion_note else 1)
+        ax.add_patch(patch)
         a = np.radians(poly["angle_mid"].iloc[0])
         v = poly["value"].iloc[0]
         r = 0.35 + 0.6 * v / values.max() + 0.03
@@ -707,6 +755,8 @@ def circular_columns(values: pd.Series, colors: list, title: str, subtitle: str,
     for frac in (0.25, 0.5, 0.75, 1.0):
         ax.add_patch(plt.Circle((0, 0), 0.35 + 0.6 * frac, fill=False, color=P.GRID, lw=0.8, zorder=0))
     ax.text(0, 0, center, ha="center", va="center", fontsize=12, color=P.INK, fontweight="semibold")
+    if champion_note:
+        P.callout(ax, champion_note, xy=(0.04, 0.95), xytext=(0.62, 1.28), rad=-0.25)
     ax.set_xlim(-1.45, 1.45)
     ax.set_ylim(-1.45, 1.45)
     ax.set_aspect("equal")
@@ -751,8 +801,8 @@ def treemap(df: pd.DataFrame, W: float = 100, H: float = 62):
     cb = fig.colorbar(sm, ax=ax, fraction=0.02, pad=0.01, extend="max")
     cb.set_label("Family median tensile strength (MPa)", color=P.INK_2)
     cb.outline.set_visible(False)
-    ax.set_title("Treemap: area = number of grades, colour = median strength")
-    P.subtitle(ax, "Outer frames = family groups; tiles = families (small tiles: name, grades · median MPa)")
+    ax.set_title("Where the grades live, and how strong they are")
+    P.subtitle(ax, "Treemap: area = number of grades, colour = median strength (plasma: indigo weak → gold strong)")
     P.source_note(fig)
     return fig
 
@@ -794,8 +844,9 @@ def _radar_axes(ax, labels, rings=(0.25, 0.5, 0.75, 1.0), ring_labels=None):
 
 def _radar_poly(ax, geo_ent: pd.DataFrame, color, alpha=0.32, lw=2.0, label=None):
     ax.fill(geo_ent["x"], geo_ent["y"], color=to_rgba(color, alpha), zorder=2)
-    ax.plot(geo_ent["x"], geo_ent["y"], color=color, lw=lw, zorder=3, label=label)
-    ax.scatter(geo_ent["x"].iloc[:-1], geo_ent["y"].iloc[:-1], s=14, color=color, zorder=4)
+    line, = ax.plot(geo_ent["x"], geo_ent["y"], color=color, lw=lw, zorder=3, label=label)
+    P.glow(line, color, width=lw)
+    ax.scatter(geo_ent["x"].iloc[:-1], geo_ent["y"].iloc[:-1], s=18, color=color, edgecolors=P.SURFACE, zorder=4)
 
 
 def radar_small_multiples(table: pd.DataFrame, colors: dict | str, title: str, subtitle: str, scale_max: float = 1.0,
@@ -838,7 +889,7 @@ def radar_overlay(table: pd.DataFrame, colors: list, title: str, subtitle: str, 
 # J. Waterfall
 # =============================================================================================
 def waterfall(wf: pd.DataFrame, title: str, subtitle: str, unit: str = "", fmt: str = "{:,.0f}", xlabel_rot: int = 0,
-              zero_based: bool = True):
+              zero_based: bool = True, story: tuple[str, str] | None = None):
     """Waterfall chart. zero_based=False starts the axis just below the data so small steps on a large total stay
     visible; the subtitle then states where the axis starts (a non-zero baseline must always be declared)."""
     lay = V.waterfall_layout(wf)
@@ -856,20 +907,25 @@ def waterfall(wf: pd.DataFrame, title: str, subtitle: str, unit: str = "", fmt: 
     for i, r in lay.iterrows():
         lo, hi = sorted([r["start"], r["end"]])
         if r["kind"] == "total":
-            lo, color = floor, P.BLUE
+            lo, color = floor, P.SKY
         else:
-            color = P.AQUA if r["value"] >= 0 else P.ORANGE
+            color = P.LIME if r["value"] >= 0 else P.PINK
         ax.bar(i, hi - lo, bottom=lo, width=0.62, color=color, edgecolor=P.SURFACE, linewidth=1.5)
         label = fmt.format(r["value"]) if r["kind"] == "total" else ("+" if r["value"] >= 0 else "−") + fmt.format(abs(r["value"]))
         ax.text(i, hi + pad, f"{label}{unit}", ha="center", va="bottom", fontsize=9.5, color=P.INK)
         if i < len(lay) - 1:
             ax.plot([i + 0.31, i + 0.69], [r["end"]] * 2, color=P.MUTED, lw=1)
     ax.set_ylim(floor, vals.max() + (vals.max() - floor) * 0.12)
-    ax.set_xticks(x, lay["step"], rotation=xlabel_rot, ha="right" if xlabel_rot else "center")
+    if story:
+        i = int(np.flatnonzero(lay["step"].to_numpy() == story[0])[0])
+        top = max(lay.loc[i, "start"], lay.loc[i, "end"])
+        P.callout(ax, story[1], xy=(i, top - (top - floor) * 0.08), xytext=(i + 0.9, top - (top - floor) * 0.30), rad=0.25)
+    labels = lay["step"] if xlabel_rot else [textwrap.fill(str(t), 14) for t in lay["step"]]
+    ax.set_xticks(x, labels, rotation=xlabel_rot, ha="right" if xlabel_rot else "center")
     ax.tick_params(axis="x", labelcolor=P.INK_2)
     ax.grid(axis="x", visible=False)
-    ax.legend(handles=[Patch(color=P.BLUE, label="Total"), Patch(color=P.AQUA, label="Increase"),
-                       Patch(color=P.ORANGE, label="Decrease")], loc="upper left", bbox_to_anchor=(1.0, 1.0))
+    ax.legend(handles=[Patch(color=P.SKY, label="Total"), Patch(color=P.LIME, label="Increase"),
+                       Patch(color=P.PINK, label="Decrease")], loc="upper left", bbox_to_anchor=(1.0, 1.0))
     ax.set_title(title)
     P.subtitle(ax, subtitle)
     if xlabel_rot:   # rotated labels hang lower: push the source line below them
@@ -891,7 +947,8 @@ def parallel_coordinates(df: pd.DataFrame):
     fig, ax = plt.subplots(figsize=(12.5, 5.6))
     x = np.arange(len(cols))
     for g, row in scaled.iterrows():
-        ax.plot(x, row.values, color=GROUP_COLOR[g], lw=2.6, marker="o", ms=6, label=g)
+        line, = ax.plot(x, row.values, color=GROUP_COLOR[g], lw=2.6, marker="o", ms=7, label=g)
+        P.glow(line, GROUP_COLOR[g], width=2.6)
     for xi in x:
         ax.axvline(xi, color=P.AXIS, lw=1)
     ax.set_xticks(x, [f"{lab}\n{lo.iloc[i]:.3g}–{hi.iloc[i]:.3g}" for i, lab in enumerate(labels)], fontsize=9)
@@ -899,7 +956,7 @@ def parallel_coordinates(df: pd.DataFrame):
     ax.tick_params(axis="x", labelcolor=P.INK_2)
     ax.grid(axis="x", visible=False)
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.17), ncol=6, fontsize=9)
-    ax.set_title("Parallel coordinates: family-group medians across eight properties")
-    P.subtitle(ax, "Each axis scaled from its 2nd to 98th percentile (range under the label)")
+    ax.set_title("Group personalities: eight properties, six characters")
+    P.subtitle(ax, "Parallel coordinates of group medians; each axis scaled from its 2nd to 98th percentile (range under the label)")
     P.source_note(fig)
     return fig

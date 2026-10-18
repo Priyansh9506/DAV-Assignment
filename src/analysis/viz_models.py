@@ -16,17 +16,17 @@ def model_comparison(tab: pd.DataFrame, baseline_mae: float, ie, chosen: tuple[s
     t["label"] = t["model"] + "  ·  " + t["features"]
     t = t.sort_values("MAE_mean", ascending=False)
     is_chosen = (t["model"] == chosen[0]) & (t["features"] == chosen[1])
-    colors = np.where(is_chosen, P.BLUE, P.OTHER)
+    colors = np.where(is_chosen, P.SKY, P.OTHER)
     fig, axes = plt.subplots(1, 2, figsize=(13.5, 5.4), sharey=True)
     y = np.arange(len(t))
     ax = axes[0]
     ax.barh(y, t["MAE_mean"], xerr=t["MAE_std"], height=0.6, color=colors, error_kw={"ecolor": P.MUTED, "lw": 1})
     for yi, v in zip(y, t["MAE_mean"]):
         ax.text(v + 12, yi, f"{v:.0f}", va="center", fontsize=8.5, color=P.INK_2)
-    ax.axvline(ie.oracle_mae, color=P.AQUA, lw=1.4)
-    ax.text(ie.oracle_mae + 3, len(t) - 0.4, f"composition-only\nceiling {ie.oracle_mae:.0f}", color=P.AQUA, fontsize=8, va="top")
-    ax.axvline(baseline_mae, color=P.ORANGE, lw=1.4)
-    ax.text(baseline_mae + 3, -0.6, f"family-median baseline {baseline_mae:.0f}", color=P.ORANGE, fontsize=8)
+    ax.axvline(ie.oracle_mae, color=P.FLAME, lw=1.4)
+    ax.text(ie.oracle_mae + 3, len(t) - 0.4, f"composition-only\nceiling {ie.oracle_mae:.0f}", color=P.FLAME, fontsize=8, va="top")
+    ax.axvline(baseline_mae, color=P.PINK, lw=1.4)
+    ax.text(baseline_mae + 3, -0.6, f"family-median baseline {baseline_mae:.0f}", color=P.PINK, fontsize=8)
     ax.set_yticks(y, t["label"])
     ax.tick_params(axis="y", labelcolor=P.INK_2, labelsize=9)
     ax.set_xlabel("MAE (MPa), GroupKFold 5×3, lower is better")
@@ -37,8 +37,8 @@ def model_comparison(tab: pd.DataFrame, baseline_mae: float, ie, chosen: tuple[s
     ax.barh(y, t["R2_mean"], xerr=t["R2_std"], height=0.6, color=colors, error_kw={"ecolor": P.MUTED, "lw": 1})
     for yi, v in zip(y, t["R2_mean"]):
         ax.text(max(v, 0) + 0.03, yi, f"{v:.2f}", va="center", fontsize=8.5, color=P.INK_2)
-    ax.axvline(ie.oracle_r2, color=P.AQUA, lw=1.4)
-    ax.text(ie.oracle_r2 - 0.02, len(t) - 0.4, f"ceiling\n{ie.oracle_r2:.2f}", color=P.AQUA, fontsize=8, va="top", ha="right")
+    ax.axvline(ie.oracle_r2, color=P.FLAME, lw=1.4)
+    ax.text(ie.oracle_r2 - 0.02, len(t) - 0.4, f"ceiling\n{ie.oracle_r2:.2f}", color=P.FLAME, fontsize=8, va="top", ha="right")
     ax.axvline(0, color=P.AXIS, lw=1)
     ax.set_xlim(-0.2, 1.05)
     ax.set_xlabel("R², higher is better")
@@ -54,7 +54,7 @@ def model_comparison(tab: pd.DataFrame, baseline_mae: float, ie, chosen: tuple[s
 
 def leakage_demo(leak: pd.DataFrame):
     t = leak.iloc[::-1]
-    colors = [P.BLUE if "used" in s else P.OTHER for s in t["setup"]]
+    colors = [P.SKY if "used" in s else P.OTHER for s in t["setup"]]
     fig, ax = plt.subplots(figsize=(10, 3.8))
     y = np.arange(len(t))
     ax.barh(y, t["R2_mean"], xerr=t["R2_std"], height=0.58, color=colors, error_kw={"ecolor": P.MUTED, "lw": 1})
@@ -78,7 +78,7 @@ def pred_vs_actual(m: pd.DataFrame, oof: pd.Series):
     fig, ax = plt.subplots(figsize=(7.8, 7))
     lim = (0, 2600)
     ax.plot(lim, lim, color=P.AXIS, lw=1.2, zorder=1)
-    for mask, color, name in [(~shared, P.BLUE, "Unique composition"), (shared, P.ORANGE, "Composition shared with other grades")]:
+    for mask, color, name in [(~shared, P.SKY, "Unique composition"), (shared, P.PINK, "Composition shared with other grades")]:
         mae = np.mean(np.abs(y[mask] - p[mask]))
         ax.scatter(y[mask], p[mask], s=16, color=color, linewidths=0.4, zorder=3 if mask is shared else 2,
                    label=f"{name}: n={mask.sum()}, MAE {mae:.0f} MPa")
@@ -99,7 +99,7 @@ def error_by_family(m: pd.DataFrame, oof: pd.Series):
     t = e.groupby("family")["ae"].agg(["size", "mean", "median"]).sort_values("mean")
     fig, ax = plt.subplots(figsize=(9.5, 6.2))
     y = np.arange(len(t))
-    ax.barh(y, t["mean"], height=0.6, color=P.BLUE, label="Mean absolute error")
+    ax.barh(y, t["mean"], height=0.6, color=P.SKY, label="Mean absolute error")
     ax.scatter(t["median"], y, color=P.INK, s=22, zorder=3, label="Median absolute error")
     for yi, (v, n) in enumerate(zip(t["mean"], t["size"])):
         ax.text(v + 6, yi, f"{v:.0f}  (n={n})", va="center", fontsize=8.5, color=P.INK_2)
@@ -119,7 +119,7 @@ def classifier_results(tab: pd.DataFrame, cm: pd.DataFrame):
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.8), gridspec_kw={"width_ratios": [1.15, 1]})
     ax = axes[0]
     t = tab.iloc[::-1]
-    colors = [P.BLUE if "Gradient boosting (balanced)" == mname else P.OTHER for mname in t["model"]]
+    colors = [P.SKY if "Gradient boosting (balanced)" == mname else P.OTHER for mname in t["model"]]
     y = np.arange(len(t))
     ax.barh(y, t["oof_macro_F1"], height=0.58, color=colors)
     for yi, (f1, ba) in enumerate(zip(t["oof_macro_F1"], t["oof_balanced_accuracy"])):
@@ -160,7 +160,7 @@ def importance(perm: pd.DataFrame, shap_mean: pd.Series, top: int = 14):
     p = perm.head(top).iloc[::-1]
     ax = axes[0]
     y = np.arange(len(p))
-    ax.barh(y, p["mae_increase_mean"], xerr=p["mae_increase_sd"], height=0.6, color=P.BLUE,
+    ax.barh(y, p["mae_increase_mean"], xerr=p["mae_increase_sd"], height=0.6, color=P.SKY,
             error_kw={"ecolor": P.MUTED, "lw": 1})
     ax.set_yticks(y, [labels.get(f, f) for f in p.index])
     ax.tick_params(axis="y", labelcolor=P.INK_2)
@@ -171,7 +171,7 @@ def importance(perm: pd.DataFrame, shap_mean: pd.Series, top: int = 14):
     s = shap_mean.head(top).iloc[::-1]
     ax = axes[1]
     y = np.arange(len(s))
-    ax.barh(y, s.values, height=0.6, color=P.BLUE)
+    ax.barh(y, s.values, height=0.6, color=P.SKY)
     ax.set_yticks(y, [labels.get(f, f) for f in s.index])
     ax.tick_params(axis="y", labelcolor=P.INK_2)
     ax.set_xlabel("Mean |SHAP value| (MPa)")
@@ -194,7 +194,7 @@ def shap_dependence(X: pd.DataFrame, sv: np.ndarray, cols: list[str], families: 
         xv = X[f].to_numpy()
         other = ~grp.isin(show).to_numpy()
         ax.scatter(xv[other], sv[other, j], s=12, color=P.OTHER, linewidths=0, label="Other families")
-        for name, color in zip(show, [P.BLUE, P.ORANGE, P.AQUA]):
+        for name, color in zip(show, [P.SKY, P.PINK, P.FLAME]):
             msk = (grp == name).to_numpy()
             ax.scatter(xv[msk], sv[msk, j], s=14, color=color, linewidths=0.3, label=name)
         ax.axhline(0, color=P.AXIS, lw=1)
@@ -216,11 +216,11 @@ def interval_coverage(iv, m: pd.DataFrame, oof: pd.Series, n_show: int = 70, see
     bars = [("Quantile GBMs, raw", iv.coverage_raw), ("After conformal\ncalibration (all)", iv.coverage_calibrated)]
     bars += [(f"Calibrated:\n{k.lower()}", v) for k, v in iv.by_group_type["coverage"].items()]
     y = np.arange(len(bars))[::-1]
-    ax.barh(y, [b[1] for b in bars], height=0.58, color=[P.OTHER, P.BLUE, P.BLUE, P.BLUE])
+    ax.barh(y, [b[1] for b in bars], height=0.58, color=[P.OTHER, P.SKY, P.SKY, P.SKY])
     for yi, (_, v) in zip(y, bars):
         ax.text(v + 0.01, yi, f"{v:.1%}", va="center", fontsize=9, color=P.INK_2)
-    ax.axvline(iv.nominal, color=P.ORANGE, lw=1.4)
-    ax.text(iv.nominal + 0.005, len(bars) - 0.45, f"target {iv.nominal:.0%}", color=P.ORANGE, fontsize=8.5)
+    ax.axvline(iv.nominal, color=P.PINK, lw=1.4)
+    ax.text(iv.nominal + 0.005, len(bars) - 0.45, f"target {iv.nominal:.0%}", color=P.PINK, fontsize=8.5)
     ax.set_yticks(y, [b[0] for b in bars])
     ax.tick_params(axis="y", labelcolor=P.INK_2, labelsize=9)
     ax.set_xlim(0, 1.05)
@@ -239,8 +239,8 @@ def interval_coverage(iv, m: pd.DataFrame, oof: pd.Series, n_show: int = 70, see
     inside = (y_true >= lo) & (y_true <= hi)
     ax.vlines(x, lo, hi, color=P.AXIS, lw=4, label="80 % interval")
     ax.scatter(x, oof.to_numpy()[order], color=P.INK_2, s=10, zorder=3, label="Prediction")
-    ax.scatter(x[inside], y_true[inside], color=P.BLUE, s=18, zorder=4, label="Measured, inside")
-    ax.scatter(x[~inside], y_true[~inside], color=P.ORANGE, s=22, zorder=4, marker="D", label="Measured, outside")
+    ax.scatter(x[inside], y_true[inside], color=P.SKY, s=18, zorder=4, label="Measured, inside")
+    ax.scatter(x[~inside], y_true[~inside], color=P.PINK, s=22, zorder=4, marker="D", label="Measured, outside")
     ax.set_xticks([])
     ax.set_xlabel(f"{n_show} random grades, sorted by prediction")
     ax.set_ylabel("Tensile strength (MPa)")
@@ -256,8 +256,8 @@ def clustering_overview(res, grades: pd.DataFrame):
     fig, axes = plt.subplots(1, 2, figsize=(14, 6.6), gridspec_kw={"width_ratios": [1, 2.3]})
     ax = axes[0]
     s = res.silhouette_by_k
-    ax.plot(s.index, s.values, color=P.BLUE, marker="o", ms=5)
-    ax.scatter([res.k], [s[res.k]], color=P.ORANGE, s=60, zorder=3)
+    ax.plot(s.index, s.values, color=P.SKY, marker="o", ms=5)
+    ax.scatter([res.k], [s[res.k]], color=P.PINK, s=60, zorder=3)
     ax.annotate(f"k = {res.k}", (res.k, s[res.k]), xytext=(-40, 10), textcoords="offset points", color=P.INK_2, fontsize=9)
     ax.set_xlabel("Number of clusters k")
     ax.set_ylabel("Silhouette score")
@@ -294,7 +294,7 @@ def umap_small_multiples(xy: np.ndarray, grades: pd.DataFrame):
     for ax, name in zip(axes.ravel(), groups):
         on = (grp == name).to_numpy()
         ax.scatter(xy[~on, 0], xy[~on, 1], s=5, color=P.OTHER, linewidths=0, alpha=0.6)
-        ax.scatter(xy[on, 0], xy[on, 1], s=9, color=P.BLUE, linewidths=0)
+        ax.scatter(xy[on, 0], xy[on, 1], s=9, color=P.SKY, linewidths=0)
         ax.set_title(f"{name}  (n={on.sum()})", fontsize=11)
         ax.set_xticks([])
         ax.set_yticks([])
@@ -310,7 +310,7 @@ def substitute_eval(ev: pd.DataFrame, chosen: str):
     fig, axes = plt.subplots(1, 2, figsize=(12.5, 3.8), sharey=True)
     t = ev.iloc[::-1]
     y = np.arange(len(t))
-    colors = [P.BLUE if i == chosen else P.OTHER for i in t.index]
+    colors = [P.SKY if i == chosen else P.OTHER for i in t.index]
     ax = axes[0]
     ax.barh(y, t["family_agree@1"], height=0.58, color=colors)
     for yi, v in zip(y, t["family_agree@1"]):

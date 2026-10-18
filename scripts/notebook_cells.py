@@ -591,27 +591,27 @@ out.head()
 # =============================================================================================
 NB04 = [
     ("md", r"""
-# 04 · Visual analytics: statistics you can see
+# 04 · The Secret Lives of 1,389 Steels
+### A visual story in a prologue, seven acts and an epilogue
 
-A visualization-intensive pass over the cleaned grade table (one row per canonical grade; strength statistics use
-measured grades only). Every chart answers a question and is followed by its takeaway.
+Every steel on a datasheet hides a biography: what it is made of, how strong it gets, how hot it must be
+before it melts, and which "family" it was born into. This notebook tells that story with one rule:
+**every claim on screen is printed by the code above it.**
 
-| § | Technique | Charts |
+| Part | Story beat | Techniques & charts |
 |---|---|---|
-| 1 | Five-number summary & descriptive statistics | annotated box plots, histogram + KDE grid, ridgeline, ECDF, violin + strip |
-| 2 | Binning | equal-width vs equal-frequency, metallurgical carbon / alloy bands |
-| 3 | Chi-square tests of independence | residual heatmaps, Cramér's V lollipop |
-| 4 | Correlation & regression | clustermap, simple OLS with confidence/prediction bands, multiple OLS forest plot + diagnostics, hexbin joint plot, pair plot |
-| 5 | PCA | scree + loadings, biplot |
-| 6 | K-means | elbow + silhouette scan, silhouette blades, per-cluster small multiples, cluster fingerprints, cluster radar |
-| 7 | Circular migration (chord) plots | raw class → cleaned outcome, named family → chemistry cluster |
-| 8 | Ring, circular columns, treemap | two-level donut, radial bars, nested treemap |
-| 9 | Radar charts | family composition, showcase alloys, 3-alloy overlay |
-| 10 | Waterfall charts | cleaning flow, carbon-equivalent build-up, model prediction build-up |
-| 11 | Parallel coordinates | family-group medians across eight properties |
-| 12 | Exports | helper CSVs for Tableau, expected values for KNIME |
+| Prologue | *The dataset had a secret* | waterfall, circular migration (chord) plot |
+| Act I | *Meet the cast* | ring diagram, treemap, five-number summary, distributions |
+| Act II | *Every family has a signature* | ridgeline, ECDF race, violins, circular columns |
+| Act III | *Slicing and testing the evidence* | binning, chi-square tests, Cramér's V |
+| Act IV | *What actually drives strength* | correlation clustermap, simple and multiple regression, hexbin, pair plot |
+| Act V | *The chemistry map* | PCA, k-means, silhouettes, fingerprints, chord: names vs chemistry |
+| Act VI | *Portraits* | radar charts, parallel coordinates |
+| Act VII | *The verdict* | carbon-equivalent and model-prediction waterfalls |
+| Epilogue | *What an engineer should remember* | plus helper exports for Tableau and KNIME |
 
-Statistics: `src/analysis/visual_stats.py`. Figures: `src/analysis/viz_suite.py` (matplotlib + seaborn, one dark theme).
+Theme: **Neon Forge** (midnight canvas, validated colour-blind-safe neon palette, plasma ramps, gold story
+callouts). Statistics: `src/analysis/visual_stats.py` · Figures: `src/analysis/viz_suite.py`.
 """),
     ("code", SETUP),
     ("code", r"""
@@ -619,37 +619,102 @@ import seaborn as sns
 from src.analysis.cleaning import load_clean_grades, load_pipeline_meta
 from src.analysis.constants import CLEAN_LISTINGS_CSV, DATA_RAW
 from src.analysis import visual_stats as V, viz_suite as VS
+from src.analysis.features import family_group
 grades = load_clean_grades(); rare = load_pipeline_meta()["rare_elements"]
 g = V.with_groups(grades)
 m = g.dropna(subset=[V.TS])
-print(f"{len(g)} grades, {len(m)} with measured tensile strength")
+raw = pd.read_csv(DATA_RAW); listings = pd.read_csv(CLEAN_LISTINGS_CSV)
+print(f"{len(raw):,} raw rows -> {len(g):,} grades -> {len(m):,} with a measured tensile strength")
 """),
-    ("md", "## 1 · Five-number summary and descriptive statistics"),
+
+    # ------------------------------------------------------------------------------- PROLOGUE
+    ("md", r"""
+---
+## Prologue · The dataset had a secret
+
+It arrived as a spreadsheet of 2,672 rows. It looked complete: no blanks, a strength for every row.
+But one strength value repeated hundreds of times, and it was exactly the column average. Many rows were
+the *same steel* written twice, once with spaces ("EN 1.0420 (GE200)…") and once with hyphens
+("EN-1.0420-GE200-…"). The first chart follows the rows as the truth comes out.
+"""),
     ("code", r"""
-fns = V.five_number_summary(g)
-display(fns.round(3))
-display(V.descriptive_stats(g).round(3))
-show(VS.five_number_boxes(g, fns), "04_01_five_number_summary")
+counts = {"raw": len(raw), "duplicates": int(raw.duplicated().sum()), "twins": int(len(listings) - len(grades)),
+          "grades": len(grades), "unmeasured": int(grades[V.TS].isna().sum()), "measured": int(grades[V.TS].notna().sum())}
+wf1 = V.waterfall_cleaning(counts); display(V.waterfall_layout(wf1))
+show(VS.waterfall(wf1, "The great disappearing act: 2,672 rows become 1,382 honest grades",
+                  "Waterfall of the cleaning pipeline; blue = totals, pink = rows removed",
+                  story=("Twin listings merged", f"The big secret: {counts['twins']:,} rows were\nthe same steel written twice")),
+     "04_31_waterfall_cleaning")
+"""),
+    ("code", r"""
+f1 = V.flow_raw_class_to_outcome(raw, listings, grades)
+display(f1)
+src1 = sorted(f1.source.unique())
+tgt1 = ["Grade class 0", "Grade class 1", "Grade class 2", "Unmeasured TS (excluded)", "Merged into twin listing", "Dropped: exact duplicate"]
+show(VS.circular_migration(f1, src1, tgt1, dict(zip(src1, [P.SEQ(0.18), P.SEQ(0.55), P.SEQ(0.92)])),
+                           "Where did every row go? A circular migration of the original classes",
+                           f"{f1.value.sum():,} raw rows flow from their original strength class (left) to their fate after cleaning (right)",
+                           min_label_share=0.0), "04_22_chord_raw_class_migration")
 """),
     ("md", r"""
-**Reading it.** Tensile strength has a median of 610 MPa with the middle half between 510 and 720 MPa (see the
-table), but a long right tail of high-strength grades flagged as Tukey outliers. Liquidus is tightly packed
-(IQR of only a few tens of °C) because so many plain steels carry the 1460 °C default. Carbon equivalent and alloy
-content are wide and bimodal, which is the plain-steel vs stainless split.
+**What the prologue reveals.** The biggest ribbon is not a data error being deleted. It is the duplicated
+listing folding back into its twin, and it carries almost all of the suspicious 652 MPa values with it. Only 7
+grades genuinely never had a measured strength. No row changes class: once the fake values are gone, every
+grade keeps the class its real strength deserves. The cast of our story is **1,389 real steels**.
+
+---
+## Act I · Meet the cast
 """),
     ("code", r"""
+show(VS.ring_chart(g), "04_24_ring_families")
+show(VS.treemap(g), "04_27_treemap_families")
+"""),
+    ("md", r"""
+Two big tribes dominate: **stainless** (about four grades in ten) and **carbon & low-alloy** steels. The rest
+are specialists: cast irons, tool and high-speed steels, weld metals, and a handful of exotic maraging and Fe-Ni
+alloys. The treemap adds the plot twist: the *small* tiles glow brightest. Spring, maraging and nitriding steels
+are rare, but they are the strongest characters in the story.
+"""),
+    ("code", r"""
+fns = V.five_number_summary(g)
+display(fns.round(3)); display(V.descriptive_stats(g).round(3))
+show(VS.five_number_boxes(g, fns), "04_01_five_number_summary")
 show(VS.distribution_grid(g), "04_02_distributions")
+"""),
+    ("md", r"""
+**The typical steel** has a tensile strength of 610 MPa, and half of all grades sit between 510 and 720 MPa
+(table above). Above that, 75 grades break past the upper whisker as outliers: the heavyweights. Liquidus is
+squeezed into a narrow 30 °C box because so many plain steels carry the 1460 °C default. Every chemistry variable
+is lopsided: most grades use a little of an element and a few use a lot. That is why this story speaks in
+**medians**, not averages.
+
+---
+## Act II · Every family has a signature
+"""),
+    ("code", r"""
 display(V.summary_by_group(g).round(1))
 show(VS.ridgeline(g), "04_03_ridgeline_families")
 show(VS.ecdf_by_group(g), "04_04_ecdf_groups")
 show(VS.violin_strip(g), "04_05_violin_groups")
 """),
+    ("code", r"""
+fam_med = m.groupby("family_label")[V.TS].median().sort_values(ascending=False)
+grp_of = g.drop_duplicates("family_label").set_index("family_label")["family_group"]
+show(VS.circular_columns(fam_med, [VS.GROUP_COLOR[grp_of[f]] for f in fam_med.index],
+                         "The strength podium, wrapped into a circle",
+                         "Circular column chart of median tensile strength by family; colour = family group", " MPa",
+                         "Median TS\nby family",
+                         champion_note=f"Champion: {fam_med.index[0]}\n{fam_med.iloc[0]:,.0f} MPa median"),
+     "04_25_circular_columns_strength")
+"""),
     ("md", r"""
-**Takeaway.** Every chemistry variable is right-skewed (mean above median), so medians and quantiles, not means,
-are the honest summaries here. The ridgeline and ECDF show families as shifted, partly overlapping distributions:
-a family narrows the strength range but does not fix it.
+**The signatures.** Each family's ridge is a fingerprint: grey cast iron hugs the low end, high-speed steel is a
+tight spike around 800 MPa, maraging steel sprawls across a huge range (its strength depends on heat treatment),
+and spring steel stands alone at the top. In the ECDF "race", the curve that climbs latest is the strongest group.
+Family alone already tells you roughly where a steel will land. Chemistry fine-tunes the answer.
 
-## 2 · Binning
+---
+## Act III · Slicing and testing the evidence
 """),
     ("code", r"""
 comp = V.binning_comparison(g)
@@ -660,72 +725,72 @@ display(pd.crosstab(b.carbon_band, b.family_group, margins=True))
 show(VS.band_stacks(g), "04_07_domain_bins")
 """),
     ("md", r"""
-**Takeaway.** On skewed data, equal-width bins pile most grades into one or two bins, while equal-frequency
-(quantile) bins balance the counts but stretch the top bin over a huge range. Domain bins (carbon bands, alloy
-bands) are the most useful for engineers: the "cast-iron range" carbon band is almost entirely cast iron, and the
-share of high-strength grades rises steadily with alloy content.
+**How you slice it changes the story.** Five equal-width bins put almost every grade into the first two boxes and
+leave the top bin nearly empty; five equal-frequency bins balance the counts but stretch the top bin over a
+1,700 MPa range. Metallurgists slice differently: by carbon band and by alloy content. Their bins tell a clean
+story: the ">2.1 % carbon" band is cast-iron territory, and the share of high-strength grades climbs with every
+step up in alloy content.
 
-## 3 · Chi-square tests of independence
+Are these patterns real, or coincidences of counting? The chi-square test is the courtroom.
 """),
     ("code", r"""
 chi = V.chi_square_suite(grades)
 display(pd.DataFrame([r.as_row() for r in chi]).round(4))
-for r in chi[:2]:
-    print(r.name); display(r.observed); display(r.expected.round(1))
 show(VS.chi_square_panels(chi), "04_08_chi_square_residuals")
 show(VS.cramers_lollipop(chi), "04_09_cramers_v")
 """),
     ("md", r"""
-**Reading the tests.** H₀ for each test: the two categorical variables are independent. All five are rejected.
-Several tables break Cochran's rule (more than 20 % of cells with expected count < 5) because the low strength
-class is tiny. For those, the **Monte-Carlo permutation p-value** is the one to quote, and it agrees.
-**Cramér's V** says how strong each association is:
+**The verdict on independence: guilty, every time.** All five null hypotheses ("these two things are unrelated")
+are rejected. Because the low-strength class has only 23 grades, four tables break Cochran's rule (too many
+small expected counts), so we also ran a **permutation test**: shuffle the labels thousands of times and see how
+often chance alone produces such a pattern. The answer is never. The gold frames mark the most surprising cell
+in each table: cast irons crowd into the low class far beyond chance. Cramér's V ranks the links: family ↔
+default liquidus is the tightest (0.67), confirming that 1460 °C is a family habit, not a measurement.
 
-* family group ↔ default liquidus is the strongest: the 1460 °C default is a family property (notebook 01);
-* family group ↔ strength class and the CE band ↔ strength class (in plain steels) are moderate-to-strong;
-* product form ↔ strength class is weak but real: cast grades are under-represented in the high class.
-
-## 4 · Correlation and regression
+---
+## Act IV · What actually drives strength?
 """),
     ("code", r"""
 show(VS.correlation_clustermap(g), "04_10_correlation_clustermap")
 reg = V.regression_suite(grades)
-print("Simple OLS, carbon steels:"); display(reg["simple"].table().round(3))
-print(f"R2 = {reg['simple'].r2:.3f}, n = {reg['simple'].n}")
+display(reg["simple"].table().round(3)); print(f"R2 = {reg['simple'].r2:.3f}, n = {reg['simple'].n}")
 show(VS.simple_regression(reg), "04_11_simple_regression")
 """),
+    ("md", r"""
+**Elements travel in gangs**: chromium, nickel and nitrogen (the stainless gang); tungsten, vanadium, molybdenum
+and cobalt (the tool-steel gang). In plain carbon steel, one element is in charge: a straight line in carbon
+alone explains about half the strength variation, and each extra 0.1 % carbon buys roughly 43 MPa. The tight
+inner band says the trend is certain; the wide outer band says any single grade can still surprise you.
+"""),
     ("code", r"""
-print("Multiple OLS, carbon & low-alloy steels (MPa per wt%):"); display(reg["multi"].table().round(2))
+display(reg["multi"].table().round(2))
 print(f"R2 = {reg['multi'].r2:.3f}, adj R2 = {reg['multi'].adj_r2:.3f}, F = {reg['multi'].f_stat:.1f}, n = {reg['multi'].n}")
 show(VS.multiple_regression(reg), "04_12_multiple_regression")
 show(VS.joint_hex(g), "04_13_hexbin_ce_strength")
 show(VS.pairplot(g), "04_14_pairplot")
 """),
     ("md", r"""
-**Takeaway.** In plain carbon steels a straight line in carbon alone explains about half of the strength variance,
-with a tight confidence band but a wide prediction band: one grade can sit far from the line. Adding Mn, Si, Cr,
-Ni, Mo and V across all carbon & low-alloy steels gives significant positive effects for C, Si, V, Ni and Cr (Mo is
-borderline negative, Mn not significant), yet the R² stays modest. The diagnostics (fan-shaped residuals, heavy-tailed Q-Q) show why the project's main model is
-gradient boosting rather than linear regression.
+**Add more suspects and the plot thickens.** Across all carbon & low-alloy steels, C, Si, V, Ni and Cr all push
+strength up (Mo is borderline negative, Mn not significant), yet the straight-line model explains only about a
+third of the variance. The residual plots show why: a fan that widens with strength and a heavy tail of
+heat-treated heavyweights. Strength is not a simple sum of elements. That is the cue for a map instead of a
+formula.
 
-## 5 · Principal component analysis
+---
+## Act V · The chemistry map
 """),
     ("code", r"""
 X, feats = V.composition_space(grades, rare)
 pca = V.pca_analysis(X, feats)
-display(pca["explained"].head(8).round(3))
-print("components to reach 80 %:", pca["n_for_80pct"], "| Kaiser (eigenvalue > 1):", pca["n_kaiser"])
-display(pca["loadings"].iloc[:, :3].round(2).sort_values("PC1"))
+display(pca["explained"].head(8).round(3)); print("components for 80 %:", pca["n_for_80pct"], "| Kaiser:", pca["n_kaiser"])
 show(VS.pca_scree(pca), "04_15_pca_scree_loadings")
 show(VS.pca_biplot(g, pca), "04_16_pca_biplot")
 """),
     ("md", r"""
-**Takeaway.** No single direction dominates: the first two components carry only about a quarter of the variance,
-and many components are needed for 80 %. Steel chemistry is genuinely multi-dimensional. The biplot still
-separates the big three: stainless grades pull along the Cr/Ni/N arrows, cast irons along C/Si/P, and plain steels
-sit near the origin.
-
-## 6 · K-means clustering
+**Compress twenty elements into two dimensions** and a map appears. Three arms pull the steels apart: the
+**stainless arm** (Cr, Ni, N) to one side, the **tool-steel arm** (V, W, Co) upward, and the **cast-iron pull**
+(C) the other way. Plain steels huddle at the centre. The scree plot keeps us honest: two axes hold only about a
+quarter of the information, and steel chemistry genuinely needs many dimensions.
 """),
     ("code", r"""
 scan = V.kmeans_scan(X)
@@ -737,127 +802,104 @@ show(VS.silhouette_plot(X, labels, names), "04_18_kmeans_silhouette_blades")
 show(VS.kmeans_small_multiples(pca["scores"], labels, names), "04_19_kmeans_pca_panels")
 show(VS.cluster_heatmap(g, labels, names, X, feats), "04_20_cluster_fingerprints")
 radar_c = V.radar_cluster_composition(grades, labels, names)
-show(VS.radar_small_multiples(radar_c, P.BLUE, "Cluster radar: median composition of each k-means cluster",
-                              "log-scaled median wt%, min-max across clusters", cols=4), "04_21_cluster_radar")
+show(VS.radar_small_multiples(radar_c, {n: P.SERIES[i % 8] for i, n in enumerate(radar_c.index)},
+                              "Eight tribes, eight chemical shapes",
+                              "Cluster radar: log-scaled median composition, min-max across clusters", cols=4), "04_21_cluster_radar")
 """),
     ("md", r"""
-**Takeaway.** The elbow has no sharp knee and the silhouette keeps creeping up with k, which is typical of a
-continuum with dense islands. For visual profiling we use the best silhouette within 4–8 clusters, so each
-cluster gets its own panel. The fingerprints read like a metallurgy textbook: an austenitic Cr-Ni block, a
-nitrogen/manganese block, a high-speed block (W, V, Co, Mo), a cast-iron block (C, Si, P) and a large lean block
-where most plain steels sit regardless of their family name.
-
-## 7 · Circular migration (chord) plots
-"""),
-    ("code", r"""
-raw = pd.read_csv(DATA_RAW); listings = pd.read_csv(CLEAN_LISTINGS_CSV)
-f1 = V.flow_raw_class_to_outcome(raw, listings, grades)
-display(f1)
-src1 = sorted(f1.source.unique())
-tgt1 = ["Grade class 0", "Grade class 1", "Grade class 2", "Unmeasured TS (excluded)", "Merged into twin listing", "Dropped: exact duplicate"]
-show(VS.circular_migration(f1, src1, tgt1, dict(zip(src1, [P.AQUA, P.BLUE, P.ORANGE])),
-                           "Circular migration plot: where every raw row's class ends up",
-                           f"{f1.value.sum():,} raw rows. Ribbon width = rows; colour = original class", min_label_share=0.0),
-     "04_22_chord_raw_class_migration")
-"""),
-    ("md", r"""
-**Reading it.** Each ribbon carries rows from an original class (left) to their fate after cleaning (right).
-Most of raw class 2's mass flows into "Merged into twin listing": those are the hyphenated duplicates, including
-almost all of the imputed 652 MPa rows. Only a thin ribbon ends in "Unmeasured". The original classes never jump
-to a different cleaned class: recomputing the class from measured strength reproduces it exactly.
+**Let the data choose its own tribes.** K-means finds clusters by chemistry alone, without being told any names.
+There is no sharp elbow (steel chemistry is a continuum with dense islands), so we take the best silhouette that
+still gives every tribe its own colour. The fingerprints read like a metallurgy textbook. Now the climax: do the
+tribes that chemistry finds match the names people gave?
 """),
     ("code", r"""
 f2 = V.flow_family_to_cluster(grades, labels, names)
 src2 = [s for s in VS.FAMILY_GROUP_ORDER if s in set(f2.source)]
 tgt2 = [names[i] for i in sorted(names)]
 display(f2.pivot(index="source", columns="target", values="value").fillna(0).astype(int))
-show(VS.circular_migration(f2, src2, tgt2, VS.GROUP_COLOR, "Circular migration plot: named family → chemistry cluster",
-                           "How grades named by family redistribute across k-means composition clusters"), "04_23_chord_family_to_cluster")
-"""),
-    ("md", r"""
-**Takeaway.** Stainless grades fan out over several chemistry clusters (austenitic, ferritic, N/Mn-rich), so the
-name "stainless" hides real chemical diversity. Carbon & low-alloy grades flow almost entirely into the lean
-clusters together with tool and other steels: their family names reflect use and heat treatment, not distinct
-chemistry.
-
-## 8 · Ring diagram, circular columns and treemap
-"""),
-    ("code", r"""
-show(VS.ring_chart(g), "04_24_ring_families")
-fam_med = m.groupby("family_label")[V.TS].median().sort_values(ascending=False)
-grp_of = g.drop_duplicates("family_label").set_index("family_label")["family_group"]
-show(VS.circular_columns(fam_med, [VS.GROUP_COLOR[grp_of[f]] for f in fam_med.index],
-                         "Circular column chart: median tensile strength by family",
-                         "Bar length = median TS; colour = family group (same colours as the ring)", " MPa", "Median TS\nby family"),
-     "04_25_circular_columns_strength")
+show(VS.circular_migration(f2, src2, tgt2, VS.GROUP_COLOR, "Names vs chemistry: where each named family really belongs",
+                           "Circular migration from named family group (left) to chemistry cluster (right); ribbon width = grades"),
+     "04_23_chord_family_to_cluster")
 presence = (g[["C","Mn","Si","P","S","Cr","Ni","Mo","Cu","N","V","Nb","Ti","Al","W","Co","B","Zr","O"]] > 0).mean().sort_values(ascending=False) * 100
-show(VS.circular_columns(presence, [P.BLUE] * len(presence), "Circular column chart: how often each element is specified",
-                         "Share of all grades with a non-zero value", " %", "Element\npresence"), "04_26_circular_columns_elements")
-show(VS.treemap(g), "04_27_treemap_families")
+show(VS.circular_columns(presence, [P.SEQ(0.25 + 0.7 * v / 100) for v in presence], "The element roll-call",
+                         "Circular column chart: share of all grades that specify each element (colour follows the share)", " %",
+                         "Element\npresence"), "04_26_circular_columns_elements")
 """),
     ("md", r"""
-**Takeaway.** Stainless steel alone is about four in ten grades. The circular columns rank families by strength
-at a glance (spring, maraging and nitriding steels at the top; grey cast iron at the bottom), and the element
-ring shows that C, Mn, Si, P and S are specified for nearly every grade while W, Co, B and Zr are rare specialists.
+**The twist.** "Stainless" is not one chemistry: its ribbon splits into several clusters (Cr-Ni austenitic,
+nitrogen/manganese-rich, ferritic). Meanwhile carbon, alloy, boron and spring steels, proudly different names,
+pour into the *same* lean cluster. Their names describe how they are used and heat-treated, not what they are made
+of. For a buyer that is good news: chemically, many "different" plain steels are close substitutes. The roll-call
+confirms the base recipe: C, Mn, Si, P and S appear in nearly every grade, while W, Co, B and Zr are rare specialists.
 
-## 9 · Radar charts
+---
+## Act VI · Portraits
 """),
     ("code", r"""
 comp_scaled, comp_raw = V.radar_family_composition(grades)
 display(comp_raw.round(3))
-show(VS.radar_small_multiples(comp_scaled, VS.GROUP_COLOR, "Radar: median composition fingerprint of each family group",
-                              "log-scaled median wt%, min-max across groups (outer ring = highest group)", cols=3),
+show(VS.radar_small_multiples(comp_scaled, VS.GROUP_COLOR, "Family portraits: each group's composition fingerprint",
+                              "Radar of log-scaled median wt%, min-max across groups (outer ring = highest group)", cols=3),
      "04_28_radar_family_composition")
 picks = V.showcase_grades(grades)
+pick_colors = dict(zip(picks["short_name"], family_group(picks["family"]).map(VS.GROUP_COLOR)))
 pct = V.radar_grade_percentiles(grades, picks)
 display(picks[["short_name", "display_name", "tensile_strength_mpa", "liquidus_c", "carbon_equivalent"]]); display(pct.round(0))
-median_ref = pd.Series(50.0, index=pct.columns)
-show(VS.radar_small_multiples(pct, P.ORANGE, "Radar: nine well-known alloys as percentile profiles",
-                              "Each spoke = the grade's percentile among all grades (0–100)", scale_max=100.0,
-                              reference=median_ref, ref_label="dataset median (50th percentile)",
-                              ring_labels=["25", "50", "75", "100"]), "04_29_radar_showcase_alloys")
-show(VS.radar_overlay(pct.loc[["AISI 304", "AISI 316", "17-4 PH"]], [P.BLUE, P.ORANGE, P.AQUA],
-                      "Radar overlay: AISI 304 vs 316 vs 17-4 PH",
-                      "Same Cr family, different strategies: Mo for corrosion (316) vs precipitation hardening (17-4 PH)",
+show(VS.radar_small_multiples(pct, pick_colors, "Nine famous steels, nine personalities",
+                              "Each spoke = the grade's percentile among all 1,389 grades (0–100); colour = family group",
+                              scale_max=100.0, reference=pd.Series(50.0, index=pct.columns),
+                              ref_label="the median steel (50th percentile)", ring_labels=["25", "50", "75", "100"]),
+     "04_29_radar_showcase_alloys")
+show(VS.radar_overlay(pct.loc[["AISI 304", "AISI 316", "17-4 PH"]], [P.SKY, P.PINK, P.FLAME],
+                      "Three stainless siblings, three strategies",
+                      "AISI 304 vs 316 vs 17-4 PH: Mo for corrosion (316) vs precipitation hardening for strength (17-4 PH)",
                       ring_labels=["25", "50", "75", "100"]), "04_30_radar_overlay_stainless")
+show(VS.parallel_coordinates(g), "04_34_parallel_coordinates")
 """),
     ("md", r"""
-**Takeaway.** The radars turn a 30-column composition table into shapes you can compare at a glance: high-speed
-steels max out the W/V/Co/Mo spokes, stainless the Cr/Ni spokes, cast iron the C/Si spokes. Among the stainless
-trio, 316 extends the Mo spoke (corrosion resistance), while 17-4 PH reaches far higher strength with *less* nickel:
-strength comes from precipitation hardening, not alloy quantity.
+**Portraits make chemistry personal.** AISI 1018 is a slim, modest shape: almost no alloy, a low carbon equivalent
+and low strength (its carbon is only mid-pack, because so many grades are low-carbon stainless).
+M2 high-speed steel bursts outward on carbon, molybdenum and liquidus. Grey cast iron is all carbon and little
+else. The stainless siblings are the best lesson: 304 and 316 share a silhouette, but 316 reaches out on
+molybdenum (for corrosion resistance), while 17-4 PH, with *less* nickel, shoots past both on strength.
+Strength comes from how the alloy is built and hardened, not from how much expensive metal goes in.
 
-## 10 · Waterfall charts
+---
+## Act VII · The verdict
 """),
     ("code", r"""
-counts = {"raw": len(raw), "duplicates": int(raw.duplicated().sum()), "twins": int(len(listings) - len(grades)),
-          "grades": len(grades), "unmeasured": int(grades[V.TS].isna().sum()), "measured": int(grades[V.TS].notna().sum())}
-wf1 = V.waterfall_cleaning(counts); display(V.waterfall_layout(wf1))
-show(VS.waterfall(wf1, "Waterfall: from raw rows to modelled grades", "Each bar removes rows; totals in blue", xlabel_rot=0),
-     "04_31_waterfall_cleaning")
 r4140 = grades[grades.display_name.str.startswith(V.SHOWCASE_GRADES["AISI 4140"])].iloc[0]
 wf2 = V.waterfall_ce(r4140); display(wf2.round(4))
-show(VS.waterfall(wf2, f"Waterfall: IIW carbon equivalent of {r4140.display_name}",
-                  "CE = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15, built term by term", fmt="{:.3f}"), "04_32_waterfall_ce_4140")
+show(VS.waterfall(wf2, f"Building a weldability score, one element at a time: {r4140.display_name}",
+                  "IIW carbon equivalent CE = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15", fmt="{:.3f}",
+                  story=("C", "Carbon alone supplies\nhalf of the score")), "04_32_waterfall_ce_4140")
 wf3, info = V.prediction_waterfall(grades, V.SHOWCASE_GRADES["AISI 4140"])
 display(wf3.round(1)); print(info)
-show(VS.waterfall(wf3, "Waterfall: how the strength model reaches its prediction for AISI 4140",
+show(VS.waterfall(wf3, "Inside the model's head: how it predicts AISI 4140",
                   f"SHAP contributions on the deployed model; measured TS = {info['measured']:.0f} MPa", unit=" MPa",
                   xlabel_rot=25, zero_based=False), "04_33_waterfall_prediction_4140")
 """),
     ("md", r"""
-**Takeaway.** Waterfalls make additive stories obvious. The cleaning waterfall shows that twin listings, not
-duplicates or missing values, are the dominant data issue. The CE waterfall shows that for 4140 carbon and
-chromium contribute most of the weldability index, and the total lands in the 'difficult' band (CE > 0.60): preheat
-and controlled welding procedures are needed. The SHAP waterfall decomposes one model
-prediction into feature pushes that sum exactly to the prediction.
+**The verdict, told as a waterfall.** For AISI 4140 the weldability score lands in the "difficult" band (above
+0.60): carbon and chromium make up most of it, so welders must preheat. The last waterfall opens the model's
+mind: it starts from the average steel, lets carbon equivalent, nickel equivalent, chromium and carbon each push
+the estimate up or down, and lands close to (but not exactly on) the measured value. That gap is the honest
+reminder of the whole project: **composition tells most of the story, and processing writes the final chapter.**
 
-## 11 · Parallel coordinates
+---
+## Epilogue · What an engineer should remember
+
+1. **Clean before you count.** 2,672 rows were really 1,389 steels; the fake 652 MPa values hid inside
+   duplicate listings.
+2. **Think in medians.** Steel data is lopsided; the typical grade is 610 MPa, not the mean.
+3. **Family first, chemistry second.** The family sets the strength range; elements fine-tune it.
+4. **Carbon is the plain steel's dial,** about +43 MPa per 0.1 %, but only inside plain steels.
+5. **Associations are real and measurable:** chi-square plus Cramér's V, with permutation tests when counts are thin.
+6. **Names ≠ chemistry.** Many differently-named plain steels share one chemical neighbourhood: good substitutes.
+7. **Strength isn't bought by the kilo.** 17-4 PH beats nickel-rich 304/316 on strength with less nickel.
+
+## Appendix · Exports for Tableau and KNIME
 """),
-    ("code", r"""
-show(VS.parallel_coordinates(g), "04_34_parallel_coordinates")
-"""),
-    ("md", "## 12 · Export helper files for Tableau and expected values for KNIME"),
     ("code", r"""
 from src.analysis import viz_exports as VX
 res = VX.build_viz_exports(grades); VX.save(res)
