@@ -1,0 +1,511 @@
+row_id,entity,axis,point_order,value,scaled,angle_deg,x,y,layer,shape_id,median_wt_pct
+1,Carbon & low-alloy,C,0,0.1036435882308683,0.1036435882308683,90.0,6.346339428953958e-18,0.1036435882308683,data,Carbon & low-alloy | data,0.18
+2,Carbon & low-alloy,Mn,1,0.48542682717024166,0.48542682717024166,54.0,0.28532673007779524,0.392718552706236,data,Carbon & low-alloy | data,0.75
+3,Carbon & low-alloy,Si,2,0.06269984281650236,0.06269984281650236,18.0,0.05963109408131644,0.019375316974937194,data,Carbon & low-alloy | data,0.225
+4,Carbon & low-alloy,Cr,3,0.0616469568667373,0.0616469568667373,-18.0,0.05862974003787677,-0.019049957323321185,data,Carbon & low-alloy | data,0.2
+5,Carbon & low-alloy,Ni,4,0.0,0.0,-54.0,0.0,-0.0,data,Carbon & low-alloy | data,0.0
+6,Carbon & low-alloy,Mo,5,0.03372003874772518,0.03372003874772518,-90.0,2.0647568759763183e-18,-0.03372003874772518,data,Carbon & low-alloy | data,0.05
+7,Carbon & low-alloy,V,6,0.0,0.0,-126.0,-0.0,-0.0,data,Carbon & low-alloy | data,0.0
+8,Carbon & low-alloy,W,7,0.0,0.0,-162.0,-0.0,-0.0,data,Carbon & low-alloy | data,0.0
+9,Carbon & low-alloy,Co,8,0.0,0.0,-198.0,-0.0,0.0,data,Carbon & low-alloy | data,0.0
+10,Carbon & low-alloy,Cu,9,0.0,0.0,-234.0,-0.0,0.0,data,Carbon & low-alloy | data,0.0
+11,Carbon & low-alloy,C,10,0.1036435882308683,0.1036435882308683,90.0,6.346339428953958e-18,0.1036435882308683,data,Carbon & low-alloy | data,0.18
+12,Stainless,C,0,0.011928610891456633,0.011928610891456633,90.0,7.304167573248311e-19,0.011928610891456633,data,Stainless | data,0.035
+13,Stainless,Mn,1,0.48542682717024166,0.48542682717024166,54.0,0.28532673007779524,0.392718552706236,data,Stainless | data,0.75
+14,Stainless,Si,2,0.26368845136156804,0.26368845136156804,18.0,0.2507826199391969,0.08148421269113626,data,Stainless | data,0.5
+15,Stainless,Cr,3,1.0,1.0,-18.0,0.9510565162951535,-0.3090169943749474,data,Stainless | data,18.25
+16,Stainless,Ni,4,0.6391836234266197,0.6391836234266197,-54.0,0.3757027073570328,-0.5171104138782922,data,Stainless | data,7.0
+17,Stainless,Mo,5,0.1542197966477503,0.1542197966477503,-90.0,9.443239016491156e-18,-0.1542197966477503,data,Stainless | data,0.25
+18,Stainless,V,6,0.0,0.0,-126.0,-0.0,-0.0,data,Stainless | data,0.0
+19,Stainless,W,7,0.0,0.0,-162.0,-0.0,-0.0,data,Stainless | data,0.0
+20,Stainless,Co,8,0.0,0.0,-198.0,-0.0,0.0,data,Stainless | data,0.0
+21,Stainless,Cu,9,0.0,0.0,-234.0,-0.0,0.0,data,Stainless | data,0.0
+22,Stainless,C,10,0.011928610891456633,0.011928610891456633,90.0,7.304167573248311e-19,0.011928610891456633,data,Stainless | data,0.035
+23,Cast iron,C,0,1.0,1.0,90.0,6.123233995736766e-17,1.0,data,Cast iron | data,3.25
+24,Cast iron,Mn,1,0.3561438102252753,0.3561438102252753,54.0,0.20933607934566612,0.2881263949136939,data,Cast iron | data,0.6
+25,Cast iron,Si,2,1.0,1.0,18.0,0.9510565162951535,0.3090169943749474,data,Cast iron | data,2.15
+26,Cast iron,Cr,3,0.0,0.0,-18.0,0.0,-0.0,data,Cast iron | data,0.0
+27,Cast iron,Ni,4,0.0,0.0,-54.0,0.0,-0.0,data,Cast iron | data,0.0
+28,Cast iron,Mo,5,0.0,0.0,-90.0,0.0,-0.0,data,Cast iron | data,0.0
+29,Cast iron,V,6,0.0,0.0,-126.0,-0.0,-0.0,data,Cast iron | data,0.0
+30,Cast iron,W,7,0.0,0.0,-162.0,-0.0,-0.0,data,Cast iron | data,0.0
+31,Cast iron,Co,8,0.0,0.0,-198.0,-0.0,0.0,data,Cast iron | data,0.0
+32,Cast iron,Cu,9,0.0,0.0,-234.0,-0.0,0.0,data,Cast iron | data,0.0
+33,Cast iron,C,10,1.0,1.0,90.0,6.123233995736766e-17,1.0,data,Cast iron | data,3.25
+34,Tool & high-speed,C,0,0.41059002849016807,0.41059002849016807,90.0,2.5141388207615246e-17,0.41059002849016807,data,Tool & high-speed | data,0.83
+35,Tool & high-speed,Mn,1,0.056583528366367375,0.056583528366367375,54.0,0.03325896349642356,0.045777036050088114,data,Tool & high-speed | data,0.3
+36,Tool & high-speed,Si,2,0.13116957063172507,0.13116957063172507,18.0,0.12474967488893952,0.04053362647006805,data,Tool & high-speed | data,0.3125
+37,Tool & high-speed,Cr,3,0.5373556252135446,0.5373556252135446,-18.0,0.511055568927198,-0.16605202021396026,data,Tool & high-speed | data,3.9
+38,Tool & high-speed,Ni,4,0.042960353995972415,0.042960353995972415,-54.0,0.025251462512096604,-0.034755656467105364,data,Tool & high-speed | data,0.15
+39,Tool & high-speed,Mo,5,0.46155270644137003,0.46155270644137003,-90.0,2.826195222906109e-17,-0.46155270644137003,data,Tool & high-speed | data,0.95
+40,Tool & high-speed,V,6,1.0,1.0,-126.0,-0.587785252292473,-0.8090169943749475,data,Tool & high-speed | data,0.525
+41,Tool & high-speed,W,7,1.0,1.0,-162.0,-0.9510565162951535,-0.3090169943749475,data,Tool & high-speed | data,1.3
+42,Tool & high-speed,Co,8,0.0,0.0,-198.0,-0.0,0.0,data,Tool & high-speed | data,0.0
+43,Tool & high-speed,Cu,9,0.3698591793623619,0.3698591793623619,-234.0,-0.217397771054193,0.2992223616297226,data,Tool & high-speed | data,0.125
+44,Tool & high-speed,C,10,0.41059002849016807,0.41059002849016807,90.0,2.5141388207615246e-17,0.41059002849016807,data,Tool & high-speed | data,0.83
+45,Weld metal,C,0,0.02199368919028522,0.02199368919028522,90.0,1.3467250534162267e-18,0.02199368919028522,data,Weld metal | data,0.05
+46,Weld metal,Mn,1,1.0,1.0,54.0,0.5877852522924731,0.8090169943749475,data,Weld metal | data,1.5
+47,Weld metal,Si,2,0.26368845136156804,0.26368845136156804,18.0,0.2507826199391969,0.08148421269113626,data,Weld metal | data,0.5
+48,Weld metal,Cr,3,0.9677735170394672,0.9677735170394672,-18.0,0.9204073096782641,-0.2990584634712081,data,Weld metal | data,16.5
+49,Weld metal,Ni,4,0.608924882716686,0.608924882716686,-54.0,0.3579170658147919,-0.4926305784155707,data,Weld metal | data,6.25
+50,Weld metal,Mo,5,0.29165033774247306,0.29165033774247306,-90.0,1.7858432629328206e-17,-0.29165033774247306,data,Weld metal | data,0.525
+51,Weld metal,V,6,0.0,0.0,-126.0,-0.0,-0.0,data,Weld metal | data,0.0
+52,Weld metal,W,7,0.0,0.0,-162.0,-0.0,-0.0,data,Weld metal | data,0.0
+53,Weld metal,Co,8,0.0,0.0,-198.0,-0.0,0.0,data,Weld metal | data,0.0
+54,Weld metal,Cu,9,1.0,1.0,-234.0,-0.5877852522924732,0.8090169943749473,data,Weld metal | data,0.375
+55,Weld metal,C,10,0.02199368919028522,0.02199368919028522,90.0,1.3467250534162267e-18,0.02199368919028522,data,Weld metal | data,0.05
+56,Other,C,0,0.0,0.0,90.0,0.0,0.0,data,Other | data,0.0175
+57,Other,Mn,1,0.0,0.0,54.0,0.0,0.0,data,Other | data,0.25
+58,Other,Si,2,0.0,0.0,18.0,0.0,0.0,data,Other | data,0.15
+59,Other,Cr,3,0.0398250533092377,0.0398250533092377,-18.0,0.03787587646155238,-0.012306618274442686,data,Other | data,0.125
+60,Other,Ni,4,1.0,1.0,-54.0,0.5877852522924731,-0.8090169943749475,data,Other | data,24.875
+61,Other,Mo,5,1.0,1.0,-90.0,6.123233995736766e-17,-1.0,data,Other | data,3.25
+62,Other,V,6,0.0,0.0,-126.0,-0.0,-0.0,data,Other | data,0.0
+63,Other,W,7,0.0,0.0,-162.0,-0.0,-0.0,data,Other | data,0.0
+64,Other,Co,8,1.0,1.0,-198.0,-0.9510565162951536,0.3090169943749473,data,Other | data,7.75
+65,Other,Cu,9,0.0,0.0,-234.0,-0.0,0.0,data,Other | data,0.0
+66,Other,C,10,0.0,0.0,90.0,0.0,0.0,data,Other | data,0.0175
+67,Carbon & low-alloy,C,0,,,,1.5308084989341915e-17,0.25,grid,Carbon & low-alloy | ring 25%,0.18
+68,Carbon & low-alloy,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Carbon & low-alloy | ring 25%,0.75
+69,Carbon & low-alloy,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Carbon & low-alloy | ring 25%,0.225
+70,Carbon & low-alloy,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Carbon & low-alloy | ring 25%,0.2
+71,Carbon & low-alloy,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Carbon & low-alloy | ring 25%,0.0
+72,Carbon & low-alloy,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Carbon & low-alloy | ring 25%,0.05
+73,Carbon & low-alloy,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Carbon & low-alloy | ring 25%,0.0
+74,Carbon & low-alloy,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Carbon & low-alloy | ring 25%,0.0
+75,Carbon & low-alloy,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Carbon & low-alloy | ring 25%,0.0
+76,Carbon & low-alloy,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Carbon & low-alloy | ring 25%,0.0
+77,Carbon & low-alloy,C,10,,,,1.5308084989341915e-17,0.25,grid,Carbon & low-alloy | ring 25%,0.18
+78,Carbon & low-alloy,C,0,,,,3.061616997868383e-17,0.5,grid,Carbon & low-alloy | ring 50%,0.18
+79,Carbon & low-alloy,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Carbon & low-alloy | ring 50%,0.75
+80,Carbon & low-alloy,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Carbon & low-alloy | ring 50%,0.225
+81,Carbon & low-alloy,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Carbon & low-alloy | ring 50%,0.2
+82,Carbon & low-alloy,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Carbon & low-alloy | ring 50%,0.0
+83,Carbon & low-alloy,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Carbon & low-alloy | ring 50%,0.05
+84,Carbon & low-alloy,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Carbon & low-alloy | ring 50%,0.0
+85,Carbon & low-alloy,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Carbon & low-alloy | ring 50%,0.0
+86,Carbon & low-alloy,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Carbon & low-alloy | ring 50%,0.0
+87,Carbon & low-alloy,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Carbon & low-alloy | ring 50%,0.0
+88,Carbon & low-alloy,C,10,,,,3.061616997868383e-17,0.5,grid,Carbon & low-alloy | ring 50%,0.18
+89,Carbon & low-alloy,C,0,,,,4.592425496802574e-17,0.75,grid,Carbon & low-alloy | ring 75%,0.18
+90,Carbon & low-alloy,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Carbon & low-alloy | ring 75%,0.75
+91,Carbon & low-alloy,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Carbon & low-alloy | ring 75%,0.225
+92,Carbon & low-alloy,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Carbon & low-alloy | ring 75%,0.2
+93,Carbon & low-alloy,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Carbon & low-alloy | ring 75%,0.0
+94,Carbon & low-alloy,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Carbon & low-alloy | ring 75%,0.05
+95,Carbon & low-alloy,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Carbon & low-alloy | ring 75%,0.0
+96,Carbon & low-alloy,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Carbon & low-alloy | ring 75%,0.0
+97,Carbon & low-alloy,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Carbon & low-alloy | ring 75%,0.0
+98,Carbon & low-alloy,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Carbon & low-alloy | ring 75%,0.0
+99,Carbon & low-alloy,C,10,,,,4.592425496802574e-17,0.75,grid,Carbon & low-alloy | ring 75%,0.18
+100,Carbon & low-alloy,C,0,,,,6.123233995736766e-17,1.0,grid,Carbon & low-alloy | ring 100%,0.18
+101,Carbon & low-alloy,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Carbon & low-alloy | ring 100%,0.75
+102,Carbon & low-alloy,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Carbon & low-alloy | ring 100%,0.225
+103,Carbon & low-alloy,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Carbon & low-alloy | ring 100%,0.2
+104,Carbon & low-alloy,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Carbon & low-alloy | ring 100%,0.0
+105,Carbon & low-alloy,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Carbon & low-alloy | ring 100%,0.05
+106,Carbon & low-alloy,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Carbon & low-alloy | ring 100%,0.0
+107,Carbon & low-alloy,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Carbon & low-alloy | ring 100%,0.0
+108,Carbon & low-alloy,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Carbon & low-alloy | ring 100%,0.0
+109,Carbon & low-alloy,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Carbon & low-alloy | ring 100%,0.0
+110,Carbon & low-alloy,C,10,,,,6.123233995736766e-17,1.0,grid,Carbon & low-alloy | ring 100%,0.18
+111,Carbon & low-alloy,C,0,,,,0.0,0.0,grid,Carbon & low-alloy | spoke C,0.18
+112,Carbon & low-alloy,C,1,,,,6.123233995736766e-17,1.0,grid,Carbon & low-alloy | spoke C,0.18
+113,Carbon & low-alloy,C,0,,,,7.225416114969384e-17,1.18,axis_label,Carbon & low-alloy | label C,0.18
+114,Carbon & low-alloy,Mn,0,,,,0.0,0.0,grid,Carbon & low-alloy | spoke Mn,0.75
+115,Carbon & low-alloy,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Carbon & low-alloy | spoke Mn,0.75
+116,Carbon & low-alloy,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Carbon & low-alloy | label Mn,0.75
+117,Carbon & low-alloy,Si,0,,,,0.0,0.0,grid,Carbon & low-alloy | spoke Si,0.225
+118,Carbon & low-alloy,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Carbon & low-alloy | spoke Si,0.225
+119,Carbon & low-alloy,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Carbon & low-alloy | label Si,0.225
+120,Carbon & low-alloy,Cr,0,,,,0.0,-0.0,grid,Carbon & low-alloy | spoke Cr,0.2
+121,Carbon & low-alloy,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Carbon & low-alloy | spoke Cr,0.2
+122,Carbon & low-alloy,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Carbon & low-alloy | label Cr,0.2
+123,Carbon & low-alloy,Ni,0,,,,0.0,-0.0,grid,Carbon & low-alloy | spoke Ni,0.0
+124,Carbon & low-alloy,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Carbon & low-alloy | spoke Ni,0.0
+125,Carbon & low-alloy,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Carbon & low-alloy | label Ni,0.0
+126,Carbon & low-alloy,Mo,0,,,,0.0,-0.0,grid,Carbon & low-alloy | spoke Mo,0.05
+127,Carbon & low-alloy,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Carbon & low-alloy | spoke Mo,0.05
+128,Carbon & low-alloy,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Carbon & low-alloy | label Mo,0.05
+129,Carbon & low-alloy,V,0,,,,-0.0,-0.0,grid,Carbon & low-alloy | spoke V,0.0
+130,Carbon & low-alloy,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Carbon & low-alloy | spoke V,0.0
+131,Carbon & low-alloy,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Carbon & low-alloy | label V,0.0
+132,Carbon & low-alloy,W,0,,,,-0.0,-0.0,grid,Carbon & low-alloy | spoke W,0.0
+133,Carbon & low-alloy,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Carbon & low-alloy | spoke W,0.0
+134,Carbon & low-alloy,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Carbon & low-alloy | label W,0.0
+135,Carbon & low-alloy,Co,0,,,,-0.0,0.0,grid,Carbon & low-alloy | spoke Co,0.0
+136,Carbon & low-alloy,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Carbon & low-alloy | spoke Co,0.0
+137,Carbon & low-alloy,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Carbon & low-alloy | label Co,0.0
+138,Carbon & low-alloy,Cu,0,,,,-0.0,0.0,grid,Carbon & low-alloy | spoke Cu,0.0
+139,Carbon & low-alloy,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Carbon & low-alloy | spoke Cu,0.0
+140,Carbon & low-alloy,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Carbon & low-alloy | label Cu,0.0
+141,Stainless,C,0,,,,1.5308084989341915e-17,0.25,grid,Stainless | ring 25%,0.035
+142,Stainless,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Stainless | ring 25%,0.75
+143,Stainless,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Stainless | ring 25%,0.5
+144,Stainless,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Stainless | ring 25%,18.25
+145,Stainless,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Stainless | ring 25%,7.0
+146,Stainless,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Stainless | ring 25%,0.25
+147,Stainless,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Stainless | ring 25%,0.0
+148,Stainless,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Stainless | ring 25%,0.0
+149,Stainless,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Stainless | ring 25%,0.0
+150,Stainless,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Stainless | ring 25%,0.0
+151,Stainless,C,10,,,,1.5308084989341915e-17,0.25,grid,Stainless | ring 25%,0.035
+152,Stainless,C,0,,,,3.061616997868383e-17,0.5,grid,Stainless | ring 50%,0.035
+153,Stainless,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Stainless | ring 50%,0.75
+154,Stainless,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Stainless | ring 50%,0.5
+155,Stainless,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Stainless | ring 50%,18.25
+156,Stainless,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Stainless | ring 50%,7.0
+157,Stainless,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Stainless | ring 50%,0.25
+158,Stainless,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Stainless | ring 50%,0.0
+159,Stainless,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Stainless | ring 50%,0.0
+160,Stainless,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Stainless | ring 50%,0.0
+161,Stainless,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Stainless | ring 50%,0.0
+162,Stainless,C,10,,,,3.061616997868383e-17,0.5,grid,Stainless | ring 50%,0.035
+163,Stainless,C,0,,,,4.592425496802574e-17,0.75,grid,Stainless | ring 75%,0.035
+164,Stainless,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Stainless | ring 75%,0.75
+165,Stainless,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Stainless | ring 75%,0.5
+166,Stainless,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Stainless | ring 75%,18.25
+167,Stainless,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Stainless | ring 75%,7.0
+168,Stainless,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Stainless | ring 75%,0.25
+169,Stainless,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Stainless | ring 75%,0.0
+170,Stainless,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Stainless | ring 75%,0.0
+171,Stainless,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Stainless | ring 75%,0.0
+172,Stainless,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Stainless | ring 75%,0.0
+173,Stainless,C,10,,,,4.592425496802574e-17,0.75,grid,Stainless | ring 75%,0.035
+174,Stainless,C,0,,,,6.123233995736766e-17,1.0,grid,Stainless | ring 100%,0.035
+175,Stainless,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Stainless | ring 100%,0.75
+176,Stainless,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Stainless | ring 100%,0.5
+177,Stainless,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Stainless | ring 100%,18.25
+178,Stainless,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Stainless | ring 100%,7.0
+179,Stainless,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Stainless | ring 100%,0.25
+180,Stainless,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Stainless | ring 100%,0.0
+181,Stainless,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Stainless | ring 100%,0.0
+182,Stainless,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Stainless | ring 100%,0.0
+183,Stainless,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Stainless | ring 100%,0.0
+184,Stainless,C,10,,,,6.123233995736766e-17,1.0,grid,Stainless | ring 100%,0.035
+185,Stainless,C,0,,,,0.0,0.0,grid,Stainless | spoke C,0.035
+186,Stainless,C,1,,,,6.123233995736766e-17,1.0,grid,Stainless | spoke C,0.035
+187,Stainless,C,0,,,,7.225416114969384e-17,1.18,axis_label,Stainless | label C,0.035
+188,Stainless,Mn,0,,,,0.0,0.0,grid,Stainless | spoke Mn,0.75
+189,Stainless,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Stainless | spoke Mn,0.75
+190,Stainless,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Stainless | label Mn,0.75
+191,Stainless,Si,0,,,,0.0,0.0,grid,Stainless | spoke Si,0.5
+192,Stainless,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Stainless | spoke Si,0.5
+193,Stainless,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Stainless | label Si,0.5
+194,Stainless,Cr,0,,,,0.0,-0.0,grid,Stainless | spoke Cr,18.25
+195,Stainless,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Stainless | spoke Cr,18.25
+196,Stainless,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Stainless | label Cr,18.25
+197,Stainless,Ni,0,,,,0.0,-0.0,grid,Stainless | spoke Ni,7.0
+198,Stainless,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Stainless | spoke Ni,7.0
+199,Stainless,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Stainless | label Ni,7.0
+200,Stainless,Mo,0,,,,0.0,-0.0,grid,Stainless | spoke Mo,0.25
+201,Stainless,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Stainless | spoke Mo,0.25
+202,Stainless,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Stainless | label Mo,0.25
+203,Stainless,V,0,,,,-0.0,-0.0,grid,Stainless | spoke V,0.0
+204,Stainless,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Stainless | spoke V,0.0
+205,Stainless,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Stainless | label V,0.0
+206,Stainless,W,0,,,,-0.0,-0.0,grid,Stainless | spoke W,0.0
+207,Stainless,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Stainless | spoke W,0.0
+208,Stainless,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Stainless | label W,0.0
+209,Stainless,Co,0,,,,-0.0,0.0,grid,Stainless | spoke Co,0.0
+210,Stainless,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Stainless | spoke Co,0.0
+211,Stainless,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Stainless | label Co,0.0
+212,Stainless,Cu,0,,,,-0.0,0.0,grid,Stainless | spoke Cu,0.0
+213,Stainless,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Stainless | spoke Cu,0.0
+214,Stainless,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Stainless | label Cu,0.0
+215,Cast iron,C,0,,,,1.5308084989341915e-17,0.25,grid,Cast iron | ring 25%,3.25
+216,Cast iron,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Cast iron | ring 25%,0.6
+217,Cast iron,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Cast iron | ring 25%,2.15
+218,Cast iron,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Cast iron | ring 25%,0.0
+219,Cast iron,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Cast iron | ring 25%,0.0
+220,Cast iron,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Cast iron | ring 25%,0.0
+221,Cast iron,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Cast iron | ring 25%,0.0
+222,Cast iron,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Cast iron | ring 25%,0.0
+223,Cast iron,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Cast iron | ring 25%,0.0
+224,Cast iron,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Cast iron | ring 25%,0.0
+225,Cast iron,C,10,,,,1.5308084989341915e-17,0.25,grid,Cast iron | ring 25%,3.25
+226,Cast iron,C,0,,,,3.061616997868383e-17,0.5,grid,Cast iron | ring 50%,3.25
+227,Cast iron,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Cast iron | ring 50%,0.6
+228,Cast iron,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Cast iron | ring 50%,2.15
+229,Cast iron,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Cast iron | ring 50%,0.0
+230,Cast iron,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Cast iron | ring 50%,0.0
+231,Cast iron,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Cast iron | ring 50%,0.0
+232,Cast iron,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Cast iron | ring 50%,0.0
+233,Cast iron,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Cast iron | ring 50%,0.0
+234,Cast iron,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Cast iron | ring 50%,0.0
+235,Cast iron,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Cast iron | ring 50%,0.0
+236,Cast iron,C,10,,,,3.061616997868383e-17,0.5,grid,Cast iron | ring 50%,3.25
+237,Cast iron,C,0,,,,4.592425496802574e-17,0.75,grid,Cast iron | ring 75%,3.25
+238,Cast iron,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Cast iron | ring 75%,0.6
+239,Cast iron,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Cast iron | ring 75%,2.15
+240,Cast iron,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Cast iron | ring 75%,0.0
+241,Cast iron,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Cast iron | ring 75%,0.0
+242,Cast iron,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Cast iron | ring 75%,0.0
+243,Cast iron,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Cast iron | ring 75%,0.0
+244,Cast iron,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Cast iron | ring 75%,0.0
+245,Cast iron,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Cast iron | ring 75%,0.0
+246,Cast iron,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Cast iron | ring 75%,0.0
+247,Cast iron,C,10,,,,4.592425496802574e-17,0.75,grid,Cast iron | ring 75%,3.25
+248,Cast iron,C,0,,,,6.123233995736766e-17,1.0,grid,Cast iron | ring 100%,3.25
+249,Cast iron,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Cast iron | ring 100%,0.6
+250,Cast iron,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Cast iron | ring 100%,2.15
+251,Cast iron,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Cast iron | ring 100%,0.0
+252,Cast iron,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Cast iron | ring 100%,0.0
+253,Cast iron,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Cast iron | ring 100%,0.0
+254,Cast iron,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Cast iron | ring 100%,0.0
+255,Cast iron,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Cast iron | ring 100%,0.0
+256,Cast iron,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Cast iron | ring 100%,0.0
+257,Cast iron,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Cast iron | ring 100%,0.0
+258,Cast iron,C,10,,,,6.123233995736766e-17,1.0,grid,Cast iron | ring 100%,3.25
+259,Cast iron,C,0,,,,0.0,0.0,grid,Cast iron | spoke C,3.25
+260,Cast iron,C,1,,,,6.123233995736766e-17,1.0,grid,Cast iron | spoke C,3.25
+261,Cast iron,C,0,,,,7.225416114969384e-17,1.18,axis_label,Cast iron | label C,3.25
+262,Cast iron,Mn,0,,,,0.0,0.0,grid,Cast iron | spoke Mn,0.6
+263,Cast iron,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Cast iron | spoke Mn,0.6
+264,Cast iron,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Cast iron | label Mn,0.6
+265,Cast iron,Si,0,,,,0.0,0.0,grid,Cast iron | spoke Si,2.15
+266,Cast iron,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Cast iron | spoke Si,2.15
+267,Cast iron,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Cast iron | label Si,2.15
+268,Cast iron,Cr,0,,,,0.0,-0.0,grid,Cast iron | spoke Cr,0.0
+269,Cast iron,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Cast iron | spoke Cr,0.0
+270,Cast iron,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Cast iron | label Cr,0.0
+271,Cast iron,Ni,0,,,,0.0,-0.0,grid,Cast iron | spoke Ni,0.0
+272,Cast iron,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Cast iron | spoke Ni,0.0
+273,Cast iron,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Cast iron | label Ni,0.0
+274,Cast iron,Mo,0,,,,0.0,-0.0,grid,Cast iron | spoke Mo,0.0
+275,Cast iron,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Cast iron | spoke Mo,0.0
+276,Cast iron,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Cast iron | label Mo,0.0
+277,Cast iron,V,0,,,,-0.0,-0.0,grid,Cast iron | spoke V,0.0
+278,Cast iron,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Cast iron | spoke V,0.0
+279,Cast iron,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Cast iron | label V,0.0
+280,Cast iron,W,0,,,,-0.0,-0.0,grid,Cast iron | spoke W,0.0
+281,Cast iron,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Cast iron | spoke W,0.0
+282,Cast iron,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Cast iron | label W,0.0
+283,Cast iron,Co,0,,,,-0.0,0.0,grid,Cast iron | spoke Co,0.0
+284,Cast iron,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Cast iron | spoke Co,0.0
+285,Cast iron,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Cast iron | label Co,0.0
+286,Cast iron,Cu,0,,,,-0.0,0.0,grid,Cast iron | spoke Cu,0.0
+287,Cast iron,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Cast iron | spoke Cu,0.0
+288,Cast iron,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Cast iron | label Cu,0.0
+289,Tool & high-speed,C,0,,,,1.5308084989341915e-17,0.25,grid,Tool & high-speed | ring 25%,0.83
+290,Tool & high-speed,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Tool & high-speed | ring 25%,0.3
+291,Tool & high-speed,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Tool & high-speed | ring 25%,0.3125
+292,Tool & high-speed,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Tool & high-speed | ring 25%,3.9
+293,Tool & high-speed,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Tool & high-speed | ring 25%,0.15
+294,Tool & high-speed,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Tool & high-speed | ring 25%,0.95
+295,Tool & high-speed,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Tool & high-speed | ring 25%,0.525
+296,Tool & high-speed,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Tool & high-speed | ring 25%,1.3
+297,Tool & high-speed,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Tool & high-speed | ring 25%,0.0
+298,Tool & high-speed,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Tool & high-speed | ring 25%,0.125
+299,Tool & high-speed,C,10,,,,1.5308084989341915e-17,0.25,grid,Tool & high-speed | ring 25%,0.83
+300,Tool & high-speed,C,0,,,,3.061616997868383e-17,0.5,grid,Tool & high-speed | ring 50%,0.83
+301,Tool & high-speed,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Tool & high-speed | ring 50%,0.3
+302,Tool & high-speed,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Tool & high-speed | ring 50%,0.3125
+303,Tool & high-speed,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Tool & high-speed | ring 50%,3.9
+304,Tool & high-speed,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Tool & high-speed | ring 50%,0.15
+305,Tool & high-speed,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Tool & high-speed | ring 50%,0.95
+306,Tool & high-speed,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Tool & high-speed | ring 50%,0.525
+307,Tool & high-speed,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Tool & high-speed | ring 50%,1.3
+308,Tool & high-speed,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Tool & high-speed | ring 50%,0.0
+309,Tool & high-speed,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Tool & high-speed | ring 50%,0.125
+310,Tool & high-speed,C,10,,,,3.061616997868383e-17,0.5,grid,Tool & high-speed | ring 50%,0.83
+311,Tool & high-speed,C,0,,,,4.592425496802574e-17,0.75,grid,Tool & high-speed | ring 75%,0.83
+312,Tool & high-speed,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Tool & high-speed | ring 75%,0.3
+313,Tool & high-speed,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Tool & high-speed | ring 75%,0.3125
+314,Tool & high-speed,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Tool & high-speed | ring 75%,3.9
+315,Tool & high-speed,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Tool & high-speed | ring 75%,0.15
+316,Tool & high-speed,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Tool & high-speed | ring 75%,0.95
+317,Tool & high-speed,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Tool & high-speed | ring 75%,0.525
+318,Tool & high-speed,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Tool & high-speed | ring 75%,1.3
+319,Tool & high-speed,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Tool & high-speed | ring 75%,0.0
+320,Tool & high-speed,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Tool & high-speed | ring 75%,0.125
+321,Tool & high-speed,C,10,,,,4.592425496802574e-17,0.75,grid,Tool & high-speed | ring 75%,0.83
+322,Tool & high-speed,C,0,,,,6.123233995736766e-17,1.0,grid,Tool & high-speed | ring 100%,0.83
+323,Tool & high-speed,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Tool & high-speed | ring 100%,0.3
+324,Tool & high-speed,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Tool & high-speed | ring 100%,0.3125
+325,Tool & high-speed,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Tool & high-speed | ring 100%,3.9
+326,Tool & high-speed,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Tool & high-speed | ring 100%,0.15
+327,Tool & high-speed,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Tool & high-speed | ring 100%,0.95
+328,Tool & high-speed,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Tool & high-speed | ring 100%,0.525
+329,Tool & high-speed,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Tool & high-speed | ring 100%,1.3
+330,Tool & high-speed,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Tool & high-speed | ring 100%,0.0
+331,Tool & high-speed,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Tool & high-speed | ring 100%,0.125
+332,Tool & high-speed,C,10,,,,6.123233995736766e-17,1.0,grid,Tool & high-speed | ring 100%,0.83
+333,Tool & high-speed,C,0,,,,0.0,0.0,grid,Tool & high-speed | spoke C,0.83
+334,Tool & high-speed,C,1,,,,6.123233995736766e-17,1.0,grid,Tool & high-speed | spoke C,0.83
+335,Tool & high-speed,C,0,,,,7.225416114969384e-17,1.18,axis_label,Tool & high-speed | label C,0.83
+336,Tool & high-speed,Mn,0,,,,0.0,0.0,grid,Tool & high-speed | spoke Mn,0.3
+337,Tool & high-speed,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Tool & high-speed | spoke Mn,0.3
+338,Tool & high-speed,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Tool & high-speed | label Mn,0.3
+339,Tool & high-speed,Si,0,,,,0.0,0.0,grid,Tool & high-speed | spoke Si,0.3125
+340,Tool & high-speed,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Tool & high-speed | spoke Si,0.3125
+341,Tool & high-speed,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Tool & high-speed | label Si,0.3125
+342,Tool & high-speed,Cr,0,,,,0.0,-0.0,grid,Tool & high-speed | spoke Cr,3.9
+343,Tool & high-speed,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Tool & high-speed | spoke Cr,3.9
+344,Tool & high-speed,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Tool & high-speed | label Cr,3.9
+345,Tool & high-speed,Ni,0,,,,0.0,-0.0,grid,Tool & high-speed | spoke Ni,0.15
+346,Tool & high-speed,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Tool & high-speed | spoke Ni,0.15
+347,Tool & high-speed,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Tool & high-speed | label Ni,0.15
+348,Tool & high-speed,Mo,0,,,,0.0,-0.0,grid,Tool & high-speed | spoke Mo,0.95
+349,Tool & high-speed,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Tool & high-speed | spoke Mo,0.95
+350,Tool & high-speed,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Tool & high-speed | label Mo,0.95
+351,Tool & high-speed,V,0,,,,-0.0,-0.0,grid,Tool & high-speed | spoke V,0.525
+352,Tool & high-speed,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Tool & high-speed | spoke V,0.525
+353,Tool & high-speed,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Tool & high-speed | label V,0.525
+354,Tool & high-speed,W,0,,,,-0.0,-0.0,grid,Tool & high-speed | spoke W,1.3
+355,Tool & high-speed,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Tool & high-speed | spoke W,1.3
+356,Tool & high-speed,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Tool & high-speed | label W,1.3
+357,Tool & high-speed,Co,0,,,,-0.0,0.0,grid,Tool & high-speed | spoke Co,0.0
+358,Tool & high-speed,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Tool & high-speed | spoke Co,0.0
+359,Tool & high-speed,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Tool & high-speed | label Co,0.0
+360,Tool & high-speed,Cu,0,,,,-0.0,0.0,grid,Tool & high-speed | spoke Cu,0.125
+361,Tool & high-speed,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Tool & high-speed | spoke Cu,0.125
+362,Tool & high-speed,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Tool & high-speed | label Cu,0.125
+363,Weld metal,C,0,,,,1.5308084989341915e-17,0.25,grid,Weld metal | ring 25%,0.05
+364,Weld metal,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Weld metal | ring 25%,1.5
+365,Weld metal,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Weld metal | ring 25%,0.5
+366,Weld metal,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Weld metal | ring 25%,16.5
+367,Weld metal,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Weld metal | ring 25%,6.25
+368,Weld metal,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Weld metal | ring 25%,0.525
+369,Weld metal,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Weld metal | ring 25%,0.0
+370,Weld metal,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Weld metal | ring 25%,0.0
+371,Weld metal,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Weld metal | ring 25%,0.0
+372,Weld metal,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Weld metal | ring 25%,0.375
+373,Weld metal,C,10,,,,1.5308084989341915e-17,0.25,grid,Weld metal | ring 25%,0.05
+374,Weld metal,C,0,,,,3.061616997868383e-17,0.5,grid,Weld metal | ring 50%,0.05
+375,Weld metal,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Weld metal | ring 50%,1.5
+376,Weld metal,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Weld metal | ring 50%,0.5
+377,Weld metal,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Weld metal | ring 50%,16.5
+378,Weld metal,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Weld metal | ring 50%,6.25
+379,Weld metal,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Weld metal | ring 50%,0.525
+380,Weld metal,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Weld metal | ring 50%,0.0
+381,Weld metal,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Weld metal | ring 50%,0.0
+382,Weld metal,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Weld metal | ring 50%,0.0
+383,Weld metal,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Weld metal | ring 50%,0.375
+384,Weld metal,C,10,,,,3.061616997868383e-17,0.5,grid,Weld metal | ring 50%,0.05
+385,Weld metal,C,0,,,,4.592425496802574e-17,0.75,grid,Weld metal | ring 75%,0.05
+386,Weld metal,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Weld metal | ring 75%,1.5
+387,Weld metal,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Weld metal | ring 75%,0.5
+388,Weld metal,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Weld metal | ring 75%,16.5
+389,Weld metal,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Weld metal | ring 75%,6.25
+390,Weld metal,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Weld metal | ring 75%,0.525
+391,Weld metal,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Weld metal | ring 75%,0.0
+392,Weld metal,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Weld metal | ring 75%,0.0
+393,Weld metal,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Weld metal | ring 75%,0.0
+394,Weld metal,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Weld metal | ring 75%,0.375
+395,Weld metal,C,10,,,,4.592425496802574e-17,0.75,grid,Weld metal | ring 75%,0.05
+396,Weld metal,C,0,,,,6.123233995736766e-17,1.0,grid,Weld metal | ring 100%,0.05
+397,Weld metal,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Weld metal | ring 100%,1.5
+398,Weld metal,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Weld metal | ring 100%,0.5
+399,Weld metal,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Weld metal | ring 100%,16.5
+400,Weld metal,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Weld metal | ring 100%,6.25
+401,Weld metal,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Weld metal | ring 100%,0.525
+402,Weld metal,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Weld metal | ring 100%,0.0
+403,Weld metal,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Weld metal | ring 100%,0.0
+404,Weld metal,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Weld metal | ring 100%,0.0
+405,Weld metal,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Weld metal | ring 100%,0.375
+406,Weld metal,C,10,,,,6.123233995736766e-17,1.0,grid,Weld metal | ring 100%,0.05
+407,Weld metal,C,0,,,,0.0,0.0,grid,Weld metal | spoke C,0.05
+408,Weld metal,C,1,,,,6.123233995736766e-17,1.0,grid,Weld metal | spoke C,0.05
+409,Weld metal,C,0,,,,7.225416114969384e-17,1.18,axis_label,Weld metal | label C,0.05
+410,Weld metal,Mn,0,,,,0.0,0.0,grid,Weld metal | spoke Mn,1.5
+411,Weld metal,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Weld metal | spoke Mn,1.5
+412,Weld metal,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Weld metal | label Mn,1.5
+413,Weld metal,Si,0,,,,0.0,0.0,grid,Weld metal | spoke Si,0.5
+414,Weld metal,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Weld metal | spoke Si,0.5
+415,Weld metal,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Weld metal | label Si,0.5
+416,Weld metal,Cr,0,,,,0.0,-0.0,grid,Weld metal | spoke Cr,16.5
+417,Weld metal,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Weld metal | spoke Cr,16.5
+418,Weld metal,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Weld metal | label Cr,16.5
+419,Weld metal,Ni,0,,,,0.0,-0.0,grid,Weld metal | spoke Ni,6.25
+420,Weld metal,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Weld metal | spoke Ni,6.25
+421,Weld metal,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Weld metal | label Ni,6.25
+422,Weld metal,Mo,0,,,,0.0,-0.0,grid,Weld metal | spoke Mo,0.525
+423,Weld metal,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Weld metal | spoke Mo,0.525
+424,Weld metal,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Weld metal | label Mo,0.525
+425,Weld metal,V,0,,,,-0.0,-0.0,grid,Weld metal | spoke V,0.0
+426,Weld metal,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Weld metal | spoke V,0.0
+427,Weld metal,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Weld metal | label V,0.0
+428,Weld metal,W,0,,,,-0.0,-0.0,grid,Weld metal | spoke W,0.0
+429,Weld metal,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Weld metal | spoke W,0.0
+430,Weld metal,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Weld metal | label W,0.0
+431,Weld metal,Co,0,,,,-0.0,0.0,grid,Weld metal | spoke Co,0.0
+432,Weld metal,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Weld metal | spoke Co,0.0
+433,Weld metal,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Weld metal | label Co,0.0
+434,Weld metal,Cu,0,,,,-0.0,0.0,grid,Weld metal | spoke Cu,0.375
+435,Weld metal,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Weld metal | spoke Cu,0.375
+436,Weld metal,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Weld metal | label Cu,0.375
+437,Other,C,0,,,,1.5308084989341915e-17,0.25,grid,Other | ring 25%,0.0175
+438,Other,Mn,1,,,,0.14694631307311828,0.20225424859373686,grid,Other | ring 25%,0.25
+439,Other,Si,2,,,,0.23776412907378838,0.07725424859373685,grid,Other | ring 25%,0.15
+440,Other,Cr,3,,,,0.23776412907378838,-0.07725424859373685,grid,Other | ring 25%,0.125
+441,Other,Ni,4,,,,0.14694631307311828,-0.20225424859373686,grid,Other | ring 25%,24.875
+442,Other,Mo,5,,,,1.5308084989341915e-17,-0.25,grid,Other | ring 25%,3.25
+443,Other,V,6,,,,-0.14694631307311826,-0.20225424859373686,grid,Other | ring 25%,0.0
+444,Other,W,7,,,,-0.23776412907378838,-0.07725424859373688,grid,Other | ring 25%,0.0
+445,Other,Co,8,,,,-0.2377641290737884,0.07725424859373682,grid,Other | ring 25%,7.75
+446,Other,Cu,9,,,,-0.1469463130731183,0.20225424859373684,grid,Other | ring 25%,0.0
+447,Other,C,10,,,,1.5308084989341915e-17,0.25,grid,Other | ring 25%,0.0175
+448,Other,C,0,,,,3.061616997868383e-17,0.5,grid,Other | ring 50%,0.0175
+449,Other,Mn,1,,,,0.29389262614623657,0.4045084971874737,grid,Other | ring 50%,0.25
+450,Other,Si,2,,,,0.47552825814757677,0.1545084971874737,grid,Other | ring 50%,0.15
+451,Other,Cr,3,,,,0.47552825814757677,-0.1545084971874737,grid,Other | ring 50%,0.125
+452,Other,Ni,4,,,,0.29389262614623657,-0.4045084971874737,grid,Other | ring 50%,24.875
+453,Other,Mo,5,,,,3.061616997868383e-17,-0.5,grid,Other | ring 50%,3.25
+454,Other,V,6,,,,-0.2938926261462365,-0.4045084971874737,grid,Other | ring 50%,0.0
+455,Other,W,7,,,,-0.47552825814757677,-0.15450849718747375,grid,Other | ring 50%,0.0
+456,Other,Co,8,,,,-0.4755282581475768,0.15450849718747364,grid,Other | ring 50%,7.75
+457,Other,Cu,9,,,,-0.2938926261462366,0.40450849718747367,grid,Other | ring 50%,0.0
+458,Other,C,10,,,,3.061616997868383e-17,0.5,grid,Other | ring 50%,0.0175
+459,Other,C,0,,,,4.592425496802574e-17,0.75,grid,Other | ring 75%,0.0175
+460,Other,Mn,1,,,,0.44083893921935485,0.6067627457812106,grid,Other | ring 75%,0.25
+461,Other,Si,2,,,,0.7132923872213651,0.23176274578121053,grid,Other | ring 75%,0.15
+462,Other,Cr,3,,,,0.7132923872213651,-0.23176274578121053,grid,Other | ring 75%,0.125
+463,Other,Ni,4,,,,0.44083893921935485,-0.6067627457812106,grid,Other | ring 75%,24.875
+464,Other,Mo,5,,,,4.592425496802574e-17,-0.75,grid,Other | ring 75%,3.25
+465,Other,V,6,,,,-0.4408389392193548,-0.6067627457812106,grid,Other | ring 75%,0.0
+466,Other,W,7,,,,-0.7132923872213651,-0.23176274578121064,grid,Other | ring 75%,0.0
+467,Other,Co,8,,,,-0.7132923872213652,0.23176274578121048,grid,Other | ring 75%,7.75
+468,Other,Cu,9,,,,-0.4408389392193549,0.6067627457812105,grid,Other | ring 75%,0.0
+469,Other,C,10,,,,4.592425496802574e-17,0.75,grid,Other | ring 75%,0.0175
+470,Other,C,0,,,,6.123233995736766e-17,1.0,grid,Other | ring 100%,0.0175
+471,Other,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Other | ring 100%,0.25
+472,Other,Si,2,,,,0.9510565162951535,0.3090169943749474,grid,Other | ring 100%,0.15
+473,Other,Cr,3,,,,0.9510565162951535,-0.3090169943749474,grid,Other | ring 100%,0.125
+474,Other,Ni,4,,,,0.5877852522924731,-0.8090169943749475,grid,Other | ring 100%,24.875
+475,Other,Mo,5,,,,6.123233995736766e-17,-1.0,grid,Other | ring 100%,3.25
+476,Other,V,6,,,,-0.587785252292473,-0.8090169943749475,grid,Other | ring 100%,0.0
+477,Other,W,7,,,,-0.9510565162951535,-0.3090169943749475,grid,Other | ring 100%,0.0
+478,Other,Co,8,,,,-0.9510565162951536,0.3090169943749473,grid,Other | ring 100%,7.75
+479,Other,Cu,9,,,,-0.5877852522924732,0.8090169943749473,grid,Other | ring 100%,0.0
+480,Other,C,10,,,,6.123233995736766e-17,1.0,grid,Other | ring 100%,0.0175
+481,Other,C,0,,,,0.0,0.0,grid,Other | spoke C,0.0175
+482,Other,C,1,,,,6.123233995736766e-17,1.0,grid,Other | spoke C,0.0175
+483,Other,C,0,,,,7.225416114969384e-17,1.18,axis_label,Other | label C,0.0175
+484,Other,Mn,0,,,,0.0,0.0,grid,Other | spoke Mn,0.25
+485,Other,Mn,1,,,,0.5877852522924731,0.8090169943749475,grid,Other | spoke Mn,0.25
+486,Other,Mn,0,,,,0.6935865977051182,0.954640053362438,axis_label,Other | label Mn,0.25
+487,Other,Si,0,,,,0.0,0.0,grid,Other | spoke Si,0.15
+488,Other,Si,1,,,,0.9510565162951535,0.3090169943749474,grid,Other | spoke Si,0.15
+489,Other,Si,0,,,,1.1222466892282812,0.36464005336243793,axis_label,Other | label Si,0.15
+490,Other,Cr,0,,,,0.0,-0.0,grid,Other | spoke Cr,0.125
+491,Other,Cr,1,,,,0.9510565162951535,-0.3090169943749474,grid,Other | spoke Cr,0.125
+492,Other,Cr,0,,,,1.1222466892282812,-0.36464005336243793,axis_label,Other | label Cr,0.125
+493,Other,Ni,0,,,,0.0,-0.0,grid,Other | spoke Ni,24.875
+494,Other,Ni,1,,,,0.5877852522924731,-0.8090169943749475,grid,Other | spoke Ni,24.875
+495,Other,Ni,0,,,,0.6935865977051182,-0.954640053362438,axis_label,Other | label Ni,24.875
+496,Other,Mo,0,,,,0.0,-0.0,grid,Other | spoke Mo,3.25
+497,Other,Mo,1,,,,6.123233995736766e-17,-1.0,grid,Other | spoke Mo,3.25
+498,Other,Mo,0,,,,7.225416114969384e-17,-1.18,axis_label,Other | label Mo,3.25
+499,Other,V,0,,,,-0.0,-0.0,grid,Other | spoke V,0.0
+500,Other,V,1,,,,-0.587785252292473,-0.8090169943749475,grid,Other | spoke V,0.0
+501,Other,V,0,,,,-0.6935865977051181,-0.954640053362438,axis_label,Other | label V,0.0
+502,Other,W,0,,,,-0.0,-0.0,grid,Other | spoke W,0.0
+503,Other,W,1,,,,-0.9510565162951535,-0.3090169943749475,grid,Other | spoke W,0.0
+504,Other,W,0,,,,-1.1222466892282812,-0.36464005336243804,axis_label,Other | label W,0.0
+505,Other,Co,0,,,,-0.0,0.0,grid,Other | spoke Co,7.75
+506,Other,Co,1,,,,-0.9510565162951536,0.3090169943749473,grid,Other | spoke Co,7.75
+507,Other,Co,0,,,,-1.1222466892282812,0.36464005336243777,axis_label,Other | label Co,7.75
+508,Other,Cu,0,,,,-0.0,0.0,grid,Other | spoke Cu,0.0
+509,Other,Cu,1,,,,-0.5877852522924732,0.8090169943749473,grid,Other | spoke Cu,0.0
+510,Other,Cu,0,,,,-0.6935865977051184,0.9546400533624378,axis_label,Other | label Cu,0.0

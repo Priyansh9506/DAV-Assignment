@@ -1,0 +1,1513 @@
+row_id,layer,shape_id,source,target,value,color_key,point_order,x,y,label,label_x,label_y
+1,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,0,-0.12186934340514737,0.9925461516413221,,,
+2,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,1,-0.12288066429376533,0.9924214539915605,,,
+3,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,2,-0.1238918575930001,0.992295725891307,,,
+4,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,3,-0.12490292225291046,0.9921689674711074,,,
+5,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,4,-0.12591385722368761,0.9920411788625777,,,
+6,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,5,-0.12692466145565906,0.991912360198403,,,
+7,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,6,-0.12793533389928663,0.9917825116123383,,,
+8,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,7,-0.12894587350516926,0.9916516332392081,,,
+9,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,8,-0.12995627922404449,0.9915197252149057,,,
+10,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,9,-0.13096655000678795,0.991386787676394,,,
+11,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,10,-0.1319766848044163,0.9912528207617044,,,
+12,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,11,-0.1329866825680865,0.9911178246099376,,,
+13,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,12,-0.13399654224909843,0.9909817993612625,,,
+14,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,13,-0.1350062627988952,0.9908447451569169,,,
+15,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,14,-0.13601584316906448,0.9907066621392068,,,
+16,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,15,-0.13702528231133895,0.9905675504515065,,,
+17,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,16,-0.13803457917759876,0.9904274102382583,,,
+18,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,17,-0.1390437327198711,0.9902862416449726,,,
+19,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,18,-0.14005274189033204,0.9901440448182275,,,
+20,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,19,-0.14106160564130818,0.9900008199056686,,,
+21,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,20,-0.14207032292527597,0.9898565670560093,,,
+22,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,21,-0.14307889269486557,0.98971128641903,,,
+23,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,22,-0.14408731390285867,0.9895649781455784,,,
+24,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,23,-0.1450955855021924,0.9894176423875694,,,
+25,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,24,-0.1450955855021924,0.9894176423875694,,,
+26,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,25,-0.13398554150086123,0.9153023770860603,,,
+27,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,26,-0.12315929560962902,0.846487033275715,,,
+28,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,27,-0.11260042864798991,0.782971803369666,,,
+29,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,28,-0.10229252143543782,0.7247568797810449,,,
+30,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,29,-0.09221915479146679,0.6718424549229846,,,
+31,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,30,-0.08236390953557078,0.6242287212086168,,,
+32,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,31,-0.07271036648724376,0.5819158710510735,,,
+33,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,32,-0.06324210646597977,0.5449040968634876,,,
+34,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,33,-0.053942710291272795,0.5131935910589907,,,
+35,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,34,-0.04479575878261678,0.48678454605071503,,,
+36,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,35,-0.035784832759505794,0.46567715425179285,,,
+37,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,36,-0.026893513041433774,0.44987160807535653,,,
+38,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,37,-0.018105380447894705,0.4393680999345378,,,
+39,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,38,-0.009404015798382645,0.4341668222424692,,,
+40,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,39,-0.0007729999123915025,0.4342679674122828,,,
+41,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,40,0.007804086390584658,0.4396717278571108,,,
+42,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,41,0.01634366229105188,0.45037829599008533,,,
+43,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,42,0.024862146969516184,0.46638786422433853,,,
+44,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,43,0.033375959606483534,0.48770062497300265,,,
+45,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,44,0.04190151938245997,0.5143167706492099,,,
+46,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,45,0.05045524547795149,0.5462364936660924,,,
+47,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,46,0.05905355707346408,0.5834599864367822,,,
+48,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,47,0.06771287334950381,0.6259874413744118,,,
+49,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,48,0.07644961348657661,0.6738190508921129,,,
+50,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,49,0.08528019666518852,0.726955007403018,,,
+51,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,50,0.09422104206584558,0.7853955033202595,,,
+52,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,51,0.10328856886905373,0.8491407310569691,,,
+53,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,52,0.11249919625531901,0.918190883026279,,,
+54,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,53,0.12186934340514749,0.992546151641322,,,
+55,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,54,0.12186934340514749,0.992546151641322,,,
+56,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,55,0.12288066429376546,0.9924214539915605,,,
+57,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,56,0.12389185759300023,0.992295725891307,,,
+58,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,57,0.12490292225291058,0.9921689674711074,,,
+59,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,58,0.12591385722368775,0.9920411788625777,,,
+60,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,59,0.12692466145565917,0.991912360198403,,,
+61,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,60,0.12793533389928652,0.9917825116123383,,,
+62,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,61,0.12894587350516937,0.9916516332392081,,,
+63,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,62,0.12995627922404437,0.9915197252149057,,,
+64,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,63,0.13096655000678806,0.991386787676394,,,
+65,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,64,0.1319766848044162,0.9912528207617044,,,
+66,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,65,0.1329866825680866,0.9911178246099376,,,
+67,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,66,0.13399654224909835,0.9909817993612625,,,
+68,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,67,0.1350062627988953,0.9908447451569169,,,
+69,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,68,0.1360158431690646,0.9907066621392068,,,
+70,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,69,0.13702528231133906,0.9905675504515065,,,
+71,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,70,0.13803457917759887,0.9904274102382583,,,
+72,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,71,0.139043732719871,0.9902862416449726,,,
+73,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,72,0.14005274189033218,0.9901440448182275,,,
+74,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,73,0.14106160564130807,0.9900008199056686,,,
+75,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,74,0.1420703229252761,0.9898565670560092,,,
+76,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,75,0.14307889269486546,0.98971128641903,,,
+77,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,76,0.14408731390285878,0.9895649781455784,,,
+78,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,77,0.1450955855021923,0.9894176423875694,,,
+79,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,78,0.1450955855021923,0.9894176423875694,,,
+80,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,79,0.13398554150086112,0.9153023770860603,,,
+81,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,80,0.1231592956096289,0.846487033275715,,,
+82,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,81,0.11260042864798984,0.782971803369666,,,
+83,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,82,0.10229252143543775,0.7247568797810449,,,
+84,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,83,0.09221915479146674,0.6718424549229846,,,
+85,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,84,0.08236390953557071,0.6242287212086168,,,
+86,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,85,0.0727103664872437,0.5819158710510735,,,
+87,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,86,0.06324210646597973,0.5449040968634876,,,
+88,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,87,0.05394271029127276,0.5131935910589907,,,
+89,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,88,0.044795758782616754,0.48678454605071503,,,
+90,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,89,0.035784832759505766,0.4656771542517929,,,
+91,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,90,0.026893513041433757,0.44987160807535653,,,
+92,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,91,0.0181053804478947,0.4393680999345378,,,
+93,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,92,0.009404015798382641,0.4341668222424692,,,
+94,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,93,0.0007729999123915025,0.4342679674122828,,,
+95,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,94,-0.007804086390584643,0.4396717278571108,,,
+96,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,95,-0.016343662291051858,0.4503782959900854,,,
+97,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,96,-0.024862146969516156,0.46638786422433864,,,
+98,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,97,-0.03337595960648349,0.4877006249730027,,,
+99,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,98,-0.04190151938245994,0.51431677064921,,,
+100,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,99,-0.05045524547795143,0.5462364936660924,,,
+101,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,100,-0.05905355707346402,0.5834599864367822,,,
+102,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,101,-0.06771287334950374,0.6259874413744118,,,
+103,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,102,-0.07644961348657653,0.673819050892113,,,
+104,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,103,-0.08528019666518843,0.7269550074030182,,,
+105,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,104,-0.09422104206584547,0.7853955033202595,,,
+106,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,105,-0.10328856886905363,0.8491407310569692,,,
+107,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,106,-0.1124991962553189,0.9181908830262792,,,
+108,ribbon,R0,Raw class 0,Grade class 0,23,Raw class 0,107,-0.12186934340514737,0.9925461516413221,,,
+109,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,0,-0.1450955855021924,0.9894176423875694,,,
+110,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,1,-0.14614753435764724,0.9892628054269403,,,
+111,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,2,-0.14719931798295594,0.9891068500345919,,,
+112,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,3,-0.14825093518900193,0.9889497763868428,,,
+113,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,4,-0.14930238478685823,0.9887915846612758,,,
+114,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,5,-0.15035366558778593,0.9886322750367379,,,
+115,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,6,-0.15140477640323802,0.98847184769334,,,
+116,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,7,-0.15245571604485877,0.9883103028124565,,,
+117,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,8,-0.15350648332448685,0.9881476405767253,,,
+118,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,9,-0.15455707705415472,0.9879838611700477,,,
+119,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,10,-0.1556074960460926,0.9878189647775878,,,
+120,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,11,-0.1566577391127267,0.9876529515857728,,,
+121,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,12,-0.157707805066683,0.9874858217822923,,,
+122,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,13,-0.15875769272078774,0.9873175755560983,,,
+123,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,14,-0.1598074008880681,0.9871482130974053,,,
+124,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,15,-0.16085692838175475,0.9869777345976894,,,
+125,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,16,-0.16190627401528254,0.9868061402496887,,,
+126,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,17,-0.16295543660229203,0.9866334302474027,,,
+127,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,18,-0.16400441495663012,0.9864596047860923,,,
+128,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,19,-0.16505320789235287,0.9862846640622797,,,
+129,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,20,-0.1661018142237251,0.9861086082737475,,,
+130,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,21,-0.16715023276522323,0.9859314376195394,,,
+131,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,22,-0.16819846233153582,0.9857531522999594,,,
+132,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,23,-0.16924650173756522,0.9855737525165716,,,
+133,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,24,-0.16924650173756522,0.9855737525165716,,,
+134,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,25,-0.15624920093855807,0.9099679856105353,,,
+135,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,26,-0.1435051909924095,0.8360038326556756,,,
+136,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,27,-0.130992728274444,0.7635602280731822,,,
+137,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,28,-0.11869006915998588,0.6925161062842449,,,
+138,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,29,-0.1065754700243597,0.6227504017100535,,,
+139,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,30,-0.0946271872428898,0.5541420487717976,,,
+140,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,31,-0.08282347719090054,0.48656998189066636,,,
+141,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,32,-0.07114259624371645,0.41991313548785014,,,
+142,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,33,-0.05956280077666188,0.3540504439845381,,,
+143,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,34,-0.048062347165061255,0.2888608418019201,,,
+144,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,35,-0.03661949178423901,0.22422326336118595,,,
+145,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,36,-0.02521249100951957,0.160016643083525,,,
+146,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,37,-0.013819601216227294,0.09611991539012697,,,
+147,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,38,-0.002419078779686685,0.032412014702181746,,,
+148,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,39,0.009010819924777928,-0.031228124559121356,,,
+149,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,40,0.02049183852184204,-0.0949215679725923,,,
+150,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,41,0.03204572063618129,-0.15878938111704163,,,
+151,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,42,0.043694209892471275,-0.22295262957127987,,,
+152,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,43,0.05545904991538752,-0.287532378914117,,,
+153,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,44,0.06736198432960566,-0.35264969472436364,,,
+154,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,45,0.07942475675980123,-0.4184256425808299,,,
+155,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,46,0.09166911083064984,-0.48498128806232615,,,
+156,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,47,0.10411679016682711,-0.5524376967476632,,,
+157,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,48,0.11678953839300854,-0.6209159342156506,,,
+158,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,49,0.12970909913386974,-0.6905370660450992,,,
+159,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,50,0.14289721601408636,-0.7614221578148196,,,
+160,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,51,0.1563756326583339,-0.8336922751036214,,,
+161,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,52,0.17016609269128796,-0.9074684834903153,,,
+162,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,53,0.1842903397376242,-0.982871848553712,,,
+163,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,54,0.1842903397376242,-0.982871848553712,,,
+164,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,55,0.18324516471585664,-0.9830672457203823,,,
+165,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,56,0.18219978252244196,-0.9832615314598527,,,
+166,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,57,0.18115419433925942,-0.9834547055524692,,,
+167,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,58,0.18010840134841977,-0.983646767779835,,,
+168,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,59,0.17906240473226673,-0.9838377179248099,,,
+169,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,60,0.17801620567337315,-0.9840275557715116,,,
+170,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,61,0.1769698053545417,-0.9842162811053146,,,
+171,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,62,0.17592320495880168,-0.9844038937128518,,,
+172,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,63,0.17487640566940965,-0.9845903933820135,,,
+173,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,64,0.17382940866984573,-0.984775779901949,,,
+174,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,65,0.17278221514381428,-0.9849600530630654,,,
+175,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,66,0.1717348262752422,-0.9851432126570291,,,
+176,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,67,0.17068724324827644,-0.985325258476765,,,
+177,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,68,0.1696394672472843,-0.9855061903164574,,,
+178,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,69,0.16859149945685056,-0.9856860079715501,,,
+179,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,70,0.16754334106177712,-0.9858647112387465,,,
+180,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,71,0.16649499324708109,-0.9860422999160099,,,
+181,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,72,0.16544645719799445,-0.9862187738025636,,,
+182,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,73,0.16439773409996108,-0.9863941326988915,,,
+183,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,74,0.1633488251386372,-0.9865683764067379,,,
+184,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,75,0.16229973149988852,-0.9867415047291079,,,
+185,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,76,0.16125045436978974,-0.9869135174702677,,,
+186,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,77,0.16020099493462284,-0.9870844144357447,,,
+187,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,78,0.16020099493462284,-0.9870844144357447,,,
+188,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,79,0.1479248154063451,-0.9113582153121966,,,
+189,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,80,0.1359425340993684,-0.8372668484296919,,,
+190,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,81,0.12423537431638437,-0.7646887527121217,,,
+191,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,82,0.11278455936008452,-0.693502367083376,,,
+192,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,83,0.10157131253316047,-0.6235861304673456,,,
+193,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,84,0.09057685713830378,-0.5548184817879208,,,
+194,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,85,0.07978241647820598,-0.487077859968992,,,
+195,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,86,0.06916921385555873,-0.42024270393445023,,,
+196,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,87,0.058718472573053536,-0.3541914526081854,,,
+197,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,88,0.04841141593338196,-0.2888025449140881,,,
+198,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,89,0.03822926723923563,-0.22395441977604905,,,
+199,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,90,0.028153249793306103,-0.1595255161179585,,,
+200,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,91,0.018164586898284915,-0.09539427286370687,,,
+201,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,92,0.008244501856863692,-0.031439128937185076,,,
+202,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,93,-0.001625782028266052,0.032461476737717015,,,
+203,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,94,-0.011465041454412668,0.09642910523710832,,,
+204,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,95,-0.021292053118884643,0.16058531763709868,,,
+205,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,96,-0.031125593718990412,0.22505167501379775,,,
+206,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,97,-0.04098443995203834,0.2899497384433147,,,
+207,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,98,-0.050887368515336914,0.3554010690017592,,,
+208,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,99,-0.060853156106194524,0.4215272277652408,,,
+209,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,100,-0.0709005794219196,0.4884497758098688,,,
+210,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,101,-0.08104841515982061,0.5562902742117533,,,
+211,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,102,-0.09131544001720593,0.625170284047003,,,
+212,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,103,-0.10172043069138398,0.6952113663917279,,,
+213,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,104,-0.11228216387966326,0.7665350823220377,,,
+214,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,105,-0.12301941627935212,0.8392629929140413,,,
+215,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,106,-0.133950964587759,0.9135166592438486,,,
+216,ribbon,R1,Raw class 0,Dropped: exact duplicate,24,Raw class 0,107,-0.1450955855021924,0.9894176423875694,,,
+217,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,0,-0.20353942926761734,0.9790667498865502,,,
+218,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,1,-0.2315593759060077,0.9728207725115764,,,
+219,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,2,-0.2593884875986024,0.9657730647006624,,,
+220,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,3,-0.28700382954951725,0.9579294346787303,,,
+221,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,4,-0.3143826431368498,0.9492963466137896,,,
+222,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,5,-0.34150236466873257,0.9398809152896254,,,
+223,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,6,-0.36834064397874183,0.9296909002422933,,,
+224,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,7,-0.39487536284533137,0.9187346993652563,,,
+225,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,8,-0.4210846532201144,0.9070213419884319,,,
+226,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,9,-0.44694691524997254,0.8945604814368529,,,
+227,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,10,-0.47244083507813117,0.8813623870750771,,,
+228,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,11,-0.4975454024095444,0.8674379358438992,,,
+229,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,12,-0.5222399278261001,0.8527986032963408,,,
+230,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,13,-0.5465040598373834,0.837456454140308,,,
+231,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,14,-0.5703178016529414,0.8214241322957075,,,
+232,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,15,-0.5936615276622347,0.8047148504742172,,,
+233,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,16,-0.6165159996086802,0.7873423792902995,,,
+234,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,17,-0.6388623824444725,0.7693210359124288,,,
+235,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,18,-0.660682259853103,0.7506656722638894,,,
+236,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,19,-0.681957649426793,0.7313916627828644,,,
+237,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,20,-0.7026710174863288,0.7115148917519067,,,
+238,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,21,-0.7228052935310865,0.6910517402072293,,,
+239,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,22,-0.7423438843073371,0.6700190724386097,,,
+240,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,23,-0.7612706874832403,0.6484342220910265,,,
+241,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,24,-0.7612706874832403,0.6484342220910265,,,
+242,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,25,-0.7033946235443669,0.600161953802838,,,
+243,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,26,-0.6478560667565666,0.5559780010615399,,,
+244,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,27,-0.594597154473006,0.5159029869101579,,,
+245,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,28,-0.5435600240468503,0.4799575343917168,,,
+246,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,29,-0.4946868128312663,0.4481622665492422,,,
+247,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,30,-0.44791965817941953,0.42053780642575894,,,
+248,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,31,-0.40320069744447595,0.3971047770642922,,,
+249,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,32,-0.36047206797960196,0.3778838015078675,,,
+250,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,33,-0.3196759071379632,0.3628955027995098,,,
+251,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,34,-0.28075435227272566,0.3521605039822442,,,
+252,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,35,-0.24364954073705558,0.345699428099096,,,
+253,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,36,-0.20830360988411886,0.34353289819309046,,,
+254,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,37,-0.1746586970670813,0.3456815373072526,,,
+255,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,38,-0.14265693963910922,0.3521659684846077,,,
+256,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,39,-0.11224047495336828,0.3630068147681809,,,
+257,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,40,-0.08335144036302478,0.3782246992009975,,,
+258,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,41,-0.05593197322124457,0.39784024482608255,,,
+259,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,42,-0.02992421088119359,0.4218740746864613,,,
+260,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,43,-0.005270290696038009,0.450346811825159,,,
+261,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,44,0.018087649981056345,0.4832790792852008,,,
+262,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,45,0.04020747379692337,0.5206915001096117,,,
+263,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,46,0.06114704339839705,0.5626046973414172,,,
+264,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,47,0.08096422143231155,0.6090392940236424,,,
+265,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,48,0.09971687054550066,0.6600159131993122,,,
+266,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,49,0.1174628533847985,0.7155551779114521,,,
+267,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,50,0.13426003259703911,0.7756777112030874,,,
+268,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,51,0.1501662708290564,0.8404041361172426,,,
+269,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,52,0.1652394307276844,0.9097550756969436,,,
+270,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,53,0.1795373749397572,0.9837511529852155,,,
+271,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,54,0.1795373749397572,0.9837511529852155,,,
+272,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,55,0.20770167636955367,0.9781922171195584,,,
+273,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,56,0.23569480469095594,0.9718271240512337,,,
+274,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,57,0.2634936899371142,0.9646611194421199,,,
+275,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,58,0.29107542222265526,0.9567001090090368,,,
+276,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,59,0.31841727062439784,0.9479506536566705,,,
+277,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,60,0.34549670191457993,0.938419964070537,,,
+278,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,61,0.37229139913116,0.9281158947744421,,,
+279,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,62,0.3987792799698866,0.9170469376573365,,,
+280,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,63,0.4249385149829814,0.9052222149748969,,,
+281,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,64,0.4507475455694319,0.8926514718316062,,,
+282,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,65,0.47618510174207485,0.8793450681495233,,,
+283,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,66,0.5012302196568236,0.8653139701303639,,,
+284,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,67,0.5258622588895921,0.8505697412179295,,,
+285,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,68,0.5500609194466819,0.8351245325683295,,,
+286,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,69,0.573806258494607,0.8189910730358544,,,
+287,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,70,0.5970787067955752,0.8021826586827489,,,
+288,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,71,0.6198590848350767,0.7847131418215328,,,
+289,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,72,0.6421286186282911,0.7665969195989002,,,
+290,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,73,0.6638689551922836,0.7478489221306037,,,
+291,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,74,0.6850621776712433,0.7284846001971036,,,
+292,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,75,0.7056908201022951,0.7085199125101215,,,
+293,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,76,0.7257378818097168,0.6879713125605933,,,
+294,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,77,0.7451868414157006,0.6668557350588593,,,
+295,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,78,0.7451868414157006,0.6668557350588593,,,
+296,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,79,0.6885084889936448,0.6171826535210215,,,
+297,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,80,0.6340669728758245,0.57165382427284,,,
+298,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,81,0.581803943420761,0.5302884492710265,,,
+299,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,82,0.5316610509869755,0.4931057304722924,,,
+300,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,83,0.4835799459329894,0.46012486983335005,,,
+301,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,84,0.43750227861732377,0.4313650693109106,,,
+302,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,85,0.3933696993984998,0.40684553086168584,,,
+303,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,86,0.35112385863503914,0.38658545644238773,,,
+304,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,87,0.31070640668546273,0.3706040480097278,,,
+305,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,88,0.2720589939082917,0.35892050752041754,,,
+306,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,89,0.23512327066204775,0.3515540369311688,,,
+307,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,90,0.19984088730525182,0.3485238381986935,,,
+308,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,91,0.1661534941964252,0.3498491132797029,,,
+309,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,92,0.13400274169408932,0.3555490641309091,,,
+310,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,93,0.10333028015676521,0.3656428927090236,,,
+311,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,94,0.07407775994297437,0.3801498009707581,,,
+312,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,95,0.04618683141123789,0.39908899087282435,,,
+313,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,96,0.019599144920077027,0.42247966437193396,,,
+314,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,97,-0.005743649171986845,0.45034102342479876,,,
+315,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,98,-0.029899900506432583,0.4826922699881303,,,
+316,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,99,-0.05292795872473882,0.5195526060186404,,,
+317,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,100,-0.07488617346838432,0.5609412334730405,,,
+318,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,101,-0.09583289437884795,0.6068773543080428,,,
+319,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,102,-0.11582647109760827,0.6573801704803585,,,
+320,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,103,-0.13492525326614407,0.7124688839466994,,,
+321,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,104,-0.15318759052593423,0.7721626966637775,,,
+322,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,105,-0.17067183251845724,0.836480810588304,,,
+323,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,106,-0.18743632888519202,0.9054424276769909,,,
+324,ribbon,R2,Raw class 1,Grade class 1,648,Raw class 1,107,-0.20353942926761734,0.9790667498865502,,,
+325,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,0,-0.7612706874832403,0.6484342220910265,,,
+326,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,1,-0.7712335240215112,0.6365523163302143,,,
+327,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,2,-0.7810109268707588,0.624517359333172,,,
+328,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,3,-0.7906005451737874,0.6123322447584401,,,
+329,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,4,-0.8000000732239042,0.5999999023681153,,,
+330,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,5,-0.8092072510192977,0.5875232973234265,,,
+331,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,6,-0.8182198648064273,0.5749054294717975,,,
+332,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,7,-0.8270357476122944,0.5621493326255695,,,
+333,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,8,-0.835652779765464,0.5492580738325591,,,
+334,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,9,-0.8440688894057139,0.5362347526386225,,,
+335,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,10,-0.8522820529821873,0.5230825003424108,,,
+336,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,11,-0.860290295739933,0.5098044792424824,,,
+337,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,12,-0.8680916921947094,0.4964038818769712,,,
+338,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,13,-0.8756843665959436,0.4828839302559789,,,
+339,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,14,-0.883066493377734,0.46924787508688026,,,
+340,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,15,-0.8902362975977849,0.45549899499273133,,,
+341,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,16,-0.8971920553641682,0.44164059572396563,,,
+342,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,17,-0.9039320942498147,0.4276760093635649,,,
+343,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,18,-0.9104547936946275,0.4136085935259001,,,
+344,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,19,-0.916758585395125,0.39944173054943743,,,
+345,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,20,-0.9228419536815219,0.3851788266834924,,,
+346,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,21,-0.9287034358821528,0.37082331126924073,,,
+347,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,22,-0.9343416226751539,0.3563786359151744,,,
+348,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,23,-0.9397551584273166,0.341848273667206,,,
+349,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,24,-0.9397551584273166,0.341848273667206,,,
+350,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,25,-0.8676126780179066,0.3158360101196357,,,
+351,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,26,-0.7969300108033738,0.29082627175754716,,,
+352,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,27,-0.7275882033427344,0.2667915043379555,,,
+353,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,28,-0.6594683021950036,0.2437041536178755,,,
+354,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,29,-0.5924513539191981,0.22153666535432234,,,
+355,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,30,-0.5264184050743332,0.20026148530431082,,,
+356,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,31,-0.4612505022194246,0.17985105922485595,,,
+357,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,32,-0.39682869191348846,0.16027783287297276,,,
+358,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,33,-0.3330340207155403,0.14151425200567616,,,
+359,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,34,-0.26974753518459593,0.12353276237998118,,,
+360,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,35,-0.20685028187967144,0.10630580975290278,,,
+361,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,36,-0.14422330735978245,0.08980583988145593,,,
+362,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,37,-0.08174765818394465,0.07400529852265554,,,
+363,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,38,-0.0193043809111742,0.058876631433516693,,,
+364,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,39,0.04322547789951346,0.04439228437105426,,,
+365,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,40,0.10596087168910213,0.030524703092283296,,,
+366,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,41,0.1690207538985763,0.017246333354218733,,,
+367,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,42,0.23252407796892022,0.004529620913875532,,,
+368,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,43,0.29658979734111773,-0.007652988471731296,,,
+369,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,44,0.36133686545615334,-0.019329049045586823,,,
+370,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,45,0.426884235755011,-0.03052611505067602,,,
+371,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,46,0.4933508616786749,-0.04127174072998394,,,
+372,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,47,0.5608556966681297,-0.05159348032649565,,,
+373,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,48,0.6295176941643589,-0.06151888808319611,,,
+374,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,49,0.6994558076083469,-0.07107551824307036,,,
+375,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,50,0.7707889904410784,-0.08029092504910351,,,
+376,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,51,0.8436361961035368,-0.08919266274428045,,,
+377,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,52,0.9181163780367066,-0.0978082855715863,,,
+378,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,53,0.9943484896815725,-0.10616534777400609,,,
+379,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,54,0.9943484896815725,-0.10616534777400609,,,
+380,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,55,0.9925827937696743,-0.12157054541453761,,,
+381,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,56,0.9905784434381004,-0.13694651290102286,,,
+382,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,57,0.9883359206084278,-0.1522895532697219,,,
+383,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,58,0.9858557644679039,-0.1675959774738185,,,
+384,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,59,0.983138571339806,-0.18286210527040625,,,
+385,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,60,0.9801849945400621,-0.19808426610535826,,,
+386,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,61,0.9769957442201694,-0.21325879999586697,,,
+387,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,62,0.9735715871964472,-0.22838205841044232,,,
+388,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,63,0.9699133467656644,-0.2434504051461569,,,
+389,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,64,0.9660219025070893,-0.25846021720292606,,,
+390,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,65,0.9618981900710039,-0.2734078856546147,,,
+391,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,66,0.9575432009537395,-0.2882898165167589,,,
+392,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,67,0.9529579822592826,-0.3031024316106961,,,
+393,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,68,0.9481436364475124,-0.3178421694238942,,,
+394,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,69,0.9431013210691267,-0.3325054859662739,,,
+395,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,70,0.9378322484873239,-0.34708885562231795,,,
+396,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,71,0.9323376855863047,-0.3615887719987622,,,
+397,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,72,0.9266189534666651,-0.3760017487676651,,,
+398,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,73,0.9206774271277541,-0.3903243205046528,,,
+399,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,74,0.914514535137072,-0.40455304352213817,,,
+400,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,75,0.9081317592867884,-0.4186844966973134,,,
+401,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,76,0.9015306342374636,-0.43271528229471695,,,
+402,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,77,0.8947127471490582,-0.44664202678317827,,,
+403,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,78,0.8947127471490582,-0.44664202678317827,,,
+404,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,79,0.8261953079509264,-0.41219589695382497,,,
+405,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,80,0.7594098281994505,-0.37811912844702944,,,
+406,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,81,0.6942544597191443,-0.3443443706386044,,,
+407,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,82,0.6306273543345204,-0.31080427290436197,,,
+408,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,83,0.5684266638700924,-0.2774314846201148,,,
+409,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,84,0.5075505401503733,-0.24415865516167523,,,
+410,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,85,0.44789713499987605,-0.21091843390485548,,,
+411,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,86,0.38936460024311426,-0.17764347022546817,,,
+412,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,87,0.33185108770460064,-0.14426641349932562,,,
+413,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,88,0.27525474920884857,-0.11071991310224014,,,
+414,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,89,0.21947373658037128,-0.07693661841002436,,,
+415,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,90,0.16440620164368186,-0.04284917879849048,,,
+416,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,91,0.10995029622329332,-0.008390243643450875,,,
+417,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,92,0.05600417214371918,0.02650753767928181,,,
+418,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,93,0.0024659812294721417,0.061911515793895464,,,
+419,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,94,-0.050766124694934106,0.0978890413245774,,,
+420,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,95,-0.10379399380498679,0.13450746489551538,,,
+421,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,96,-0.15671947427617272,0.1718341371308971,,,
+422,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,97,-0.2096444142839785,0.2099364086549099,,,
+423,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,98,-0.2626706620038913,0.24888163009174163,,,
+424,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,99,-0.31590006561139755,0.28873715206557965,,,
+425,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,100,-0.36943447328198425,0.3295703252006117,,,
+426,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,101,-0.4233757331911385,0.3714485001210255,,,
+427,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,102,-0.47782569351434684,0.41443902745100825,,,
+428,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,103,-0.5328862024270961,0.4586092578147479,,,
+429,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,104,-0.5886591081048734,0.504026541836432,,,
+430,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,105,-0.6452462587231652,0.550758230140248,,,
+431,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,106,-0.7027495024574585,0.5988716733503836,,,
+432,ribbon,R3,Raw class 1,Merged into twin listing,350,Raw class 1,107,-0.7612706874832403,0.6484342220910265,,,
+433,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,0,-0.9397551584273166,0.341848273667206,,,
+434,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,1,-0.9400425816380532,0.34105709889586533,,,
+435,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,2,-0.940329338763174,0.3402656824618254,,,
+436,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,3,-0.9406154295994921,0.33947402492585943,,,
+437,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,4,-0.9409008539442915,0.33868212684891275,,,
+438,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,5,-0.9411856115953298,0.3378899887920994,,,
+439,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,6,-0.9414697023508359,0.33709761131670524,,,
+440,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,7,-0.941753126009512,0.3363049949841844,,,
+441,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,8,-0.9420358823705327,0.3355121403561604,,,
+442,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,9,-0.9423179712335453,0.33471904799442664,,,
+443,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,10,-0.9425993923986704,0.3339257184609436,,,
+444,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,11,-0.9428801456665012,0.3331321523178412,,,
+445,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,12,-0.9431602308381051,0.33233835012741514,,,
+446,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,13,-0.9434396477150214,0.3315443124521312,,,
+447,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,14,-0.9437183960992642,0.33075003985461937,,,
+448,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,15,-0.943996475793321,0.3299555328976768,,,
+449,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,16,-0.9442738866001528,0.32916079214426786,,,
+450,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,17,-0.9445506283231946,0.3283658181575212,,,
+451,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,18,-0.944826700766356,0.32757061150073086,,,
+452,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,19,-0.9451021037340201,0.3267751727373569,,,
+453,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,20,-0.945376837031045,0.32597950243102225,,,
+454,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,21,-0.9456509004627629,0.3251836011455156,,,
+455,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,22,-0.9459242938349807,0.32438746944478797,,,
+456,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,23,-0.9461970169539803,0.32359110789295364,,,
+457,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,24,-0.9461970169539803,0.32359110789295364,,,
+458,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,25,-0.8743186001990305,0.29816834289186067,,,
+459,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,26,-0.8054616603466805,0.2720587207451379,,,
+460,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,27,-0.7395581504488048,0.24518163079701905,,,
+461,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,28,-0.6765400235572778,0.21745646239173713,,,
+462,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,29,-0.6163392327239745,0.18880260487352568,,,
+463,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,30,-0.5588877310007688,0.15913944758661794,,,
+464,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,31,-0.5041174714395352,0.12838637987524723,,,
+465,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,32,-0.4519604070921488,0.09646279108364701,,,
+466,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,33,-0.4023484910104836,0.06328807055605051,,,
+467,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,34,-0.35521367624641403,0.028781607636691138,,,
+468,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,35,-0.31048791585181496,-0.007137208330197792,,,
+469,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,36,-0.26810316287856056,-0.04454898800038297,,,
+470,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,37,-0.22799137037852538,-0.08353434202963105,,,
+471,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,38,-0.19008449140358416,-0.12417388107370855,,,
+472,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,39,-0.1543144790056111,-0.16654821578838241,,,
+473,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,40,-0.12061328623648092,-0.21073795682941898,,,
+474,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,41,-0.08891286614806804,-0.2568237148525851,,,
+475,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,42,-0.05914517179224679,-0.30488610051364745,,,
+476,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,43,-0.031242156220891916,-0.35500572446837253,,,
+477,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,44,-0.005135772485877758,-0.40726319737252725,,,
+478,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,45,0.01924202636092108,-0.46173912988187804,,,
+479,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,46,0.04195928726763014,-0.5185141326521915,,,
+480,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,47,0.06308405718237504,-0.5776688163392347,,,
+481,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,48,0.0826843830532811,-0.6392837915987739,,,
+482,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,49,0.1008283118284739,-0.7034396690865757,,,
+483,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,50,0.11758389045607903,-0.7702170594584072,,,
+484,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,51,0.13301916588422186,-0.8396965733700347,,,
+485,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,52,0.14720218506102795,-0.9119588214772248,,,
+486,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,53,0.16020099493462284,-0.9870844144357447,,,
+487,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,54,0.16020099493462284,-0.9870844144357447,,,
+488,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,55,0.15937004437379274,-0.98721891642953,,,
+489,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,56,0.15853898088819052,-0.987352718909982,,,
+490,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,57,0.1577078050666827,-0.9874858217822924,,,
+491,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,58,0.15687651749821524,-0.9876182249521482,,,
+492,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,59,0.15604511877181323,-0.987749928325733,,,
+493,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,60,0.1552136094765808,-0.9878809318097255,,,
+494,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,61,0.15438199020169974,-0.9880112353113006,,,
+495,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,62,0.15355026153643042,-0.9881408387381294,,,
+496,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,63,0.1527184240701105,-0.9882697419983787,,,
+497,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,64,0.15188647839215472,-0.9883979450007115,,,
+498,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,65,0.15105442509205474,-0.9885254476542872,,,
+499,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,66,0.1502222647593776,-0.9886522498687612,,,
+500,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,67,0.14938999798376754,-0.9887783515542854,,,
+501,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,68,0.14855762535494318,-0.9889037526215079,,,
+502,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,69,0.1477251474626986,-0.9890284529815732,,,
+503,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,70,0.14689256489690247,-0.9891524525461226,,,
+504,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,71,0.1460598782474971,-0.9892757512272937,,,
+505,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,72,0.14522708810449922,-0.9893983489377208,,,
+506,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,73,0.14439419505799855,-0.989520245590535,,,
+507,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,74,0.14356119969815784,-0.9896414410993638,,,
+508,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,75,0.1427281026152125,-0.989761935378332,,,
+509,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,76,0.14189490439946936,-0.9898817283420608,,,
+510,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,77,0.14106160564130762,-0.9900008199056687,,,
+511,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,78,0.14106160564130762,-0.9900008199056687,,,
+512,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,79,0.1295196185850044,-0.9146376570852884,,,
+513,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,80,0.11673821150955745,-0.8421143769081858,,,
+514,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,81,0.10265091079382183,-0.7723490664775492,,,
+515,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,82,0.08719124281665258,-0.7052598128965656,,,
+516,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,83,0.07029273395690491,-0.6407647032684229,,,
+517,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,84,0.05188891059343388,-0.5787818246963085,,,
+518,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,85,0.031913299105094564,-0.5192292642834095,,,
+519,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,86,0.010299425870742084,-0.4620251091329142,,,
+520,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,87,-0.01301918273076846,-0.4070874463480097,,,
+521,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,88,-0.03810900032058196,-0.3543343630318834,,,
+522,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,89,-0.0650365005198433,-0.30368394628772316,,,
+523,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,90,-0.09386815694969744,-0.25505428321871637,,,
+524,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,91,-0.12467044323128924,-0.20836346092805041,,,
+525,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,92,-0.15750983298576351,-0.16352956651891315,,,
+526,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,93,-0.1924527998342654,-0.12047068709449174,,,
+527,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,94,-0.22956581739793946,-0.07910490975797405,,,
+528,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,95,-0.26891535929793087,-0.03935032161254741,,,
+529,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,96,-0.31056789915538446,-0.001125009761399301,,,
+530,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,97,-0.35458991059144507,0.03565293869228255,,,
+531,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,98,-0.40104786722725766,0.07106543664531079,,,
+532,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,99,-0.45000824268396705,0.10519439699449776,,,
+533,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,100,-0.5015375105827181,0.13812173263665595,,,
+534,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,101,-0.555702144544656,0.16992935646859794,,,
+535,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,102,-0.6125686181909253,0.20069918138713605,,,
+536,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,103,-0.672203405142671,0.2305131202890828,,,
+537,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,104,-0.7346729790210382,0.2594530860712508,,,
+538,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,105,-0.8000438134471715,0.2876009916304523,,,
+539,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,106,-0.8683823820422159,0.3150387498634998,,,
+540,ribbon,R4,Raw class 1,Dropped: exact duplicate,19,Raw class 1,107,-0.9397551584273166,0.341848273667206,,,
+541,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,0,-0.9569137860995085,0.29037218526006264,,,
+542,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,1,-0.9655842259548778,0.2600905661248011,,,
+543,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,2,-0.9732966585384496,0.22955089735805598,,,
+544,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,3,-0.9800434319372161,0.1987834789833485,,,
+545,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,4,-0.9858178523198127,0.16781883698665057,,,
+546,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,5,-0.9906141905778216,0.13668769302994052,,,
+547,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,6,-0.9944276880099243,0.10542093397061421,,,
+548,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,7,-0.9972545610432613,0.07404958121699502,,,
+549,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,8,-0.9990920049873149,0.0426047599503523,,,
+550,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,9,-0.9999381968165919,0.011117668243961213,,,
+551,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,10,-0.9997922969793431,-0.020380453890161455,,,
+552,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,11,-0.9986544502305276,-0.05185835549612667,,,
+553,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,12,-0.9965257854881934,-0.08328480567990276,,,
+554,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,13,-0.993408414713418,-0.11462862459514062,,,
+555,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,14,-0.9893054308149203,-0.14585871437834946,,,
+556,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,15,-0.9842209045804214,-0.1769440900027377,,,
+557,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,16,-0.978159880637801,-0.20785391002009787,,,
+558,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,17,-0.9711283724500541,-0.238557507160242,,,
+559,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,18,-0.9631333563490165,-0.2690244187576257,,,
+560,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,19,-0.954182764613776,-0.29922441697497104,,,
+561,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,20,-0.944285477600638,-0.3291275387939076,,,
+562,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,21,-0.9334513149324526,-0.3587041157428713,,,
+563,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,22,-0.9216910257560493,-0.38792480333276147,,,
+564,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,23,-0.909016278077435,-0.4167606101711717,,,
+565,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,24,-0.909016278077435,-0.4167606101711717,,,
+566,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,25,-0.8394083717968684,-0.3845870847662287,,,
+567,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,26,-0.77157014158868,-0.3526929108525918,,,
+568,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,27,-0.7053984453333905,-0.32101306710082883,,,
+569,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,28,-0.6407901409115194,-0.2894825321815069,,,
+570,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,29,-0.5776420862035875,-0.25803628476519386,,,
+571,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,30,-0.5158511390901143,-0.2266093035224571,,,
+572,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,31,-0.45531415745161985,-0.195136567123864,,,
+573,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,32,-0.3959279991686247,-0.16355305423998232,,,
+574,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,33,-0.3375895221216486,-0.1317937435413794,,,
+575,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,34,-0.2801955841912117,-0.09979361369862279,,,
+576,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,35,-0.2236430432578342,-0.06748764338228003,,,
+577,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,36,-0.1678287572020361,-0.034810811262918566,,,
+578,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,37,-0.11264958390433734,-0.001698096011105904,,,
+579,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,38,-0.05800238124525843,0.031915523702590314,,,
+580,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,39,-0.00378400710531894,0.0660950692076028,,,
+581,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,40,0.05010868063496059,0.1009055618333638,,,
+582,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,41,0.10377882409506026,0.13641202290930596,,,
+583,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,42,0.15732956539446014,0.1726794737648618,,,
+584,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,43,0.21086404665263986,0.20977293572946365,,,
+585,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,44,0.26448540998907955,0.2477574301325442,,,
+586,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,45,0.3182967975232589,0.28669797830353577,,,
+587,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,46,0.3724013513746579,0.32665960157187085,,,
+588,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,47,0.4269022136627567,0.3677073212669821,,,
+589,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,48,0.4819025265070348,0.4099061587183018,,,
+590,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,49,0.5375054320269723,0.4533211352552626,,,
+591,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,50,0.5938140723420494,0.49801727220729697,,,
+592,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,51,0.6509315895717455,0.5440595909038373,,,
+593,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,52,0.7089611258355407,0.591513112674316,,,
+594,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,53,0.7680058232529152,0.6404428588481661,,,
+595,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,54,0.7680058232529152,0.6404428588481661,,,
+596,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,55,0.7877952954253381,0.6159371498015883,,,
+597,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,56,0.8068031541440418,0.5908203368734235,,,
+598,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,57,0.8250105407052648,0.5651173397845854,,,
+599,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,58,0.8423993905960863,0.5388536598403526,,,
+600,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,59,0.8589524514171859,0.5120553546291717,,,
+601,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,60,0.8746532999998634,0.4847490121695442,,,
+602,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,61,0.8894863587003345,0.45696172453064354,,,
+603,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,62,0.9034369108551369,0.4287210609528385,,,
+604,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,63,0.9164911153823112,0.4000550404947888,,,
+605,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,64,0.9286360205138726,0.3709921042342525,,,
+606,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,65,0.9398595766459453,0.3415610870501856,,,
+607,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,66,0.9501506482938136,0.3117911890141314,,,
+608,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,67,0.9594990251400258,0.2817119464192816,,,
+609,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,68,0.9678954321645915,0.25135320247595533,,,
+610,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,69,0.9753315388472202,0.22074507770256904,,,
+611,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,70,0.9817999674324721,0.1899179400414737,,,
+612,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,71,0.9872943002496194,0.1589023747293108,,,
+613,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,72,0.9918090860799587,0.12772915395177817,,,
+614,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,73,0.9953398455652529,0.09642920631291418,,,
+615,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,74,0.9978830756519402,0.06503358614919087,,,
+616,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,75,0.9994362530666993,0.033573442718861264,,,
+617,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,76,0.9999978368199223,0.0020799892971303147,,,
+618,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,77,0.9995672697346122,-0.029415527792190012,,,
+619,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,78,0.9995672697346122,-0.029415527792190012,,,
+620,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,79,0.9229240295429896,-0.026923523242455272,,,
+621,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,80,0.8480193551469234,-0.023998876078817916,,,
+622,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,81,0.7747329168246644,-0.020621918353859937,,,
+623,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,82,0.7029443848544625,-0.016772982120163284,,,
+624,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,83,0.632533429514569,-0.01243239943030994,,,
+625,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,84,0.5633797210832336,-0.007580502336881865,,,
+626,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,85,0.4953629298387066,-0.002197622892461024,,,
+627,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,86,0.42836272605923875,0.003735906850370606,,,
+628,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,87,0.3622587800230803,0.010239754839031067,,,
+629,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,88,0.2969307620084816,0.017333589020938386,,,
+630,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,89,0.23225834229369322,0.02503707734351058,,,
+631,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,90,0.16812119115696542,0.03336988775416572,,,
+632,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,91,0.10439897887654839,0.0423516882003218,,,
+633,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,92,0.04097137573069301,0.05200214662939684,,,
+634,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,93,-0.022281948002350907,0.06234093098880894,,,
+635,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,94,-0.08548132204433236,0.07338770922597605,,,
+636,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,95,-0.1487470761170014,0.08516214928831625,,,
+637,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,96,-0.2121995399421076,0.09768391912324759,,,
+638,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,97,-0.2759590432414003,0.11097268667818805,,,
+639,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,98,-0.34014591573662945,0.1250481199005557,,,
+640,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,99,-0.4048804871495444,0.13992988673776857,,,
+641,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,100,-0.4702830872018947,0.15563765513724462,,,
+642,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,101,-0.5364740456154303,0.172191093046402,,,
+643,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,102,-0.6035736921119006,0.18960986841265867,,,
+644,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,103,-0.671702356413055,0.20791364918343264,,,
+645,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,104,-0.7409803682406436,0.22712210330614205,,,
+646,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,105,-0.8115280573164154,0.24725489872820477,,,
+647,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,106,-0.8834657533621204,0.26833170339703893,,,
+648,ribbon,R5,Raw class 2,Grade class 2,711,Raw class 2,107,-0.9569137860995085,0.29037218526006264,,,
+649,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,0,-0.909016278077435,-0.4167606101711717,,,
+650,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,1,-0.9088869867978279,-0.4170424981096831,,,
+651,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,2,-0.908757608104156,-0.4173243459382802,,,
+652,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,3,-0.9086281420088629,-0.4176061536298546,,,
+653,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,4,-0.9084985885244002,-0.41788792115730317,,,
+654,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,5,-0.908368947663228,-0.41816964849352684,,,
+655,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,6,-0.908239219437815,-0.4184513356114286,,,
+656,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,7,-0.9081094038606378,-0.418732982483918,,,
+657,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,8,-0.9079795009441816,-0.4190145890839065,,,
+658,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,9,-0.90784951070094,-0.4192961553843104,,,
+659,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,10,-0.9077194331434157,-0.41957768135804846,,,
+660,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,11,-0.9075892682841186,-0.4198591669780454,,,
+661,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,12,-0.9074590161355676,-0.4201406122172288,,,
+662,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,13,-0.9073286767102902,-0.4204220170485293,,,
+663,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,14,-0.9071982500208221,-0.4207033814448822,,,
+664,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,15,-0.9070677360797068,-0.4209847053792279,,,
+665,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,16,-0.9069371348994975,-0.4212659888245083,,,
+666,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,17,-0.9068064464927545,-0.4215472317536708,,,
+667,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,18,-0.9066756708720474,-0.42182843413966625,,,
+668,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,19,-0.9065448080499535,-0.4221095959554495,,,
+669,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,20,-0.906413858039059,-0.42239071717397925,,,
+670,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,21,-0.9062828208519582,-0.422671797768218,,,
+671,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,22,-0.9061516965012537,-0.4229528377111327,,,
+672,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,23,-0.9060204849995572,-0.4232338369756925,,,
+673,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,24,-0.9060204849995572,-0.4232338369756925,,,
+674,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,25,-0.8364322945950472,-0.3912052519375252,,,
+675,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,26,-0.7681790429609413,-0.36077899512967015,,,
+676,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,27,-0.7011436310613067,-0.33193298988844555,,,
+677,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,28,-0.6352089598602102,-0.304645159550169,,,
+678,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,29,-0.5702579303217192,-0.2788934274511589,,,
+679,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,30,-0.5061734434099007,-0.254655716927733,,,
+680,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,31,-0.4428384000888214,-0.231909951316209,,,
+681,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,32,-0.38013570132254887,-0.2106340539529053,,,
+682,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,33,-0.3179482480751498,-0.19080594817413957,,,
+683,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,34,-0.2561589413106914,-0.17240355731622983,,,
+684,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,35,-0.19465068199324076,-0.15540480471549412,,,
+685,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,36,-0.13330637108686483,-0.13978761370825032,,,
+686,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,37,-0.07200890955563062,-0.12552990763081634,,,
+687,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,38,-0.010641198363605484,-0.11260960981951026,,,
+688,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,39,0.05091386152514395,-0.10100464361064995,,,
+689,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,40,0.11277336914655013,-0.09069293234055344,,,
+690,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,41,0.17505442353654638,-0.08165239934553863,,,
+691,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,42,0.2378741237310656,-0.07386096796192344,,,
+692,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,43,0.3013495687660405,-0.06729656152602592,,,
+693,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,44,0.3655978576774044,-0.061937103374164,,,
+694,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,45,0.43073608950108977,-0.0577605168426556,,,
+695,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,46,0.4968813632730298,-0.05474472526781871,,,
+696,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,47,0.5641507780291576,-0.052867651985971285,,,
+697,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,48,0.6326614328054058,-0.05210722033343127,,,
+698,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,49,0.7025304266377073,-0.052441353646516635,,,
+699,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,50,0.7738748585619956,-0.05384797526154533,,,
+700,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,51,0.8468118276142029,-0.05630500851483531,,,
+701,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,52,0.9214584328302625,-0.05979037674270453,,,
+702,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,53,0.9979317732461077,-0.06428200328147098,,,
+703,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,54,0.9979317732461077,-0.06428200328147098,,,
+704,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,55,0.9979117898498048,-0.06459148302027971,,,
+705,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,56,0.9978917104772949,-0.06490095654687049,,,
+706,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,57,0.9978715351305091,-0.06521042383147907,,,
+707,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,58,0.997851263811388,-0.06551988484434178,,,
+708,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,59,0.9978308965218811,-0.06582933955569559,,,
+709,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,60,0.9978104332639472,-0.06613878793577804,,,
+710,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,61,0.9977898740395547,-0.06644822995482735,,,
+711,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,62,0.9977692188506806,-0.06675766558308224,,,
+712,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,63,0.9977484676993116,-0.06706709479078216,,,
+713,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,64,0.9977276205874435,-0.06737651754816706,,,
+714,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,65,0.9977066775170812,-0.06768593382547763,,,
+715,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,66,0.9976856384902391,-0.0679953435929551,,,
+716,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,67,0.9976645035089405,-0.06830474682084137,,,
+717,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,68,0.9976432725752182,-0.06861414347937893,,,
+718,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,69,0.9976219456911142,-0.06892353353881094,,,
+719,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,70,0.9976005228586795,-0.06923291696938116,,,
+720,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,71,0.9975790040799746,-0.06954229374133403,,,
+721,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,72,0.9975573893570691,-0.06985166382491459,,,
+722,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,73,0.9975356786920417,-0.07016102719036854,,,
+723,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,74,0.9975138720869807,-0.07047038380794225,,,
+724,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,75,0.9974919695439832,-0.07077973364788268,,,
+725,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,76,0.9974699710651559,-0.07108907668043751,,,
+726,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,77,0.9974478766526144,-0.071398412875855,,,
+727,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,78,0.9974478766526144,-0.071398412875855,,,
+728,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,79,0.9210085194814148,-0.06636143177848774,,,
+729,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,80,0.8463886736038438,-0.06234371312560726,,,
+730,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,81,0.7734710854944564,-0.059366497775631036,,,
+731,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,82,0.702138501627806,-0.057451026586976456,,,
+732,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,83,0.6322736684784478,-0.05661854041806102,,,
+733,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,84,0.5637593325209355,-0.05689028012730212,,,
+734,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,85,0.49647824022982334,-0.058287486573117206,,,
+735,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,86,0.4303131380796662,-0.06083140061392376,,,
+736,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,87,0.3651467725450179,-0.06454326310813918,,,
+737,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,88,0.30086189010043274,-0.0694443149141809,,,
+738,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,89,0.23734123722046532,-0.0755557968904664,,,
+739,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,90,0.17446756037966987,-0.08289894989541312,,,
+740,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,91,0.11212360605260036,-0.09149501478743846,,,
+741,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,92,0.050192120713811586,-0.10136523242495989,,,
+742,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,93,-0.01144414916214262,-0.11253084366639488,,,
+743,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,94,-0.07290245710070749,-0.12501308937016076,,,
+744,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,95,-0.13430005662732902,-0.1388332103946751,,,
+745,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,96,-0.19575420126745297,-0.1540124475983553,,,
+746,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,97,-0.25738214454652475,-0.1705720418396188,,,
+747,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,98,-0.3193011399899903,-0.188533233976883,,,
+748,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,99,-0.3816284411232952,-0.20791726486856538,,,
+749,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,100,-0.444481301471885,-0.22874537537308337,,,
+750,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,101,-0.5079769745612058,-0.2510388063488545,,,
+751,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,102,-0.5722327139167029,-0.27481879865429604,,,
+752,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,103,-0.6373657730638221,-0.30010659314782545,,,
+753,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,104,-0.7034934055280094,-0.3269234306878604,,,
+754,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,105,-0.7707328648347102,-0.35529055213281807,,,
+755,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,106,-0.83920140450937,-0.385229198341116,,,
+756,ribbon,R6,Raw class 2,Unmeasured TS (excluded),7,Raw class 2,107,-0.909016278077435,-0.4167606101711717,,,
+757,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,0,-0.9060204849995572,-0.4232338369756925,,,
+758,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,1,-0.8890181817603721,-0.4578718952933037,,,
+759,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,2,-0.8706922429987354,-0.49182824032565586,,,
+760,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,3,-0.8510699537173892,-0.5250523153738882,,,
+761,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,4,-0.8301805290208807,-0.5574946539964403,,,
+762,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,5,-0.8080550706179709,-0.58910695365832,,,
+763,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,6,-0.784726520515126,-0.6198421476474664,,,
+764,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,7,-0.7602296119700418,-0.649654475151122,,,
+765,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,8,-0.7346008177782203,-0.67849954938789,,,
+766,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,9,-0.7078782959695936,-0.7063344236940349,,,
+767,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,10,-0.6801018329960485,-0.733117655465625,,,
+768,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,11,-0.6513127844944382,-0.7588093678613236,,,
+769,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,12,-0.6215540137132707,-0.7833713091739596,,,
+770,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,13,-0.5908698276947639,-0.8067669097824725,,,
+771,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,14,-0.5593059113072634,-0.828961336599453,,,
+772,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,15,-0.5269092592262621,-0.8499215449331966,,,
+773,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,16,-0.49372810596527356,-0.8696163276870689,,,
+774,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,17,-0.45981185406075176,-0.8880163618229193,,,
+775,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,18,-0.42521100051796723,-0.9050942520193735,,,
+776,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,19,-0.3899770616273566,-0.9208245714600001,,,
+777,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,20,-0.3541624962632928,-0.9351838996906187,,,
+778,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,21,-0.3178206277794601,-0.9481508574893923,,,
+779,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,22,-0.2810055646171287,-0.9597061386977832,,,
+780,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,23,-0.24377211974454194,-0.9698325389649766,,,
+781,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,24,-0.24377211974454194,-0.9698325389649766,,,
+782,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,25,-0.22448398452600338,-0.8967096458591909,,,
+783,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,26,-0.20439960684637373,-0.8278107706830758,,,
+784,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,27,-0.18344896631529928,-0.7631037355790624,,,
+785,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,28,-0.16156204254242593,-0.7025563626895798,,,
+786,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,29,-0.1386688151374001,-0.6461364741570591,,,
+787,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,30,-0.11469926370986766,-0.5938118921239297,,,
+788,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,31,-0.08958336786947488,-0.5455504387326214,,,
+789,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,32,-0.06325110722586791,-0.5013199361255651,,,
+790,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,33,-0.03563246138869283,-0.46108820644519044,,,
+791,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,34,-0.006657409967595791,-0.4248230718339274,,,
+792,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,35,0.023744067427777016,-0.3924923544342063,,,
+793,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,36,0.055641991187779544,-0.3640638763884572,,,
+794,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,37,0.08910638170276564,-0.33950545983911,,,
+795,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,38,0.12420725936308905,-0.31878492692859495,,,
+796,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,39,0.1610146445591039,-0.3018700997993421,,,
+797,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,40,0.19959855768116372,-0.2887288005937815,,,
+798,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,41,0.2400290191196226,-0.2793288514543433,,,
+799,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,42,0.2823760492648344,-0.27363807452345745,,,
+800,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,43,0.3267096685071529,-0.2716242919435542,,,
+801,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,44,0.37309989723693204,-0.2732553258570635,,,
+802,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,45,0.42161675584452557,-0.2784989984064155,,,
+803,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,46,0.47233026472028733,-0.2873231317340403,,,
+804,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,47,0.5253104442545715,-0.29969554798236797,,,
+805,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,48,0.5806273148377316,-0.3155840692938285,,,
+806,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,49,0.6383508968601216,-0.33495651781085206,,,
+807,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,50,0.6985512107120955,-0.3577807156758688,,,
+808,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,51,0.7612982767840069,-0.3840244850313086,,,
+809,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,52,0.8266621154662097,-0.4136556480196017,,,
+810,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,53,0.8947127471490582,-0.44664202678317827,,,
+811,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,54,0.8947127471490582,-0.44664202678317827,,,
+812,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,55,0.876815803326314,-0.48082642090179545,,,
+813,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,56,0.8576133917777787,-0.5142949253525785,,,
+814,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,57,0.8371341024632121,-0.5469977097695312,,,
+815,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,58,0.8154084264517144,-0.5788860838468473,,,
+816,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,59,0.7924687105243843,-0.6099125698326111,,,
+817,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,60,0.7683491090140566,-0.6400309732171603,,,
+818,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,61,0.743085532953826,-0.6691964515108613,,,
+819,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,62,0.7167155966100631,-0.6973655810089004,,,
+820,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,63,0.6892785614795355,-0.7244964214436826,,,
+821,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,64,0.660815277834009,-0.7505485784285795,,,
+822,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,65,0.6313681238993644,-0.7754832636000579,,,
+823,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,66,0.6009809427597843,-0.7992633523686425,,,
+824,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,67,0.569698977080952,-0.8218534391927291,,,
+825,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,68,0.5375688017494494,-0.8432198902929539,,,
+826,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,69,0.5046382545286467,-0.8633308937286333,,,
+827,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,70,0.47095636483433084,-0.8821565067617155,,,
+828,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,71,0.4365732807361111,-0.8996687004377271,,,
+829,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,72,0.4015401942932918,-0.915841401317338,,,
+830,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,73,0.36590926533637863,-0.9306505302964113,,,
+831,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,74,0.3297335438076935,-0.9440740384567409,,,
+832,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,75,0.29306689077672626,-0.9560919398940995,,,
+833,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,76,0.2559638982478216,-0.9666863414747199,,,
+834,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,77,0.21847980787959573,-0.9758414694759057,,,
+835,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,78,0.21847980787959573,-0.9758414694759057,,,
+836,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,79,0.2010989552230964,-0.9022419068596655,,,
+837,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,80,0.18281232954387058,-0.8328442372404358,,,
+838,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,81,0.16355077054673134,-0.7676144735154763,,,
+839,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,82,0.14324511793649128,-0.7065186285820451,,,
+840,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,83,0.12182621141796353,-0.6495227153374021,,,
+841,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,84,0.09922489069596085,-0.5965927466788058,,,
+842,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,85,0.07537199547529615,-0.547694735503515,,,
+843,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,86,0.0501983654607823,-0.5027946947087892,,,
+844,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,87,0.02363484035723216,-0.46185863719188724,,,
+845,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,88,-0.004387740130541391,-0.42485257585006786,,,
+846,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,89,-0.03393853629772542,-0.39174252358059036,,,
+847,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,90,-0.06508670843950713,-0.36249449328071365,,,
+848,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,91,-0.09790141685107365,-0.3370744978476965,,,
+849,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,92,-0.13245182182761192,-0.31544855017879825,,,
+850,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,93,-0.16880708366430938,-0.29758266317127774,,,
+851,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,94,-0.2070363626563528,-0.283442849722394,,,
+852,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,95,-0.24720881909892956,-0.27299512272940596,,,
+853,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,96,-0.2893936132872268,-0.26620549508957264,,,
+854,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,97,-0.3336599055164314,-0.2630399797001531,,,
+855,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,98,-0.3800768560817307,-0.26346458945840623,,,
+856,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,99,-0.42871362527831164,-0.2674453372615912,,,
+857,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,100,-0.4796393734013614,-0.27494823600696683,,,
+858,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,101,-0.5329232607460674,-0.28593929859179223,,,
+859,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,102,-0.5886344476076164,-0.3003845379133263,,,
+860,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,103,-0.6468420942811955,-0.31824996686882806,,,
+861,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,104,-0.7076153610619922,-0.33950159835555666,,,
+862,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,105,-0.7710234082451932,-0.3641054452707709,,,
+863,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,106,-0.8371353961259856,-0.39202752051172973,,,
+864,ribbon,R7,Raw class 2,Merged into twin listing,871,Raw class 2,107,-0.9060204849995572,-0.4232338369756925,,,
+865,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,0,-0.24377211974454194,-0.9698325389649766,,,
+866,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,1,-0.24295566161278032,-0.9700373943772973,,,
+867,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,2,-0.24213903133001763,-0.9702415624505892,,,
+868,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,3,-0.24132222947489418,-0.970445043040185,,,
+869,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,4,-0.2405052566261692,-0.9706478360019047,,,
+870,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,5,-0.23968811336272575,-0.9708499411920553,,,
+871,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,6,-0.23887080026356752,-0.9710513584674308,,,
+872,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,7,-0.23805331790781606,-0.9712520876853137,,,
+873,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,8,-0.23723566687471537,-0.971452128703473,,,
+874,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,9,-0.23641784774362903,-0.9716514813801655,,,
+875,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,10,-0.23559986109403705,-0.9718501455741366,,,
+876,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,11,-0.23478170750554084,-0.9720481211446184,,,
+877,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,12,-0.23396338755785914,-0.9722454079513315,,,
+878,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,13,-0.2331449018308295,-0.9724420058544843,,,
+879,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,14,-0.23232625090440429,-0.9726379147147739,,,
+880,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,15,-0.23150743535865556,-0.972833134393385,,,
+881,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,16,-0.23068845577377198,-0.9730276647519908,,,
+882,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,17,-0.2298693127300559,-0.9732215056527531,,,
+883,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,18,-0.22905000680792803,-0.9734146569583222,,,
+884,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,19,-0.22823053858792455,-0.9736071185318367,,,
+885,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,20,-0.22741090865069402,-0.9737988902369245,,,
+886,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,21,-0.22659111757700215,-0.9739899719377019,,,
+887,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,22,-0.225771165947728,-0.974180363498774,,,
+888,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,23,-0.22495105434386525,-0.9743700647852351,,,
+889,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,24,-0.22495105434386525,-0.9743700647852351,,,
+890,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,25,-0.20776962604397944,-0.9013933034686591,,,
+891,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,26,-0.19111653194773215,-0.8336590152930436,,,
+892,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,27,-0.17496926112847722,-0.7711681615988575,,,
+893,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,28,-0.15930530265956802,-0.7139217037265683,,,
+894,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,29,-0.14410214561435855,-0.6619206030166451,,,
+895,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,30,-0.1293372790662022,-0.6151658208095557,,,
+896,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,31,-0.11498819208845269,-0.5736583184457682,,,
+897,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,32,-0.10103237375446374,-0.5373990572657514,,,
+898,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,33,-0.08744731313758894,-0.5063889986099732,,,
+899,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,34,-0.07421049931118193,-0.48062910381890195,,,
+900,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,35,-0.0612994213485964,-0.46012033423300586,,,
+901,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,36,-0.048691568323185996,-0.4448636511927534,,,
+902,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,37,-0.036364429308304344,-0.4348600160386125,,,
+903,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,38,-0.024295493377305168,-0.43011039011105173,,,
+904,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,39,-0.01246224960354202,-0.43061573475053927,,,
+905,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,40,-0.0008421870603686522,-0.4363770112975434,,,
+906,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,41,0.010587205178861348,-0.4473951810925324,,,
+907,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,42,0.02184843804079433,-0.4636712054759745,,,
+908,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,43,0.032964022452076594,-0.4852060457883379,,,
+909,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,44,0.043956469339354536,-0.5120006633700911,,,
+910,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,45,0.05484828962927446,-0.5440560195617022,,,
+911,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,46,0.06566199424848272,-0.5813730757036394,,,
+912,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,47,0.07642009412362571,-0.6239527931363713,,,
+913,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,48,0.08714510018134973,-0.6717961332003657,,,
+914,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,49,0.09785952334830113,-0.7249040572360911,,,
+915,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,50,0.1085858745511263,-0.783277526584016,,,
+916,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,51,0.11934666471647151,-0.8469175025846083,,,
+917,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,52,0.13016440477098315,-0.9158249465783364,,,
+918,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,53,0.14106160564130762,-0.9900008199056687,,,
+919,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,54,0.14106160564130762,-0.9900008199056687,,,
+920,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,55,0.14022820693117746,-0.9901192099847709,,,
+921,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,56,0.13939470885960012,-0.9902368984954799,,,
+922,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,57,0.1385611120171665,-0.9903538853544052,,,
+923,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,58,0.1377274169945383,-0.9904701704786533,,,
+924,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,59,0.13689362438244645,-0.9905857537858284,,,
+925,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,60,0.1360597347716911,-0.9907006351940313,,,
+926,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,61,0.13522574875314125,-0.9908148146218607,,,
+927,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,62,0.13439166691773366,-0.9909282919884127,,,
+928,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,63,0.1335574898564736,-0.9910410672132804,,,
+929,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,64,0.1327232181604336,-0.991153140216555,,,
+930,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,65,0.13188885242075318,-0.9912645109188247,,,
+931,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,66,0.13105439322863865,-0.9913751792411758,,,
+932,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,67,0.13021984117536237,-0.9914851451051919,,,
+933,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,68,0.1293851968522626,-0.9915944084329547,,,
+934,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,69,0.12855046085074295,-0.9917029691470434,,,
+935,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,70,0.12771563376227202,-0.9918108271705351,,,
+936,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,71,0.1268807161783831,-0.9919179824270052,,,
+937,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,72,0.12604570869067297,-0.9920244348405265,,,
+938,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,73,0.12521061189080285,-0.9921301843356701,,,
+939,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,74,0.12437542637049692,-0.9922352308375051,,,
+940,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,75,0.1235401527215425,-0.9923395742715988,,,
+941,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,76,0.1227047915357887,-0.9924432145640165,,,
+942,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,77,0.12186934340514727,-0.9925461516413221,,,
+943,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,78,0.12186934340514727,-0.9925461516413221,,,
+944,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,79,0.11241018548188281,-0.9181732163619923,,,
+945,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,80,0.10292847983106226,-0.849069261369626,,,
+946,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,81,0.09340173835580907,-0.7852328897057992,,,
+947,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,82,0.08380747295924652,-0.7266627044120868,,,
+948,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,83,0.07412319554449803,-0.673357308530065,,,
+949,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,84,0.06432641801468689,-0.6253153051013088,,,
+950,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,85,0.054394652272936446,-0.5825352971673937,,,
+951,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,86,0.04430541022237012,-0.5450158877698957,,,
+952,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,87,0.03403620376611122,-0.5127556799503901,,,
+953,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,88,0.02356454480728308,-0.48575327675045205,,,
+954,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,89,0.012867945249009107,-0.4640072812116576,,,
+955,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,90,0.001923916994412616,-0.44751629637558216,,,
+956,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,91,-0.00929002805338305,-0.43627892528380097,,,
+957,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,92,-0.020796377991254472,-0.4302937709778898,,,
+958,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,93,-0.032617620916078394,-0.4295594364994241,,,
+959,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,94,-0.044776244924731354,-0.43407452488997955,,,
+960,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,95,-0.05729473811409008,-0.4438376391911315,,,
+961,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,96,-0.07019558858103121,-0.4588473824444555,,,
+962,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,97,-0.08350128442243135,-0.4791023576915271,,,
+963,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,98,-0.0972343137351672,-0.5046011679739218,,,
+964,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,99,-0.11141716461611534,-0.5353424163332152,,,
+965,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,100,-0.12607232516215244,-0.5713247058109827,,,
+966,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,101,-0.14122228347015525,-0.6125466394488001,,,
+967,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,102,-0.15688952763700026,-0.6590068202882425,,,
+968,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,103,-0.17309654575956412,-0.7107038513708857,,,
+969,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,104,-0.18986582593472368,-0.7676363357383051,,,
+970,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,105,-0.20721985625935532,-0.8298028764320765,,,
+971,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,106,-0.22518112483033584,-0.8972020764937749,,,
+972,ribbon,R8,Raw class 2,Dropped: exact duplicate,19,Raw class 2,107,-0.24377211974454194,-0.9698325389649766,,,
+973,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,0,-0.13283758431161063,1.081875305289041,Raw class 0 (47),-0.17471959784573604,1.187212307099545
+974,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,1,-0.1346240650942105,1.0816544554974614,,-0.17471959784573604,1.187212307099545
+975,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,2,-0.13641017871851374,1.0814306557250832,,-0.17471959784573604,1.187212307099545
+976,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,3,-0.13819592031327846,1.0812039065822718,,-0.17471959784573604,1.187212307099545
+977,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,4,-0.1399812850082772,1.0809742086874374,,-0.17471959784573604,1.187212307099545
+978,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,5,-0.14176626793430974,1.0807415626670318,,-0.17471959784573604,1.187212307099545
+979,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,6,-0.1435508642232179,1.0805059691555468,,-0.17471959784573604,1.187212307099545
+980,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,7,-0.14533506900789772,1.0802674287955134,,-0.17471959784573604,1.187212307099545
+981,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,8,-0.1471188774223125,1.0800259422374996,,-0.17471959784573604,1.187212307099545
+982,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,9,-0.14890228460150745,1.0797815101401078,,-0.17471959784573604,1.187212307099545
+983,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,10,-0.15068528568162098,1.0795341331699746,,-0.17471959784573604,1.187212307099545
+984,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,11,-0.15246787579989995,1.0792838120017674,,-0.17471959784573604,1.187212307099545
+985,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,12,-0.1542500500947119,1.0790305473181838,,-0.17471959784573604,1.187212307099545
+986,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,13,-0.15603180370555778,1.0787743398099487,,-0.17471959784573604,1.187212307099545
+987,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,14,-0.15781313177308662,1.0785151901758132,,-0.17471959784573604,1.187212307099545
+988,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,15,-0.15959402943910814,1.0782530991225525,,-0.17471959784573604,1.187212307099545
+989,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,16,-0.16137449184660455,1.077988067364964,,-0.17471959784573604,1.187212307099545
+990,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,17,-0.16315451413974658,1.0777200956258648,,-0.17471959784573604,1.187212307099545
+991,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,18,-0.16493409146390497,1.0774491846360905,,-0.17471959784573604,1.187212307099545
+992,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,19,-0.16671321896566335,1.0771753351344928,,-0.17471959784573604,1.187212307099545
+993,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,20,-0.16849189179283292,1.0768985478679376,,-0.17471959784573604,1.187212307099545
+994,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,21,-0.1702701050944647,1.0766188235913026,,-0.17471959784573604,1.187212307099545
+995,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,22,-0.17204785402086248,1.076336163067476,,-0.17471959784573604,1.187212307099545
+996,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,23,-0.17382513372359742,1.0760505670673537,,-0.17471959784573604,1.187212307099545
+997,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,24,-0.17560193935551935,1.0757620363698381,,-0.17471959784573604,1.187212307099545
+998,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,25,-0.1773782660707718,1.0754705717618342,,-0.17471959784573604,1.187212307099545
+999,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,26,-0.1791541090248045,1.0751761740382497,,-0.17471959784573604,1.187212307099545
+1000,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,27,-0.1809294633743857,1.0748788440019912,,-0.17471959784573604,1.187212307099545
+1001,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,28,-0.18270432427761704,1.0745785824639627,,-0.17471959784573604,1.187212307099545
+1002,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,29,-0.18447868689394586,1.074275390243063,,-0.17471959784573604,1.187212307099545
+1003,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,30,-0.1726314317723163,1.005285227566903,,-0.17471959784573604,1.187212307099545
+1004,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,31,-0.17097101904877923,1.0055689487277448,,-0.17471959784573604,1.187212307099545
+1005,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,32,-0.169310140038416,1.0058499274147075,,-0.17471959784573604,1.187212307099545
+1006,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,33,-0.16764879927091794,1.0061281628614813,,-0.17471959784573604,1.187212307099545
+1007,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,34,-0.165987001277236,1.0064036543092394,,-0.17471959784573604,1.187212307099545
+1008,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,35,-0.16432475058956855,1.0066764010066374,,-0.17471959784573604,1.187212307099545
+1009,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,36,-0.16266205174134804,1.0069464022098173,,-0.17471959784573604,1.187212307099545
+1010,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,37,-0.16099890926722912,1.0072136571824086,,-0.17471959784573604,1.187212307099545
+1011,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,38,-0.15933532770307704,1.0074781651955307,,-0.17471959784573604,1.187212307099545
+1012,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,39,-0.1576713115859537,1.0077399255277946,,-0.17471959784573604,1.187212307099545
+1013,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,40,-0.156006865454107,1.0079989374653051,,-0.17471959784573604,1.187212307099545
+1014,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,41,-0.15434199384695693,1.0082552003016627,,-0.17471959784573604,1.187212307099545
+1015,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,42,-0.15267670130508393,1.0085087133379653,,-0.17471959784573604,1.187212307099545
+1016,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,43,-0.1510109923702171,1.0087594758828102,,-0.17471959784573604,1.187212307099545
+1017,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,44,-0.14934487158522045,1.0090074872522967,,-0.17471959784573604,1.187212307099545
+1018,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,45,-0.14767834349408104,1.009252746770027,,-0.17471959784573604,1.187212307099545
+1019,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,46,-0.1460114126418981,1.0094952537671078,,-0.17471959784573604,1.187212307099545
+1020,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,47,-0.144344083574868,1.0097350075821536,,-0.17471959784573604,1.187212307099545
+1021,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,48,-0.14267636084027335,1.0099720075612868,,-0.17471959784573604,1.187212307099545
+1022,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,49,-0.141008248986471,1.0102062530581413,,-0.17471959784573604,1.187212307099545
+1023,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,50,-0.1393397525628785,1.0104377434338623,,-0.17471959784573604,1.187212307099545
+1024,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,51,-0.13767087611996215,1.0106664780571097,,-0.17471959784573604,1.187212307099545
+1025,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,52,-0.13600162420922537,1.0108924563040584,,-0.17471959784573604,1.187212307099545
+1026,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,53,-0.1343320013831947,1.0111156775584016,,-0.17471959784573604,1.187212307099545
+1027,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,54,-0.13266201219540913,1.0113361412113508,,-0.17471959784573604,1.187212307099545
+1028,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,55,-0.13099166120040617,1.0115538466616387,,-0.17471959784573604,1.187212307099545
+1029,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,56,-0.12932095295371013,1.0117687933155204,,-0.17471959784573604,1.187212307099545
+1030,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,57,-0.1276498920118202,1.011980980586775,,-0.17471959784573604,1.187212307099545
+1031,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,58,-0.12597848293219696,1.012190407896707,,-0.17471959784573604,1.187212307099545
+1032,arc,A_source_Raw class 0,Raw class 0,,47,Raw class 0,59,-0.12430673027325032,1.0123970746741486,,-0.17471959784573604,1.187212307099545
+1033,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,0,-0.22185797790170292,1.0671827573763397,Raw class 1 (1017),-0.7940750573378986,0.8996915045246415
+1034,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,1,-0.25984353427218865,1.0585751450402272,,-0.7940750573378986,0.8996915045246415
+1035,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,2,-0.29749731642496013,1.0486159195434464,,-0.7940750573378986,0.8996915045246415
+1036,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,3,-0.3347712471425007,1.037317797054815,,-0.7940750573378986,0.8996915045246415
+1037,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,4,-0.3716177342103661,1.0246952032777132,,-0.7940750573378986,0.8996915045246415
+1038,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,5,-0.4079897311840236,1.0107642550310079,,-0.7940750573378986,0.8996915045246415
+1039,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,6,-0.4438407974588356,0.995542739670731,,-0.7940750573378986,0.8996915045246415
+1040,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,7,-0.47912515756649693,0.9790500923787708,,-0.7940750573378986,0.8996915045246415
+1041,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,8,-0.5137977596222065,0.9613073713475838,,-0.7940750573378986,0.8996915045246415
+1042,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,9,-0.5478143328479543,0.9423372308926092,,-0.7940750573378986,0.8996915045246415
+1043,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,10,-0.5811314440984713,0.9221638925267165,,-0.7940750573378986,0.8996915045246415
+1044,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,11,-0.613706553317671,0.9008131140336184,,-0.7940750573378986,0.8996915045246415
+1045,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,12,-0.6454980678547741,0.8783121565797399,,-0.7940750573378986,0.8996915045246415
+1046,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,13,-0.6764653955707659,0.8546897499065305,,-0.7940750573378986,0.8996915045246415
+1047,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,14,-0.7065689966673732,0.8299760556476685,,-0.7940750573378986,0.8996915045246415
+1048,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,15,-0.7357704341723912,0.8042026288179933,,-0.7940750573378986,0.8996915045246415
+1049,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,16,-0.7640324230168986,0.7774023775233306,,-0.7940750573378986,0.8996915045246415
+1050,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,17,-0.7913188776416901,0.749609520942668,,-0.7940750573378986,0.8996915045246415
+1051,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,18,-0.8175949580721538,0.720859545636314,,-0.7940750573378986,0.8996915045246415
+1052,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,19,-0.842827114402751,0.6911891602358446,,-0.7940750573378986,0.8996915045246415
+1053,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,20,-0.8669831296343132,0.6606362485736698,,-0.7940750573378986,0.8996915045246415
+1054,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,21,-0.8900321608094468,0.6292398213120871,,-0.7940750573378986,0.8996915045246415
+1055,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,22,-0.9119447783935332,0.5970399661335662,,-0.7940750573378986,0.8996915045246415
+1056,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,23,-0.9326930038510377,0.5640777965558724,,-0.7940750573378986,0.8996915045246415
+1057,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,24,-0.9522503453691503,0.5303953994373763,,-0.7940750573378986,0.8996915045246415
+1058,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,25,-0.97059183168314,0.496035781239587,,-0.7940750573378986,0.8996915045246415
+1059,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,26,-0.9876940439602443,0.46104281311550593,,-0.7940750573378986,0.8996915045246415
+1060,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,27,-1.0035351457013746,0.42546117489392715,,-0.7940750573378986,0.8996915045246415
+1061,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,28,-1.0180949106224608,0.38933629803120556,,-0.7940750573378986,0.8996915045246415
+1062,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,29,-1.0313547484798387,0.3527143076033195,,-0.7940750573378986,0.8996915045246415
+1063,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,30,-0.9651209572930599,0.3300629300508127,,-0.7940750573378986,0.8996915045246415
+1064,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,31,-0.9527126686558807,0.3643330495337887,,-0.7940750573378986,0.8996915045246415
+1065,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,32,-0.939087934509543,0.39813798017596896,,-0.7940750573378986,0.8996915045246415
+1066,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,33,-0.9242641512288524,0.43143455906221656,,-0.7940750573378986,0.8996915045246415
+1067,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,34,-0.9082602461622044,0.46418027235264103,,-0.7940750573378986,0.8996915045246415
+1068,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,35,-0.8910966534647095,0.4963333095652513,,-0.7940750573378986,0.8996915045246415
+1069,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,36,-0.872795288007393,0.5278526169605411,,-0.7940750573378986,0.8996915045246415
+1070,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,37,-0.8533795173957833,0.558697949959851,,-0.7940750573378986,0.8996915045246415
+1071,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,38,-0.8328741321336107,0.5888299245305769,,-0.7940750573378986,0.8996915045246415
+1072,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,39,-0.8113053139697243,0.6182100674726084,,-0.7940750573378986,0.8996915045246415
+1073,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,40,-0.7887006024686294,0.6468008655417995,,-0.7940750573378986,0.8996915045246415
+1074,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,41,-0.7650888598473365,0.6745658133477433,,-0.7940750573378986,0.8996915045246415
+1075,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,42,-0.7405002341234164,0.7014694599646983,,-0.7940750573378986,0.8996915045246415
+1076,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,43,-0.7149661206213179,0.7274774541961443,,-0.7940750573378986,0.8996915045246415
+1077,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,44,-0.6885191218860908,0.7525565884351864,,-0.7940750573378986,0.8996915045246415
+1078,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,45,-0.6611930060557063,0.7766748410647912,,-0.7940750573378986,0.8996915045246415
+1079,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,46,-0.6330226637451204,0.7998014173437257,,-0.7940750573378986,0.8996915045246415
+1080,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,47,-0.604044063497128,0.8219067887259951,,-0.7940750573378986,0.8996915045246415
+1081,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,48,-0.5742942058569032,0.8429627305635695,,-0.7940750573378986,0.8996915045246415
+1082,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,49,-0.5438110761288444,0.862942358144267,,-0.7940750573378986,0.8996915045246415
+1083,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,50,-0.5126335958760674,0.8818201610187719,,-0.7940750573378986,0.8996915045246415
+1084,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,51,-0.48080157322445016,0.8995720355729683,,-0.7940750573378986,0.8996915045246415
+1085,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,52,-0.4483556520347035,0.9161753158039873,,-0.7940750573378986,0.8996915045246415
+1086,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,53,-0.4153372600073507,0.931608802260684,,-0.7940750573378986,0.8996915045246415
+1087,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,54,-0.3817885557868844,0.9458527891115853,,-0.7940750573378986,0.8996915045246415
+1088,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,55,-0.3477523751326361,0.9588890893057499,,-0.7940750573378986,0.8996915045246415
+1089,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,56,-0.31327217622509224,0.9707010577944143,,-0.7940750573378986,0.8996915045246415
+1090,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,57,-0.2783919841774856,0.9812736127837753,,-0.7940750573378986,0.8996915045246415
+1091,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,58,-0.24315633482351595,0.9905932549917722,,-0.7940750573378986,0.8996915045246415
+1092,arc,A_source_Raw class 1,Raw class 1,,1017,Raw class 1,59,-0.20761021785296968,0.9986480848842813,,-0.7940750573378986,0.8996915045246415
+1093,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,0,-1.0430360268484644,0.3165056819334683,Raw class 2 (1608),-1.0386028527042075,-0.6010857795312431
+1094,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,1,-1.059244883020277,0.2570997428924419,,-1.0386028527042075,-0.6010857795312431
+1095,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,2,-1.0720731845910758,0.19687327619753123,,-1.0386028527042075,-0.6010857795312431
+1096,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,3,-1.0814799903445342,0.13601849317054673,,-1.0386028527042075,-0.6010857795312431
+1097,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,4,-1.0874352786860426,0.07472961038978336,,-1.0386028527042075,-0.6010857795312431
+1098,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,5,-1.0899200434559053,0.013202229852472588,,-1.0386028527042075,-0.6010857795312431
+1099,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,6,-1.0889263545870436,-0.04836728528429376,,-1.0386028527042075,-0.6010857795312431
+1100,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,7,-1.084457383413614,-0.10978243739186176,,-1.0386028527042075,-0.6010857795312431
+1101,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,8,-1.0765273925497714,-0.17084722148747591,,-1.0386028527042075,-0.6010857795312431
+1102,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,9,-1.0651616903708785,-0.231366750779477,,-1.0386028527042075,-0.6010857795312431
+1103,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,10,-1.050396550242435,-0.2911478786438119,,-1.0386028527042075,-0.6010857795312431
+1104,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,11,-1.0322790947545,-0.349999815046851,,-1.0386028527042075,-0.6010857795312431
+1105,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,12,-1.0108671453310811,-0.40773473544719113,,-1.0386028527042075,-0.6010857795312431
+1106,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,13,-0.9862290376944464,-0.4641683802331719,,-1.0386028527042075,-0.6010857795312431
+1107,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,14,-0.9584434037733089,-0.5191206427829991,,-1.0386028527042075,-0.6010857795312431
+1108,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,15,-0.9275989207509149,-0.5724161442707029,,-1.0386028527042075,-0.6010857795312431
+1109,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,16,-0.8937940280539433,-0.6238847933834476,,-1.0386028527042075,-0.6010857795312431
+1110,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,17,-0.85713661318544,-0.6733623291638712,,-1.0386028527042075,-0.6010857795312431
+1111,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,18,-0.8177436674044442,-0.7206908452449843,,-1.0386028527042075,-0.6010857795312431
+1112,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,19,-0.7757409123511942,-0.7657192938045488,,-1.0386028527042075,-0.6010857795312431
+1113,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,20,-0.7312623988095339,-0.8083039676305731,,-1.0386028527042075,-0.6010857795312431
+1114,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,21,-0.684450078887052,-0.84830895875943,,-1.0386028527042075,-0.6010857795312431
+1115,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,22,-0.635453352978348,-0.8856065922228533,,-1.0386028527042075,-0.6010857795312431
+1116,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,23,-0.5844285929572522,-0.920077833519538,,-1.0386028527042075,-0.6010857795312431
+1117,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,24,-0.5315386431197542,-0.9516126685108867,,-1.0386028527042075,-0.6010857795312431
+1118,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,25,-0.4769523004703394,-0.9801104545284941,,-1.0386028527042075,-0.6010857795312431
+1119,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,26,-0.42084377601040607,-1.0054802415728037,,-1.0386028527042075,-0.6010857795312431
+1120,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,27,-0.36339213874803616,-1.0276410625778478,,-1.0386028527042075,-0.6010857795312431
+1121,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,28,-0.3047807442035588,-1.0465221918156944,,-1.0386028527042075,-0.6010857795312431
+1122,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,29,-0.24519664923481316,-1.0620633706159064,,-1.0386028527042075,-0.6010857795312431
+1123,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,30,-0.22945007543074256,-0.9938574660809398,,-1.0386028527042075,-0.6010857795312431
+1124,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,31,-0.2852076688877339,-0.9793143446348699,,-1.0386028527042075,-0.6010857795312431
+1125,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,32,-0.3400550289201798,-0.9616457649811055,,-1.0386028527042075,-0.6010857795312431
+1126,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,33,-0.3938171114959763,-0.9409081159672107,,-1.0386028527042075,-0.6010857795312431
+1127,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,34,-0.4463223362199514,-0.9171675813018931,,-1.0386028527042075,-0.6010857795312431
+1128,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,35,-0.49740313392857727,-0.8904999283312884,,-1.0386028527042075,-0.6010857795312431
+1129,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,36,-0.5468964814829332,-0.8609902662292924,,-1.0386028527042075,-0.6010857795312431
+1130,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,37,-0.594644422053133,-0.8287327743736792,,-1.0386028527042075,-0.6010857795312431
+1131,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,38,-0.6404945692337551,-0.7938304017748795,,-1.0386028527042075,-0.6010857795312431
+1132,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,39,-0.6843005933813986,-0.756394538516683,,-1.0386028527042075,-0.6010857795312431
+1133,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,40,-0.7259226886222184,-0.7165446602574677,,-1.0386028527042075,-0.6010857795312431
+1134,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,41,-0.765228019039021,-0.6744079469264991,,-1.0386028527042075,-0.6010857795312431
+1135,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,42,-0.8020911426138979,-0.6301188768322464,,-1.0386028527042075,-0.6010857795312431
+1136,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,43,-0.8363944115734148,-0.5838187974780885,,-1.0386028527042075,-0.6010857795312431
+1137,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,44,-0.8680283478586542,-0.5356554744551532,,-1.0386028527042075,-0.6010857795312431
+1138,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,45,-0.896891992521812,-0.4857826198519808,,-1.0386028527042075,-0.6010857795312431
+1139,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,46,-0.9228932279342525,-0.43435940168608744,,-1.0386028527042075,-0.6010857795312431
+1140,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,47,-0.9459490717777089,-0.3815499359230596,,-1.0386028527042075,-0.6010857795312431
+1141,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,48,-0.9659859418803578,-0.3275227627043927,,-1.0386028527042075,-0.6010857795312431
+1142,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,49,-0.9829398910525539,-0.2724503084556772,,-1.0386028527042075,-0.6010857795312431
+1143,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,50,-0.9967568111727487,-0.21650833559180413,,-1.0386028527042075,-0.6010857795312431
+1144,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,51,-1.007392605872263,-0.15987538157543618,,-1.0386028527042075,-0.6010857795312431
+1145,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,52,-1.0148133312677856,-0.1027321891189899,,-1.0386028527042075,-0.6010857795312431
+1146,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,53,-1.0189953042924627,-0.04526112934860516,,-1.0386028527042075,-0.6010857795312431
+1147,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,54,-1.019925178279838,0.012354380228919302,,-1.0386028527042075,-0.6010857795312431
+1148,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,55,-1.017599985559416,0.0699304610986968,,-1.0386028527042075,-0.6010857795312431
+1149,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,56,-1.0120271469279127,0.12728336058161255,,-1.0386028527042075,-0.6010857795312431
+1150,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,57,-1.0032244479659609,0.1842300382765884,,-1.0386028527042075,-0.6010857795312431
+1151,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,58,-0.9912199822758555,0.24058875022962453,,-1.0386028527042075,-0.6010857795312431
+1152,arc,A_source_Raw class 2,Raw class 2,,1608,Raw class 2,59,-0.9760520618214987,0.2961796289652639,,-1.0386028527042075,-0.6010857795312431
+1153,arc,A_target_Grade class 0,,Grade class 0,23,destination,0,0.1581541881973896,1.0784652302024507,Grade class 0 (23),0.16018995568135538,1.1892599287366934
+1154,arc,A_target_Grade class 0,,Grade class 0,23,destination,1,0.15728256820081676,1.0785926913066655,,0.16018995568135538,1.1892599287366934
+1155,arc,A_target_Grade class 0,,Grade class 0,23,destination,2,0.15641084548039821,1.0787194479641624,,0.16018995568135538,1.1892599287366934
+1156,arc,A_target_Grade class 0,,Grade class 0,23,destination,3,0.15553902060547095,1.0788455000921546,,0.16018995568135538,1.1892599287366934
+1157,arc,A_target_Grade class 0,,Grade class 0,23,destination,4,0.1546670941454375,1.0789708476083155,,0.16018995568135538,1.1892599287366934
+1158,arc,A_target_Grade class 0,,Grade class 0,23,destination,5,0.15379506666976817,1.0790954904307783,,0.16018995568135538,1.1892599287366934
+1159,arc,A_target_Grade class 0,,Grade class 0,23,destination,6,0.1529229387479985,1.0792194284781367,,0.16018995568135538,1.1892599287366934
+1160,arc,A_target_Grade class 0,,Grade class 0,23,destination,7,0.15205071094972922,1.079342661669445,,0.16018995568135538,1.1892599287366934
+1161,arc,A_target_Grade class 0,,Grade class 0,23,destination,8,0.15117838384462715,1.0794651899242174,,0.16018995568135538,1.1892599287366934
+1162,arc,A_target_Grade class 0,,Grade class 0,23,destination,9,0.1503059580024231,1.0795870131624286,,0.16018995568135538,1.1892599287366934
+1163,arc,A_target_Grade class 0,,Grade class 0,23,destination,10,0.1494334339929133,1.079708131304514,,0.16018995568135538,1.1892599287366934
+1164,arc,A_target_Grade class 0,,Grade class 0,23,destination,11,0.14856081238595684,1.0798285442713693,,0.16018995568135538,1.1892599287366934
+1165,arc,A_target_Grade class 0,,Grade class 0,23,destination,12,0.14768809375147807,1.0799482519843508,,0.16018995568135538,1.1892599287366934
+1166,arc,A_target_Grade class 0,,Grade class 0,23,destination,13,0.14681527865946392,1.0800672543652752,,0.16018995568135538,1.1892599287366934
+1167,arc,A_target_Grade class 0,,Grade class 0,23,destination,14,0.14594236767996396,1.0801855513364205,,0.16018995568135538,1.1892599287366934
+1168,arc,A_target_Grade class 0,,Grade class 0,23,destination,15,0.14506936138309096,1.0803031428205243,,0.16018995568135538,1.1892599287366934
+1169,arc,A_target_Grade class 0,,Grade class 0,23,destination,16,0.14419626033901997,1.0804200287407864,,0.16018995568135538,1.1892599287366934
+1170,arc,A_target_Grade class 0,,Grade class 0,23,destination,17,0.1433230651179873,1.0805362090208663,,0.16018995568135538,1.1892599287366934
+1171,arc,A_target_Grade class 0,,Grade class 0,23,destination,18,0.14244977629029168,1.0806516835848847,,0.16018995568135538,1.1892599287366934
+1172,arc,A_target_Grade class 0,,Grade class 0,23,destination,19,0.1415763944262917,1.0807664523574236,,0.16018995568135538,1.1892599287366934
+1173,arc,A_target_Grade class 0,,Grade class 0,23,destination,20,0.14070292009640825,1.0808805152635252,,0.16018995568135538,1.1892599287366934
+1174,arc,A_target_Grade class 0,,Grade class 0,23,destination,21,0.1398293538711218,1.0809938722286934,,0.16018995568135538,1.1892599287366934
+1175,arc,A_target_Grade class 0,,Grade class 0,23,destination,22,0.13895569632097246,1.0811065231788928,,0.16018995568135538,1.1892599287366934
+1176,arc,A_target_Grade class 0,,Grade class 0,23,destination,23,0.13808194801656096,1.0812184680405492,,0.16018995568135538,1.1892599287366934
+1177,arc,A_target_Grade class 0,,Grade class 0,23,destination,24,0.13720810952854615,1.0813297067405494,,0.16018995568135538,1.1892599287366934
+1178,arc,A_target_Grade class 0,,Grade class 0,23,destination,25,0.13633418142764697,1.0814402392062419,,0.16018995568135538,1.1892599287366934
+1179,arc,A_target_Grade class 0,,Grade class 0,23,destination,26,0.13546016428463956,1.081550065365436,,0.16018995568135538,1.1892599287366934
+1180,arc,A_target_Grade class 0,,Grade class 0,23,destination,27,0.1345860586703597,1.0816591851464021,,0.16018995568135538,1.1892599287366934
+1181,arc,A_target_Grade class 0,,Grade class 0,23,destination,28,0.13371186515570016,1.0817675984778727,,0.16018995568135538,1.1892599287366934
+1182,arc,A_target_Grade class 0,,Grade class 0,23,destination,29,0.13283758431161077,1.081875305289041,,0.16018995568135538,1.1892599287366934
+1183,arc,A_target_Grade class 0,,Grade class 0,23,destination,30,0.12430673027325044,1.0123970746741484,,0.16018995568135538,1.1892599287366934
+1184,arc,A_target_Grade class 0,,Grade class 0,23,destination,31,0.12512486464111391,1.0122962848141561,,0.16018995568135538,1.1892599287366934
+1185,arc,A_target_Grade class 0,,Grade class 0,23,destination,32,0.1259429172878595,1.0121948338067248,,0.16018995568135538,1.1892599287366934
+1186,arc,A_target_Grade class 0,,Grade class 0,23,destination,33,0.126760887679204,1.0120927217181144,,0.16018995568135538,1.1892599287366934
+1187,arc,A_target_Grade class 0,,Grade class 0,23,destination,34,0.12757877528091735,1.0119899486150152,,0.16018995568135538,1.1892599287366934
+1188,arc,A_target_Grade class 0,,Grade class 0,23,destination,35,0.128396579558823,1.0118865145645508,,0.16018995568135538,1.1892599287366934
+1189,arc,A_target_Grade class 0,,Grade class 0,23,destination,36,0.12921429997880016,1.0117824196342753,,0.16018995568135538,1.1892599287366934
+1190,arc,A_target_Grade class 0,,Grade class 0,23,destination,37,0.13003193600678156,1.011677663892175,,0.16018995568135538,1.1892599287366934
+1191,arc,A_target_Grade class 0,,Grade class 0,23,destination,38,0.13084948710875619,1.011572247406667,,0.16018995568135538,1.1892599287366934
+1192,arc,A_target_Grade class 0,,Grade class 0,23,destination,39,0.13166695275076734,1.0114661702466015,,0.16018995568135538,1.1892599287366934
+1193,arc,A_target_Grade class 0,,Grade class 0,23,destination,40,0.13248433239891516,1.0113594324812587,,0.16018995568135538,1.1892599287366934
+1194,arc,A_target_Grade class 0,,Grade class 0,23,destination,41,0.1333016255193555,1.0112520341803508,,0.16018995568135538,1.1892599287366934
+1195,arc,A_target_Grade class 0,,Grade class 0,23,destination,42,0.13411883157830007,1.0111439754140217,,0.16018995568135538,1.1892599287366934
+1196,arc,A_target_Grade class 0,,Grade class 0,23,destination,43,0.1349359500420187,1.011035256252846,,0.16018995568135538,1.1892599287366934
+1197,arc,A_target_Grade class 0,,Grade class 0,23,destination,44,0.1357529803768374,1.0109258767678302,,0.16018995568135538,1.1892599287366934
+1198,arc,A_target_Grade class 0,,Grade class 0,23,destination,45,0.1365699220491406,1.0108158370304117,,0.16018995568135538,1.1892599287366934
+1199,arc,A_target_Grade class 0,,Grade class 0,23,destination,46,0.1373867745253699,1.0107051371124594,,0.16018995568135538,1.1892599287366934
+1200,arc,A_target_Grade class 0,,Grade class 0,23,destination,47,0.13820353727202536,1.0105937770862732,,0.16018995568135538,1.1892599287366934
+1201,arc,A_target_Grade class 0,,Grade class 0,23,destination,48,0.13902020975566604,1.010481757024584,,0.16018995568135538,1.1892599287366934
+1202,arc,A_target_Grade class 0,,Grade class 0,23,destination,49,0.1398367914429097,1.0103690770005544,,0.16018995568135538,1.1892599287366934
+1203,arc,A_target_Grade class 0,,Grade class 0,23,destination,50,0.14065328180043263,1.0102557370877772,,0.16018995568135538,1.1892599287366934
+1204,arc,A_target_Grade class 0,,Grade class 0,23,destination,51,0.1414696802949722,1.0101417373602768,,0.16018995568135538,1.1892599287366934
+1205,arc,A_target_Grade class 0,,Grade class 0,23,destination,52,0.14228598639332457,1.0100270778925082,,0.16018995568135538,1.1892599287366934
+1206,arc,A_target_Grade class 0,,Grade class 0,23,destination,53,0.1431021995623472,1.0099117587593573,,0.16018995568135538,1.1892599287366934
+1207,arc,A_target_Grade class 0,,Grade class 0,23,destination,54,0.14391831926895735,1.009795780036141,,0.16018995568135538,1.1892599287366934
+1208,arc,A_target_Grade class 0,,Grade class 0,23,destination,55,0.14473434498013416,1.009679141798607,,0.16018995568135538,1.1892599287366934
+1209,arc,A_target_Grade class 0,,Grade class 0,23,destination,56,0.14555027616291777,1.0095618441229337,,0.16018995568135538,1.1892599287366934
+1210,arc,A_target_Grade class 0,,Grade class 0,23,destination,57,0.14636611228440932,1.0094438870857299,,0.16018995568135538,1.1892599287366934
+1211,arc,A_target_Grade class 0,,Grade class 0,23,destination,58,0.14718185281177346,1.0093252707640354,,0.16018995568135538,1.1892599287366934
+1212,arc,A_target_Grade class 0,,Grade class 0,23,destination,59,0.14799749721223612,1.0092059952353207,,0.16018995568135538,1.1892599287366934
+1213,arc,A_target_Grade class 1,,Grade class 1,648,destination,0,0.8122536571431137,0.7268727512141567,Grade class 1 (648),0.586509615946829,1.0469032765264912
+1214,arc,A_target_Grade class 1,,Grade class 1,648,destination,1,0.7954944394191208,0.7451768896398082,,0.586509615946829,1.0469032765264912
+1215,arc,A_target_Grade class 1,,Grade class 1,648,destination,2,0.7783228361576584,0.7630947272229699,,0.586509615946829,1.0469032765264912
+1216,arc,A_target_Grade class 1,,Grade class 1,648,destination,3,0.7607477491441944,0.7806169753291572,,0.586509615946829,1.0469032765264912
+1217,arc,A_target_Grade class 1,,Grade class 1,648,destination,4,0.7427782893307917,0.7977345503980776,,0.586509615946829,1.0469032765264912
+1218,arc,A_target_Grade class 1,,Grade class 1,648,destination,5,0.724423772112978,0.8144385786525613,,0.586509615946829,1.0469032765264912
+1219,arc,A_target_Grade class 1,,Grade class 1,648,destination,6,0.7056937125006297,0.8307204006987421,,0.586509615946829,1.0469032765264912
+1220,arc,A_target_Grade class 1,,Grade class 1,648,destination,7,0.686597820185377,0.8465715760150992,,0.586509615946829,1.0469032765264912
+1221,arc,A_target_Grade class 1,,Grade class 1,648,destination,8,0.6671459945070838,0.8619838873280371,,0.586509615946829,1.0469032765264912
+1222,arc,A_target_Grade class 1,,Grade class 1,648,destination,9,0.6473483193220159,0.8769493448717329,,0.586509615946829,1.0469032765264912
+1223,arc,A_target_Grade class 1,,Grade class 1,648,destination,10,0.6272150577753534,0.8914601905300428,,0.586509615946829,1.0469032765264912
+1224,arc,A_target_Grade class 1,,Grade class 1,648,destination,11,0.6067566469807609,0.9055089018583221,,0.586509615946829,1.0469032765264912
+1225,arc,A_target_Grade class 1,,Grade class 1,648,destination,12,0.5859836926097723,0.9190881959830711,,0.586509615946829,1.0469032765264912
+1226,arc,A_target_Grade class 1,,Grade class 1,648,destination,13,0.5649069633937935,0.9321910333773885,,0.586509615946829,1.0469032765264912
+1227,arc,A_target_Grade class 1,,Grade class 1,648,destination,14,0.5435373855415762,0.944810621510273,,0.586509615946829,1.0469032765264912
+1228,arc,A_target_Grade class 1,,Grade class 1,648,destination,15,0.521886037075054,0.9569404183678812,,0.586509615946829,1.0469032765264912
+1229,arc,A_target_Grade class 1,,Grade class 1,648,destination,16,0.4999641420864795,0.9685741358449186,,0.586509615946829,1.0469032765264912
+1230,arc,A_target_Grade class 1,,Grade class 1,648,destination,17,0.47778306491983685,0.9797057430044019,,0.586509615946829,1.0469032765264912
+1231,arc,A_target_Grade class 1,,Grade class 1,648,destination,18,0.4553543042795489,0.9903294692041069,,0.586509615946829,1.0469032765264912
+1232,arc,A_target_Grade class 1,,Grade class 1,648,destination,19,0.43268948726953177,1.0004398070880776,,0.586509615946829,1.0469032765264912
+1233,arc,A_target_Grade class 1,,Grade class 1,648,destination,20,0.40980036336568504,1.0100315154416484,,0.586509615946829,1.0469032765264912
+1234,arc,A_target_Grade class 1,,Grade class 1,648,destination,21,0.38669879832494575,1.0190996219084978,,0.586509615946829,1.0469032765264912
+1235,arc,A_target_Grade class 1,,Grade class 1,648,destination,22,0.3633967680340631,1.0276394255683252,,0.586509615946829,1.0469032765264912
+1236,arc,A_target_Grade class 1,,Grade class 1,648,destination,23,0.33990635230127897,1.0356464993738157,,0.586509615946829,1.0469032765264912
+1237,arc,A_target_Grade class 1,,Grade class 1,648,destination,24,0.31623972859413657,1.043116692445628,,0.586509615946829,1.0469032765264912
+1238,arc,A_target_Grade class 1,,Grade class 1,648,destination,25,0.2924091657266646,1.0500461322242163,,0.586509615946829,1.0469032765264912
+1239,arc,A_target_Grade class 1,,Grade class 1,648,destination,26,0.2684270174992029,1.0564312264773712,,0.586509615946829,1.0469032765264912
+1240,arc,A_target_Grade class 1,,Grade class 1,648,destination,27,0.24430571629417464,1.0622686651624391,,0.586509615946829,1.0469032765264912
+1241,arc,A_target_Grade class 1,,Grade class 1,648,destination,28,0.2200577666311207,1.0675554221422527,,0.586509615946829,1.0469032765264912
+1242,arc,A_target_Grade class 1,,Grade class 1,648,destination,29,0.19569573868433535,1.072288756753885,,0.586509615946829,1.0469032765264912
+1243,arc,A_target_Grade class 1,,Grade class 1,648,destination,30,0.18312812243855234,1.00342617604492,,0.586509615946829,1.0469032765264912
+1244,arc,A_target_Grade class 1,,Grade class 1,648,destination,31,0.20592561648049826,0.9989968170505484,,0.586509615946829,1.0469032765264912
+1245,arc,A_target_Grade class 1,,Grade class 1,648,destination,32,0.2286163583670258,0.9940495765740256,,0.586509615946829,1.0469032765264912
+1246,arc,A_target_Grade class 1,,Grade class 1,648,destination,33,0.25118858518274007,0.9885870192724024,,0.586509615946829,1.0469032765264912
+1247,arc,A_target_Grade class 1,,Grade class 1,648,destination,34,0.2736305954506402,0.9826119769437619,,0.586509615946829,1.0469032765264912
+1248,arc,A_target_Grade class 1,,Grade class 1,648,destination,35,0.2959307551981828,0.9761275470592115,,0.586509615946829,1.0469032765264912
+1249,arc,A_target_Grade class 1,,Grade class 1,648,destination,36,0.31807750398835233,0.9691370911571487,,0.586509615946829,1.0469032765264912
+1250,arc,A_target_Grade class 1,,Grade class 1,648,destination,37,0.34005936091260947,0.9616442331006346,,0.586509615946829,1.0469032765264912
+1251,arc,A_target_Grade class 1,,Grade class 1,648,destination,38,0.36186493054260976,0.9536528571987777,,0.586509615946829,1.0469032765264912
+1252,arc,A_target_Grade class 1,,Grade class 1,648,destination,39,0.38348290883761355,0.9451671061931021,,0.586509615946829,1.0469032765264912
+1253,arc,A_target_Grade class 1,,Grade class 1,648,destination,40,0.40490208900451596,0.9361913791099441,,0.586509615946829,1.0469032765264912
+1254,arc,A_target_Grade class 1,,Grade class 1,648,destination,41,0.4261113673074678,0.9267303289799899,,0.586509615946829,1.0469032765264912
+1255,arc,A_target_Grade class 1,,Grade class 1,648,destination,42,0.44709974882406744,0.9167888604261375,,0.586509615946829,1.0469032765264912
+1256,arc,A_target_Grade class 1,,Grade class 1,648,destination,43,0.4678563531451457,0.9063721271209331,,0.586509615946829,1.0469032765264912
+1257,arc,A_target_Grade class 1,,Grade class 1,648,destination,44,0.4883704200151881,0.895485529114898,,0.586509615946829,1.0469032765264912
+1258,arc,A_target_Grade class 1,,Grade class 1,648,destination,45,0.5086313149104658,0.8841347100371361,,0.586509615946829,1.0469032765264912
+1259,arc,A_target_Grade class 1,,Grade class 1,648,destination,46,0.5286285345519902,0.8723255541696663,,0.586509615946829,1.0469032765264912
+1260,arc,A_target_Grade class 1,,Grade class 1,648,destination,47,0.5483517123504291,0.8600641833970023,,0.586509615946829,1.0469032765264912
+1261,arc,A_target_Grade class 1,,Grade class 1,648,destination,48,0.5677906237801615,0.8473569540325583,,0.586509615946829,1.0469032765264912
+1262,arc,A_target_Grade class 1,,Grade class 1,648,destination,49,0.5869351916796884,0.8342104535235262,,0.586509615946829,1.0469032765264912
+1263,arc,A_target_Grade class 1,,Grade class 1,648,destination,50,0.6057754914756479,0.8206314970359335,,0.586509615946829,1.0469032765264912
+1264,arc,A_target_Grade class 1,,Grade class 1,648,destination,51,0.6243017563277297,0.8066271239216494,,0.586509615946829,1.0469032765264912
+1265,arc,A_target_Grade class 1,,Grade class 1,648,destination,52,0.6425043821918206,0.7922045940691754,,0.586509615946829,1.0469032765264912
+1266,arc,A_target_Grade class 1,,Grade class 1,648,destination,53,0.6603739327987543,0.7773713841401073,,0.586509615946829,1.0469032765264912
+1267,arc,A_target_Grade class 1,,Grade class 1,648,destination,54,0.6779011445460894,0.7621351836932225,,0.586509615946829,1.0469032765264912
+1268,arc,A_target_Grade class 1,,Grade class 1,648,destination,55,0.6950769313003738,0.7465038911982009,,0.586509615946829,1.0469032765264912
+1269,arc,A_target_Grade class 1,,Grade class 1,648,destination,56,0.7118923891074111,0.7304856099410462,,0.586509615946829,1.0469032765264912
+1270,arc,A_target_Grade class 1,,Grade class 1,648,destination,57,0.728338800808084,0.7140886438233296,,0.586509615946829,1.0469032765264912
+1271,arc,A_target_Grade class 1,,Grade class 1,648,destination,58,0.7444076405573422,0.6973214930574353,,0.586509615946829,1.0469032765264912
+1272,arc,A_target_Grade class 1,,Grade class 1,648,destination,59,0.7600905782440146,0.6801928497600365,,0.586509615946829,1.0469032765264912
+1273,arc,A_target_Grade class 2,,Grade class 2,711,destination,0,1.0895283240107274,-0.032062925293487116,Grade class 2 (711),1.1341467995784889,0.39205999159040783
+1274,arc,A_target_Grade class 2,,Grade class 2,711,destination,1,1.0899892696454068,-0.004836533662947804,,1.1341467995784889,0.39205999159040783
+1275,arc,A_target_Grade class 2,,Grade class 2,711,destination,2,1.0897699569565884,0.022392876430591763,,1.1341467995784889,0.39205999159040783
+1276,arc,A_target_Grade class 2,,Grade class 2,711,destination,3,1.0888705228165203,0.0496083112117102,,1.1341467995784889,0.39205999159040783
+1277,arc,A_target_Grade class 2,,Grade class 2,711,destination,4,1.0872915285587657,0.07679278562692758,,1.1341467995784889,0.39205999159040783
+1278,arc,A_target_Grade class 2,,Grade class 2,711,destination,5,1.0850339596278753,0.10392933394501533,,1.1341467995784889,0.39205999159040783
+1279,arc,A_target_Grade class 2,,Grade class 2,711,destination,6,1.0820992249643766,0.131001020345247,,1.1341467995784889,0.39205999159040783
+1280,arc,A_target_Grade class 2,,Grade class 2,711,destination,7,1.0784891561254577,0.15799094948698242,,1.1341467995784889,0.39205999159040783
+1281,arc,A_target_Grade class 2,,Grade class 2,711,destination,8,1.0742060061419003,0.18488227705398783,,1.1341467995784889,0.39205999159040783
+1282,arc,A_target_Grade class 2,,Grade class 2,711,destination,9,1.0692524481119712,0.21165822026691225,,1.1341467995784889,0.39205999159040783
+1283,arc,A_target_Grade class 2,,Grade class 2,711,destination,10,1.06363157353315,0.23830206835735884,,1.1341467995784889,0.39205999159040783
+1284,arc,A_target_Grade class 2,,Grade class 2,711,destination,11,1.0573468903727394,0.26479719299701443,,1.1341467995784889,0.39205999159040783
+1285,arc,A_target_Grade class 2,,Grade class 2,711,destination,12,1.0504023208785538,0.29112705867532834,,1.1341467995784889,0.39205999159040783
+1286,arc,A_target_Grade class 2,,Grade class 2,711,destination,13,1.0428021991310583,0.3172752330192645,,1.1341467995784889,0.39205999159040783
+1287,arc,A_target_Grade class 2,,Grade class 2,711,destination,14,1.0345512683384872,0.3432253970486851,,1.1341467995784889,0.39205999159040783
+1288,arc,A_target_Grade class 2,,Grade class 2,711,destination,15,1.0256546778766227,0.3689613553609666,,1.1341467995784889,0.39205999159040783
+1289,arc,A_target_Grade class 2,,Grade class 2,711,destination,16,1.0161179800750895,0.3944670462384916,,1.1341467995784889,0.39205999159040783
+1290,arc,A_target_Grade class 2,,Grade class 2,711,destination,17,1.0059471267521658,0.41972655167270795,,1.1341467995784889,0.39205999159040783
+1291,arc,A_target_Grade class 2,,Grade class 2,711,destination,18,0.9951484655002755,0.4447241072984996,,1.1341467995784889,0.39205999159040783
+1292,arc,A_target_Grade class 2,,Grade class 2,711,destination,19,0.9837287357244783,0.4694441122326699,,1.1341467995784889,0.39205999159040783
+1293,arc,A_target_Grade class 2,,Grade class 2,711,destination,20,0.9716950644364329,0.4938711388103953,,1.1341467995784889,0.39205999159040783
+1294,arc,A_target_Grade class 2,,Grade class 2,711,destination,21,0.9590549618064533,0.5179899422135746,,1.1341467995784889,0.39205999159040783
+1295,arc,A_target_Grade class 2,,Grade class 2,711,destination,22,0.9458163164764407,0.5417854699850649,,1.1341467995784889,0.39205999159040783
+1296,arc,A_target_Grade class 2,,Grade class 2,711,destination,23,0.9319873906366092,0.5652428714228642,,1.1341467995784889,0.39205999159040783
+1297,arc,A_target_Grade class 2,,Grade class 2,711,destination,24,0.9175768148690844,0.5883475068483814,,1.1341467995784889,0.39205999159040783
+1298,arc,A_target_Grade class 2,,Grade class 2,711,destination,25,0.9025935827615881,0.6110849567430051,,1.1341467995784889,0.39205999159040783
+1299,arc,A_target_Grade class 2,,Grade class 2,711,destination,26,0.8870470452945728,0.6334410307472734,,1.1341467995784889,0.39205999159040783
+1300,arc,A_target_Grade class 2,,Grade class 2,711,destination,27,0.8709469050053095,0.6554017765170252,,1.1341467995784889,0.39205999159040783
+1301,arc,A_target_Grade class 2,,Grade class 2,711,destination,28,0.8543032099325689,0.6769534884310068,,1.1341467995784889,0.39205999159040783
+1302,arc,A_target_Grade class 2,,Grade class 2,711,destination,29,0.8371263473456777,0.6980827161445011,,1.1341467995784889,0.39205999159040783
+1303,arc,A_target_Grade class 2,,Grade class 2,711,destination,30,0.7833659397179735,0.6532517160251294,,1.1341467995784889,0.39205999159040783
+1304,arc,A_target_Grade class 2,,Grade class 2,711,destination,31,0.7994397010378167,0.6334794111923183,,1.1341467995784889,0.39205999159040783
+1305,arc,A_target_Grade class 2,,Grade class 2,711,destination,32,0.8150145349590969,0.6133117541718951,,1.1341467995784889,0.39205999159040783
+1306,arc,A_target_Grade class 2,,Grade class 2,711,destination,33,0.8300807212848296,0.5927613315249715,,1.1341467995784889,0.39205999159040783
+1307,arc,A_target_Grade class 2,,Grade class 2,711,destination,34,0.8446288572631374,0.5718409686952891,,1.1341467995784889,0.39205999159040783
+1308,arc,A_target_Grade class 2,,Grade class 2,711,destination,35,0.8586498634554734,0.5505637220049073,,1.1341467995784889,0.39205999159040783
+1309,arc,A_target_Grade class 2,,Grade class 2,711,destination,36,0.8721349894030653,0.5289428705057997,,1.1341467995784889,0.39205999159040783
+1310,arc,A_target_Grade class 2,,Grade class 2,711,destination,37,0.8850758190880452,0.5069919076924461,,1.1341467995784889,0.39205999159040783
+1311,arc,A_target_Grade class 2,,Grade class 2,711,destination,38,0.8974642761858553,0.4847245330805928,,1.1341467995784889,0.39205999159040783
+1312,arc,A_target_Grade class 2,,Grade class 2,711,destination,39,0.9092926291056528,0.4621546436574341,,1.1341467995784889,0.39205999159040783
+1313,arc,A_target_Grade class 2,,Grade class 2,711,destination,40,0.9205534958155668,0.4392963252085535,,1.1341467995784889,0.39205999159040783
+1314,arc,A_target_Grade class 2,,Grade class 2,711,destination,41,0.9312398484497989,0.4161638435270364,,1.1341467995784889,0.39205999159040783
+1315,arc,A_target_Grade class 2,,Grade class 2,711,destination,42,0.9413450176946871,0.3927716355102404,,1.1341467995784889,0.39205999159040783
+1316,arc,A_target_Grade class 2,,Grade class 2,711,destination,43,0.9508626969510011,0.3691343001497811,,1.1341467995784889,0.39205999159040783
+1317,arc,A_target_Grade class 2,,Grade class 2,711,destination,44,0.959786946269867,0.34526658942035404,,1.1341467995784889,0.39205999159040783
+1318,arc,A_target_Grade class 2,,Grade class 2,711,destination,45,0.9681121960598688,0.3211833990730815,,1.1341467995784889,0.39205999159040783
+1319,arc,A_target_Grade class 2,,Grade class 2,711,destination,46,0.9758332505630087,0.29689975933912827,,1.1341467995784889,0.39205999159040783
+1320,arc,A_target_Grade class 2,,Grade class 2,711,destination,47,0.9829452910973622,0.27243082554938985,,1.1341467995784889,0.39205999159040783
+1321,arc,A_target_Grade class 2,,Grade class 2,711,destination,48,0.9894438790643983,0.24779186867610525,,1.1341467995784889,0.39205999159040783
+1322,arc,A_target_Grade class 2,,Grade class 2,711,destination,49,0.9953249587190944,0.22299826580229914,,1.1341467995784889,0.39205999159040783
+1323,arc,A_target_Grade class 2,,Grade class 2,711,destination,50,1.0005848597011104,0.19806549052500047,,1.1341467995784889,0.39205999159040783
+1324,arc,A_target_Grade class 2,,Grade class 2,711,destination,51,1.005220299325448,0.17300910329822713,,1.1341467995784889,0.39205999159040783
+1325,arc,A_target_Grade class 2,,Grade class 2,711,destination,52,1.0092283846311623,0.1478447417217634,,1.1341467995784889,0.39205999159040783
+1326,arc,A_target_Grade class 2,,Grade class 2,711,destination,53,1.0126066141868477,0.12258811078179084,,1.1341467995784889,0.39205999159040783
+1327,arc,A_target_Grade class 2,,Grade class 2,711,destination,54,1.0153528796517732,0.0972549730494639,,1.1341467995784889,0.39205999159040783
+1328,arc,A_target_Grade class 2,,Grade class 2,711,destination,55,1.0174654670916887,0.07186113884354692,,1.1341467995784889,0.39205999159040783
+1329,arc,A_target_Grade class 2,,Grade class 2,711,destination,56,1.0189430580484868,0.046422456363251714,,1.1341467995784889,0.39205999159040783
+1330,arc,A_target_Grade class 2,,Grade class 2,711,destination,57,1.0197847303630458,0.02095480179743455,,1.1341467995784889,0.39205999159040783
+1331,arc,A_target_Grade class 2,,Grade class 2,711,destination,58,1.0199899587507477,-0.004525930583675895,,1.1341467995784889,0.39205999159040783
+1332,arc,A_target_Grade class 2,,Grade class 2,711,destination,59,1.0195586151293043,-0.03000383834803381,,1.1341467995784889,0.39205999159040783
+1333,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,0,1.0872181855513496,-0.07782427003468195,Unmeasured TS (excluded) (7),1.1972354039977127,-0.08140876742976648
+1334,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,1,1.0872372943692576,-0.07755685483963665,,1.1972354039977127,-0.08140876742976648
+1335,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,2,1.0872563374129847,-0.0772894349526638,,1.1972354039977127,-0.08140876742976648
+1336,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,3,1.087275314681379,-0.07702201038994144,,1.1972354039977127,-0.08140876742976648
+1337,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,4,1.0872942261732925,-0.07675458116764784,,1.1972354039977127,-0.08140876742976648
+1338,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,5,1.0873130718875812,-0.07648714730196156,,1.1972354039977127,-0.08140876742976648
+1339,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,6,1.0873318518231048,-0.07621970880906144,,1.1972354039977127,-0.08140876742976648
+1340,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,7,1.087350565978727,-0.0759522657051266,,1.1972354039977127,-0.08140876742976648
+1341,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,8,1.087369214353316,-0.07568481800633647,,1.1972354039977127,-0.08140876742976648
+1342,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,9,1.0873877969457437,-0.0754173657288707,,1.1972354039977127,-0.08140876742976648
+1343,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,10,1.0874063137548857,-0.07514990888890927,,1.1972354039977127,-0.08140876742976648
+1344,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,11,1.0874247647796218,-0.07488244750263238,,1.1972354039977127,-0.08140876742976648
+1345,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,12,1.0874431500188357,-0.0746149815862206,,1.1972354039977127,-0.08140876742976648
+1346,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,13,1.0874614694714155,-0.07434751115585468,,1.1972354039977127,-0.08140876742976648
+1347,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,14,1.0874797231362525,-0.07408003622771564,,1.1972354039977127,-0.08140876742976648
+1348,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,15,1.087497911012243,-0.07381255681798489,,1.1972354039977127,-0.08140876742976648
+1349,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,16,1.0875160330982858,-0.07354507294284396,,1.1972354039977127,-0.08140876742976648
+1350,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,17,1.0875340893932854,-0.07327758461847475,,1.1972354039977127,-0.08140876742976648
+1351,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,18,1.087552079896149,-0.07301009186105939,,1.1972354039977127,-0.08140876742976648
+1352,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,19,1.0875700046057886,-0.07274259468678032,,1.1972354039977127,-0.08140876742976648
+1353,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,20,1.0875878635211194,-0.07247509311182017,,1.1972354039977127,-0.08140876742976648
+1354,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,21,1.0876056566410615,-0.0722075871523619,,1.1972354039977127,-0.08140876742976648
+1355,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,22,1.0876233839645377,-0.07194007682458871,,1.1972354039977127,-0.08140876742976648
+1356,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,23,1.0876410454904764,-0.07167256214468408,,1.1972354039977127,-0.08140876742976648
+1357,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,24,1.0876586412178086,-0.07140504312883174,,1.1972354039977127,-0.08140876742976648
+1358,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,25,1.08767617114547,-0.07113751979321567,,1.1972354039977127,-0.08140876742976648
+1359,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,26,1.0876936352724003,-0.07086999215402018,,1.1972354039977127,-0.08140876742976648
+1360,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,27,1.0877110335975426,-0.07060246022742972,,1.1972354039977127,-0.08140876742976648
+1361,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,28,1.0877283661198445,-0.07033492402962911,,1.1972354039977127,-0.08140876742976648
+1362,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,29,1.0877456328382575,-0.07006738357680337,,1.1972354039977127,-0.08140876742976648
+1363,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,30,1.0178904087110299,-0.0655676433471004,,1.1972354039977127,-0.08140876742976648
+1364,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,31,1.0178742508644416,-0.06581800230295567,,1.1972354039977127,-0.08140876742976648
+1365,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,32,1.0178580314399022,-0.06606835727704431,,1.1972354039977127,-0.08140876742976648
+1366,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,33,1.017841750438393,-0.0663187082542207,,1.1972354039977127,-0.08140876742976648
+1367,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,34,1.0178254078608986,-0.06656905521933944,,1.1972354039977127,-0.08140876742976648
+1368,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,35,1.017809003708408,-0.06681939815725539,,1.1972354039977127,-0.08140876742976648
+1369,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,36,1.0177925379819137,-0.06706973705282362,,1.1972354039977127,-0.08140876742976648
+1370,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,37,1.0177760106824114,-0.06732007189089953,,1.1972354039977127,-0.08140876742976648
+1371,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,38,1.0177594218109014,-0.06757040265633865,,1.1972354039977127,-0.08140876742976648
+1372,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,39,1.0177427713683869,-0.06782072933399684,,1.1972354039977127,-0.08140876742976648
+1373,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,40,1.0177260593558755,-0.06807105190873021,,1.1972354039977127,-0.08140876742976648
+1374,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,41,1.0177092857743781,-0.06832137036539503,,1.1972354039977127,-0.08140876742976648
+1375,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,42,1.0176924506249092,-0.06857168468884793,,1.1972354039977127,-0.08140876742976648
+1376,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,43,1.0176755539084876,-0.06882199486394572,,1.1972354039977127,-0.08140876742976648
+1377,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,44,1.0176585956261355,-0.06907230087554549,,1.1972354039977127,-0.08140876742976648
+1378,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,45,1.0176415757788786,-0.06932260270850454,,1.1972354039977127,-0.08140876742976648
+1379,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,46,1.0176244943677466,-0.06957290034768052,,1.1972354039977127,-0.08140876742976648
+1380,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,47,1.017607351393773,-0.0698231937779312,,1.1972354039977127,-0.08140876742976648
+1381,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,48,1.0175901468579946,-0.0700734829841147,,1.1972354039977127,-0.08140876742976648
+1382,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,49,1.0175728807614526,-0.0703237679510894,,1.1972354039977127,-0.08140876742976648
+1383,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,50,1.0175555531051912,-0.07057404866371386,,1.1972354039977127,-0.08140876742976648
+1384,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,51,1.017538163890259,-0.07082432510684698,,1.1972354039977127,-0.08140876742976648
+1385,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,52,1.0175207131177078,-0.07107459726534783,,1.1972354039977127,-0.08140876742976648
+1386,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,53,1.0175032007885934,-0.07132486512407583,,1.1972354039977127,-0.08140876742976648
+1387,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,54,1.017485626903975,-0.07157512866789063,,1.1972354039977127,-0.08140876742976648
+1388,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,55,1.0174679914649158,-0.07182538788165212,,1.1972354039977127,-0.08140876742976648
+1389,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,56,1.017450294472483,-0.07207564275022044,,1.1972354039977127,-0.08140876742976648
+1390,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,57,1.0174325359277472,-0.07232589325845604,,1.1972354039977127,-0.08140876742976648
+1391,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,58,1.0174147158317823,-0.07257613939121961,,1.1972354039977127,-0.08140876742976648
+1392,arc,A_target_Unmeasured TS (excluded),,Unmeasured TS (excluded),7,destination,59,1.0173968341856667,-0.0728263811333721,,1.1972354039977127,-0.08140876742976648
+1393,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,0,0.23814299058875937,-1.0636672017287372,Merged into twin listing (1221),0.8954462870370775,-0.7988591534378958
+1394,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,1,0.2835439026469964,-1.0524746340276856,,0.8954462870370775,-0.7988591534378958
+1395,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,2,0.3284229955067633,-1.0393451476878912,,0.8954462870370775,-0.7988591534378958
+1396,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,3,0.3726976760597418,-1.0243029055214419,,0.8954462870370775,-0.7988591534378958
+1397,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,4,0.4162864635260493,-1.0073755904750599,,0.8954462870370775,-0.7988591534378958
+1398,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,5,0.4591091394071551,-0.9885943546838721,,0.8954462870370775,-0.7988591534378958
+1399,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,6,0.5010868951157604,-0.9679937621406696,,0.8954462870370775,-0.7988591534378958
+1400,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,7,0.5421424770109552,-0.9456117250861614,,0.8954462870370775,-0.7988591534378958
+1401,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,8,0.5822003285717302,-0.9214894342372948,,0.8954462870370775,-0.7988591534378958
+1402,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,9,0.6211867294472027,-0.8956712829820369,,0.8954462870370775,-0.7988591534378958
+1403,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,10,0.6590299311276491,-0.8682047856801334,,0.8954462870370775,-0.7988591534378958
+1404,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,11,0.6956602889866673,-0.8391404902201935,,0.8954462870370775,-0.7988591534378958
+1405,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,12,0.7310103904514624,-0.8085318849940307,,0.8954462870370775,-0.7988591534378958
+1406,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,13,0.7650151790653804,-0.776435300459455,,0.8954462870370775,-0.7988591534378958
+1407,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,14,0.7976120742143678,-0.7429098054726792,,0.8954462870370775,-0.7988591534378958
+1408,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,15,0.8287410862970245,-0.7080170985811205,,0.8954462870370775,-0.7988591534378958
+1409,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,16,0.8583449271262917,-0.6718213944766578,,0.8954462870370775,-0.7988591534378958
+1410,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,17,0.8863691153596018,-0.6343893058183099,,0.8954462870370775,-0.7988591534378958
+1411,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,18,0.9127620767634578,-0.5957897206418217,,0.8954462870370775,-0.7988591534378958
+1412,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,19,0.9374752391279252,-0.556093675581767,,0.8954462870370775,-0.7988591534378958
+1413,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,20,0.9604631216563575,-0.5153742251394857,,0.8954462870370775,-0.7988591534378958
+1414,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,21,0.9816834186658477,-0.4737063072374424,,0.8954462870370775,-0.7988591534378958
+1415,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,22,1.0010970774443702,-0.4311666053074393,,0.8954462870370775,-0.7988591534378958
+1416,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,23,1.0186683701213246,-0.38783340716648473,,0.8954462870370775,-0.7988591534378958
+1417,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,24,1.03436495941922,-0.3437864609400368,,0.8954462870370775,-0.7988591534378958
+1418,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,25,1.0481579581654894,-0.299106828297771,,0.8954462870370775,-0.7988591534378958
+1419,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,26,1.0600219824549133,-0.2538767352719727,,0.8954462870370775,-0.7988591534378958
+1420,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,27,1.069935198364817,-0.2081794209330968,,0.8954462870370775,-0.7988591534378958
+1421,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,28,1.0778793621370661,-0.16209898420098554,,0.8954462870370775,-0.7988591534378958
+1422,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,29,1.0838398537529141,-0.11572022907366665,,0.8954462870370775,-0.7988591534378958
+1423,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,30,1.0142354594752039,-0.1082886547294862,,0.8954462870370775,-0.7988591534378958
+1424,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,31,1.008657751724594,-0.15168895769266544,,0.8954462870370775,-0.7988591534378958
+1425,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,32,1.0012237636074435,-0.19481010032271437,,0.8954462870370775,-0.7988591534378958
+1426,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,33,0.9919471762422125,-0.2375727247499194,,0.8954462870370775,-0.7988591534378958
+1427,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,34,0.9808450617695406,-0.2798981329025013,,0.8954462870370775,-0.7988591534378958
+1428,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,35,0.9679378519335821,-0.321708431338383,,0.8954462870370775,-0.7988591534378958
+1429,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,36,0.9532493004805055,-0.36292667459616,,0.8954462870370775,-0.7988591534378958
+1430,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,37,0.9368064394433554,-0.40347700680145687,,0.8954462870370775,-0.7988591534378958
+1431,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,38,0.918639529393729,-0.4432848012680653,,0.8954462870370775,-0.7988591534378958
+1432,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,39,0.8987820037518207,-0.48227679783694993,,0.8954462870370775,-0.7988591534378958
+1433,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,40,0.8772704072573245,-0.5203812377003691,,0.8954462870370775,-0.7988591534378958
+1434,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,41,0.8541443287144282,-0.557527995462989,,0.8954462870370775,-0.7988591534378958
+1435,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,42,0.8294463281346732,-0.5936487081969505,,0.8954462870370775,-0.7988591534378958
+1436,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,43,0.8032218584117592,-0.6286769012533862,,0.8954462870370775,-0.7988591534378958
+1437,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,44,0.7755191816724448,-0.6625481105988467,,0.8954462870370775,-0.7988591534378958
+1438,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,45,0.7463892804574818,-0.6952000014514979,,0.8954462870370775,-0.7988591534378958
+1439,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,46,0.715885763896044,-0.726572482998756,,0.8954462870370775,-0.7988591534378958
+1440,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,47,0.6840647690463226,-0.7566078189852397,,0.8954462870370775,-0.7988591534378958
+1441,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,48,0.6509848575838537,-0.7852507339675205,,0.8954462870370775,-0.7988591534378958
+1442,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,49,0.6167069080277082,-0.8124485150401248,,0.8954462870370775,-0.7988591534378958
+1443,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,50,0.5812940037028869,-0.8381511088455758,,0.8954462870370775,-0.7988591534378958
+1444,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,51,0.5448113166451053,-0.8623112136899455,,0.8954462870370775,-0.7988591534378958
+1445,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,52,0.5073259876616277,-0.8848843665943895,,0.8954462870370775,-0.7988591534378958
+1446,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,53,0.46890700276887665,-0.9058290251224613,,0.8954462870370775,-0.7988591534378958
+1447,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,54,0.4296250662342185,-0.9251066438326142,,0.8954462870370775,-0.7988591534378958
+1448,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,55,0.3895524704555693,-0.9426817452151934,,0.8954462870370775,-0.7988591534378958
+1449,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,56,0.34876296291829045,-0.9585219849833676,,0.8954462870370775,-0.7988591534378958
+1450,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,57,0.30733161047421886,-0.9725982115978432,,0.8954462870370775,-0.7988591534378958
+1451,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,58,0.2653346611926022,-0.9848845199158158,,0.8954462870370775,-0.7988591534378958
+1452,arc,A_target_Merged into twin listing,,Merged into twin listing,1221,destination,59,0.22284940403718764,-0.9953582988654238,,0.8954462870370775,-0.7988591534378958
+1453,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,0,0.13283758431161052,-1.081875305289041,Dropped: exact duplicate (62),0.18378749614713386,-1.1858423825534181
+1454,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,1,0.1351941414804671,-1.0815833505141246,,0.18378749614713386,-1.1858423825534181
+1455,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,2,0.1375500570319605,-1.0812862626568898,,0.18378749614713386,-1.1858423825534181
+1456,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,3,0.1399053197851605,-1.0809840431272852,,0.18378749614713386,-1.1858423825534181
+1457,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,4,0.1422599185622341,-1.0806766933596128,,0.18378749614713386,-1.1858423825534181
+1458,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,5,0.14461384218850015,-1.0803642148125232,,0.18378749614713386,-1.1858423825534181
+1459,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,6,0.14696707949248164,-1.0800466089690068,,0.18378749614713386,-1.1858423825534181
+1460,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,7,0.14931961930595838,-1.0797238773363882,,0.18378749614713386,-1.1858423825534181
+1461,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,8,0.15167145046402059,-1.079396021446318,,0.18378749614713386,-1.1858423825534181
+1462,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,9,0.15402256180512144,-1.0790630428547665,,0.18378749614713386,-1.1858423825534181
+1463,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,10,0.15637294217113104,-1.0787249431420154,,0.18378749614713386,-1.1858423825534181
+1464,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,11,0.15872258040738765,-1.0783817239126507,,0.18378749614713386,-1.1858423825534181
+1465,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,12,0.16107146536275233,-1.0780333867955556,,0.18378749614713386,-1.1858423825534181
+1466,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,13,0.1634195858896611,-1.0776799334439016,,0.18378749614713386,-1.1858423825534181
+1467,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,14,0.16576693084417743,-1.0773213655351415,,0.18378749614713386,-1.1858423825534181
+1468,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,15,0.1681134890860456,-1.0769576847710016,,0.18378749614713386,-1.1858423825534181
+1469,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,16,0.1704592494787442,-1.0765888928774732,,0.18378749614713386,-1.1858423825534181
+1470,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,17,0.17280420088953768,-1.076214991604804,,0.18378749614713386,-1.1858423825534181
+1471,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,18,0.17514833218953002,-1.0758359827274908,,0.18378749614713386,-1.1858423825534181
+1472,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,19,0.17749163225371686,-1.0754518680442706,,0.18378749614713386,-1.1858423825534181
+1473,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,20,0.17983408996104036,-1.0750626493781117,,0.18378749614713386,-1.1858423825534181
+1474,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,21,0.18217569419443885,-1.074668328576205,,0.18378749614713386,-1.1858423825534181
+1475,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,22,0.18451643384090144,-1.074268907509957,,0.18378749614713386,-1.1858423825534181
+1476,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,23,0.18685629779152124,-1.0738643880749779,,0.18378749614713386,-1.1858423825534181
+1477,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,24,0.18919527494154653,-1.073454772191075,,0.18378749614713386,-1.1858423825534181
+1478,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,25,0.19153335419043452,-1.073040061802243,,0.18378749614713386,-1.1858423825534181
+1479,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,26,0.19387052444190336,-1.0726202588766547,,0.18378749614713386,-1.1858423825534181
+1480,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,27,0.19620677460398653,-1.0721953654066505,,0.18378749614713386,-1.1858423825534181
+1481,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,28,0.19854209358908279,-1.071765383408731,,0.18378749614713386,-1.1858423825534181
+1482,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,29,0.2008764703140104,-1.0713303149235462,,0.18378749614713386,-1.1858423825534181
+1483,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,30,0.1879761465323767,-1.0025292855247863,,0.18378749614713386,-1.1858423825534181
+1484,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,31,0.18579168390904993,-1.0029364138320234,,0.18378749614713386,-1.1858423825534181
+1485,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,32,0.18360633953767547,-1.0033387823071407,,0.18378749614713386,-1.1858423825534181
+1486,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,33,0.18142012378967104,-1.003736389040539,,0.18378749614713386,-1.1858423825534181
+1487,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,34,0.1792330470405901,-1.0041292321452182,,0.18378749614713386,-1.1858423825534181
+1488,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,35,0.17704511967007105,-1.0045173097567857,,0.18378749614713386,-1.1858423825534181
+1489,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,36,0.1748563520617905,-1.0049006200334654,,0.18378749614713386,-1.1858423825534181
+1490,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,37,0.17266675460341235,-1.0052791611561065,,0.18378749614713386,-1.1858423825534181
+1491,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,38,0.1704763376865391,-1.005652931328192,,0.18378749614713386,-1.1858423825534181
+1492,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,39,0.16828511170666163,-1.0060219287758476,,0.18378749614713386,-1.1858423825534181
+1493,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,40,0.16609308706311118,-1.0063861517478496,,0.18378749614713386,-1.1858423825534181
+1494,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,41,0.16390027415900973,-1.0067455985156337,,0.18378749614713386,-1.1858423825534181
+1495,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,42,0.16170668340121874,-1.0071002673733027,,0.18378749614713386,-1.1858423825534181
+1496,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,43,0.15951232520029274,-1.0074501566376355,,0.18378749614713386,-1.1858423825534181
+1497,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,44,0.15731720997042797,-1.0077952646480932,,0.18378749614713386,-1.1858423825534181
+1498,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,45,0.15512134812941375,-1.0081355897668296,,0.18378749614713386,-1.1858423825534181
+1499,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,46,0.15292475009858195,-1.0084711303786968,,0.18378749614713386,-1.1858423825534181
+1500,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,47,0.15072742630275904,-1.0088018848912537,,0.18378749614713386,-1.1858423825534181
+1501,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,48,0.14852938717021597,-1.0091278517347742,,0.18378749614713386,-1.1858423825534181
+1502,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,49,0.14633064313261804,-1.009449029362253,,0.18378749614713386,-1.1858423825534181
+1503,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,50,0.14413120462497603,-1.0097654162494145,,0.18378749614713386,-1.1858423825534181
+1504,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,51,0.14193108208559724,-1.0100770108947197,,0.18378749614713386,-1.1858423825534181
+1505,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,52,0.13973028595603443,-1.0103838118193724,,0.18378749614713386,-1.1858423825534181
+1506,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,53,0.13752882668103786,-1.0106858175673274,,0.18378749614713386,-1.1858423825534181
+1507,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,54,0.13532671470850471,-1.0109830267052968,,0.18378749614713386,-1.1858423825534181
+1508,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,55,0.1331239604894301,-1.0112754378227569,,0.18378749614713386,-1.1858423825534181
+1509,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,56,0.1309205744778566,-1.0115630495319547,,0.18378749614713386,-1.1858423825534181
+1510,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,57,0.1287165671308254,-1.0118458604679152,,0.18378749614713386,-1.1858423825534181
+1511,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,58,0.12651194890832698,-1.0121238692884467,,0.18378749614713386,-1.1858423825534181
+1512,arc,A_target_Dropped: exact duplicate,,Dropped: exact duplicate,62,destination,59,0.12430673027325022,-1.0123970746741486,,0.18378749614713386,-1.1858423825534181

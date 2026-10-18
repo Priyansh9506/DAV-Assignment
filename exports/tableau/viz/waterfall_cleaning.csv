@@ -1,0 +1,7 @@
+row_id,step,value,kind,start,end,running_total
+1,Raw rows,2672,total,0.0,2672,2672
+2,Exact duplicates,-62,delta,2672.0,2610,2610
+3,Twin listings merged,-1221,delta,2610.0,1389,1389
+4,Canonical grades,1389,total,0.0,1389,1389
+5,No measured TS,-7,delta,1389.0,1382,1382
+6,Modelled grades,1382,total,0.0,1382,1382

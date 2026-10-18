@@ -1,0 +1,11 @@
+row_id,bin,n,method,low,high
+1,"(137.69, 602.0]",671,equal width,137.69,602.0
+2,"(602.0, 1064.0]",650,equal width,602.0,1064.0
+3,"(1064.0, 1526.0]",36,equal width,1064.0,1526.0
+4,"(1526.0, 1988.0]",18,equal width,1526.0,1988.0
+5,"(1988.0, 2450.0]",7,equal width,1988.0,2450.0
+6,"(139.999, 500.0]",318,equal frequency (quantile),139.999,500.0
+7,"(500.0, 580.0]",284,equal frequency (quantile),500.0,580.0
+8,"(580.0, 650.0]",240,equal frequency (quantile),580.0,650.0
+9,"(650.0, 750.0]",268,equal frequency (quantile),650.0,750.0
+10,"(750.0, 2450.0]",272,equal frequency (quantile),750.0,2450.0

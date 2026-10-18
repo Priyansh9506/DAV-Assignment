@@ -1,0 +1,10 @@
+row_id,source,target,value
+1,Raw class 0,Dropped: exact duplicate,24
+2,Raw class 0,Grade class 0,23
+3,Raw class 1,Dropped: exact duplicate,19
+4,Raw class 1,Grade class 1,648
+5,Raw class 1,Merged into twin listing,350
+6,Raw class 2,Dropped: exact duplicate,19
+7,Raw class 2,Grade class 2,711
+8,Raw class 2,Merged into twin listing,871
+9,Raw class 2,Unmeasured TS (excluded),7

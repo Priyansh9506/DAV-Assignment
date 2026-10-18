@@ -1,0 +1,6 @@
+row_id,test,rows,columns,n,chi2,dof,p_value,p_permutation,cramers_v,share_expected_lt5,asymptotic_valid
+1,Family group × strength class,family_group,strength_class_name,1382,548.7274103275685,10,1.6780576963999677e-111,0.0004997501249375312,0.4455631935571099,0.2222222222222222,False
+2,Product form × strength class,product_form,strength_class_name,1382,117.36593759006887,4,1.950567072492399e-24,0.0004997501249375312,0.2060639483081766,0.2222222222222222,False
+3,Carbon band × strength class,carbon_band,strength_class_name,1382,315.84947427317843,6,3.277391387151594e-65,0.0004997501249375312,0.3380423092579872,0.25,False
+4,CE weldability band × strength class (plain steels),ce_band,strength_class_name,583,198.21602703797848,4,9.086684725635881e-42,0.0004997501249375312,0.41230643053065325,0.3333333333333333,False
+5,Family group × default liquidus,family_group,liquidus_is_default,1389,631.9723979268789,5,2.4938101215573924e-134,0.0004997501249375312,0.6745248163033946,0.0,True

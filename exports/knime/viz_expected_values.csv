@@ -1,0 +1,99 @@
+section,item,value
+Five-number summary,tensile_strength_mpa | n,1382
+Five-number summary,tensile_strength_mpa | min,140.0
+Five-number summary,tensile_strength_mpa | Q1,510.0
+Five-number summary,tensile_strength_mpa | median,610.0
+Five-number summary,tensile_strength_mpa | Q3,720.0
+Five-number summary,tensile_strength_mpa | max,2450.0
+Five-number summary,tensile_strength_mpa | IQR,210.0
+Five-number summary,tensile_strength_mpa | n_outliers,75
+Five-number summary,liquidus_c | n,1389
+Five-number summary,liquidus_c | min,1160.0
+Five-number summary,liquidus_c | Q1,1430.0
+Five-number summary,liquidus_c | median,1450.0
+Five-number summary,liquidus_c | Q3,1460.0
+Five-number summary,liquidus_c | max,1830.0
+Five-number summary,liquidus_c | IQR,30.0
+Five-number summary,liquidus_c | n_outliers,115
+Five-number summary,carbon_equivalent | n,1389
+Five-number summary,carbon_equivalent | min,0.0
+Five-number summary,carbon_equivalent | Q1,0.58
+Five-number summary,carbon_equivalent | median,2.526666666666667
+Five-number summary,carbon_equivalent | Q3,4.761666666666667
+Five-number summary,carbon_equivalent | max,9.563333333333334
+Five-number summary,carbon_equivalent | IQR,4.181666666666667
+Five-number summary,carbon_equivalent | n_outliers,0
+Five-number summary,alloying_total | n,1389
+Five-number summary,alloying_total | min,0.0324999999999988
+Five-number summary,alloying_total | Q1,2.549999999999997
+Five-number summary,alloying_total | median,11.799999999999995
+Five-number summary,alloying_total | Q3,31.599999999999994
+Five-number summary,alloying_total | max,70.7
+Five-number summary,alloying_total | IQR,29.049999999999997
+Five-number summary,alloying_total | n_outliers,0
+Chi-square,Family group × strength class | chi2,548.7274103275685
+Chi-square,Family group × strength class | df,10
+Chi-square,Family group × strength class | p_value,1.6780576963999677e-111
+Chi-square,Family group × strength class | cramers_v,0.4455631935571099
+Chi-square,Family group × strength class | n,1382
+Chi-square,Product form × strength class | chi2,117.36593759006887
+Chi-square,Product form × strength class | df,4
+Chi-square,Product form × strength class | p_value,1.950567072492399e-24
+Chi-square,Product form × strength class | cramers_v,0.2060639483081766
+Chi-square,Product form × strength class | n,1382
+Chi-square,Carbon band × strength class | chi2,315.84947427317843
+Chi-square,Carbon band × strength class | df,6
+Chi-square,Carbon band × strength class | p_value,3.277391387151594e-65
+Chi-square,Carbon band × strength class | cramers_v,0.3380423092579872
+Chi-square,Carbon band × strength class | n,1382
+Chi-square,CE weldability band × strength class (plain steels) | chi2,198.21602703797848
+Chi-square,CE weldability band × strength class (plain steels) | df,4
+Chi-square,CE weldability band × strength class (plain steels) | p_value,9.086684725635881e-42
+Chi-square,CE weldability band × strength class (plain steels) | cramers_v,0.41230643053065325
+Chi-square,CE weldability band × strength class (plain steels) | n,583
+Chi-square,Family group × default liquidus | chi2,631.9723979268789
+Chi-square,Family group × default liquidus | df,5
+Chi-square,Family group × default liquidus | p_value,2.4938101215573924e-134
+Chi-square,Family group × default liquidus | cramers_v,0.6745248163033946
+Chi-square,Family group × default liquidus | n,1389
+"Simple regression (carbon steels, TS ~ C)",n,196
+"Simple regression (carbon steels, TS ~ C)",intercept,429.1854289042037
+"Simple regression (carbon steels, TS ~ C)",slope C,428.62661253350984
+"Simple regression (carbon steels, TS ~ C)",R^2,0.5082160079793168
+"Simple regression (carbon steels, TS ~ C)",p slope,1.0103047648569834e-31
+Multiple regression (carbon & low-alloy),coef Intercept,404.03747369433233
+Multiple regression (carbon & low-alloy),coef C,648.5044281082568
+Multiple regression (carbon & low-alloy),coef Mn,-19.57174182266548
+Multiple regression (carbon & low-alloy),coef Si,193.3292859668982
+Multiple regression (carbon & low-alloy),coef Cr,19.721239818693977
+Multiple regression (carbon & low-alloy),coef Ni,23.837013377405412
+Multiple regression (carbon & low-alloy),coef Mo,-74.22061976173623
+Multiple regression (carbon & low-alloy),coef V,362.1829058437585
+Multiple regression (carbon & low-alloy),n,574
+Multiple regression (carbon & low-alloy),R^2,0.32551332524095045
+Multiple regression (carbon & low-alloy),adj R^2,0.3171716172492307
+PCA (log1p + z-score composition),PC1 explained variance,0.15033662073792953
+PCA (log1p + z-score composition),PC2 explained variance,0.11759028130354089
+PCA (log1p + z-score composition),PC3 explained variance,0.09504594210573884
+PCA (log1p + z-score composition),PC4 explained variance,0.07628659596615131
+PCA (log1p + z-score composition),PC5 explained variance,0.05938301499199001
+PCA (log1p + z-score composition),components for 80 %,12
+k-Means scan,k=2 silhouette,0.23075220678206873
+k-Means scan,k=3 silhouette,0.24659898338180467
+k-Means scan,k=4 silhouette,0.2686898460117663
+k-Means scan,k=5 silhouette,0.2711150081048302
+k-Means scan,k=6 silhouette,0.27721144434915584
+k-Means scan,k=7 silhouette,0.28642644356118263
+k-Means scan,k=8 silhouette,0.3167163870670987
+k-Means scan,k=9 silhouette,0.33105299078619477
+k-Means scan,k=10 silhouette,0.33555732894944673
+k-Means scan,k=11 silhouette,0.3464903992951862
+k-Means scan,k=12 silhouette,0.2996897076400203
+k-Means scan,k used for visuals,8
+k-Means scan,"cluster sizes at k=8, largest first",704 377 84 73 65 43 25 18
+Row counts (waterfall),raw,2672
+Row counts (waterfall),duplicates,62
+Row counts (waterfall),twins,1221
+Row counts (waterfall),grades,1389
+Row counts (waterfall),unmeasured,7
+Row counts (waterfall),measured,1382

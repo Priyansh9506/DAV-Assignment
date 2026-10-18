@@ -1,0 +1,61 @@
+row_id,test,row_value,col_value,observed,expected,std_residual
+1,Family group × strength class,Carbon & low-alloy,Low (<300),1,9.70260492040521,-2.793862921821926
+2,Family group × strength class,Carbon & low-alloy,Medium (300-600),346,273.3603473227207,4.393453155501247
+3,Family group × strength class,Carbon & low-alloy,High (>600),236,299.9370477568741,-3.691794538263336
+4,Family group × strength class,Cast iron,Low (<300),22,1.0484804630969609,20.461400449245755
+5,Family group × strength class,Cast iron,Medium (300-600),28,29.539797395079596,-0.2833086433518029
+6,Family group × strength class,Cast iron,High (>600),13,32.41172214182345,-3.409675214601318
+7,Family group × strength class,Other,Low (<300),0,0.46599131693198265,-0.6826355667059714
+8,Family group × strength class,Other,Medium (300-600),12,13.128798842257599,-0.3115330006782044
+9,Family group × strength class,Other,High (>600),16,14.40520984081042,0.42018810375636323
+10,Family group × strength class,Stainless,Low (<300),0,9.036903039073806,-3.0061442146167585
+11,Family group × strength class,Stainless,Medium (300-600),231,254.60492040520984,-1.479343896143554
+12,Family group × strength class,Stainless,High (>600),312,279.35817655571634,1.952961661547908
+13,Family group × strength class,Tool & high-speed,Low (<300),0,1.3646888567293778,-1.168198979938511
+14,Family group × strength class,Tool & high-speed,Medium (300-600),10,38.44862518089725,-4.5879732357383896
+15,Family group × strength class,Tool & high-speed,High (>600),72,42.186685962373375,4.5901042542153005
+16,Family group × strength class,Weld metal,Low (<300),0,1.3813314037626627,-1.1753005589051093
+17,Family group × strength class,Weld metal,Medium (300-600),21,38.91751085383502,-2.87213697916051
+18,Family group × strength class,Weld metal,High (>600),62,42.701157742402316,2.9533262892684538
+19,Product form × strength class,cast,Low (<300),22,4.1606367583212736,8.745798110201733
+20,Product form × strength class,cast,Medium (300-600),127,117.22141823444284,0.9031759941551508
+21,Product form × strength class,cast,High (>600),101,128.6179450072359,-2.4352333198864375
+22,Product form × strength class,weld,Low (<300),0,1.3813314037626627,-1.1753005589051093
+23,Product form × strength class,weld,Medium (300-600),21,38.91751085383502,-2.87213697916051
+24,Product form × strength class,weld,High (>600),62,42.701157742402316,2.9533262892684538
+25,Product form × strength class,wrought,Low (<300),1,17.458031837916064,-3.9389480909742387
+26,Product form × strength class,wrought,Medium (300-600),500,491.86107091172215,0.36698307818158177
+27,Product form × strength class,wrought,High (>600),548,539.6808972503618,0.35810300499726794
+28,Carbon band × strength class,Low carbon (≤0.25),Low (<300),1,16.093342981186687,-3.7623769714110797
+29,Carbon band × strength class,Low carbon (≤0.25),Medium (300-600),515,453.4124457308249,2.8923193262579106
+30,Carbon band × strength class,Low carbon (≤0.25),High (>600),451,497.49421128798843,-2.0845142530477156
+31,Carbon band × strength class,Medium carbon (0.25–0.60),Low (<300),0,4.227206946454414,-2.056017253442785
+32,Carbon band × strength class,Medium carbon (0.25–0.60),Medium (300-600),98,119.09696092619392,-1.9331678273039496
+33,Carbon band × strength class,Medium carbon (0.25–0.60),High (>600),156,130.67583212735167,2.2153255002446506
+34,Carbon band × strength class,High carbon / tool (0.60–2.1),Low (<300),8,1.8639652677279306,4.494370811852979
+35,Carbon band × strength class,High carbon / tool (0.60–2.1),Medium (300-600),17,52.515195369030394,-4.900853442079364
+36,Carbon band × strength class,High carbon / tool (0.60–2.1),High (>600),87,57.62083936324168,3.870344235189623
+37,Carbon band × strength class,Cast-iron range (>2.1),Low (<300),14,0.8154848046309696,14.600113386257911
+38,Carbon band × strength class,Cast-iron range (>2.1),Medium (300-600),18,22.975397973950795,-1.0379974904966418
+39,Carbon band × strength class,Cast-iron range (>2.1),High (>600),17,25.209117221418236,-1.6349995532264752
+40,CE weldability band × strength class (plain steels),Readily weldable (CE ≤0.40),Low (<300),1,0.2967409948542024,1.2910008487162177
+41,CE weldability band × strength class (plain steels),Readily weldable (CE ≤0.40),Medium (300-600),154,102.67238421955403,5.065522721491537
+42,CE weldability band × strength class (plain steels),Readily weldable (CE ≤0.40),High (>600),18,70.03087478559176,-6.217507989361934
+43,CE weldability band × strength class (plain steels),Preheat advised (0.40–0.60),Low (<300),0,0.27958833619210977,-0.5287611333977845
+44,CE weldability band × strength class (plain steels),Preheat advised (0.40–0.60),Medium (300-600),126,96.73756432246998,2.975177615600105
+45,CE weldability band × strength class (plain steels),Preheat advised (0.40–0.60),High (>600),37,65.9828473413379,-3.568005564483928
+46,CE weldability band × strength class (plain steels),Difficult (CE >0.60),Low (<300),0,0.4236706689536878,-0.6508998916528469
+47,CE weldability band × strength class (plain steels),Difficult (CE >0.60),Medium (300-600),66,146.590051457976,-6.656243245737216
+48,CE weldability band × strength class (plain steels),Difficult (CE >0.60),High (>600),181,99.98627787307032,8.101928110193377
+49,Family group × default liquidus,Carbon & low-alloy,False,142,363.0633549316055,-11.601804647463632
+50,Family group × default liquidus,Carbon & low-alloy,True,441,219.93664506839454,14.906234829709888
+51,Family group × default liquidus,Cast iron,False,67,41.724262059035276,3.9129969711244983
+52,Family group × default liquidus,Cast iron,True,0,25.275737940964724,-5.02749817911103
+53,Family group × default liquidus,Other,False,25,17.437005039596833,1.8111643637619759
+54,Family group × default liquidus,Other,True,3,10.562994960403168,-2.3270208507898213
+55,Family group × default liquidus,Stainless,False,502,340.02159827213825,8.784233209056808
+56,Family group × default liquidus,Stainless,True,44,205.97840172786178,-11.286161678456011
+57,Family group × default liquidus,Tool & high-speed,False,70,51.0655147588193,2.6496569258945244
+58,Family group × default liquidus,Tool & high-speed,True,12,30.934485241180706,-3.404333166753126
+59,Family group × default liquidus,Weld metal,False,59,51.6882649388049,1.0170082346993579
+60,Family group × default liquidus,Weld metal,True,24,31.311735061195105,-1.3066728867471105
