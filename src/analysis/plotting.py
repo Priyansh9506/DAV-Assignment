@@ -32,6 +32,8 @@ BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = SERIES
 SEQ_BLUE = LinearSegmentedColormap.from_list(
     "seq_blue", ["#0d366b", "#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])
 DIVERGING = LinearSegmentedColormap.from_list("div_blue_red", ["#3987e5", "#383835", "#e66767"])
+# sequential ramp for the dark surface: dim -> bright so low values stay visible against the background
+SEQ_ON_DARK = LinearSegmentedColormap.from_list("seq_dark", ["#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])
 
 FONT = ["Segoe UI", "Inter", "DejaVu Sans", "sans-serif"]
 
@@ -57,9 +59,10 @@ def apply_theme() -> None:
     })
 
 
-def subtitle(ax, text: str) -> None:
-    """Secondary line under the left-aligned title (the 'so what' of the chart)."""
-    ax.annotate(text, xy=(0, 1), xycoords="axes fraction", xytext=(0, 4), textcoords="offset points",
+def subtitle(ax, text: str, offset: float = 4) -> None:
+    """Secondary line under the left-aligned title (the 'so what' of the chart).
+    `offset` is the gap in points above the axes (raise it when ticks sit on top)."""
+    ax.annotate(text, xy=(0, 1), xycoords="axes fraction", xytext=(0, offset), textcoords="offset points",
                 ha="left", va="bottom", fontsize=9.5, color=INK_2)
 
 

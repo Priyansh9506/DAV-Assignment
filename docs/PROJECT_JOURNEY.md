@@ -96,3 +96,32 @@ From `src/analysis/quality.py::irreducible_error` over 1382 measured grades in 1
 
 Done: cleaning pipeline, features, data dictionary, notebook 01, 51 passing tests.
 Pending: EDA, models, findings (Phase 2); exports (Phase 3); app (Phase 4); Tableau/KNIME instructions (Phase 5).
+
+---
+
+## Phase 2 plan: EDA, models, findings
+
+**Analysis unit:** 1389 canonical grades. Strength work uses the 1382 grades with measured TS.
+
+**EDA (`notebooks/02_eda.ipynb`, logic in `src/analysis/eda.py`, figures in `src/analysis/viz_eda.py`).** Each section answers one question:
+
+1. How does strength vary by family? (box plot by family, sorted by median)
+2. Which elements relate to strength, and does pooling families mislead? (Spearman ρ overall vs within family groups; carbon's Simpson's paradox)
+3. Where do stainless grades sit on the Cr–Ni map, and does strength follow alloy content there?
+4. Does carbon equivalent track strength, and in which families?
+5. Strength vs liquidus "design space": are they independent axes?
+6. What separates the three strength classes? (effect sizes + family mix)
+7. How do conclusions change with vs without the imputed rows?
+
+**Models (`notebooks/03_models.ipynb`, logic in `src/analysis/modeling.py`, `clustering.py`, `substitutes.py`).**
+
+- Every evaluation uses **GroupKFold by `composition_group_id`** (5 folds × 3 repeats), so identical chemistries never sit on both sides of a split.
+- TS regression, in order: global median → family median (baseline) → Ridge (interpretable) → Random Forest (for the KNIME cross-check) → HistGradientBoosting. Reported as MAE / RMSE / R² against the baseline and the irreducible-error ceiling. Two feature sets: composition-only, and composition + family + product form.
+- Leakage demonstration: the same GBM scored with naive random KFold on listing rows (twins + imputed rows) vs GroupKFold on grades.
+- Strength-class classifier without TS: family-majority baseline → balanced logistic regression → balanced HGB classifier. Reports macro-F1, balanced accuracy and the confusion matrix.
+- Permutation importance on held-out folds, plus SHAP for the final GBM.
+- Prediction intervals: quantile GBMs (10th/90th percentiles), conformally calibrated on out-of-fold residuals, with coverage reported.
+- Clustering on standardized composition: KMeans (k by silhouette) and HDBSCAN, PCA + UMAP projections, compared to families with ARI/NMI and a contingency table.
+- Substitute engine: nearest neighbours on transformed + standardized composition. The transform is chosen by held-out family agreement and |ΔTS| of the nearest non-identical neighbour.
+
+**Deliberate exclusions:** TS is never a feature for class. Strength numbers embedded in designations (e.g. "S460N", "Grade 60-40-18") are never parsed into features: that would leak the target through the name.

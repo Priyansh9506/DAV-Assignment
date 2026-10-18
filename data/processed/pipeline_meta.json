@@ -1,0 +1,19 @@
+{
+  "rare_elements": [
+    "As",
+    "Ca",
+    "Ce",
+    "La",
+    "Mg",
+    "Pb",
+    "Se",
+    "Sn",
+    "Ta",
+    "Zn"
+  ],
+  "imputed_ts_value": 652.482978,
+  "default_liquidus_c": 1460,
+  "n_grades": 1389,
+  "n_measured": 1382,
+  "n_listings": 2610
+}

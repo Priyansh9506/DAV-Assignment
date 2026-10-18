@@ -64,6 +64,22 @@ FAMILY_LABELS = {
 }
 
 
+# Coarser grouping used where 17 families are too many (charts, per-group statistics)
+PLAIN_STEEL_FAMILIES = ["carbon", "alloy", "boron", "spring", "bearing", "nitriding", "weathering"]
+CAST_IRON_FAMILIES = ["cast_iron_grey", "cast_iron_ductile", "cast_iron_malleable", "cast_iron_austenitic", "cast_iron_other"]
+FAMILY_GROUP_OF = {
+    **{f: "Carbon & low-alloy" for f in PLAIN_STEEL_FAMILIES},
+    **{f: "Cast iron" for f in CAST_IRON_FAMILIES},
+    "stainless": "Stainless", "tool": "Tool & high-speed", "high_speed": "Tool & high-speed", "weld_metal": "Weld metal",
+}
+FAMILY_GROUP_ORDER = ["Carbon & low-alloy", "Stainless", "Cast iron", "Tool & high-speed", "Weld metal", "Other"]
+
+
+def family_group(family: pd.Series) -> pd.Series:
+    """Map a family Series to its group; maraging, Fe-Ni special alloys etc. fall into 'Other'."""
+    return family.map(FAMILY_GROUP_OF).fillna("Other")
+
+
 def family_from_name(name: str) -> str | None:
     """Return the first family whose rule matches `name`, or None if no rule matches."""
     for fam, pattern in _COMPILED_FAMILY_RULES:

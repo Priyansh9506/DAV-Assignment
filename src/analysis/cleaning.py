@@ -16,7 +16,7 @@ import pandas as pd
 
 from . import features as F
 from .constants import (
-    CLEAN_GRADES_CSV, CLEAN_LISTINGS_CSV, CLEANING_LOG_JSON, CLEANING_LOG_MD, DATA_RAW,
+    CLEAN_GRADES_CSV, CLEAN_LISTINGS_CSV, CLEANING_LOG_JSON, CLEANING_LOG_MD, DATA_RAW, PIPELINE_META_JSON,
     DEFAULT_LIQUIDUS_C, ELEMENTS, IMPUTED_TS_TOL, IMPUTED_TS_VALUE, RARE_ELEMENT_MIN_ROWS,
     RAW_CLASS, RAW_LIQUIDUS, RAW_NAME, RAW_TS, STRENGTH_CLASS_EDGES, STRENGTH_CLASS_LABELS,
 )
@@ -350,8 +350,21 @@ def save_outputs(result: CleaningResult) -> None:
     CLEANING_LOG_MD.write_text(result.log.to_markdown(), encoding="utf-8")
     CLEANING_LOG_JSON.write_text(result.log.to_json(), encoding="utf-8")
     write_data_dictionary(result.grades, result.rare_elements)
+    meta = {
+        "rare_elements": result.rare_elements,
+        "imputed_ts_value": IMPUTED_TS_VALUE,
+        "default_liquidus_c": DEFAULT_LIQUIDUS_C,
+        "n_grades": len(result.grades),
+        "n_measured": int(result.grades["tensile_strength_mpa"].notna().sum()),
+        "n_listings": len(result.listings),
+    }
+    PIPELINE_META_JSON.write_text(json.dumps(meta, indent=2), encoding="utf-8")
     logger.info("Saved %s (%d rows) and %s (%d rows)", CLEAN_GRADES_CSV.name, len(result.grades),
                 CLEAN_LISTINGS_CSV.name, len(result.listings))
+
+
+def load_pipeline_meta() -> dict:
+    return json.loads(PIPELINE_META_JSON.read_text(encoding="utf-8"))
 
 
 def load_clean_grades() -> pd.DataFrame:

@@ -10,6 +10,7 @@ DATA_PROCESSED = ROOT / "data" / "processed"
 CLEAN_GRADES_CSV = DATA_PROCESSED / "steels_clean.csv"
 CLEAN_LISTINGS_CSV = DATA_PROCESSED / "steels_listings.csv"
 DATA_DICTIONARY_MD = DATA_PROCESSED / "DATA_DICTIONARY.md"
+PIPELINE_META_JSON = DATA_PROCESSED / "pipeline_meta.json"
 
 REPORTS = ROOT / "reports"
 FIGURES = REPORTS / "figures"

@@ -271,6 +271,323 @@ grades.head(3)
 '''),
 ]
 
+# =============================================================================================
+# 02 EDA
+# =============================================================================================
+NB02 = [
+    ("md", r'''
+# 02 · Exploratory analysis: questions, not chart spam
+
+Each section asks one question an engineer or buyer would ask, answers it with a statistic and one figure,
+and ends with the practical takeaway. Strength statistics use only grades with a **measured** tensile strength.
+Statistics come from `src/analysis/eda.py`; figures from `src/analysis/viz_eda.py`.
+'''),
+    ("code", SETUP),
+    ("code", r'''
+from src.analysis.cleaning import load_clean_grades
+from src.analysis.constants import CLEAN_LISTINGS_CSV
+from src.analysis import eda as E, viz_eda as VE
+grades = load_clean_grades()
+listings = pd.read_csv(CLEAN_LISTINGS_CSV)
+m = E.measured(grades)
+print(f"{len(grades)} grades, {len(m)} with measured tensile strength")
+m[E.TS].describe()
+'''),
+    ("md", "## Q1 · How much does family alone decide strength?"),
+    ("code", r'''
+fam = E.family_strength_table(grades)
+display(fam.set_index("family_label").drop(columns="family"))
+kw = E.kruskal_family(grades)
+print("Kruskal-Wallis across families:", {k: (round(v, 4) if isinstance(v, float) else v) for k, v in kw.items()})
+show(VE.strength_by_family(grades), "02_strength_by_family")
+'''),
+    ("md", r'''
+**Takeaway.** Family is the first-order decision. Family medians run from grey cast iron at the bottom to spring
+steel at the top, about a sevenfold spread. The Kruskal–Wallis ε² printed above is the share of the strength
+*ranking* explained by family alone. Within most families the IQR is still a few hundred MPa, which is where
+chemistry and processing come in. The baseline model in notebook 03 is exactly this: predict the family median.
+
+## Q2 · Which elements drive strength, and does pooling families mislead?
+'''),
+    ("code", r'''
+rho, pval, sizes = E.element_correlations(grades)
+print("Spearman rho with tensile strength (NaN = element essentially absent in that group)")
+display(rho.round(2))
+ce = E.carbon_effect(grades)
+pd.Series(ce)
+'''),
+    ("code", r'''
+show(VE.carbon_paradox(grades, ce), "02_carbon_simpsons_paradox")
+show(VE.correlation_heatmap(rho, sizes), "02_element_correlations")
+'''),
+    ("md", r'''
+**Takeaway.** Pooled across all grades, carbon looks irrelevant to strength. That is a **Simpson's paradox**:
+cast irons hold 2–4 % carbon (as graphite) yet are mostly weak, which cancels the steel trend. Within carbon &
+low-alloy steels, carbon is the dominant strengthener (Theil–Sen slope above, per 0.1 % C). The heatmap shows
+the same thing for other elements: V, Co, Mo and W matter strongly in tool & high-speed steels; in stainless,
+nitrogen and molybdenum help while the bulk Cr/Ni amount does not. **Any element-to-strength claim must be
+made within a family.** That is also why the models include family as a feature.
+
+## Q3 · Stainless steels: does more alloy mean more strength?
+'''),
+    ("code", r'''
+prof = E.stainless_profile(grades)
+display(prof)
+s = m[m.family == "stainless"]
+from scipy import stats
+print("within stainless, Spearman rho(alloying_total, TS) =", round(stats.spearmanr(s.alloying_total, s[E.TS])[0], 3))
+show(VE.cr_ni_map(grades, prof), "02_cr_ni_map")
+'''),
+    ("md", r'''
+**Takeaway.** Inside the stainless family, total alloy content is essentially uncorrelated with strength.
+What matters is **which microstructure** the Cr–Ni balance produces: duplex-type and Ni-bearing martensitic /
+precipitation-hardening grades sit well above fully austenitic grades, despite austenitic grades carrying the
+most nickel. For procurement this is the expensive mistake to avoid: a high-Ni austenitic grade is *not* the
+strong option. You pay for nickel to get corrosion resistance and toughness, not strength.
+
+## Q4 · Is carbon equivalent a useful strength index?
+'''),
+    ("code", r'''
+ce_tab = E.ce_by_group(grades)
+display(ce_tab)
+show(VE.ce_small_multiples(grades, ce_tab), "02_ce_vs_strength")
+'''),
+    ("md", r'''
+**Takeaway.** The IIW carbon equivalent is a decent single-number strength proxy for carbon/low-alloy and
+tool steels, and meaningless for stainless (its Cr term counts corrosion-resisting chromium as if it were
+hardenability) and for cast irons. Use CE to screen plain steels; do not carry it across families.
+
+## Q5 · Strength vs liquidus: one trade-off or two independent axes?
+'''),
+    ("code", r'''
+ds = E.design_space_stats(grades)
+display(pd.Series(ds))
+display(E.design_space_by_family(grades))
+show(VE.design_space(grades, ds), "02_design_space")
+'''),
+    ("md", r'''
+**Takeaway.** Tensile strength and liquidus are at most weakly related: no correlation across all grades, and
+only a weak one once the default 1460 °C values are removed (coefficients above). They are **near-independent
+design axes**: picking a strength band barely constrains the melting range, and vice versa. That justifies the
+app's Target Designer, which filters on both axes at once. Liquidus mostly separates *families* (cast irons sit
+at the low end, high-speed steels at the top; see the P10–P90 table), not grades within a family.
+
+Example query, as the Target Designer runs it: **800–1000 MPa with a liquidus of 1420–1470 °C**, with and
+without the default-liquidus grades.
+'''),
+    ("code", r'''
+q, fam_q, env = E.target_design_query(grades, 800, 1000, 1420, 1470)
+print(f"{len(q)} grades match"); display(fam_q.head(8)); display(env.round(3))
+q2, fam_q2, _ = E.target_design_query(grades, 800, 1000, 1420, 1470, exclude_default_liquidus=True)
+print(f"excluding default liquidus: {len(q2)} grades"); display(fam_q2.head(8))
+'''),
+    ("md", "## Q6 · What separates the strength classes?"),
+    ("code", r'''
+sep = E.class_separation(grades)
+display(sep.round(3))
+display(E.class_family_mix(grades))
+show(VE.class_drivers(sep, grades), "02_class_drivers")
+'''),
+    ("md", r'''
+**Takeaway.** No single element separates the classes strongly: even the largest effect size (Mo) is small.
+The classes are separated mainly by **family**. The low class (< 300 MPa) is almost entirely cast iron (grey
+and Ni-Resist), which is why its carbon median is high. Every high-speed, maraging, spring and nitriding grade
+is high-class, and the high class carries several times more alloy than the medium class (alloying-total medians
+above). The low class is tiny (see n), so the classifier in notebook 03 must be class-balanced and judged on
+macro-F1, not accuracy.
+
+## Q7 · How do conclusions change with vs without the imputed rows?
+'''),
+    ("code", r'''
+from src.analysis.quality import imputation_sensitivity
+sens = imputation_sensitivity(listings, grades)
+display(sens.T.round(3))
+show(VE.imputation_sensitivity(listings, grades, sens), "02_imputation_sensitivity")
+'''),
+    ("md", r'''
+**Takeaway.** Treating the imputed constant as data would:
+
+* create a fake mode at 652 MPa and overstate the share of high-strength grades;
+* set the **median of whole families** (stainless, tool) to exactly the imputed value;
+* weaken the true element–strength correlations (e.g. Ni, Mo, V), because a constant was mixed into the target.
+
+Dropping imputed rows *but keeping twin listings* (scenario B) fixes the values, but still double-counts most
+grades, so every grade listed twice gets twice the weight. Scenario C (one row per grade, measured TS) is used
+everywhere else in this project.
+'''),
+]
+
+# =============================================================================================
+# 03 Models
+# =============================================================================================
+NB03 = [
+    ("md", r"""
+# 03 · Models: honest evaluation against a baseline and a ceiling
+
+All models are evaluated with **GroupKFold by `composition_group_id`** (5 folds × 3 seeds): grades with identical
+chemistry never sit on both sides of a split. Every score is compared with
+
+* the **family-median baseline** (what an engineer gets from a handbook table), and
+* the **irreducible-error ceiling** from notebook 01 (processing is not in the data).
+
+Logic: `src/analysis/modeling.py`, `evaluation.py`, `clustering.py`, `substitutes.py`, `train.py`.
+"""),
+    ("code", SETUP),
+    ("code", r"""
+import logging; logging.basicConfig(level=logging.WARNING)
+from src.analysis.cleaning import load_clean_grades, load_pipeline_meta
+from src.analysis.constants import CLEAN_LISTINGS_CSV
+from src.analysis import evaluation as EV, modeling as M, viz_models as VM
+grades = load_clean_grades(); listings = pd.read_csv(CLEAN_LISTINGS_CSV)
+rare = load_pipeline_meta()["rare_elements"]
+ev = EV.run_evaluation(grades, listings, rare)      # every CV experiment, run once
+EV.save_evaluation(ev)
+m = ev.measured
+print("measured grades:", len(m), "| composition groups:", m.composition_group_id.nunique())
+pd.Series(ev.ceiling.as_dict())
+"""),
+    ("md", "## 1 · Tensile-strength regression"),
+    ("code", r"""
+cols = ["model", "features", "MAE_mean", "MAE_std", "RMSE_mean", "R2_mean", "R2_std", "oof_MAE", "oof_R2"]
+display(ev.reg_table[cols].sort_values("MAE_mean"))
+show(VM.model_comparison(ev.reg_table, ev.baseline_mae, ev.ceiling, EV.CHOSEN_REGRESSOR), "03_model_comparison")
+"""),
+    ("md", r"""
+**Reading the table.**
+
+* The **family-median baseline** is the bar to beat. **Ridge does not beat it**: element effects change sign
+  between families (notebook 02, Q2), and a pooled linear model cannot express that.
+* Tree ensembles learn those family-conditional, non-linear effects and roughly **halve the baseline MAE**.
+  Adding family and product form to composition helps every model.
+* Nested GroupKFold tuning of the GBM (last row) gives no gain over the fixed settings, so the simpler fixed
+  configuration is deployed.
+* The gap to the ceiling is real but bounded. Most of it sits in grades whose chemistry is shared with other
+  tempers (section 3).
+
+## 2 · Why GroupKFold: the leakage demonstration
+"""),
+    ("code", r"""
+display(ev.leakage)
+show(VM.leakage_demo(ev.leakage), "03_leakage_demo")
+"""),
+    ("md", r"""
+The same model looks far better on random splits of the listing rows, because a grade's twin listing sits in
+the training fold. Keeping the imputed targets instead adds noise. Even at grade level, a random split lets
+processing variants of one chemistry leak across folds. **Only the last row is an honest estimate** of how the
+model does on a chemistry it has not seen.
+
+## 3 · Where the model errs
+"""),
+    ("code", r"""
+err = (ev.chosen_oof - m[M.TARGET]).abs()
+shared = m.composition_group_n_measured > 1
+print(f"OOF MAE: unique composition {err[~shared].mean():.1f} MPa (n={(~shared).sum()}), "
+      f"shared composition {err[shared].mean():.1f} MPa (n={shared.sum()}); median AE {err.median():.1f} MPa")
+show(VM.pred_vs_actual(m, ev.chosen_oof), "03_pred_vs_actual")
+show(VM.error_by_family(m, ev.chosen_oof), "03_error_by_family")
+"""),
+    ("md", "## 4 · Strength-class classifier (TS never used as a feature)"),
+    ("code", r"""
+display(ev.clf_table.round(3))
+cm = M.confusion(ev.y_class, ev.clf_results["Gradient boosting (balanced)"].oof.astype(int))
+display(cm)
+show(VM.classifier_results(ev.clf_table, cm), "03_classifier")
+"""),
+    ("md", r"""
+Class-balanced gradient boosting clearly beats the family-majority baseline on macro-F1 and recovers almost
+the whole low class. Errors concentrate at the medium/high boundary (600 MPa), where a few MPa decide the
+label. Thresholding the regressor's prediction is nearly as good, a useful consistency check between the
+two models.
+
+## 5 · What drives the predictions
+"""),
+    ("code", r"""
+display(ev.perm_importance.round(2).head(15))
+import shap
+spec = M.feature_specs(rare)["composition+family"]; levels = M.category_levels(grades)
+X = M.build_X(m, spec, levels, rare)
+est = M.make_regressor("Gradient boosting", spec).fit(X, m[M.TARGET])
+codes = X.copy()
+for c in spec.categorical: codes[c] = X[c].cat.codes.astype(float)
+cols_ = list(X.columns)
+def f(a):
+    d = pd.DataFrame(a, columns=cols_)
+    for c in spec.categorical: d[c] = pd.Categorical.from_codes(d[c].astype(int), categories=levels[c])
+    return est.predict(d)
+sample = codes.sample(250, random_state=0)
+background = shap.maskers.Independent(shap.utils.sample(codes, 100, random_state=0), max_samples=100)
+sv = shap.PermutationExplainer(f, background, seed=0)(sample, silent=True)
+print("SHAP additivity max error:", float(np.abs(sv.values.sum(1) + sv.base_values - f(sample.values)).max()))
+shap_mean = pd.Series(np.abs(sv.values).mean(0), index=cols_).sort_values(ascending=False)
+shap_mean.rename("mean_abs_shap_mpa").to_csv(ROOT / "reports/tables/shap_importance.csv")
+display(shap_mean.round(1).head(12))
+show(VM.importance(ev.perm_importance, shap_mean), "03_feature_importance")
+show(VM.shap_dependence(X.loc[sample.index].reset_index(drop=True), sv.values, cols_, m.loc[sample.index, "family"]),
+     "03_shap_dependence")
+"""),
+    ("md", r"""
+Permutation importance (held-out folds) and SHAP (deployed model) agree on the top of the ranking: **family**
+first, then carbon equivalent, nickel and carbon. The dependence plots show *why* one global coefficient fails:
+the same carbon or nickel content pushes the prediction differently depending on the family.
+
+## 6 · Prediction intervals for the Strength Estimator
+"""),
+    ("code", r"""
+iv = ev.intervals
+print({k: round(v, 3) for k, v in [("nominal", iv.nominal), ("coverage_raw", iv.coverage_raw),
+       ("coverage_calibrated", iv.coverage_calibrated), ("mean_width_calibrated", iv.mean_width_calibrated),
+       ("q_hat_final", iv.q_hat_final)]})
+display(iv.by_group_type)
+show(VM.interval_coverage(iv, m, ev.chosen_oof), "03_interval_coverage")
+"""),
+    ("md", r"""
+Raw quantile GBMs under-cover. A cross-conformal correction brings coverage to the 80 % target **without
+looking at the fold being scored**. Coverage is lower for grades whose chemistry is shared with other tempers,
+which is the processing ceiling again. The app therefore shows the range together with a
+"processing / heat treatment not modelled" warning.
+
+## 7 · Clustering: does chemistry recover the named families?
+"""),
+    ("code", r"""
+cl = ev.clustering
+display(cl.agreement.round(3))
+display(cl.profiles)
+print("PCA explained variance (2 comps):", cl.pca_explained.round(3))
+show(VM.clustering_overview(cl, grades), "03_clusters_vs_families")
+show(VM.umap_small_multiples(cl.umap_xy, grades), "03_umap_family_groups")
+"""),
+    ("md", r"""
+Composition clusters recover the chemically distinct families (stainless sub-types, grey cast iron,
+high-speed and bearing steels), but **most carbon, alloy, boron, spring, nitriding and weathering grades merge
+into one lean cluster**. Those names describe application and heat treatment more than chemistry. Agreement
+metrics (ARI/NMI) are moderate, and higher against the coarser family groups. HDBSCAN leaves a large share as
+noise: composition space is a continuum with dense islands (standard series), not separated blobs.
+
+## 8 · Substitute engine
+"""),
+    ("code", r"""
+display(ev.substitute_eval.round(3))
+show(VM.substitute_eval(ev.substitute_eval, EV.CHOSEN_TRANSFORM), "03_substitute_eval")
+from src.analysis.substitutes import SubstituteIndex, substitute_features, find_substitutes
+idx = SubstituteIndex.fit(grades, substitute_features(rare), EV.CHOSEN_TRANSFORM)
+for name in ["AISI 316 (S31600) Stainless Steel", "SAE-AISI 4140 (SCM440,G41400) Cr-Mo Steel"]:
+    gid = grades.loc[grades.display_name == name, "grade_id"].iloc[0]
+    print(name); display(find_substitutes(idx, grades, gid, k=5).round(2))
+print("SAE-AISI 4140, leaner substitutes only:")
+display(find_substitutes(idx, grades, gid, k=5, leaner_only=True).round(2))
+"""),
+    ("md", "## 9 · Fit and save the deployed models"),
+    ("code", r"""
+from src.analysis.train import train_and_save
+out = train_and_save(grades, rare, ev)
+print(sorted(p.name for p in (ROOT / "models").iterdir()))
+out.head()
+"""),
+]
+
+
 NOTEBOOKS = {
     "01": ("01_cleaning.ipynb", NB01),
+    "02": ("02_eda.ipynb", NB02),
+    "03": ("03_models.ipynb", NB03),
 }

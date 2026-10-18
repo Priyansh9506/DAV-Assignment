@@ -1,0 +1,145 @@
+{
+  "n_grades_measured": 1382,
+  "cv": "GroupKFold by composition_group_id, 5 folds x 3 seeds (0, 1, 2)",
+  "ceiling": {
+    "oracle_mae": 9.9075936123693,
+    "oracle_rmse": 54.36518084472001,
+    "oracle_r2": 0.9496849842241408,
+    "n_measured": 1382,
+    "n_groups": 1296,
+    "multi_member_groups": 37,
+    "multi_member_grades": 123,
+    "groups_with_spread": 28,
+    "within_group_mae": 111.31946644141766,
+    "within_group_rmse": 182.23101865314717,
+    "within_group_sd_pooled": 217.93432261145367
+  },
+  "chosen_regressor": {
+    "model": "Gradient boosting",
+    "features": "composition+family",
+    "MAE_mean": 56.70783244467714,
+    "MAE_std": 6.525758449258982,
+    "RMSE_mean": 110.01383009158864,
+    "RMSE_std": 21.934883621502095,
+    "R2_mean": 0.7806695842642492,
+    "R2_std": 0.07536551611328414,
+    "oof_MAE": 55.63403025764693,
+    "oof_RMSE": 112.41728932309067,
+    "oof_R2": 0.784859508078905,
+    "oof_MAE_unique_composition": 46.38257642840874,
+    "oof_MAE_shared_composition": 150.3298056317191,
+    "oof_median_AE": 27.88519034454015,
+    "hyperparameters": {
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 400,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 5
+    }
+  },
+  "baseline_family_median": {
+    "MAE_mean": 114.80521842923663,
+    "RMSE_mean": 177.82744006400304,
+    "R2_mean": 0.4127919252089028
+  },
+  "classifier": {
+    "model": "Gradient boosting (balanced)",
+    "macro_F1_mean": 0.8868232725182676,
+    "macro_F1_std": 0.050958901580507046,
+    "balanced_accuracy_mean": 0.9032410173924756,
+    "oof_macro_F1": 0.884508432600397,
+    "oof_balanced_accuracy": 0.9147605151167189,
+    "recall_class_0": 0.9565217391304348,
+    "recall_class_1": 0.8904320987654321,
+    "recall_class_2": 0.8973277074542897,
+    "confusion_oof": [
+      [
+        22,
+        1,
+        0
+      ],
+      [
+        6,
+        577,
+        65
+      ],
+      [
+        0,
+        73,
+        638
+      ]
+    ]
+  },
+  "intervals": {
+    "nominal": 0.8,
+    "coverage_raw": 0.6128798842257598,
+    "coverage_calibrated": 0.7981186685962374,
+    "mean_width_calibrated": 203.54061571299945,
+    "q_hat_final": 18.80757450435264,
+    "by_group_type": [
+      {
+        "type": "Composition shared with other grades",
+        "n": 123,
+        "coverage": 0.7235772357723578,
+        "mean_width": 410.8804467231292
+      },
+      {
+        "type": "Unique composition",
+        "n": 1259,
+        "coverage": 0.8054011119936457,
+        "mean_width": 183.28422237364606
+      }
+    ]
+  },
+  "clustering": {
+    "k": 13,
+    "silhouette": 0.368310758740103,
+    "agreement": [
+      {
+        "method": "KMeans",
+        "vs": "family",
+        "n_clusters": 13,
+        "noise_share": 0.0,
+        "ARI": 0.2034567854416268,
+        "NMI": 0.45663833747158844
+      },
+      {
+        "method": "KMeans",
+        "vs": "family_group",
+        "n_clusters": 13,
+        "noise_share": 0.0,
+        "ARI": 0.4075982364792334,
+        "NMI": 0.45064331876052255
+      },
+      {
+        "method": "HDBSCAN (non-noise)",
+        "vs": "family",
+        "n_clusters": 21,
+        "noise_share": 0.48668106551475887,
+        "ARI": 0.2700867582903752,
+        "NMI": 0.6359495228678372
+      },
+      {
+        "method": "HDBSCAN (non-noise)",
+        "vs": "family_group",
+        "n_clusters": 21,
+        "noise_share": 0.48668106551475887,
+        "ARI": 0.24311355397312762,
+        "NMI": 0.5260778316776695
+      }
+    ]
+  },
+  "substitutes": {
+    "transform": "log1p + z-score",
+    "family_agree@1": 0.9229661627069834,
+    "family_agree@5": 0.8529877609791217,
+    "median_abs_dTS@1": 30.0,
+    "median_abs_dLiq@1": 0.0,
+    "random_baseline": {
+      "family_agree@1": 0.23974082073434125,
+      "family_agree@5": NaN,
+      "median_abs_dTS@1": 150.0,
+      "median_abs_dLiq@1": 20.0
+    }
+  }
+}
