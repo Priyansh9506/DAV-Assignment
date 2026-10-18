@@ -39,11 +39,18 @@ STEP 1 - CLEANING PIPELINE (reusable module, not notebook-only code)
 - Flag (do not silently drop) imputed or default values; report how key statistics change with vs without them.
 
 STEP 2 - VISUAL-ANALYTICS NOTEBOOK (notebooks/04_visual_analytics.ipynb, logic in src/analysis/*.py)
-Use matplotlib + seaborn with ONE consistent, eye-appealing theme (dark or light), a colour-blind-safe
-categorical palette (validate it; at most 3 hues + grey on scatter plots, fold the rest into "Other" or use
-small multiples), sequential = one hue, diverging = two hues with a grey midpoint. Every chart has a title
-that states the takeaway, a subtitle, axis labels with units, a source note, and is saved to reports/figures/.
-Each chart is followed by a 2-4 sentence takeaway written ONLY from numbers the code printed.
+Use matplotlib + seaborn with ONE eye-candy theme that makes viewers stop scrolling: a deep midnight canvas
+with a soft radial glow, MAXIMUM-CHROMA neon categorical hues (hot pink, electric sky, electric orange, violet,
+lime, magenta: never plain default blue), plasma-style ramps (indigo -> magenta -> orange -> gold) for magnitudes,
+a two-pole neon diverging map with a dark neutral midpoint, glow on key lines, and gold callout boxes/arrows for
+story beats. Beauty must not break readability: validate the categorical palette for colour-blind separation and
+contrast (keep hues inside an equal-lightness band; reach "pop" through chroma), use at most 3 hues + a dim
+"Other" on scatter plots, and keep text in neutral ink colours.
+STORYTELLING: structure the notebook as a narrative (Prologue -> Acts -> Epilogue), give every chart a
+headline-style title that states its story beat (e.g. "The great disappearing act: 2,672 rows become 1,382
+honest grades"), pin 1-2 gold callouts on the exact data points the story is about, and end with an epilogue of
+"what to remember" lessons. Every chart has a subtitle, axis labels with units and a source note, and is saved
+to reports/figures/. Each chart is followed by a 2-4 sentence takeaway written ONLY from numbers the code printed.
 Mandatory techniques and charts:
  A. Five-number summary (min, Q1, median, Q3, max + IQR, Tukey fences, outlier count) as a table AND as
     annotated box plots; full descriptive statistics (mean, sd, CV, skewness, kurtosis, mode, % zeros).

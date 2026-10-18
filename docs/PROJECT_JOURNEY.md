@@ -167,3 +167,21 @@ against a stub of KNIME's `knime.scripting.io` API with the real data.
 **Status:** done: notebook 04, exports, Tableau guide, KNIME guide, prompt. Pending (not on this branch):
 FastAPI app wiring and frontend pages, `reports/FINDINGS.md`, README, and building the Tableau workbook /
 KNIME workflow themselves by following the guides.
+
+### Phase 6b: "Neon Forge" theme and story structure
+
+**Why:** the visuals had to be more striking than a default blue palette, and the notebook had to read as a story,
+not a chart catalogue.
+
+- **Palette:** maximum-chroma hues computed in OKLCH inside the equal-lightness band: sky `#0d9de5`, hot pink
+  `#ff0d89`, electric orange `#ed6300`, violet `#a053fd`, lime `#5bab0f`, magenta `#ef0be8`, teal `#07a4a4`,
+  amber `#c58501`, on a midnight canvas `#0e0b1e`. Validated with the dataviz validator (dark mode): lightness band,
+  chroma floor, adjacent CVD separation (worst ΔE 9.7), normal-vision floor (worst ΔE 18.5) and contrast all pass.
+  The first three slots also pass all-pairs, so they are the only hues on scatter plots. Brighter neon cyan/gold
+  candidates were rejected because they failed the lightness band. Magnitudes use a plasma ramp; diverging uses
+  sky ↔ pink; gold `#ffd166` is reserved for story callouts.
+- **Story:** notebook 04 is now "The Secret Lives of 1,389 Steels": Prologue (the duplicated-listing secret),
+  Acts I–VII (cast, signatures, evidence, drivers, chemistry map, portraits, verdict) and an Epilogue of seven
+  lessons, with headline titles and gold callouts on the data points each beat is about.
+- **Tableau / KNIME:** the guides ship the same palettes (`Preferences.tps` for Tableau, hex codes for KNIME's
+  Color Manager) and the KNIME Python View scripts were recoloured and re-tested.

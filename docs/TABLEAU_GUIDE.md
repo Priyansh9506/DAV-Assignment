@@ -91,23 +91,58 @@ Chi-square cells source: create `Residual Label` = `STR([Observed]) + CHAR(10) +
 
 ---
 
-## 2. Colour plan (use the same everywhere)
+## 2. Colour plan: the "Neon Forge" look (use it everywhere)
 
-| Family Group | Colour (hex) |
-|---|---|
-| Carbon & low-alloy | `#3987e5` |
-| Stainless | `#d95926` |
-| Cast iron | `#199e70` |
-| Tool & high-speed | `#c98500` |
-| Weld metal | `#d55181` |
-| Other | `#008300` |
+The Python figures use a midnight canvas with neon, colour-blind-validated hues. Recreate it in Tableau so
+the dashboards and the notebook look like one product.
 
-Assign it once: drag `Family Group` to Color on any sheet → **Edit Colors…** → click each item and type the
-hex code. Tableau then reuses it on every sheet. Set **Worksheet → Format → Shading → Worksheet** to a dark
-grey (`#1a1a19`) if you want the dark look of the Python figures, or keep Tableau's light default. Either
-way, pick one style and keep it for all sheets.
+### 2.1 Install the palettes once (Preferences.tps)
+1. Close Tableau. Open `Documents/My Tableau Repository/Preferences.tps` in Notepad (create it if missing).
+2. Replace its content with:
+```xml
+<?xml version='1.0'?>
+<workbook>
+  <preferences>
+    <color-palette name="Neon Forge" type="regular">
+      <color>#0d9de5</color> <color>#ff0d89</color> <color>#ed6300</color> <color>#a053fd</color>
+      <color>#5bab0f</color> <color>#ef0be8</color> <color>#07a4a4</color> <color>#c58501</color>
+    </color-palette>
+    <color-palette name="Neon Plasma" type="ordered-sequential">
+      <color>#5102a3</color> <color>#8a09a5</color> <color>#b83289</color> <color>#da5b69</color>
+      <color>#f48849</color> <color>#febd2a</color> <color>#f0f921</color>
+    </color-palette>
+    <color-palette name="Neon Sky-Pink" type="ordered-diverging">
+      <color>#0d9de5</color> <color>#2b2547</color> <color>#ff0d89</color>
+    </color-palette>
+  </preferences>
+</workbook>
+```
+3. Reopen Tableau. The three palettes now appear in every **Edit Colors** dialog.
 
----
+### 2.2 Family-group colours (assign once, Tableau reuses them on every sheet)
+
+| Family Group | Colour | Hex |
+|---|---|---|
+| Carbon & low-alloy | sky | `#0d9de5` |
+| Stainless | hot pink | `#ff0d89` |
+| Cast iron | electric orange | `#ed6300` |
+| Tool & high-speed | violet | `#a053fd` |
+| Weld metal | lime | `#5bab0f` |
+| Other | magenta | `#ef0be8` |
+
+Drag `Family Group` to Color → **Edit Colors…** → palette *Neon Forge* → **Assign Palette** (the order above
+matches the palette order).
+
+### 2.3 Rules that keep it beautiful *and* readable
+- **Scatter plots:** at most three neon hues (sky, pink, orange) and the rest in a dim violet-grey `#4b4470`.
+  These three were validated as distinguishable for colour-blind viewers in every pairing.
+- **Magnitudes** (heatmap cells, treemap colour, histogram bins): *Neon Plasma*, which runs indigo → magenta →
+  orange → gold. **Plus/minus** values (chi-square residuals, loadings): *Neon Sky-Pink*, centred at 0.
+- **Story accent:** use gold `#ffd166` only for annotation lines, callout borders and the one mark the sheet's
+  story is about. Never use it as a data colour.
+- **Canvas:** Format → Workbook → set *Worksheets* and *Dashboards* shading to `#0e0b1e`, fonts to white
+  (titles) and lavender `#d4ceef` (labels); gridlines `#251f45`. Add Annotations (right-click a mark →
+  **Annotate → Mark…**) with a gold border for the story beats listed under each sheet.
 
 ## 3. Sheets
 
@@ -180,7 +215,8 @@ way, pick one style and keep it for all sheets.
 ### Sheet 9: Chi-square residual highlight table
 - **Data:** Chi cells. **Filter:** `Test` (single value, show filter).
 - **Columns:** `Col Value`. **Rows:** `Row Value`. **Mark:** Square.
-- **Color:** `AVG(Std Residual)` → Edit Colors → *Red-Blue Diverging*, **Center = 0**, tick *Use full colour range*.
+- **Color:** `AVG(Std Residual)` → Edit Colors → *Neon Sky-Pink*, **Center = 0**, tick *Use full colour range*.
+- **Story beat:** annotate Cast iron × Low (<300) with a gold border: "22 grades where chance expects ~1".
 - **Label:** `Residual Label`.
 - **Tooltip:** observed, expected, residual.
 - **Check (Family group × strength class):** Cast iron × Low (<300) = **22** grades, residual **+20.5**.
@@ -243,8 +279,8 @@ way, pick one style and keep it for all sheets.
 ### Sheet 14: Circular migration plot (chord diagram)
 - **Data:** Chord family (`chord_family_to_cluster.csv`). **Analysis → Aggregate Measures: OFF.**
 - **Columns:** `X`. **Rows:** `Y`. **Mark:** **Polygon**.
-- **Path:** `Point Order`. **Detail:** `Shape Id`. **Color:** `Color Key` (use the family-group colours;
-  set "destination" to light grey). **Opacity:** 75 %.
+- **Path:** `Point Order`. **Detail:** `Shape Id`. **Color:** `Color Key` (family-group colours from §2.2;
+  set "destination" to pale lavender `#e9e4ff`). **Opacity:** 75 %.
 - Right-click each axis → **Edit Axis** → fixed range **−1.8 to 1.8** for both, then hide the axes
   (right-click → uncheck *Show Header*) and remove gridlines (Format → Lines → None).
 - **Labels:** drag `Label X` to Columns and `Label Y` to Rows next to the existing pills → right-click each
@@ -268,7 +304,7 @@ way, pick one style and keep it for all sheets.
 
 ### Sheet 16: Treemap
 - **Data:** Wide. Drag `Family Group` to Detail, `Family Label` to Detail, `Grades` to Size,
-  `MEDIAN(Measured TS)` to Color (sequential blue; Edit Colors → *End* at 1100 so one extreme family does not
+  `MEDIAN(Measured TS)` to Color (*Neon Plasma*; Edit Colors → *End* at 1100 so one extreme family does not
   flatten the scale). Mark becomes **Square** automatically (or use Show Me → Treemap).
 - **Label:** Family Label, Grades, Median TS.
 - Composition variant: data Long, Detail = `Element`, Size = `SUM(Wt Pct)`, filter `Element` ≠ Fe,
@@ -292,7 +328,7 @@ way, pick one style and keep it for all sheets.
   - `Axis Label Text` = `IF [Layer] = "axis_label" THEN [Axis] END`
 - **Columns:** `Entity` (discrete, one radar per alloy) then `X`. **Rows:** `Y`.
 - **Marks card 1 (Y): Line.** Path = `Point Order`, Detail = `Shape Id`, Color = `Layer`
-  (data = orange `#d95926`, grid = dark grey, axis_label = fully transparent), Label = `Axis Label Text`
+  (data = the alloy's family-group colour, grid = `#251f45`, axis_label = fully transparent), Label = `Axis Label Text`
   (Label → *Allow labels to overlap other marks*).
 - **Fill (optional):** drag `Data Only Y` to Rows next to `Y` → right-click → **Dual Axis** → **Synchronize
   Axis**. On marks card 2 choose **Polygon**, Path = `Point Order`, Detail = `Shape Id`, Color = orange at 35 %
@@ -307,7 +343,7 @@ way, pick one style and keep it for all sheets.
 
 ### Sheet 19: Model error and uncertainty
 - **Data:** Wide. **Columns:** `Measured TS`. **Rows:** `Ts Pred Mpa`. **Detail:** `Grade Id`.
-  **Color:** `Abs Residual` (sequential). Add a reference line y = x: Analytics → Trend Line is not it; instead
+  **Color:** `Abs Residual` (*Neon Plasma*). Add a reference line y = x: Analytics → Trend Line is not it; instead
   create a calculated field `Identity` = `[Measured TS]` and put it on a dual axis as a Line.
 - Second view: **Rows** `Family Label`, **Columns** `AVG(Abs Residual)`, Bar, sorted.
 - **Insight:** errors are small where chemistry decides strength and large in heat-treatment-defined families
@@ -316,8 +352,9 @@ way, pick one style and keep it for all sheets.
 ### Sheet 20: Waterfall charts
 - **Data:** waterfall_cleaning.csv.
 - **Columns:** `Step` (sort: Manual, or by `Row Id` ascending). **Rows:** `SUM(End)`.
-- **Mark:** **Gantt Bar**. **Size:** `SUM(Bar Size)`. **Color:** `Direction` (Total = blue,
-  Increase = green, Decrease = orange). **Label:** `SUM(Value)`.
+- **Mark:** **Gantt Bar**. **Size:** `SUM(Bar Size)`. **Color:** `Direction` (Total = sky `#0d9de5`,
+  Increase = lime `#5bab0f`, Decrease = hot pink `#ff0d89`).
+- **Story beat:** annotate the twin-listing bar: "The big secret: 1,221 rows were the same steel written twice". **Label:** `SUM(Value)`.
 - **Check:** 2672 → −62 → −1221 → **1389** → −7 → **1382**.
 - Repeat with `waterfall_ce_aisi4140.csv` (C 0.405 + Mn/6 0.146 + Cr/5 0.190 + Mo/5 0.040 = **CE 0.781**) and
   `waterfall_prediction_aisi4140.csv` (average prediction → SHAP pushes → predicted TS). For the prediction

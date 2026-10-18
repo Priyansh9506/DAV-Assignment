@@ -5,8 +5,8 @@ import knime.scripting.io as knio
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap, Normalize
 
-SURFACE, INK = "#1a1a19", "#ffffff"
-SEQ = LinearSegmentedColormap.from_list("seq", ["#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])
+SURFACE, INK = "#0e0b1e", "#ffffff"
+SEQ = LinearSegmentedColormap.from_list("seq", ["#5102a3", "#8a09a5", "#b83289", "#da5b69", "#f48849", "#febd2a", "#f0f921"])
 
 
 def squarify(sizes, x, y, w, h):

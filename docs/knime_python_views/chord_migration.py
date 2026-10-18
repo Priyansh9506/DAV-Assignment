@@ -7,8 +7,8 @@ import numpy as np
 from matplotlib.patches import PathPatch, Wedge
 from matplotlib.path import Path
 
-SURFACE, INK, INK_2 = "#1a1a19", "#ffffff", "#c3c2b7"
-SERIES = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"]
+SURFACE, INK, INK_2 = "#0e0b1e", "#ffffff", "#d4ceef"
+SERIES = ["#0d9de5", "#ff0d89", "#ed6300", "#a053fd", "#5bab0f", "#ef0be8", "#07a4a4", "#c58501"]
 
 flows = knio.input_tables[0].to_pandas()
 flows["count"] = flows["count"].astype(float)

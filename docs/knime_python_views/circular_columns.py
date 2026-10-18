@@ -5,7 +5,7 @@ import knime.scripting.io as knio
 import matplotlib.pyplot as plt
 import numpy as np
 
-SURFACE, INK, INK_2, GRID, BAR = "#1a1a19", "#ffffff", "#c3c2b7", "#2c2c2a", "#3987e5"
+SURFACE, INK, INK_2, GRID = "#0e0b1e", "#ffffff", "#d4ceef", "#251f45"
 
 d = knio.input_tables[0].to_pandas().dropna(subset=["value"]).sort_values("value", ascending=False)
 n = len(d)
@@ -17,7 +17,8 @@ fig, ax = plt.subplots(figsize=(10, 10), subplot_kw={"polar": True}, facecolor=S
 ax.set_facecolor(SURFACE)
 ax.set_theta_offset(np.pi / 2)
 ax.set_theta_direction(-1)
-ax.bar(theta, d["value"], width=width, bottom=inner, color=BAR, edgecolor=SURFACE, alpha=0.9)
+colors = plt.get_cmap("plasma")(0.14 + 0.86 * d["value"].to_numpy() / d["value"].max())   # longer = hotter
+ax.bar(theta, d["value"], width=width, bottom=inner, color=colors, edgecolor=SURFACE, alpha=0.95)
 for t, (lab, v) in zip(theta, zip(d["label"], d["value"])):
     rot = (90 - np.degrees(t)) % 360                 # on-screen angle of this bar (clockwise from the top)
     flip = 90 < rot < 270                            # left half: turn the text so it is not upside down

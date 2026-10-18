@@ -5,8 +5,8 @@ import knime.scripting.io as knio
 import matplotlib.pyplot as plt
 import numpy as np
 
-SURFACE, INK, INK_2, GRID = "#1a1a19", "#ffffff", "#c3c2b7", "#2c2c2a"
-TOTAL, UP, DOWN = "#3987e5", "#199e70", "#d95926"
+SURFACE, INK, INK_2, GRID = "#0e0b1e", "#ffffff", "#d4ceef", "#251f45"
+TOTAL, UP, DOWN = "#0d9de5", "#5bab0f", "#ff0d89"
 
 wf = knio.input_tables[0].to_pandas().reset_index(drop=True)
 run, starts, ends = 0.0, [], []
@@ -31,6 +31,6 @@ for i, r in wf.iterrows():
         ax.plot([i + 0.31, i + 0.69], [ends[i]] * 2, color=INK_2, lw=1)
 ax.set_xticks(np.arange(len(wf)), wf["step"], rotation=20, ha="right", color=INK_2)
 ax.grid(axis="y", color=GRID)
-ax.set_title("Waterfall: running total built step by step (blue = total, green = increase, orange = decrease)", color=INK)
+ax.set_title("Waterfall: running total built step by step (sky = total, lime = increase, pink = decrease)", color=INK)
 fig.tight_layout()
 knio.output_view = knio.view_matplotlib(fig)

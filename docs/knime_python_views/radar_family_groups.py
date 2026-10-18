@@ -4,8 +4,8 @@ import knime.scripting.io as knio
 import matplotlib.pyplot as plt
 import numpy as np
 
-SURFACE, INK, INK_2, GRID = "#1a1a19", "#ffffff", "#c3c2b7", "#2c2c2a"
-SERIES = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300"]
+SURFACE, INK, INK_2, GRID = "#0e0b1e", "#ffffff", "#d4ceef", "#251f45"
+SERIES = ["#0d9de5", "#ff0d89", "#ed6300", "#a053fd", "#5bab0f", "#ef0be8"]
 ORDER = ["Carbon & low-alloy", "Stainless", "Cast iron", "Tool & high-speed", "Weld metal", "Other"]
 ELEMENTS = ["C", "Mn", "Si", "Cr", "Ni", "Mo", "V", "W", "Co", "Cu"]
 

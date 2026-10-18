@@ -8,8 +8,8 @@ from matplotlib.colors import LinearSegmentedColormap
 from scipy import stats
 
 ROW, COL = "family_group", "strength_class"
-SURFACE, INK, INK_2 = "#1a1a19", "#ffffff", "#c3c2b7"
-DIV = LinearSegmentedColormap.from_list("div", ["#3987e5", "#383835", "#e66767"])
+SURFACE, INK, INK_2 = "#0e0b1e", "#ffffff", "#d4ceef"
+DIV = LinearSegmentedColormap.from_list("div", ["#0d9de5", "#2b2547", "#ff0d89"])
 
 df = knio.input_tables[0].to_pandas()
 obs = pd.crosstab(df[ROW], df[COL])

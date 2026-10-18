@@ -86,8 +86,11 @@ One Math Formula node per feature (*Append column*):
   **2.823**, max `carbon_equivalent` **9.563**, max `ni_eq` **109.9**.
 
 ### Node 6. Color Manager
-- **Settings:** column `family_group`; set the colours: Carbon & low-alloy `#3987e5`, Stainless `#d95926`,
-  Cast iron `#199e70`, Tool & high-speed `#c98500`, Weld metal `#d55181`, Other `#008300`.
+- **Settings:** column `family_group`; set the "Neon Forge" colours (colour-blind validated): Carbon & low-alloy
+  `#0d9de5` (sky), Stainless `#ff0d89` (hot pink), Cast iron `#ed6300` (electric orange), Tool & high-speed `#a053fd`
+  (violet), Weld metal `#5bab0f` (lime), Other `#ef0be8` (magenta).
+- **Dark canvas for native views:** in each view node's settings set the background to `#0e0b1e` where the
+  option exists (Plot appearance / Background colour); the Python View scripts already use it.
 - Every view downstream inherits these colours, so the whole workflow looks consistent.
 
 ---
