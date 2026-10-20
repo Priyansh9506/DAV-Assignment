@@ -32,12 +32,13 @@ STEP 0 - PROFILE, THEN PLAN (STOP AND WAIT FOR APPROVAL)
    the Tableau sheets/dashboards and the KNIME workflow outline.
 3. Show me the plan and wait for "approved" before writing analysis code.
 
-STEP 1 - CLEANING PIPELINE (reusable module, not notebook-only code)
-- src/analysis/cleaning.py: each step is a function that logs rows before/after; save data/processed/*.csv,
-  a generated data dictionary and a cleaning log. Unit tests for every rule (pytest, synthetic data).
+STEP 1 - CLEANING PIPELINE (inside notebooks/01_cleaning.ipynb)
+- Each step is a small function defined in the notebook that logs rows before/after and asserts its
+  assumptions (fail loudly); save data/processed/*.csv, a generated data dictionary and a cleaning log.
 - Flag (do not silently drop) imputed or default values; report how key statistics change with vs without them.
 
-STEP 2 - VISUAL-ANALYTICS NOTEBOOK (notebooks/03_visual_analytics.ipynb, logic in src/analysis/*.py)
+STEP 2 - VISUAL-ANALYTICS NOTEBOOK (notebooks/03_visual_analytics.ipynb, self-contained: every statistic and
+chart function is defined in the cell right above the one that uses it)
 Use matplotlib + seaborn with ONE eye-candy theme that makes viewers stop scrolling: a deep midnight canvas
 with a soft radial glow, MAXIMUM-CHROMA neon categorical hues (hot pink, electric sky, electric orange, violet,
 lime, magenta: never plain default blue), plasma-style ramps (indigo -> magenta -> orange -> gold) for magnitudes,
@@ -107,9 +108,11 @@ STEP 5 - GUIDES (step-by-step, visualization-intensive, written for students who
 RULES
 - Every number in docs, notebooks and charts must come from code output. No fabricated statistics.
 - Prefer medians/quantiles for skewed data; state assumptions and test validity (e.g. Cochran's rule).
-- Production-quality code: modules + tests + reproducible notebook builds; no logic hidden in notebooks.
+- Self-contained notebooks that teammates can learn from: each notebook holds all of its own code (no hidden
+  modules), chart functions are prefixed plot_, the shared chart theme is the same cell in every notebook, and
+  each notebook runs top to bottom with Kernel -> Restart & Run All.
 - Keep docs/PROJECT_JOURNEY.md updated after every step (decisions, numbers, what is done vs pending).
-- At the end: run the tests, rebuild the notebooks, summarise what was built and what is left.
+- At the end: Restart & Run All every notebook, summarise what was built and what is left.
 ```
 
 ---
@@ -122,8 +125,7 @@ Step 2 and the guides:
 | Prompt item | Where it lives |
 |---|---|
 | A–L chart suite | `notebooks/03_visual_analytics.ipynb`, figures `reports/figures/03_*.png` |
-| Statistics behind the charts | `src/analysis/visual_stats.py` |
-| Figure code (theme, chord, radar, ring, treemap, waterfall…) | `src/analysis/viz_suite.py` |
-| Tableau helper CSVs, KNIME expected values | `src/analysis/viz_exports.py` → `exports/tableau/viz/`, `exports/knime/viz_expected_values.csv` |
+| Statistics and figure code (theme, chord, radar, ring, treemap, waterfall…) | inside `notebooks/03_visual_analytics.ipynb`, above each chart |
+| Tableau helper CSVs, KNIME expected values | appendix of notebook 03 → `exports/tableau/viz/`, `exports/knime/viz_expected_values.csv` |
 | Tableau guide | `docs/TABLEAU_GUIDE.md` |
 | KNIME guide + Python View scripts | `docs/KNIME_GUIDE.md`, `docs/knime_python_views/*.py` |

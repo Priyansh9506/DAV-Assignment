@@ -9,4 +9,5 @@
 
 Files used by the guides: `exports/tableau/*.csv`, `exports/tableau/viz/*.csv` (ready-made shapes for chord,
 radar, radial bars and waterfalls), `exports/knime/knime_input.csv` and `exports/knime/viz_expected_values.csv`
-(every statistic KNIME should reproduce). Regenerate them all with `python -m src.analysis.pipeline`.
+(every statistic KNIME should reproduce). To regenerate them, run notebooks 01 → 03 in order
+(*Kernel → Restart & Run All*); the exports are written by the appendix of notebook 03.

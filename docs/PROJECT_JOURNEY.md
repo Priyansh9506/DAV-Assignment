@@ -27,7 +27,7 @@ Every row is iron-based (minimum Fe = 29.3 wt%). The domain is **steels & iron a
 
 ## Phase 1 plan: data cleaning and features
 
-**Goal:** a reusable, logged cleaning pipeline (`src/analysis/`), not notebook-only logic. The notebook `notebooks/01_cleaning.ipynb` only calls the pipeline and displays what it did.
+**Goal:** a reusable, logged cleaning pipeline. (Originally a `src/analysis/` module called by the notebook; since Phase 8 the same code lives inside `notebooks/01_cleaning.ipynb`, section 1.)
 
 Pre-coding profiling (scratch scripts, findings re-derived inside the pipeline and notebook) showed:
 
@@ -56,7 +56,7 @@ Planned steps (each logs rows before/after):
 
 ## Phase 1 results: what the pipeline found
 
-Source of every number: `python -m src.analysis.cleaning` → `reports/cleaning_log.md`, and `notebooks/01_cleaning.ipynb`.
+Source of every number: `notebooks/01_cleaning.ipynb`, which also writes `reports/cleaning_log.md`.
 
 ### Data issues and decisions
 
@@ -68,13 +68,13 @@ Source of every number: `python -m src.analysis.cleaning` → `reports/cleaning_
 | 4 | Imputation sits on the hyphenated twin | 459 pairs: spaced measured, hyphenated imputed; 3 pairs both imputed; 0 the other way | TS taken from the measured twin (same record, not imputation). **Only 7 grades have no measured TS**: kept for composition work, excluded from strength stats and models |
 | 5 | Same composition, different TS | 476 composition groups at listing level, but only **28** with measured TS. The other 448 are the imputed constant disagreeing with the measured twin | The 28 are real processing variants (maraging aged/annealed, CB7Cu H900–H1150, cast-iron grades). Quantified as the irreducible error (below) |
 | 6 | `Class` is binned TS | Recomputed class matches the original on 100% of measured listings | `strength_class` rebuilt from measured TS: 23 / 648 / 711 grades (low/medium/high), 7 without class. TS is never a feature for class |
-| 7 | Liquidus = 1460 °C | 1037 listings / 524 grades (37.7%). Same share in both name formats (39.4% spaced, 40.1% hyphenated). 76.8% of carbon & low-alloy grades (C ≤ 1%) vs 0% of cast irons, high-speed steels and Fe-Ni alloys. Within C ≤ 0.6% the recorded mean only moves 1462.6 → 1453.1 °C while the empirical correlation predicts 1519 → 1485 °C | **Family-typical default, not a measurement.** Kept, flagged `liquidus_is_default`. Liquidus treated as reliable only at family level for plain steels; no grade-level liquidus model is claimed; the app shows default values distinctly and can exclude them |
+| 7 | Liquidus = 1460 °C | 1037 listings / 524 grades (37.7%). Same share in both name formats (39.4% spaced, 40.1% hyphenated). 76.8% of carbon & low-alloy grades (C ≤ 1%) vs 0% of cast irons, high-speed steels and Fe-Ni alloys. Within C ≤ 0.6% the recorded mean only moves 1462.6 → 1453.1 °C while the empirical correlation predicts 1519 → 1485 °C | **Family-typical default, not a measurement.** Kept, flagged `liquidus_is_default`. Liquidus treated as reliable only at family level for plain steels; no grade-level liquidus model is claimed; the design-space analysis shows default values distinctly and can exclude them |
 | 8 | Composition sums 95.01–105.23 wt% | 98.7% of grades within 99–101 wt%; 18 outside | Not renormalised: these are specification midpoints and should stay as specified |
 | 9 | Rare elements | As, Ca, Ce, La, Mg, Pb, Se, Sn, Ta, Zn non-zero in < 30 de-duplicated rows | Summed into `trace_total` for modelling |
 
 ### Irreducible error (the model ceiling)
 
-From `src/analysis/quality.py::irreducible_error` over 1382 measured grades in 1296 composition groups:
+From `irreducible_error` (notebook 01, section 6) over 1382 measured grades in 1296 composition groups:
 
 - **Whole-dataset oracle** (predict each grade with its composition-group mean, in-sample): MAE 9.9 MPa, RMSE 54.4 MPa, **R² 0.950**. No composition-only model can beat this. It is optimistic, because singletons contribute zero error.
 - **Where processing variants are observable** (37 multi-member groups, 123 grades, 28 with different TS): within-group MAE **111.3 MPa**, RMSE 182.2 MPa.
@@ -90,7 +90,7 @@ From `src/analysis/quality.py::irreducible_error` over 1382 measured grades in 1
 - `data/processed/DATA_DICTIONARY.md`: generated from the data
 - `reports/cleaning_log.md|json`: step-by-step row counts
 - Figures: `reports/figures/01_cleaning_funnel.png`, `01_twin_listings_imputation.png`, `01_processing_variants.png`, `01_liquidus_default.png`
-- Tests: `tests/unit/test_features.py`, `tests/unit/test_cleaning.py` (synthetic data with every issue planted), `tests/integration/test_pipeline_real_data.py` (pins the counts above)
+- Tests: originally pytest unit and integration tests; removed in Phase 8 together with `src/` (the pipeline's own assertions, e.g. twin listings never disagree and the recomputed class matches the original, still run on every execution of notebook 01)
 
 ### Status after Phase 1
 
@@ -103,7 +103,7 @@ Pending: EDA, models, findings (Phase 2); exports (Phase 3); app (Phase 4); Tabl
 
 **Analysis unit:** 1389 canonical grades. Strength work uses the 1382 grades with measured TS.
 
-**EDA (`notebooks/02_eda.ipynb`, logic in `src/analysis/eda.py`, figures in `src/analysis/viz_eda.py`).** Each section answers one question:
+**EDA (`notebooks/02_eda.ipynb`; each question's statistics and chart are defined in the notebook).** Each section answers one question:
 
 1. How does strength vary by family? (box plot by family, sorted by median)
 2. Which elements relate to strength, and does pooling families mislead? (Spearman ρ overall vs within family groups; carbon's Simpson's paradox)
@@ -127,10 +127,9 @@ branch adds a 34-figure notebook, Tableau helper exports, two step-by-step guide
 prompt. It does not change the cleaning on `main`.
 
 **Plan → build:** the prompt in `docs/CLAUDE_CODE_PROMPT.md` lists the mandatory techniques: five-number
-summary and descriptive stats, binning, chi-square, regression, PCA, k-means, circular migration (chord) plots,
-ring/donut, circular columns, treemap, radar and waterfall. Each one is implemented in
-`src/analysis/visual_stats.py` (numbers) and `src/analysis/viz_suite.py` (figures), and orchestrated by
-`notebooks/03_visual_analytics.ipynb`.
+summary and descriptive stats, binning, chi-square, regression, PCA, circular migration (chord) plots,
+ring/donut, circular columns, treemap, radar and waterfall. Each one is implemented inside
+`notebooks/03_visual_analytics.ipynb`, with the statistics and figure functions right above the cell that uses them.
 
 **Key numbers (printed by notebook 03 / `exports/knime/viz_expected_values.csv`):**
 
@@ -146,14 +145,11 @@ ring/donut, circular columns, treemap, radar and waterfall. Each one is implemen
 | PCA (log1p + z-score composition) | PC1 15.0 %, PC2 11.8 %; 12 components for 80 % |
 | Waterfalls | 2672 → 2610 → 1389 → 1382 rows; AISI 4140 CE = 0.781 (C 0.405, Cr/5 0.190, Mn/6 0.146, Mo/5 0.040) |
 
-**Tableau / KNIME support:** `python -m src.analysis.viz_exports` writes 17 helper CSVs to
+**Tableau / KNIME support:** the appendix of notebook 03 writes 17 helper CSVs to
 `exports/tableau/viz/` (chord ribbons and arcs, radar polygons with grid, radial-bar polygons, waterfall
 start/end, chi-square cells, regression coefficients, PCA scores) and
 `exports/knime/viz_expected_values.csv`. The KNIME Python View scripts in `docs/knime_python_views/` were tested
 against a stub of KNIME's `knime.scripting.io` API with the real data.
-
-**Tests:** `tests/unit/test_visual_stats.py` covers the five-number summary, chi-square, OLS against
-`numpy.polyfit`, waterfall layout, and chord, radar and radial-bar geometry. Full suite: 58 passed.
 
 **Status:** done: notebook 03, exports, Tableau guide, KNIME guide, prompt. Pending: `reports/FINDINGS.md`,
 README, and building the Tableau workbook / KNIME workflow themselves by following the guides.
@@ -194,5 +190,22 @@ learning is to be done in KNIME rather than in Python.
   random forest built natively, judged against the majority-class baseline and the irreducible-error floor.
 - **Renamed:** `04_visual_analytics.ipynb` → `03_visual_analytics.ipynb` (no gap after the old
   notebook 03 was removed); its figures are now `03_01` … `03_27` in reading order.
-- **Pipeline:** `python -m src.analysis.pipeline` = clean → Tableau / KNIME exports (seconds, not minutes).
+
+---
+
+## Phase 8: self-contained notebooks
+
+**Why:** teammates read the notebooks to learn from the work. Jumping between a notebook (the demo) and
+`src/analysis/*.py` (the code) made that hard, and the generated-notebook setup (`scripts/`) meant edits made in
+Jupyter would be overwritten by the next rebuild.
+
+- **Notebooks hold all their own code.** Every function from `src/analysis/` was moved, verbatim, into the
+  notebook cell right above the first cell that uses it. Chart functions are prefixed `plot_` (`plot_ridgeline`,
+  `plot_waterfall`, …) so a statistic and its chart can never be confused. The "Neon Forge" theme is the same
+  cell in all three notebooks.
+- **Removed:** `src/`, `scripts/` (notebook builder), `tests/` (they imported `src`) and `pyproject.toml`.
+- **Verified:** after the move, every regenerated file (cleaned data, cleaning log, all Tableau / KNIME exports,
+  38 of 39 figures) was byte-identical to the previous commit; the violin plot differs only by its random jitter.
+- **How to rerun:** open the notebooks in order 01 → 02 → 03 and use *Kernel → Restart & Run All*. Notebook 01
+  writes `data/processed/`; notebook 03's appendix writes `exports/`.
 
