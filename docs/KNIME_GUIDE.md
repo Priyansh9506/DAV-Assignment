@@ -10,6 +10,9 @@ should see is listed next to the node, taken from the Python notebooks (`exports
 **All machine learning (k-means clustering, decision tree, k-NN, random forest) is built here in KNIME**;
 there are no Python models to compare against, so for those nodes you report KNIME's own scores.
 
+> **New to KNIME?** Build with [KNIME_WORKFLOW_STEP_BY_STEP.md](KNIME_WORKFLOW_STEP_BY_STEP.md) open next to this
+> file: it has the wiring map, the build order and the clicks. This file holds the settings and expected values.
+
 > Written for **KNIME Analytics Platform 5.2 or newer** (classic or modern UI). Node names are from the Node
 > Repository; type them into the repository search box. Where KNIME 4.7 uses a different name, it is given in
 > brackets.
@@ -239,7 +242,7 @@ One Math Formula node per feature (*Append column*):
 
 ### Node 25. PCA
 - **Settings:** the 20 normalized columns; **Dimensions to reduce to: 3** (or *minimum information 80 %* to
-  see how many are needed); keep original columns.
+  see how many are needed); keep original columns (untick *Remove original data columns*).
 - **Expected explained variance:** PC1 **15.0 %**, PC2 **11.8 %**, PC3 **9.5 %**, PC4 **7.6 %**, PC5 **5.9 %**;
   **12** components are needed for 80 %.
 - **Node 25b. Bar Chart / Line Plot (scree):** use the PCA node's spectral-decomposition output (eigenvalues)
@@ -256,8 +259,9 @@ One Math Formula node per feature (*Append column*):
 ## 7. Section G: K-means clustering
 
 ### Node 27. k-Means
-- **Input:** Node 24 (normalized log composition). **Settings:** number of clusters **8**; max iterations 99;
-  *Use static random seed* ✓ (any value); include the 20 columns.
+- **Input:** Node 25 (it carries the 20 normalized log-composition columns and the PCA dimensions).
+  **Settings:** number of clusters **8**; max iterations 99; *Use static random seed* ✓ (any value); include
+  only the 20 normalized element columns (not the PCA dimensions, not TS).
 - **Output:** appended `Cluster` column; cluster centres on port 2.
 - **What to expect:** one very large cluster (the lean plain steels) and several small, chemically sharp ones
   (austenitic stainless, N/Mn-rich stainless, high-speed steel, cast iron). Note the sizes for your report.
@@ -273,10 +277,11 @@ One Math Formula node per feature (*Append column*):
   continuum with dense islands). Pick the best k in a readable range (4–8) and justify it from this plot.
 
 ### Node 29. Scatter Plot: clusters on the PCA map
-- Join `Cluster` to the PCA output (Joiner on `grade_id`), **Color Manager** on `Cluster`, Scatter Plot of
-  PC1 vs PC2.
+- Node 27's output already has both `Cluster` and the PCA dimensions: **Color Manager** on `Cluster` →
+  Scatter Plot of PC1 vs PC2.
 - **Node 29b. GroupBy** `Cluster` → Median of `C, Cr, Ni, Mo, V, W, Co, tensile_strength_mpa` and *Mode* of
-  `family_label` → **Heatmap** of the medians = cluster fingerprints.
+  `family_label` → **Heatmap** of the medians = cluster fingerprints. The element columns are log-scaled
+  z-scores at this point, so read the colours as above / below the average steel.
 - **Insight:** clusters match chemistry (austenitic Cr-Ni, N/Mn-rich, high-speed W/V/Co, cast iron C/Si), while
   carbon, alloy, boron and spring steels share one lean cluster.
 
@@ -346,8 +351,10 @@ so including it leaks the answer. Exclude identifiers too (`grade_id`, names, `c
   This reproduces the group-safe `split` column: grades with identical chemistry never sit on both sides.
 - **Class target:** for the classifiers, convert `strength_class` to String first (**Number to String**) so
   KNIME treats it as a class, not a number.
-- **Baseline to beat:** predicting the majority class gives the accuracy of class 2's share of the test set.
-  Compute it with a GroupBy on `strength_class` over port 2.
+- **Alternative split:** a **Rule-based Row Splitter** with `$split$ = "train" => TRUE` gives the same 1117 / 265
+  and does not depend on the row order.
+- **Baseline to beat:** 133 of the 265 test grades are class 2, so always predicting class 2 scores
+  **0.502** accuracy (check with a GroupBy on `strength_class` over port 2).
 
 ### Node 39. Decision Tree Learner → Decision Tree Predictor → Scorer
 - **Learner:** class column `strength_class`; quality measure **Gini index**; pruning **MDL**; min number

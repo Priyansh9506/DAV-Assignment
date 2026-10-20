@@ -225,6 +225,7 @@ fair train/test split for its models. These files are generated: never edit them
 | [`GUIDE.md`](docs/GUIDE.md) | Index of the guides |
 | [`TABLEAU_GUIDE.md`](docs/TABLEAU_GUIDE.md) | Build 18 sheets, 3 interactive dashboards and a Story: which file, which shelf, which mark, which colour, and the insight each sheet shows |
 | [`KNIME_GUIDE.md`](docs/KNIME_GUIDE.md) | Build the 41-node workflow: statistics, PCA, k-means, decision tree, k-NN, random forest and a dashboard, with the value each node should output |
+| [`KNIME_WORKFLOW_STEP_BY_STEP.md`](docs/KNIME_WORKFLOW_STEP_BY_STEP.md) | Click-by-click build sheet for that workflow: which node connects to which, build order, checkpoints, troubleshooting |
 | [`knime_python_views/`](docs/knime_python_views/) | Six copy-paste scripts for KNIME *Python View* nodes (radar, chord, waterfall, circular columns, treemap, chi-square heatmap) |
 | [`PROJECT_JOURNEY.md`](docs/PROJECT_JOURNEY.md) | The project diary: every decision and the numbers behind it, phase by phase |
 | [`CLAUDE_CODE_PROMPT.md`](docs/CLAUDE_CODE_PROMPT.md) | The reusable AI prompt used to plan and build this kind of project for any dataset |
