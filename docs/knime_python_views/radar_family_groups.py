@@ -32,5 +32,5 @@ for ax, (grp, row), color in zip(axes.ravel(), scaled.iterrows(), SERIES):
     ax.set_title(grp, color=INK, pad=14, fontweight="bold")
 fig.suptitle("Radar: median composition fingerprint of each family group (log-scaled, 0-1 across groups)",
              color=INK, x=0.02, ha="left", fontweight="bold")
-fig.tight_layout()
+fig.tight_layout(rect=(0, 0, 1, 0.95))
 knio.output_view = knio.view_matplotlib(fig)
