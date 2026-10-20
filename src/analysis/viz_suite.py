@@ -1,4 +1,4 @@
-"""Visual-analytics suite (notebook 04): summaries, binning, chi-square, regression, PCA, k-means,
+"""Visual-analytics suite (notebook 03): summaries, binning, chi-square, regression, PCA,
 circular migration (chord) plots, ring / donut, circular columns, treemap, radar and waterfall charts.
 
 Geometry for the circular charts is computed by `*_geometry` functions that return plain DataFrames, so the
@@ -18,7 +18,6 @@ from matplotlib.patches import Patch, PathPatch, Wedge
 from matplotlib.path import Path
 from matplotlib.transforms import offset_copy
 from scipy import stats
-from sklearn.metrics import silhouette_samples
 
 from . import plotting as P
 from . import visual_stats as V
@@ -499,91 +498,7 @@ def pca_biplot(df: pd.DataFrame, pca: dict, n_arrows: int = 8):
 
 
 # =============================================================================================
-# F. K-means
-# =============================================================================================
-def kmeans_elbow(scan: pd.DataFrame, k: int):
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4.4))
-    for ax, col, color, title in [(axes[0], "inertia", P.SKY, "Elbow: within-cluster sum of squares"),
-                                  (axes[1], "silhouette", P.PINK, "Silhouette score (higher = better separated)")]:
-        line, = ax.plot(scan.index, scan[col], marker="o", color=color, ms=6)
-        P.glow(line, color)
-        P.ring(ax, k, scan.loc[k, col], size=230)
-        ax.set_xlabel("Number of clusters k")
-        ax.set_title(title, fontsize=11.5)
-        ax.set_xticks(scan.index)
-    axes[0].set_ylabel("Inertia")
-    axes[1].set_ylabel("Mean silhouette")
-    P.subtitle(axes[0], f"Ringed: k = {k}, chosen as best silhouette within 4–8 (one colour/panel per cluster)")
-    fig.tight_layout(w_pad=3)
-    P.source_note(fig)
-    return fig
-
-
-def silhouette_plot(X: np.ndarray, labels: np.ndarray, names: dict):
-    sil = silhouette_samples(X, labels)
-    fig, ax = plt.subplots(figsize=(10.5, 6.5))
-    y0 = 0
-    for c in sorted(set(labels)):
-        v = np.sort(sil[labels == c])
-        ax.fill_betweenx(np.arange(y0, y0 + len(v)), 0, v, color=P.SERIES[c % 8], alpha=0.85, linewidth=0)
-        ax.text(-0.02, y0 + len(v) / 2, names[c], ha="right", va="center", fontsize=8.5, color=P.INK_2)
-        y0 += len(v) + 12
-    ax.axvline(sil.mean(), color=P.INK, lw=1.4)
-    ax.text(sil.mean() + 0.01, y0 * 0.98, f"mean {sil.mean():.2f}", fontsize=9, color=P.INK)
-    ax.set_yticks([])
-    ax.set_xlim(-0.4, 1)
-    ax.set_xlabel("Silhouette coefficient per grade")
-    ax.grid(axis="y", visible=False)
-    ax.set_title("Silhouette profile of each k-means cluster")
-    P.subtitle(ax, "Wide, mostly-positive blades = coherent clusters; negative values = grades closer to another cluster")
-    P.source_note(fig)
-    return fig
-
-
-def kmeans_small_multiples(sc: np.ndarray, labels: np.ndarray, names: dict):
-    k = len(names)
-    cols = 4
-    rows = int(np.ceil(k / cols))
-    fig, axes = plt.subplots(rows, cols, figsize=(14.5, 3.6 * rows), sharex=True, sharey=True)
-    for ax, c in zip(axes.ravel(), sorted(names)):
-        on = labels == c
-        ax.scatter(sc[~on, 0], sc[~on, 1], s=4, color=P.OTHER, linewidths=0, alpha=0.5)
-        ax.scatter(sc[on, 0], sc[on, 1], s=9, color=P.SERIES[c % 8], linewidths=0)
-        ax.set_title(f"{names[c]}  n={on.sum()}", fontsize=9.5)
-        ax.set_xticks([])
-        ax.set_yticks([])
-    for ax in axes.ravel()[k:]:
-        ax.axis("off")
-    fig.tight_layout()
-    _title(fig, "Eight chemical tribes, each lit up on the chemistry map",
-           "Coloured = cluster members, grey = every other grade (PC1 × PC2)", y=1.05)
-    P.source_note(fig)
-    return fig
-
-
-def cluster_heatmap(df: pd.DataFrame, labels: np.ndarray, names: dict, X: np.ndarray, feats: list[str]):
-    z = pd.DataFrame(X, columns=feats).groupby(labels).mean()
-    z.index = [names[i] for i in z.index]
-    z = z[[f for f in feats if f != "trace_total"]]
-    ts = df.assign(_c=labels).groupby("_c")[TS].median()
-    fig, ax = plt.subplots(figsize=(14, 5.2))
-    ax.imshow(z.values, cmap=P.DIVERGING, vmin=-2.5, vmax=2.5, aspect="auto")
-    for i in range(z.shape[0]):
-        for j in range(z.shape[1]):
-            if abs(z.iat[i, j]) >= 1:
-                ax.text(j, i, f"{z.iat[i, j]:+.1f}", ha="center", va="center", fontsize=7.5, color=P.INK)
-    ax.set_xticks(range(z.shape[1]), z.columns, fontsize=9)
-    ax.set_yticks(range(z.shape[0]), [f"{n}  · median TS {ts.iloc[i]:.0f}" for i, n in enumerate(z.index)], fontsize=8.5)
-    ax.tick_params(axis="both", labelcolor=P.INK_2)
-    ax.grid(False)
-    ax.set_title("Cluster fingerprints: each tribe's chemical signature")
-    P.subtitle(ax, "Pink = element well above the dataset average, sky = well below; values shown where |z| ≥ 1")
-    P.source_note(fig)
-    return fig
-
-
-# =============================================================================================
-# G. Circular migration (chord) plot
+# F. Circular migration (chord) plot
 # =============================================================================================
 def _arc(a0: float, a1: float, r: float = 1.0, n: int = 24) -> np.ndarray:
     t = np.radians(np.linspace(a0, a1, max(2, n)))
@@ -680,7 +595,7 @@ def circular_migration(flows: pd.DataFrame, sources: list[str], targets: list[st
 
 
 # =============================================================================================
-# H. Ring / donut, circular columns, treemap
+# G. Ring / donut, circular columns, treemap
 # =============================================================================================
 def _shade(color: str, i: int, n: int) -> tuple:
     base = np.array(to_rgba(color))
@@ -808,7 +723,7 @@ def treemap(df: pd.DataFrame, W: float = 100, H: float = 62):
 
 
 # =============================================================================================
-# I. Radar charts
+# H. Radar charts
 # =============================================================================================
 def radar_geometry(table: pd.DataFrame, scale_max: float) -> pd.DataFrame:
     """Closed polygon (x, y) per row of `table` (rows = entities, columns = radar axes), clockwise from top."""
@@ -886,7 +801,7 @@ def radar_overlay(table: pd.DataFrame, colors: list, title: str, subtitle: str, 
 
 
 # =============================================================================================
-# J. Waterfall
+# I. Waterfall
 # =============================================================================================
 def waterfall(wf: pd.DataFrame, title: str, subtitle: str, unit: str = "", fmt: str = "{:,.0f}", xlabel_rot: int = 0,
               zero_based: bool = True, story: tuple[str, str] | None = None):
@@ -936,7 +851,7 @@ def waterfall(wf: pd.DataFrame, title: str, subtitle: str, unit: str = "", fmt: 
 
 
 # =============================================================================================
-# K. Parallel coordinates
+# J. Parallel coordinates
 # =============================================================================================
 def parallel_coordinates(df: pd.DataFrame):
     cols = [TS, "liquidus_c", "carbon_equivalent", "alloying_total", "C", "Cr", "Ni", "Mo"]

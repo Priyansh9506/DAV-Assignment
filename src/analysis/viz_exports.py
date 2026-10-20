@@ -103,14 +103,8 @@ def build_viz_exports(grades: pd.DataFrame | None = None) -> dict[str, pd.DataFr
     scores = pd.DataFrame(pca["scores"][:, :3], columns=["PC1", "PC2", "PC3"])
     out["pca_explained.csv"] = pca["explained"]
     out["pca_loadings.csv"] = pca["loadings"].iloc[:, :5].reset_index(names="element")
-    scan = V.kmeans_scan(X)
-    k, labels = V.kmeans_visual(X, scan)
-    names = V.cluster_names(grades, labels)
-    from sklearn.metrics import silhouette_samples
-    out["kmeans_scan.csv"] = scan.reset_index()
-    out["pca_kmeans_scores.csv"] = pd.concat([g[["grade_id", "display_name", "family_group", "family_label", TS]].reset_index(drop=True),
-                                              scores], axis=1).assign(cluster=labels + 1, cluster_name=pd.Series(labels).map(names),
-                                                                      silhouette=silhouette_samples(X, labels))
+    out["pca_scores.csv"] = pd.concat([g[["grade_id", "display_name", "family_group", "family_label", TS]].reset_index(drop=True),
+                                       scores], axis=1)
 
     raw, listings = pd.read_csv(DATA_RAW), pd.read_csv(CLEAN_LISTINGS_CSV)
     f1 = V.flow_raw_class_to_outcome(raw, listings, grades)
@@ -118,12 +112,7 @@ def build_viz_exports(grades: pd.DataFrame | None = None) -> dict[str, pd.DataFr
     tgt1 = ["Grade class 0", "Grade class 1", "Grade class 2", "Unmeasured TS (excluded)", "Merged into twin listing",
             "Dropped: exact duplicate"]
     out["chord_raw_class_migration.csv"] = chord_layers(f1, src1, tgt1)
-    f2 = V.flow_family_to_cluster(grades, labels, names)
-    src2 = [s for s in VS.FAMILY_GROUP_ORDER if s in set(f2["source"])]
-    tgt2 = [names[i] for i in sorted(names)]
-    out["chord_family_to_cluster.csv"] = chord_layers(f2, src2, tgt2)
     out["flows_raw_class_migration.csv"] = f1
-    out["flows_family_to_cluster.csv"] = f2
 
     fam_med = m.groupby("family_label")[TS].median().sort_values(ascending=False)
     rb = VS.radial_bar_geometry(fam_med)
@@ -142,19 +131,14 @@ def build_viz_exports(grades: pd.DataFrame | None = None) -> dict[str, pd.DataFr
     out["waterfall_cleaning.csv"] = V.waterfall_layout(V.waterfall_cleaning(counts))
     r4140 = grades[grades["display_name"].str.startswith(V.SHOWCASE_GRADES["AISI 4140"])].iloc[0]
     out["waterfall_ce_aisi4140.csv"] = V.waterfall_layout(V.waterfall_ce(r4140))
-    wf_pred, info = V.prediction_waterfall(grades, V.SHOWCASE_GRADES["AISI 4140"])
-    out["waterfall_prediction_aisi4140.csv"] = V.waterfall_layout(wf_pred).assign(grade=info["grade"],
-                                                                                  measured_ts=info["measured"])
     for df in out.values():
         if "row_id" not in df.columns:
             df.insert(0, "row_id", range(1, len(df) + 1))
 
-    sizes = " ".join(map(str, pd.Series(labels).value_counts().sort_values(ascending=False).values))
-    expected = knime_expected(fns, chi, reg, pca, scan, k, counts, sizes)
-    return {"tableau": out, "knime": expected, "k": k, "names": names}
+    return {"tableau": out, "knime": knime_expected(fns, chi, reg, pca, counts)}
 
 
-def knime_expected(fns, chi, reg, pca, scan, k, counts, k_sizes: str) -> pd.DataFrame:
+def knime_expected(fns, chi, reg, pca, counts) -> pd.DataFrame:
     rows = []
     for var in [TS, "liquidus_c", "carbon_equivalent", "alloying_total"]:
         r = fns.loc[var]
@@ -175,11 +159,8 @@ def knime_expected(fns, chi, reg, pca, scan, k, counts, k_sizes: str) -> pd.Data
     rows += [{"section": "PCA (log1p + z-score composition)", "item": f"{c} explained variance", "value": v}
              for c, v in zip(ev["component"].head(5), ev["explained_variance_ratio"].head(5))]
     rows.append({"section": "PCA (log1p + z-score composition)", "item": "components for 80 %", "value": pca["n_for_80pct"]})
-    rows += [{"section": "k-Means scan", "item": f"k={kk} silhouette", "value": v} for kk, v in scan["silhouette"].items()]
-    rows.append({"section": "k-Means scan", "item": "k used for visuals", "value": k})
-    rows.append({"section": "k-Means scan", "item": f"cluster sizes at k={k}, largest first", "value": k_sizes})
     rows += [{"section": "Row counts (waterfall)", "item": i, "value": v} for i, v in counts.items()]
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows, dtype=object)       # object keeps counts as integers next to the float statistics
 
 
 def save(result: dict) -> None:

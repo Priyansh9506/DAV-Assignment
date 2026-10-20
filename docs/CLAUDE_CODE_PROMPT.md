@@ -18,7 +18,6 @@ INPUTS (filled in by the student)
 - Domain: <<e.g. Materials / Manufacturing>>
 - Problem statement: <<one or two sentences, the real-world question>>
 - Target / key variable(s): <<e.g. Tensile Strength (MPa)>>
-- Application idea: <<e.g. web app to explore grades and find substitutes>>
 
 GIT
 - Work on a NEW branch named feature/visual-analytics (create it from the current branch; never commit to main).
@@ -38,7 +37,7 @@ STEP 1 - CLEANING PIPELINE (reusable module, not notebook-only code)
   a generated data dictionary and a cleaning log. Unit tests for every rule (pytest, synthetic data).
 - Flag (do not silently drop) imputed or default values; report how key statistics change with vs without them.
 
-STEP 2 - VISUAL-ANALYTICS NOTEBOOK (notebooks/04_visual_analytics.ipynb, logic in src/analysis/*.py)
+STEP 2 - VISUAL-ANALYTICS NOTEBOOK (notebooks/03_visual_analytics.ipynb, logic in src/analysis/*.py)
 Use matplotlib + seaborn with ONE eye-candy theme that makes viewers stop scrolling: a deep midnight canvas
 with a soft radial glow, MAXIMUM-CHROMA neon categorical hues (hot pink, electric sky, electric orange, violet,
 lime, magenta: never plain default blue), plasma-style ramps (indigo -> magenta -> orange -> gold) for magnitudes,
@@ -65,47 +64,44 @@ Mandatory techniques and charts:
     multiple OLS with coefficient forest plot (standardized betas + 95 % CI), residual-vs-fitted and Q-Q plots,
     hexbin joint plot, seaborn pair plot.
  F. PCA: scree + cumulative variance, loadings heatmap, biplot (scores + loading arrows).
- G. K-means: elbow (inertia) + silhouette scan, silhouette blade plot, clusters on the PCA plane as small
-    multiples, cluster fingerprint heatmap, cluster radar.
- H. Circular migration plot (chord / ring diagram): ribbons from source categories (left) to target
-    categories (right), width = flow. Build at least two, e.g. raw label -> cleaned outcome and
-    category -> cluster. Implement the geometry yourself (arcs + Bezier ribbons) and export it for Tableau.
- I. Ring / donut (two-level sunburst), circular column (radial bar) charts, nested treemap (squarify).
- J. Radar charts: category composition fingerprints (small multiples), well-known items as percentile
+ G. Circular migration plot (chord / ring diagram): ribbons from source categories (left) to target
+    categories (right), width = flow, e.g. raw label -> cleaned outcome. Implement the geometry yourself
+    (arcs + Bezier ribbons) and export it for Tableau.
+ H. Ring / donut (two-level sunburst), circular column (radial bar) charts, nested treemap (squarify).
+ I. Radar charts: category composition fingerprints (small multiples), well-known items as percentile
     profiles (3x3 small multiples with a median reference outline), and a 3-item overlay.
- K. Waterfall charts: data-cleaning row flow, an additive index built term by term, and a model prediction
-    built from SHAP contributions (declare any non-zero axis baseline in the subtitle).
- L. Parallel coordinates of group medians.
+ J. Waterfall charts: data-cleaning row flow and an additive index built term by term.
+ K. Parallel coordinates of group medians.
 Render and LOOK at every figure; fix overlapping labels, clipped text and unreadable colours before moving on.
 
-STEP 3 - MODELS (only where they answer a real question)
-Baseline first (e.g. group median), then interpretable regression, then gradient boosting; group-aware
-cross-validation if duplicates or near-duplicates exist; report MAE/RMSE/R2 against the baseline and an
-irreducible-error ceiling. Classifier with class balancing and macro-F1 if a class target exists.
+STEP 3 - NO MACHINE LEARNING IN PYTHON, NO WEB APP
+Python stops at cleaning, statistics and notebook visuals. Machine learning (k-means, decision tree, k-NN,
+random forest) is built in KNIME (STEP 5). Do not build a web dashboard or API (React, JS, FastAPI, ...).
 
 STEP 4 - EXPORTS
-- exports/tableau/: wide table (one row per entity + features + predictions + clusters), long table for
-  composition-type charts, summaries, metrics, and exports/tableau/viz/*.csv helper files: radar polygons,
+- exports/tableau/: wide table (one row per entity + features), long table for composition-type charts,
+  summaries, and exports/tableau/viz/*.csv helper files: radar polygons,
   chord ribbons/arcs, radial-bar polygons and waterfall start/end values as ready x/y coordinates
   (columns: layer, shape_id, point_order, x, y, ...) so Tableau can draw them with Polygon/Line marks.
 - exports/knime/: model-ready input with a deterministic, group-safe train/test split column sorted
-  train-first, plus a CSV of every number KNIME should reproduce.
+  train-first, plus a CSV of every statistic KNIME should reproduce.
 
 STEP 5 - GUIDES (step-by-step, visualization-intensive, written for students who used the tools only in labs)
 - docs/TABLEAU_GUIDE.md: which file to connect, data types/roles, every calculated field with exact formula,
   15+ sheets (box plot with five-number reference lines, histogram with bins, quantile bins via LOD
   percentiles, stacked domain bins, chi-square residual highlight table, scatter with trend line + Describe
-  Trend Model, coefficient forest plot, PCA scatter, native clustering, elbow line, chord via Polygon marks,
+  Trend Model, coefficient forest plot, PCA scatter, chord via Polygon marks,
   donut, radial bars, treemap, radar via Line/Polygon marks, waterfall via Gantt bars, KPI tiles), each with
   shelves, marks, colour, filters, tooltips and the insight it shows; 3 interactive dashboards with filter and
   highlight actions; a Story; publishing to Tableau Public.
 - docs/KNIME_GUIDE.md: node-by-node workflow (exact settings, ports, what to check) covering readers, row
   filters, rule engine, math formulas, statistics/five-number summary, binning, crosstab chi-square,
-  correlation, linear regression, PCA, k-means + silhouette loop, colour manager and native view nodes
+  correlation, linear regression, PCA, k-means + silhouette loop, decision tree, k-NN and random forest
+  (with a leakage warning and a majority-class baseline), colour manager and native view nodes
   (box plot, histogram, bar, pie/donut, scatter, scatter matrix, heatmap, sunburst, parallel coordinates),
   plus Python View nodes (copy-paste scripts) for radar, chord, waterfall, circular columns, treemap and
   residual heatmap; a composite interactive dashboard (component layout); expected values from Python
-  for every check; exporting the .knwf and screenshots.
+  for every statistical check; exporting the .knwf and screenshots.
 - Do NOT generate .twb/.twbx/.knwf files; instructions only.
 
 RULES
@@ -125,7 +121,7 @@ Step 2 and the guides:
 
 | Prompt item | Where it lives |
 |---|---|
-| A–L chart suite | `notebooks/04_visual_analytics.ipynb`, figures `reports/figures/04_*.png` |
+| A–L chart suite | `notebooks/03_visual_analytics.ipynb`, figures `reports/figures/03_*.png` |
 | Statistics behind the charts | `src/analysis/visual_stats.py` |
 | Figure code (theme, chord, radar, ring, treemap, waterfall…) | `src/analysis/viz_suite.py` |
 | Tableau helper CSVs, KNIME expected values | `src/analysis/viz_exports.py` → `exports/tableau/viz/`, `exports/knime/viz_expected_values.csv` |

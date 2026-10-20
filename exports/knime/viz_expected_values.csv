@@ -78,19 +78,6 @@ PCA (log1p + z-score composition),PC3 explained variance,0.09504594210573884
 PCA (log1p + z-score composition),PC4 explained variance,0.07628659596615131
 PCA (log1p + z-score composition),PC5 explained variance,0.05938301499199001
 PCA (log1p + z-score composition),components for 80 %,12
-k-Means scan,k=2 silhouette,0.23075220678206873
-k-Means scan,k=3 silhouette,0.24659898338180467
-k-Means scan,k=4 silhouette,0.2686898460117663
-k-Means scan,k=5 silhouette,0.2711150081048302
-k-Means scan,k=6 silhouette,0.27721144434915584
-k-Means scan,k=7 silhouette,0.28642644356118263
-k-Means scan,k=8 silhouette,0.3167163870670987
-k-Means scan,k=9 silhouette,0.33105299078619477
-k-Means scan,k=10 silhouette,0.33555732894944673
-k-Means scan,k=11 silhouette,0.3464903992951862
-k-Means scan,k=12 silhouette,0.2996897076400203
-k-Means scan,k used for visuals,8
-k-Means scan,"cluster sizes at k=8, largest first",704 377 84 73 65 43 25 18
 Row counts (waterfall),raw,2672
 Row counts (waterfall),duplicates,62
 Row counts (waterfall),twins,1221

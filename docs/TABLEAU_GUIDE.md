@@ -1,10 +1,11 @@
 # Tableau guide: SteelScope visual analytics
 
-A step-by-step build guide for someone who has used Tableau only in lab sessions. You will build **20 sheets,
+A step-by-step build guide for someone who has used Tableau only in lab sessions. You will build **18 sheets,
 3 interactive dashboards and a Story**, then publish to Tableau Public. Each sheet lists *exactly* what goes on
 which shelf, which mark type to pick, how to colour/filter/tooltip it, and the **insight it shows**. Where a
-number is quoted, it was printed by the Python code (`notebooks/04_visual_analytics.ipynb` and the CSVs in
-`exports/`), so you can check your sheet against it.
+number is quoted, it was printed by the Python code (`notebooks/03_visual_analytics.ipynb` and the CSVs in
+`exports/`), so you can check your sheet against it. Machine learning (clustering, decision trees, k-NN) is not
+part of this workbook; it is built in KNIME (see the KNIME guide).
 
 > Works in **Tableau Public (free) or Tableau Desktop 2023.x / 2024.x**. Menu names below are from those versions.
 
@@ -16,17 +17,16 @@ number is quoted, it was printed by the Python code (`notebooks/04_visual_analyt
 
 | File (in `exports/tableau/`) | Rows | What it is | Used by sheets |
 |---|---|---|---|
-| `steels_wide.csv` | 1389 | One row per steel grade: names, family, strength, liquidus, 30 elements, CE, predictions, clusters | 1–8, 12, 15, 19 |
-| `steels_long.csv` | 41 670 | One row per (grade, element): wt% | 16 |
+| `steels_wide.csv` | 1389 | One row per steel grade: names, family, strength, liquidus, 30 elements, CE, Schaeffler Cr/Ni equivalents | 1–8, 14 |
+| `steels_long.csv` | 41 670 | One row per (grade, element): wt% | 15 |
 | `viz/chi_square_cells.csv` | 60 | Observed / expected / standardized residual per cell of 5 chi-square tests | 9 |
 | `viz/chi_square_tests.csv` | 5 | χ², df, p, Cramér's V per test | 9 (tooltip), 10 |
 | `viz/regression_coefficients.csv` | 8 | Multiple-regression coefficients with 95 % CI | 11 |
-| `viz/pca_kmeans_scores.csv` | 1389 | PC1–PC3, k-means cluster (k = 8) and silhouette per grade | 12, 13 |
-| `viz/kmeans_scan.csv` | 11 | Inertia and silhouette for k = 2…12 | 13 |
-| `viz/chord_family_to_cluster.csv`, `viz/chord_raw_class_migration.csv` | 3648 / 1512 | Ready-made polygons for the circular migration (chord) plots | 14 |
-| `viz/radial_bars_family_ts.csv` | 408 | Polygons for the circular column chart | 17 |
-| `viz/radar_showcase_grades.csv`, `viz/radar_family_composition.csv` | 621 / 510 | Radar polygons + grid lines | 18 |
-| `viz/waterfall_cleaning.csv`, `viz/waterfall_ce_aisi4140.csv`, `viz/waterfall_prediction_aisi4140.csv` | 6 / 8 / 10 | Waterfall steps with start/end | 20 |
+| `viz/pca_scores.csv` | 1389 | PC1–PC3 per grade, with family group and TS for colour and tooltip | 12 |
+| `viz/chord_raw_class_migration.csv` | 1512 | Ready-made polygons for the circular migration (chord) plot | 13 |
+| `viz/radial_bars_family_ts.csv` | 408 | Polygons for the circular column chart | 16 |
+| `viz/radar_showcase_grades.csv`, `viz/radar_family_composition.csv` | 621 / 510 | Radar polygons + grid lines | 17 |
+| `viz/waterfall_cleaning.csv`, `viz/waterfall_ce_aisi4140.csv` | 6 / 8 | Waterfall steps with start/end | 18 |
 
 > **Why helper files?** Tableau has no built-in chord, radar, radial-bar or waterfall chart. The helper
 > files already contain the x/y coordinates of every shape, so you only drag fields. The geometry is
@@ -38,7 +38,7 @@ number is quoted, it was printed by the Python code (`notebooks/04_visual_analyt
 2. For each additional file: **Data → New Data Source → Text file**. Do **not** join or relate these
    files; each sheet uses one data source.
 3. Rename each data source (right-click its name at the top of the Data pane → *Rename*), e.g. `Wide`,
-   `Long`, `Chi cells`, `Chord family`, `Radar showcase`…
+   `Long`, `Chi cells`, `Chord`, `Radar showcase`…
 
 ### 0.3 Field types and roles (do this on `Wide` before building)
 
@@ -47,17 +47,17 @@ use the tidied names. If your field still shows the raw name, put that inside th
 
 | Field | Set data type | Set role | How |
 |---|---|---|---|
-| Grade Id, Display Name, Family, Family Label, Family Group, Product Form, Naming Source, Strength Class Label, Cluster Label | String | Dimension | default |
-| Strength Class, Cluster Id, Hdbscan Cluster | Number (whole) | **Dimension** | right-click → *Convert to Dimension* |
+| Grade Id, Display Name, Family, Family Label, Family Group, Product Form, Naming Source, Strength Class Label | String | Dimension | default |
+| Strength Class, Composition Group Id | Number (whole) | **Dimension** | right-click → *Convert to Dimension* |
 | Is Imputed Ts, Liquidus Is Default, Is Stainless Comp | Boolean | Dimension | data-source page: click the type icon → *Boolean* |
-| Tensile Strength Mpa, Liquidus C, all element columns, Carbon Equivalent, Alloying Total, Ts Pred Mpa, Residual Mpa, Pca 1/2, Umap 1/2 | Number (decimal) | Measure | default |
+| Tensile Strength Mpa, Liquidus C, all element columns, Carbon Equivalent, Alloying Total, Cr Eq, Ni Eq | Number (decimal) | Measure | default |
 
 In every helper file: **Point Order** → Number (whole), keep as *Measure*. **X**, **Y** → Number (decimal),
 Measure.
 
 ### 0.4 Global setting for the shape sheets
 
-For sheets 14, 17 and 18 you need one mark per CSV row: **Analysis menu → untick *Aggregate Measures***
+For sheets 13, 16 and 17 you need one mark per CSV row: **Analysis menu → untick *Aggregate Measures***
 (on that sheet only).
 
 ---
@@ -75,8 +75,6 @@ Create each with **Analysis → Create Calculated Field…**. Type the name and 
 | C5 | `CE Weldability` | `IF [Family Group] = "Carbon & low-alloy" THEN (IF [Carbon Equivalent] <= 0.40 THEN "Readily weldable" ELSEIF [Carbon Equivalent] <= 0.60 THEN "Preheat advised" ELSE "Difficult" END) END` | IIW CE bands, plain steels only |
 | C6 | `TS Quintile` | `IF [Measured TS] <= {FIXED : PERCENTILE([Measured TS], 0.2)} THEN "Q1" ELSEIF [Measured TS] <= {FIXED : PERCENTILE([Measured TS], 0.4)} THEN "Q2" ELSEIF [Measured TS] <= {FIXED : PERCENTILE([Measured TS], 0.6)} THEN "Q3" ELSEIF [Measured TS] <= {FIXED : PERCENTILE([Measured TS], 0.8)} THEN "Q4" ELSEIF NOT ISNULL([Measured TS]) THEN "Q5" END` | Equal-frequency (quantile) bins |
 | C7 | `TS z within family` | `([Measured TS] - {FIXED [Family] : AVG([Measured TS])}) / {FIXED [Family] : STDEV([Measured TS])}` | How unusual a grade is inside its own family |
-| C8 | `Interval Width` | `[Ts Pred Hi Mpa] - [Ts Pred Lo Mpa]` | Width of the model's 80 % prediction range |
-| C9 | `Abs Residual` | `ABS([Residual Mpa])` | Model error per grade |
 | C10 | `Grades` | `COUNTD([Grade Id])` | Clean count measure |
 | C11 | `Share of Grades` | `[Grades] / TOTAL([Grades])` | Percent-of-total for stacked bars and donuts (table calculation) |
 | C13 | `Equal Width Bin` | `MIN(INT(([Measured TS] - 140) / 462), 4) + 1` | 5 equal-width bins of 462 MPa starting at the minimum (Tableau's own bins start at 0, so they cannot reproduce this) |
@@ -209,7 +207,7 @@ matches the palette order).
 - Easiest route: create the Spearman matrix in Python (already in the notebook) and show it here as a
   highlight table, or build a Pearson heatmap in Tableau:
   - **Data:** Wide. Create one calculated field per pair, e.g. `corr C-TS` = `CORR([C], [Measured TS])`.
-  - For a full matrix use the notebook figure `04_10_correlation_clustermap.png` (Dashboard → Image object).
+  - For a full matrix use the notebook figure `03_15_correlation_clustermap.png` (Dashboard → Image object).
 - **Insight:** elements that travel together (Cr-Ni-N, W-V-Mo-Co) and the weak overall link of C to strength.
 
 ### Sheet 9: Chi-square residual highlight table
@@ -252,48 +250,30 @@ matches the palette order).
   third of the variance.
 
 ### Sheet 12: PCA scatter (biplot without arrows)
-- **Data:** pca_kmeans_scores.csv. **Columns:** `PC1`. **Rows:** `PC2`. **Detail:** `Grade Id`.
+- **Data:** pca_scores.csv. **Columns:** `PC1`. **Rows:** `PC2`. **Detail:** `Grade Id`.
 - **Color:** `Family Group` (only the 3 big groups coloured; set the other three to grey in Edit Colors).
 - **Tooltip:** Display Name, family, TS.
 - **Axis titles:** "PC1 (15.0 % of variance)", "PC2 (11.8 % of variance)".
 - **Insight:** stainless grades spread along PC1 (Cr, Ni, N), high-speed/tool steels along PC2 (V, W, Co),
   and plain steels cluster tightly near the origin.
 
-### Sheet 13: K-means: native clustering and the elbow
-**13a. Tableau's own clustering**
-- **Data:** Wide. **Columns:** `Cr`, **Rows:** `Ni`, **Detail:** `Grade Id`.
-- **Analytics → Cluster** → drop on the view. In the dialog add variables `C, Mn, Si, Cr, Ni, Mo, V, W, Co,
-  Cu, N` and set **Number of clusters = 8**.
-- Right-click the Clusters pill on Color → **Describe Clusters** → note the F-statistics (most separating
-  elements) and the cluster sizes.
-- Tableau standardises with min-max scaling and its own initialisation, so expect a different split from
-  Python. Python's k = 8 cluster sizes (log1p + z-score composition) are **704 / 377 / 84 / 73 / 65 / 43 / 25 / 18**.
-
-**13b. Python clusters on the PCA plane**
-- **Data:** pca_kmeans_scores.csv. Columns `PC1`, Rows `PC2`, **Color:** `Cluster Name`, Detail `Grade Id`.
-- **13c. Elbow:** data kmeans_scan.csv, Columns `K` (dimension), Rows `Silhouette` (line + circle). Dual axis
-  with `Inertia` is **not** recommended (two scales mislead); make a second small sheet for inertia instead.
-- **Insight:** clusters recover chemistry-defined families (austenitic, N/Mn-rich, high-speed, cast iron), while
-  carbon, alloy, boron and spring steels mostly share one lean cluster.
-
-### Sheet 14: Circular migration plot (chord diagram)
-- **Data:** Chord family (`chord_family_to_cluster.csv`). **Analysis → Aggregate Measures: OFF.**
+### Sheet 13: Circular migration plot (chord diagram)
+- **Data:** Chord (`chord_raw_class_migration.csv`). **Analysis → Aggregate Measures: OFF.**
 - **Columns:** `X`. **Rows:** `Y`. **Mark:** **Polygon**.
-- **Path:** `Point Order`. **Detail:** `Shape Id`. **Color:** `Color Key` (family-group colours from §2.2;
-  set "destination" to pale lavender `#e9e4ff`). **Opacity:** 75 %.
+- **Path:** `Point Order`. **Detail:** `Shape Id`. **Color:** `Color Key` (one colour per raw class, e.g. the
+  *Neon Plasma* steps; set "destination" to pale lavender `#e9e4ff`). **Opacity:** 75 %.
 - Right-click each axis → **Edit Axis** → fixed range **−1.8 to 1.8** for both, then hide the axes
   (right-click → uncheck *Show Header*) and remove gridlines (Format → Lines → None).
 - **Labels:** drag `Label X` to Columns and `Label Y` to Rows next to the existing pills → right-click each
   new pill → **Dual Axis** → **Synchronize Axis**. On the new marks card choose **Text**, put `Label` on Text,
   `Shape Id` on Detail.
 - **Tooltip:** `Source`, `Target`, `Value` ("<Value> grades migrate from <Source> to <Target>").
-- Repeat with `chord_raw_class_migration.csv` for the second plot (raw Class → cleaned outcome).
-- **Check:** the ribbon from *Carbon & low-alloy* to the largest cluster carries the most grades; raw class 2 sends
-  **871** rows to "Merged into twin listing" and **7** to "Unmeasured TS (excluded)".
-- **Insight:** stainless grades fan out over several chemistry clusters, while plain-steel family names
-  collapse into one lean cluster. In the raw-class chord, the imputed rows almost all disappear into the twin merge.
+- Left = the raw file's original Class, right = what happened to each row in cleaning.
+- **Check:** raw class 2 sends **871** rows to "Merged into twin listing" and **7** to "Unmeasured TS (excluded)".
+- **Insight:** the imputed rows almost all disappear into the twin merge, and no row changes class once the
+  fake values are gone.
 
-### Sheet 15: Ring (donut) diagram
+### Sheet 14: Ring (donut) diagram
 - **Data:** Wide. **Rows:** type `MIN(0)` twice (double-click Rows, type `MIN(0)`, Enter; repeat).
 - First marks card: **Pie**, Angle = `Grades`, Color = `Family Group`, Label = `Family Group` + `Grades`.
 - Second marks card: **Circle**, remove all fields, colour = the worksheet background, size smaller than the pie.
@@ -302,7 +282,7 @@ matches the palette order).
 - For the outer ring (families), duplicate the sheet with Color = `Family Label`.
 - **Insight:** stainless (546) and carbon & low-alloy (583) are 81 % of all grades.
 
-### Sheet 16: Treemap
+### Sheet 15: Treemap
 - **Data:** Wide. Drag `Family Group` to Detail, `Family Label` to Detail, `Grades` to Size,
   `MEDIAN(Measured TS)` to Color (*Neon Plasma*; Edit Colors → *End* at 1100 so one extreme family does not
   flatten the scale). Mark becomes **Square** automatically (or use Show Me → Treemap).
@@ -312,7 +292,7 @@ matches the palette order).
 - **Insight:** area shows how many grades exist and colour shows how strong they are: spring and maraging
   tiles are small but the brightest.
 
-### Sheet 17: Circular column chart (radial bars)
+### Sheet 16: Circular column chart (radial bars)
 - **Data:** radial_bars_family_ts.csv. **Aggregate Measures: OFF.**
 - **Columns:** `X`, **Rows:** `Y`, **Mark:** Polygon, **Path:** `Point Order`, **Detail:** `Bar`,
   **Color:** `Family Group`. Fix both axes to −1.3…1.3 and hide them.
@@ -321,7 +301,7 @@ matches the palette order).
 - **Insight:** ranks families by median strength at a glance: spring 1790, maraging 1085, nitriding 1025 MPa
   at the top; grey cast iron 260 MPa at the bottom.
 
-### Sheet 18: Radar charts
+### Sheet 17: Radar charts
 - **Data:** Radar showcase (`radar_showcase_grades.csv`). **Aggregate Measures: OFF.**
 - Create two calculated fields in this data source:
   - `Data Only Y` = `IF [Layer] = "data" THEN [Y] END` (the polygon layer)
@@ -341,24 +321,14 @@ matches the palette order).
 - **Insight:** each alloy becomes a recognisable shape: high-speed steels max out W/V/Co/Mo; stainless Cr/Ni;
   cast iron C/Si.
 
-### Sheet 19: Model error and uncertainty
-- **Data:** Wide. **Columns:** `Measured TS`. **Rows:** `Ts Pred Mpa`. **Detail:** `Grade Id`.
-  **Color:** `Abs Residual` (*Neon Plasma*). Add a reference line y = x: Analytics → Trend Line is not it; instead
-  create a calculated field `Identity` = `[Measured TS]` and put it on a dual axis as a Line.
-- Second view: **Rows** `Family Label`, **Columns** `AVG(Abs Residual)`, Bar, sorted.
-- **Insight:** errors are small where chemistry decides strength and large in heat-treatment-defined families
-  (maraging, ductile and malleable irons).
-
-### Sheet 20: Waterfall charts
+### Sheet 18: Waterfall charts
 - **Data:** waterfall_cleaning.csv.
 - **Columns:** `Step` (sort: Manual, or by `Row Id` ascending). **Rows:** `SUM(End)`.
 - **Mark:** **Gantt Bar**. **Size:** `SUM(Bar Size)`. **Color:** `Direction` (Total = sky `#0d9de5`,
   Increase = lime `#5bab0f`, Decrease = hot pink `#ff0d89`).
 - **Story beat:** annotate the twin-listing bar: "The big secret: 1,221 rows were the same steel written twice". **Label:** `SUM(Value)`.
 - **Check:** 2672 → −62 → −1221 → **1389** → −7 → **1382**.
-- Repeat with `waterfall_ce_aisi4140.csv` (C 0.405 + Mn/6 0.146 + Cr/5 0.190 + Mo/5 0.040 = **CE 0.781**) and
-  `waterfall_prediction_aisi4140.csv` (average prediction → SHAP pushes → predicted TS). For the prediction
-  waterfall right-click the axis → Edit Axis → untick *Include zero* and state the starting value in the title.
+- Repeat with `waterfall_ce_aisi4140.csv` (C 0.405 + Mn/6 0.146 + Cr/5 0.190 + Mo/5 0.040 = **CE 0.781**).
 - **Insight:** twin listings, not duplicates or missing values, are the dominant data issue; for AISI 4140
   carbon and chromium make up most of the carbon equivalent.
 
@@ -367,12 +337,12 @@ matches the palette order).
 ## 4. Dashboards (Dashboard → New Dashboard; Size: *Automatic* or 1366 × 768)
 
 ### Dashboard A: Strength Explorer
-- **Layout:** top row = Sheet 1 tiles; middle = Sheet 7 (scatter, large, left) + Sheet 16 (treemap, right);
+- **Layout:** top row = Sheet 1 tiles; middle = Sheet 7 (scatter, large, left) + Sheet 15 (treemap, right);
   bottom = Sheet 2 (box plot).
 - **Filters:** show `Family Group`, `Product Form`, `Liquidus Type` from Sheet 7 → right-click each filter →
   *Apply to Worksheets → All Using This Data Source*.
 - **Actions:** Dashboard → Actions → Add Action:
-  1. **Filter action** "Treemap filters scatter": Source = Sheet 16, Run on = *Select*, Target = Sheet 7 and
+  1. **Filter action** "Treemap filters scatter": Source = Sheet 15, Run on = *Select*, Target = Sheet 7 and
      Sheet 2, Clearing = *Show all values*.
   2. **Highlight action** "Hover family": Source = Sheet 2, Run on = *Hover*, Target = Sheet 7, Fields =
      `Family Group`.
@@ -388,9 +358,9 @@ matches the palette order).
   switches the heatmap to that test.
 
 ### Dashboard C: Circular & Composition Gallery
-- **Layout:** Sheet 14 (chord) large on the left; Sheet 18 (radar trellis) on the right; Sheet 17 (radial
-  columns) and Sheet 15 (donut) at the bottom; Sheet 20 (waterfall) as a floating panel or second tab.
-- **Action:** Highlight action from Sheet 15 (donut, *Select*) to Sheets 16/17 on `Family Group`.
+- **Layout:** Sheet 13 (chord) large on the left; Sheet 17 (radar trellis) on the right; Sheet 16 (radial
+  columns) and Sheet 14 (donut) at the bottom; Sheet 18 (waterfall) as a floating panel or second tab.
+- **Action:** Highlight action from Sheet 14 (donut, *Select*) to Sheets 15/16 on `Family Group`.
 - Add a **Text object** explaining how to read a chord diagram: "ribbon width = number of grades; left =
   from, right = to".
 
@@ -398,12 +368,12 @@ matches the palette order).
 
 ## 5. Story (Story → New Story)
 Create 6 story points, each with a one-line caption:
-1. "2672 listings are really 1389 grades": Sheet 20 (cleaning waterfall).
+1. "2672 listings are really 1389 grades": Sheet 18 (cleaning waterfall).
 2. "Family sets the strength range": Dashboard A with Spring selected in the treemap.
 3. "Skewed data: medians, not means": Sheet 4 + Sheet 5.
 4. "Associations are real and measurable": Dashboard B with the chi-square heatmap.
-5. "Chemistry clusters vs family names": Sheet 14.
-6. "Each alloy has a fingerprint": Sheet 18 with 304 / 316 / 17-4 PH selected.
+5. "The chemistry map: three arms pull the steels apart": Sheet 12.
+6. "Each alloy has a fingerprint": Sheet 17 with 304 / 316 / 17-4 PH selected.
 
 ---
 

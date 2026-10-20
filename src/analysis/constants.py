@@ -14,11 +14,9 @@ PIPELINE_META_JSON = DATA_PROCESSED / "pipeline_meta.json"
 
 REPORTS = ROOT / "reports"
 FIGURES = REPORTS / "figures"
-TABLES = REPORTS / "tables"
 CLEANING_LOG_MD = REPORTS / "cleaning_log.md"
 CLEANING_LOG_JSON = REPORTS / "cleaning_log.json"
 
-MODELS_DIR = ROOT / "models"
 EXPORTS_TABLEAU = ROOT / "exports" / "tableau"
 EXPORTS_KNIME = ROOT / "exports" / "knime"
 

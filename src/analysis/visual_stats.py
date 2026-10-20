@@ -1,4 +1,4 @@
-"""Statistics behind the visual-analytics notebook (04) and the Tableau / KNIME guides.
+"""Statistics behind the visual-analytics notebook (03) and the Tableau / KNIME guides.
 
 Every function returns plain DataFrames / dicts so the same numbers feed the figures, the Tableau helper
 CSVs and the "expected values" quoted in the KNIME guide.
@@ -10,13 +10,10 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 from scipy import stats
-from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-from sklearn.metrics import silhouette_score
 
-from .constants import RANDOM_STATE
+from .constants import ELEMENTS, RANDOM_STATE
 from .features import FAMILY_GROUP_ORDER, PLAIN_STEEL_FAMILIES, family_group
-from .substitutes import SubstituteIndex, substitute_features
 
 TS = "tensile_strength_mpa"
 SUMMARY_VARS = {
@@ -243,11 +240,13 @@ def regression_suite(grades: pd.DataFrame) -> dict:
     return {"carbon": carbon, "simple": simple, "plain": plain, "multi": multi, "std_multi": std_multi}
 
 
-# ----------------------------------------------------------------------------- 5. PCA + KMeans
+# ------------------------------------------------------------------------------------- 5. PCA
 def composition_space(grades: pd.DataFrame, rare: list[str]) -> tuple[np.ndarray, list[str]]:
-    """log1p + z-score of the composition features: the space used for substitutes and clustering."""
-    feats = substitute_features(rare)
-    return SubstituteIndex.fit(grades, feats, "log1p + z-score").matrix, feats
+    """log1p + z-score of every non-rare element except Fe (redundant with the others) plus summed trace elements."""
+    feats = [el for el in ELEMENTS if el not in rare and el != "Fe"] + ["trace_total"]
+    T = np.log1p(grades[feats].to_numpy(dtype=float))
+    sd = T.std(axis=0)
+    return (T - T.mean(axis=0)) / np.where(sd > 0, sd, 1.0), feats
 
 
 def pca_analysis(X: np.ndarray, feats: list[str]) -> dict:
@@ -263,38 +262,7 @@ def pca_analysis(X: np.ndarray, feats: list[str]) -> dict:
             "n_kaiser": int((pca.explained_variance_ > 1).sum())}
 
 
-def kmeans_scan(X: np.ndarray, ks=range(2, 13)) -> pd.DataFrame:
-    rows = []
-    for k in ks:
-        km = KMeans(k, n_init=20, random_state=RANDOM_STATE).fit(X)
-        rows.append({"k": k, "inertia": km.inertia_, "silhouette": silhouette_score(X, km.labels_, random_state=RANDOM_STATE)})
-    return pd.DataFrame(rows).set_index("k")
-
-
-def kmeans_visual(X: np.ndarray, scan: pd.DataFrame, k_range=(4, 8)) -> tuple[int, np.ndarray]:
-    """k for the visual profiling: best silhouette within a readable range (≤ 8 clusters = one colour/panel each)."""
-    sub = scan.loc[k_range[0]:k_range[1], "silhouette"]
-    k = int(sub.idxmax())
-    labels = KMeans(k, n_init=50, random_state=RANDOM_STATE).fit_predict(X)
-    return k, labels
-
-
-def cluster_names(grades: pd.DataFrame, labels: np.ndarray) -> dict[int, str]:
-    """'K3 · Stainless (78 %)': dominant family label and its share."""
-    out = {}
-    for c in sorted(set(labels)):
-        fam = grades.loc[labels == c, "family_label"].value_counts()
-        out[int(c)] = f"K{c + 1} · {fam.index[0]} ({fam.iloc[0] / fam.sum():.0%})"
-    return out
-
-
-# ------------------------------------------------------------------------- 6. migration flows
-def flow_family_to_cluster(grades: pd.DataFrame, labels: np.ndarray, names: dict[int, str]) -> pd.DataFrame:
-    g = with_groups(grades)
-    f = pd.DataFrame({"source": g["family_group"].values, "target": pd.Series(labels).map(names).values})
-    return f.groupby(["source", "target"]).size().rename("value").reset_index()
-
-
+# ------------------------------------------------------------------------- 6. migration flow
 def flow_raw_class_to_outcome(raw: pd.DataFrame, listings: pd.DataFrame, grades: pd.DataFrame) -> pd.DataFrame:
     """Where every raw row's Class ends up after cleaning: a 'migration' from raw label to cleaned outcome."""
     dup = raw.duplicated()
@@ -359,12 +327,6 @@ def radar_grade_percentiles(grades: pd.DataFrame, picks: pd.DataFrame) -> pd.Dat
     return pd.DataFrame(out).T
 
 
-def radar_cluster_composition(grades: pd.DataFrame, labels: np.ndarray, names: dict[int, str]) -> pd.DataFrame:
-    med = grades.assign(_c=pd.Series(labels, index=grades.index).map(names)).groupby("_c")[RADAR_ELEMENTS].median()
-    lg = np.log1p(med)
-    return (lg - lg.min()) / (lg.max() - lg.min()).replace(0, 1)
-
-
 # ------------------------------------------------------------------------------- 8. waterfalls
 def waterfall_cleaning(log_counts: dict) -> pd.DataFrame:
     return pd.DataFrame([
@@ -402,52 +364,3 @@ def waterfall_layout(wf: pd.DataFrame) -> pd.DataFrame:
     out["start"], out["end"] = bottoms, tops
     out["running_total"] = out["end"]
     return out
-
-
-def prediction_waterfall(grades: pd.DataFrame, display_prefix: str, top: int = 7) -> tuple[pd.DataFrame, dict]:
-    """Deployed GBM's prediction for one grade, built up from the average prediction with SHAP contributions
-    (permutation explainer; the smaller contributions are pooled as 'other features')."""
-    import json
-
-    import joblib
-    import shap
-
-    from . import modeling as M
-    from .constants import MODELS_DIR
-
-    meta = json.loads((MODELS_DIR / "model_meta.json").read_text(encoding="utf-8"))
-    model = joblib.load(MODELS_DIR / "ts_point.joblib")
-    spec = M.FeatureSpec(meta["numeric_features"], meta["categorical_features"])
-    levels, rare = meta["category_levels"], meta["rare_elements"]
-    m = grades.dropna(subset=[TS]).reset_index(drop=True)
-    X = M.build_X(m, spec, levels, rare)
-    codes = X.copy()
-    for c in spec.categorical:
-        codes[c] = X[c].cat.codes.astype(float)
-    cols = list(X.columns)
-
-    def f(a):
-        d = pd.DataFrame(a, columns=cols)
-        for c in spec.categorical:
-            d[c] = pd.Categorical.from_codes(d[c].astype(int), categories=levels[c])
-        return model.predict(d)
-
-    idx = m.index[m["display_name"].str.startswith(display_prefix)][0]
-    background = shap.maskers.Independent(shap.utils.sample(codes, 100, random_state=RANDOM_STATE), max_samples=100)
-    sv = shap.PermutationExplainer(f, background, seed=RANDOM_STATE)(codes.loc[[idx]], silent=True)
-    contrib = pd.Series(sv.values[0], index=cols)
-    order = contrib.abs().sort_values(ascending=False).index
-    keep, rest = order[:top], order[top:]
-    nice = {"carbon_equivalent": "carbon equivalent", "alloying_total": "alloy total", "product_form": "product form",
-            "cr_eq": "Cr equivalent", "ni_eq": "Ni equivalent"}
-    rows = [{"step": "Average prediction", "value": float(sv.base_values[0]), "kind": "total"}]
-    for c in keep:
-        val = X.loc[idx, c]
-        shown = val if isinstance(val, str) else f"{float(val):.3g}"
-        rows.append({"step": f"{nice.get(c, c)} = {shown}", "value": float(contrib[c]), "kind": "delta"})
-    rows.append({"step": f"{len(rest)} other features", "value": float(contrib[rest].sum()), "kind": "delta"})
-    pred = float(sv.base_values[0] + contrib.sum())
-    rows.append({"step": "Predicted TS", "value": pred, "kind": "total"})
-    info = {"grade": m.loc[idx, "display_name"], "measured": float(m.loc[idx, TS]), "predicted": pred,
-            "model_predict": float(f(codes.loc[[idx]].values)[0])}
-    return pd.DataFrame(rows), info

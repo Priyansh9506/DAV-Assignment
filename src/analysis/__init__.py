@@ -1,1 +1,1 @@
-"""SteelScope analysis package: cleaning, features, EDA, models and exports."""
+"""SteelScope analysis package: cleaning, features, EDA, visual statistics and Tableau / KNIME exports."""

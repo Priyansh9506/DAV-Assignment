@@ -1,7 +1,7 @@
 """Build and execute the project notebooks.
 
     python scripts/build_notebooks.py            # all notebooks
-    python scripts/build_notebooks.py 01 03      # selected notebooks
+    python scripts/build_notebooks.py 01 04      # selected notebooks
 
 Notebooks only orchestrate and display: all logic lives in src/analysis. Each notebook is
 regenerated from the cell lists below and executed top to bottom with nbclient, so the saved

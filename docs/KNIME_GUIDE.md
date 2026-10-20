@@ -3,9 +3,12 @@
 A node-by-node build guide for someone who has used KNIME only in lab sessions. The workflow is
 **visualization-first**: every analytical step ends in a view (native KNIME view nodes where they exist,
 Python View nodes for radar, chord, waterfall, circular-column, treemap and residual-heatmap charts), and
-everything is assembled into an interactive dashboard (a component with a composite view). Every number you
-should see is listed next to the node, taken from the Python run (`exports/knime/viz_expected_values.csv`,
-`exports/knime/python_reference_metrics.csv`).
+everything is assembled into an interactive dashboard (a component with a composite view). Every statistic you
+should see is listed next to the node, taken from the Python notebooks (`exports/knime/viz_expected_values.csv`).
+
+**Division of work.** Python (notebooks 01, 02, 03) cleans the data and produces the statistical visuals.
+**All machine learning (k-means clustering, decision tree, k-NN, random forest) is built here in KNIME**;
+there are no Python models to compare against, so for those nodes you report KNIME's own scores.
 
 > Written for **KNIME Analytics Platform 5.2 or newer** (classic or modern UI). Node names are from the Node
 > Repository; type them into the repository search box. Where KNIME 4.7 uses a different name, it is given in
@@ -29,9 +32,9 @@ should see is listed next to the node, taken from the Python run (`exports/knime
 ### Data files
 | File | Rows | Use |
 |---|---|---|
-| `exports/knime/knime_input.csv` | 1389 | Main input: cleaned grades, 30 elements, family, product form, TS, class, liquidus, group-safe `split` column, Python's engineered features for cross-checks |
+| `exports/knime/knime_input.csv` | 1389 | Main input: cleaned grades, 30 elements, family, product form, TS, class, liquidus, group-safe train/test `split` column, Python's engineered features for cross-checks |
 | `exports/tableau/viz/waterfall_cleaning.csv`, `waterfall_ce_aisi4140.csv` | 6 / 8 | Waterfall inputs |
-| `exports/knime/viz_expected_values.csv` | 98 | The numbers to reproduce (open it in a CSV Reader + Table View to keep it visible in the workflow) |
+| `exports/knime/viz_expected_values.csv` | 85 | The numbers to reproduce (open it in a CSV Reader + Table View to keep it visible in the workflow) |
 
 ---
 
@@ -216,7 +219,8 @@ One Math Formula node per feature (*Append column*):
 - **Expected coefficients (MPa per wt%):** Intercept **404.0**, C **648.5**, Mn **−19.6**, Si **193.3**,
   Cr **19.7**, Ni **23.8**, Mo **−74.2**, V **362.2**; R² **0.326**, adjusted R² **0.317**.
 - **Insight:** C, Si, V, Ni and Cr raise strength; Mn is not significant. A linear model explains only about a
-  third of the variance, which is why the project's main model is gradient boosting.
+  third of the variance, which is why the non-linear models in Section I (decision tree, k-NN, random forest)
+  are worth building.
 
 ---
 
@@ -255,8 +259,8 @@ One Math Formula node per feature (*Append column*):
 - **Input:** Node 24 (normalized log composition). **Settings:** number of clusters **8**; max iterations 99;
   *Use static random seed* ✓ (any value); include the 20 columns.
 - **Output:** appended `Cluster` column; cluster centres on port 2.
-- **Python reference sizes (k = 8):** **704 / 377 / 84 / 73 / 65 / 43 / 25 / 18** (all 1389 grades). With 1382
-  rows and KNIME's different initialisation, expect similar but not identical sizes.
+- **What to expect:** one very large cluster (the lean plain steels) and several small, chemically sharp ones
+  (austenitic stainless, N/Mn-rich stainless, high-speed steel, cast iron). Note the sizes for your report.
 
 ### Node 28. Silhouette loop (choosing k)
 1. **Counting Loop Start:** from 2 to 12 (KNIME counts iterations from 0, so set iterations = 11 and
@@ -265,7 +269,8 @@ One Math Formula node per feature (*Append column*):
 3. **Silhouette Coefficient** node (KNIME Labs / Statistics) on the cluster column → overall mean silhouette.
 4. **Loop End:** collect rows; add the iteration/k column.
 5. **Line Plot:** x = k, y = mean silhouette.
-- **Python reference:** k=4 0.269, k=6 0.277, k=8 **0.317**, k=10 0.336, k=11 0.346 (rises slowly; no sharp elbow).
+- **What to expect:** the silhouette rises slowly with k and has no sharp elbow (steel chemistry is a
+  continuum with dense islands). Pick the best k in a readable range (4–8) and justify it from this plot.
 
 ### Node 29. Scatter Plot: clusters on the PCA map
 - Join `Cluster` to the PCA output (Joiner on `grade_id`), **Color Manager** on `Cluster`, Scatter Plot of
@@ -329,36 +334,57 @@ One Math Formula node per feature (*Append column*):
 
 ---
 
-## 9. Section I: Model cross-check (optional, links to Phase 3 exports)
+## 9. Section I: Machine learning in KNIME
+
+All models predict from **composition + family + product form only**. Never use `tensile_strength_mpa`,
+`strength_class_label` or `is_imputed_ts` as a feature: the strength class is computed from tensile strength,
+so including it leaks the answer. Exclude identifiers too (`grade_id`, names, `composition_group_id`, `split`).
 
 ### Node 38. Partitioning
 - **Input:** Node 6 output (1382 rows, file already sorted train-first).
 - **Settings:** **Absolute**, **1117** rows, **Take from top**. Port 1 = train (**1117**), port 2 = test (**265**).
-  This reproduces Python's group-safe split exactly.
+  This reproduces the group-safe `split` column: grades with identical chemistry never sit on both sides.
+- **Class target:** for the classifiers, convert `strength_class` to String first (**Number to String**) so
+  KNIME treats it as a class, not a number.
+- **Baseline to beat:** predicting the majority class gives the accuracy of class 2's share of the test set.
+  Compute it with a GroupBy on `strength_class` over port 2.
 
-### Node 39. Random Forest Learner (Regression) → Random Forest Predictor (Regression) → Numeric Scorer
-- **Learner:** target `tensile_strength_mpa`; features = 19 elements + `trace_total` + the 4 engineered
-  features + `family` + `product_form`; 100 models; attribute sampling *square root*.
-- **Python reference on the same split:** R² **0.828**, MAE **46.6 MPa**, RMSE **76.6 MPa**. KNIME's forest
-  differs in implementation details; within ±10 % on MAE counts as matching.
+### Node 39. Decision Tree Learner → Decision Tree Predictor → Scorer
+- **Learner:** class column `strength_class`; quality measure **Gini index**; pruning **MDL**; min number
+  of records per node **5**; features = 19 elements + `trace_total` + the 4 engineered features + `family`
+  + `product_form`.
+- **Predictor:** model from the learner, data from Partitioning port 2. **Scorer:** actual `strength_class` vs
+  `Prediction (strength_class)` → accuracy, Cohen's κ and the confusion matrix.
+- **Decision Tree View:** open the learner's view. The first splits show which families and elements separate
+  the classes (expect a family / cast-iron split near the root).
 
-### Node 40. Random Forest Learner (classification) → Predictor → Scorer
-- **Target:** `strength_class` (convert to String first with **Number to String** so KNIME treats it as a class).
-- **Python reference:** accuracy **0.872**, Cohen's κ **0.754**, macro-F1 **0.912** on 265 test rows
-  (6 / 126 / 133 per class 0 / 1 / 2).
-- **Scorer view:** confusion matrix: errors cluster between classes 1 and 2 near 600 MPa.
+### Node 40. Normalizer → Normalizer (Apply) → K Nearest Neighbor → Scorer
+- k-NN works on distances, so scale first: **Normalizer** (min-max 0–1) on the training port's numeric feature
+  columns, then **Normalizer (Apply)** with its model on the test port (never fit the scaling on test rows).
+- **K Nearest Neighbor:** class column `strength_class`; **k = 5** (try 3, 5, 7, 9 and keep the best);
+  *Weight neighbours by distance* ✓. Numeric features only (drop or one-hot the string columns with
+  **One to Many** first).
+- **Scorer:** as in Node 39. Compare accuracy and κ with the decision tree.
+
+### Node 41. Random Forest Learner (Regression) → Random Forest Predictor (Regression) → Numeric Scorer
+- **Learner:** target `tensile_strength_mpa`; same features as Node 39; 100 models; attribute sampling
+  *square root*.
+- **Numeric Scorer:** R², MAE and RMSE on the test port. Judge MAE against the irreducible-error floor from
+  notebook 01 (identical compositions differ by about 111 MPa on average because of heat treatment).
+- **Scorer views:** in the classifiers' confusion matrices, errors cluster between classes 1 and 2 near 600 MPa.
 
 ---
 
 ## 10. Section J: The interactive dashboard (component composite view)
 
-1. Select nodes **9, 10, 15, 17, 21, 26, 29, 30, 31, 32, 34, 35, 36** (Ctrl+click) → right-click →
+1. Select nodes **9, 10, 15, 17, 21, 26, 29, 30, 31, 32, 34, 35, 36, 39** (Ctrl+click) → right-click →
    **Create Component…** → name `SteelScope Dashboard`.
 2. Open the component (Ctrl+double-click) → **Layout Editor** (toolbar button): drag views into a grid:
    - Row 1: Donut (30) · Sunburst (31) · Circular columns (32)
    - Row 2: Box plot (9) · Histogram (10) · Stacked carbon bands (15)
    - Row 3: PCA scatter (26) · Cluster scatter (29) · Chord (35)
    - Row 4: Chi-square heatmap (17) · Regression scatter (21) · Radar (34) · Waterfall (36)
+   - Row 5: Decision tree view and confusion matrix (39)
 3. **Interactivity:** in each native view's settings tick **Publish selection** and **Subscribe to selection**
    (and *Subscribe to filter*). Selecting a family in the bar/box/scatter views then highlights the same grades
    everywhere. Add a **Value Filter Widget** / **Single Selection Widget** on `family_group` inside the
@@ -393,7 +419,8 @@ One Math Formula node per feature (*Append column*):
 | 20 Linear Regression | slope C, R² | 428.63, 0.508 |
 | 22 Linear Regression | R² | 0.326 |
 | 25 PCA | PC1 / PC2 variance | 15.0 % / 11.8 % |
-| 28 Silhouette | k = 8 | ≈ 0.32 |
+| 28 Silhouette | chosen k | your choice, justified by the plot |
 | 36 Waterfall | final total | 1382 |
 | 38 Partitioning | train / test | 1117 / 265 |
-| 39 Numeric Scorer | R² (RF) | ≈ 0.83 |
+| 39 / 40 Scorer | decision tree / k-NN accuracy, κ | report KNIME's values; both must beat the majority-class baseline |
+| 41 Numeric Scorer | random forest R², MAE | report KNIME's values |
