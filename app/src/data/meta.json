@@ -1,0 +1,206 @@
+{
+  "source": "data/processed/steels_clean.csv (notebooks/01_cleaning.ipynb)",
+  "nGrades": 1389,
+  "nMeasured": 1382,
+  "elements": [
+    "Al",
+    "As",
+    "B",
+    "C",
+    "Ca",
+    "Ce",
+    "Co",
+    "Cr",
+    "Cu",
+    "Fe",
+    "La",
+    "Mg",
+    "Mn",
+    "Mo",
+    "N",
+    "Nb",
+    "Ni",
+    "O",
+    "P",
+    "Pb",
+    "S",
+    "Se",
+    "Si",
+    "Sn",
+    "Ta",
+    "Ti",
+    "V",
+    "W",
+    "Zn",
+    "Zr"
+  ],
+  "rareElements": [
+    "As",
+    "Ca",
+    "Ce",
+    "La",
+    "Mg",
+    "Pb",
+    "Se",
+    "Sn",
+    "Ta",
+    "Zn"
+  ],
+  "pcaFeatures": [
+    "Al",
+    "B",
+    "C",
+    "Co",
+    "Cr",
+    "Cu",
+    "Mn",
+    "Mo",
+    "N",
+    "Nb",
+    "Ni",
+    "O",
+    "P",
+    "S",
+    "Si",
+    "Ti",
+    "V",
+    "W",
+    "Zr",
+    "trace_total"
+  ],
+  "groupOrder": [
+    "Carbon & low-alloy",
+    "Stainless",
+    "Cast iron",
+    "Tool & high-speed",
+    "Weld metal",
+    "Other"
+  ],
+  "pca": {
+    "explained": [
+      0.1503,
+      0.1176,
+      0.095,
+      0.0763,
+      0.0594
+    ],
+    "componentsFor80": 12,
+    "topLoadings": {
+      "PC1": [
+        {
+          "element": "Cr",
+          "loading": 0.802
+        },
+        {
+          "element": "Ni",
+          "loading": 0.767
+        },
+        {
+          "element": "N",
+          "loading": 0.689
+        },
+        {
+          "element": "C",
+          "loading": -0.581
+        }
+      ],
+      "PC2": [
+        {
+          "element": "V",
+          "loading": 0.796
+        },
+        {
+          "element": "W",
+          "loading": 0.781
+        },
+        {
+          "element": "Co",
+          "loading": 0.712
+        },
+        {
+          "element": "Mo",
+          "loading": 0.506
+        }
+      ]
+    }
+  },
+  "defaultLiquidus": 1460,
+  "nDefaultLiquidus": 524,
+  "cleaning": [
+    {
+      "step": "load_raw",
+      "detail": "Read Alloys.csv: 2672 rows x 34 columns",
+      "rowsAfter": 2672
+    },
+    {
+      "step": "validate_schema",
+      "detail": "34 expected columns present, all numeric, 0 nulls, no negative wt%",
+      "rowsAfter": 2672
+    },
+    {
+      "step": "drop_exact_duplicates",
+      "detail": "Removed 62 exact full-row duplicates",
+      "rowsAfter": 2610
+    },
+    {
+      "step": "flag_imputed_ts",
+      "detail": "469 rows (18.0%) carry TS = 652.482978 (the raw column mean); flagged, not dropped",
+      "rowsAfter": 2610
+    },
+    {
+      "step": "add_canonical_grade",
+      "detail": "1389 canonical grades; 1221 listed twice (spaced + hyphenated name), 168 listed once",
+      "rowsAfter": 2610
+    },
+    {
+      "step": "collapse_to_grades",
+      "detail": "1389 grades. 459 grades had an imputed listing whose twin carries the measured TS; 7 grades have no measured TS at all",
+      "rowsAfter": 1389
+    },
+    {
+      "step": "audit_processing_variants",
+      "detail": "476 composition groups show >1 TS at listing level, but only 28 once the imputed constant is excluded: the rest is the imputed value disagreeing with the measured twin",
+      "rowsAfter": 1389
+    },
+    {
+      "step": "recompute_strength_class",
+      "detail": "Class rebuilt from measured TS (edges (300.0, 600.0) MPa); matches the original Class on 100% of measured listings. Grade counts 0/1/2 = 23/648/711, 7 without class",
+      "rowsAfter": 1389
+    },
+    {
+      "step": "flag_default_liquidus",
+      "detail": "524 grades (37.7%) have liquidus = 1460 °C; kept but flagged as a family-typical default (evidence in 01_cleaning)",
+      "rowsAfter": 1389
+    },
+    {
+      "step": "group_trace_elements",
+      "detail": "10 elements non-zero in <30 de-duplicated rows summed into trace_total: As, Ca, Ce, La, Mg, Pb, Se, Sn, Ta, Zn",
+      "rowsAfter": 1389
+    },
+    {
+      "step": "add_features",
+      "detail": "family (17 families, 105 by EN 10020 composition rule), naming_source, product_form, CE, Cr+Ni, Schaeffler Cr/Ni eq, composition_group_id (1299 groups)",
+      "rowsAfter": 1389
+    }
+  ],
+  "strengthClasses": [
+    {
+      "value": 0,
+      "label": "Low (<300 MPa)",
+      "min": 140.0,
+      "max": 290.0
+    },
+    {
+      "value": 1,
+      "label": "Medium (300-600 MPa)",
+      "min": 300.0,
+      "max": 600.0
+    },
+    {
+      "value": 2,
+      "label": "High (>600 MPa)",
+      "min": 610.0,
+      "max": 2450.0
+    }
+  ]
+}
