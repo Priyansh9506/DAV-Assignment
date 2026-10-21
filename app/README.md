@@ -12,13 +12,16 @@ open any grade, find look-alikes and search for a grade that meets a requirement
 
 **What it does.** Filter the grades by family group, product form, a strength window and a name search. Four stat
 cards (grades in view, median strength, the middle 50 %, median carbon equivalent), a strength histogram stacked by
-family, a donut of who is in the data, box plots of strength per family, and a sortable table that links to every
-grade. Everything recomputes as you filter.
+family, a **sunburst** of family groups and their families, box plots of strength per family, a **treemap** of the
+17 families (area = grades, label = median strength), a **chord diagram** of how each family group flows into the
+low / medium / high strength classes, and a sortable table that links to every grade. Everything recomputes as you
+filter.
 
 **Why it is useful.** It answers "what is in this data and how strong is it?" in one screen. With every family on,
 the median is 610 MPa and the middle half sits between 510 and 720 MPa; switch a family off and you see at once how
 much each one shifts the picture. The box plots make the project's first finding visible: **family decides the
-strength range**, from cast iron at the bottom to the maraging and Fe-Ni alloys at the top.
+strength range**, from cast iron at the bottom to the maraging and Fe-Ni alloys at the top, and the chord shows
+the same thing as flows: almost every low-strength grade comes from the cast-iron ribbon.
 
 ### 2 · Grade inspector: one grade in context (`/grades/[id]`)
 

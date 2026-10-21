@@ -22,9 +22,11 @@ export function getGrade(id: string): Grade | undefined {
 }
 
 export function gradeRows(): GradeRow[] {
-  return grades.map(({ id, name, group, familyLabel, form, standard, ts, liquidus, liquidusDefault, ce, alloyTotal }) => ({
-    id, name, group, familyLabel, form, standard, ts, liquidus, liquidusDefault, ce, alloyTotal,
-  }))
+  return grades.map(
+    ({ id, name, group, familyLabel, form, standard, ts, strengthClass, liquidus, liquidusDefault, ce, alloyTotal }) => ({
+      id, name, group, familyLabel, form, standard, ts, strengthClass, liquidus, liquidusDefault, ce, alloyTotal,
+    }),
+  )
 }
 
 export type GroupSummary = { group: GroupName; n: number; ts: FiveNumber | null }

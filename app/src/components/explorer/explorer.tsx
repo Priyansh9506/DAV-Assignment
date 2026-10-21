@@ -4,7 +4,9 @@ import { RotateCcwIcon, SearchIcon } from "lucide-react"
 import * as React from "react"
 
 import { StrengthBoxPlot } from "@/components/charts/box-plot"
-import { GroupDonut } from "@/components/charts/group-donut"
+import { ClassChord } from "@/components/charts/class-chord"
+import { FamilySunburst } from "@/components/charts/family-sunburst"
+import { FamilyTreemap } from "@/components/charts/family-treemap"
 import { StrengthHistogram } from "@/components/charts/strength-histogram"
 import { GradeTable } from "@/components/grade-table"
 import { StatTile } from "@/components/stat-tile"
@@ -141,10 +143,10 @@ export function Explorer({ rows }: { rows: GradeRow[] }) {
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Who is in the data?</CardTitle>
-            <CardDescription>Grades per family group</CardDescription>
+            <CardDescription>Grades per family group and family</CardDescription>
           </CardHeader>
           <CardContent>
-            <GroupDonut rows={filtered} />
+            <FamilySunburst rows={filtered} />
           </CardContent>
         </Card>
       </div>
@@ -158,6 +160,27 @@ export function Explorer({ rows }: { rows: GradeRow[] }) {
           <StrengthBoxPlot rows={filtered} groups={groups} />
         </CardContent>
       </Card>
+
+      <div className="grid gap-6 xl:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Seventeen families at a glance</CardTitle>
+            <CardDescription>Tile area = number of grades, colour = family group, label = median tensile strength</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <FamilyTreemap rows={filtered} />
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Where each family lands on strength</CardTitle>
+            <CardDescription>Chord: family groups (left) flow into strength classes (right); ribbon width = grades</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ClassChord rows={filtered} />
+          </CardContent>
+        </Card>
+      </div>
 
       <Card>
         <CardHeader>

@@ -68,7 +68,18 @@ export type Meta = {
 /** The slim row the Explorer and Target designer send to the browser. */
 export type GradeRow = Pick<
   Grade,
-  "id" | "name" | "group" | "familyLabel" | "form" | "standard" | "ts" | "liquidus" | "liquidusDefault" | "ce" | "alloyTotal"
+  | "id"
+  | "name"
+  | "group"
+  | "familyLabel"
+  | "form"
+  | "standard"
+  | "ts"
+  | "strengthClass"
+  | "liquidus"
+  | "liquidusDefault"
+  | "ce"
+  | "alloyTotal"
 >
 
 /** The slimmest row: grade search and the PCA map. */
