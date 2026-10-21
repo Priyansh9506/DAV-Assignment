@@ -107,8 +107,9 @@ AWS, ACI). We answer the three questions they keep asking:
 | Tool | Role | Status |
 |---|---|---|
 | **Python notebooks** | Cleaning, statistics and every first-part visualization | Done |
-| **Tableau** | Interactive dashboards and a Story, built from `tableau/data/` | Guide ready, workbook to build |
-| **KNIME** | The statistics as a node workflow, plus **all machine learning** (k-means, decision tree, k-NN, random forest) | Guide ready, workflow to build |
+| **Tableau** | Interactive dashboards and a Story, built from `tableau/data/` ([`tableau/`](tableau/README.md)) | Workbooks in `tableau/workbooks/` |
+| **KNIME** | The statistics as a node workflow, plus **all machine learning** (k-means, decision tree, k-NN, random forest) ([`knime/`](knime/README.md)) | Workflow in `knime/workflow/` |
+| **Power BI** | Six-page interactive report: overview, families and classes, carbon, chemistry map, grade drillthrough, target finder ([`powerbi/`](powerbi/README.md)) | Data, model, measures, theme and guide ready |
 | **Web app** | Explorer, grade inspector, substitute finder and target designer on the cleaned data ([`app/`](app/README.md)) | Done |
 | **DOCX report** | Final write-up of all parts | To do |
 
@@ -172,6 +173,7 @@ Project/
 │   ├── workflow/                ← SteelScope_Visual_Analytics.knwf
 │   ├── data/                    ← knime_input.csv, viz_expected_values.csv
 │   └── python_views/            ← copy-paste scripts for Python View nodes
+├── powerbi/                     ← everything Power BI: guide, star-schema data, Power Query, DAX measures, theme
 ├── docs/                        ← guide index, project journey, reusable prompt
 ├── app/                         ← the web application (Next.js + shadcn/ui), see app/README.md
 ├── requirements.txt             ← Python packages for the notebooks

@@ -1,0 +1,18 @@
+family,family_label,family_group,group_order,group_color
+alloy,Alloy steel,Carbon & low-alloy,1,#2a78d6
+bearing,Bearing steel,Carbon & low-alloy,1,#2a78d6
+boron,Boron steel,Carbon & low-alloy,1,#2a78d6
+carbon,Carbon / non-alloy steel,Carbon & low-alloy,1,#2a78d6
+nitriding,Nitriding steel,Carbon & low-alloy,1,#2a78d6
+spring,Spring steel,Carbon & low-alloy,1,#2a78d6
+weathering,Weathering steel,Carbon & low-alloy,1,#2a78d6
+stainless,Stainless steel,Stainless,2,#eb6834
+cast_iron_austenitic,Austenitic (Ni-Resist) cast iron,Cast iron,3,#1baf7a
+cast_iron_ductile,Ductile cast iron,Cast iron,3,#1baf7a
+cast_iron_grey,Grey cast iron,Cast iron,3,#1baf7a
+cast_iron_malleable,Malleable cast iron,Cast iron,3,#1baf7a
+high_speed,High-speed steel,Tool & high-speed,4,#eda100
+tool,Tool steel,Tool & high-speed,4,#eda100
+weld_metal,Weld metal,Weld metal,5,#e87ba4
+fe_ni_special,Fe-Ni/Co special alloy,Other,6,#008300
+maraging,Maraging steel,Other,6,#008300

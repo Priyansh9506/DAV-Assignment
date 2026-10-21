@@ -1,0 +1,171 @@
+# Power BI guide: the SteelScope report
+
+Build a six-page interactive Power BI report on the cleaned steel data, step by step. Every number you should see is
+listed next to the step so you can check your work. Only native visuals are used, so nothing has to be downloaded
+from AppSource.
+
+| Page | Question it answers | Main visuals |
+|---|---|---|
+| 1 · Overview | What is in the data and how strong is it? | KPI cards, strength histogram, family treemap, median-with-quartiles chart |
+| 2 · Families and strength classes | Does family decide strength? | 100 % stacked bars, class matrix, decomposition tree |
+| 3 · Carbon is the dial | What makes a plain steel stronger? | scatter with trend line, weldability bands |
+| 4 · Chemistry map | Which steels are chemically alike? | PCA scatter, element heatmap matrix |
+| 5 · Grade inspector | What is this one grade? | drillthrough page: cards, composition bars |
+| 6 · Target finder | Which grades meet my requirement? | range slicers, matches per family, candidate table |
+
+> Written for Power BI Desktop (2024 or newer, Microsoft Store or download). Menu names are from the current
+> ribbon; if your version differs, the same command is under the matching tab.
+
+---
+
+## 0 · Before you start
+
+1. If the cleaned data changed, regenerate the tables: `python powerbi/build_powerbi_data.py` from the project
+   root. It writes four CSVs to `powerbi/data/`:
+
+| File | Rows | What it is |
+|---|---|---|
+| `grades.csv` | 1,389 | Fact table: one row per grade (strength, class, liquidus, CE, key elements, PCA coordinates, weldability band) |
+| `composition.csv` | 13,376 | One row per (grade, element present) with wt% |
+| `families.csv` | 17 | Family → family group, group sort order and colour |
+| `elements.csv` | 30 | Element symbol → full name, rare-trace flag |
+
+2. Open Power BI Desktop → **Blank report**.
+3. **View → Themes → Browse for themes** → `powerbi/SteelScope.theme.json`. This loads the family-group colours
+   used by the web app (checked for colour-blind separation).
+
+## 1 · Load the data
+
+**Quick way:** **Home → Get data → Text/CSV** → pick each of the four files in turn → **Load**.
+
+**Portable way (recommended):** use the parameterised queries in `powerbi/queries.pq` so the report works after
+you move the folder:
+
+1. **Home → Transform data** opens Power Query.
+2. **Manage Parameters → New**: `DataFolder`, type *Text*, value = full path of `powerbi\data\` **with** the
+   trailing backslash.
+3. For each block in `queries.pq`: **New Source → Blank Query → Advanced Editor**, paste, **Done**, rename the
+   query (`grades`, `composition`, `families`, `elements`).
+4. **Close & Apply**.
+
+✅ Check: the Data pane shows four tables; `grades` has 1,389 rows (Table view, bottom-left).
+
+## 2 · Model
+
+**Model view** (left bar, third icon). Create these relationships (drag the column from one table onto the other),
+all *many-to-one*, *single* cross-filter direction:
+
+| From (many) | To (one) |
+|---|---|
+| `grades[family]` | `families[family]` |
+| `composition[grade_id]` | `grades[grade_id]` |
+| `composition[element]` | `elements[element]` |
+
+**Sort orders** (Table view → select the column → *Column tools → Sort by column*):
+
+| Column | Sort by |
+|---|---|
+| `families[family_group]` | `families[group_order]` |
+| `grades[strength_class]` | `grades[strength_class_order]` |
+
+**Strength bins:** right-click `grades[tensile_strength_mpa]` → *New group* → Group type **Bin**, bin size **100**.
+This creates `tensile_strength_mpa (bins)`.
+
+**Measures:** select the `grades` table → *Modeling → New measure*, and paste each definition from
+`powerbi/measures.dax`. Format `Share of grades`, `High-strength share` and `Readily weldable share (plain steels)`
+as **Percentage**, 1 decimal.
+
+✅ Check with a card per measure (no filters): Grades **1,389**, Measured grades **1,382**, Median strength **610**,
+Q1 **510**, Q3 **720**, Mean **651.6**, Median CE **2.53**, Placeholder liquidus grades **524**.
+
+**Consistent colours:** wherever `family_group` is on Legend or Axis, open *Format → Colors* and set:
+Carbon & low-alloy `#2a78d6`, Stainless `#eb6834`, Cast iron `#1baf7a`, Tool & high-speed `#eda100`,
+Weld metal `#e87ba4`, Other `#008300`.
+
+---
+
+## 3 · Page 1 · Overview
+
+Rename the page (double-click the tab) to **Overview**. Canvas: *Format page → Canvas settings → 16:9*.
+
+| # | Visual | Fields | Formatting / what to look for |
+|---|---|---|---|
+| 1 | **Slicer** (tile style) | `families[family_group]` | *Slicer settings → Style: Tile*, multi-select with Ctrl. This filters the whole page |
+| 2 | **Slicer** (dropdown) | `grades[product_form]` | wrought / cast / weld |
+| 3 | **Slicer** (between) | `grades[tensile_strength_mpa]` | numeric range 140–2450 |
+| 4 | **Card** ×4 | `Grades`, `Median strength (MPa)`, `Middle 50 % (MPa)`, `Median carbon equivalent` | titles: *Grades in view*, *Median strength*, *Middle 50 %*, *Median CE* |
+| 5 | **Stacked column chart** | X `tensile_strength_mpa (bins)`, Y `Grades`, Legend `families[family_group]` | title *How strong are they?*. Most grades sit between 400 and 800 MPa, with a long tail to 2450 |
+| 6 | **Treemap** | Category `families[family_group]`, Details `families[family_label]`, Values `Grades` | title *Who is in the data?*. Stainless (546) and alloy steel (293) are the biggest tiles |
+| 7 | **Clustered column chart** | X `families[family_group]`, Y `Median strength (MPa)` | *Analytics pane → Error bars → Enabled*, Upper bound `Q3 strength (MPa)`, Lower bound `Q1 strength (MPa)`. This is the box plot: bar = median, whiskers = middle 50 %. Cast iron lowest, the maraging/Fe-Ni "Other" group highest |
+
+**Interactions:** click a family group in the treemap; every other visual filters to it. *Format → Edit
+interactions* lets you switch a visual from filter to highlight.
+
+## 4 · Page 2 · Families and strength classes
+
+| # | Visual | Fields | What it shows |
+|---|---|---|---|
+| 1 | **100 % stacked bar chart** | Y `families[family_group]`, X `Measured grades`, Legend `grades[strength_class]` | class mix per group; cast iron holds 22 of the 23 low-strength grades |
+| 2 | **Matrix** | Rows `families[family_group]`, Columns `grades[strength_class]`, Values `Measured grades` | the crosstab behind the chi-square test (χ² = 548.7, df = 10, Cramér's V = 0.45 in notebook 03). *Format → Cell elements → Background color* on for a heatmap |
+| 3 | **Decomposition tree** | Analyze `Measured grades`; Explain by `families[family_group]`, `families[family_label]`, `grades[product_form]`, `grades[strength_class]` | click **+** on a node and choose the next level to drill group → family → form → class |
+| 4 | **Card** | `High-strength share` | 51.4 % of measured grades are above 600 MPa |
+
+## 5 · Page 3 · Carbon is the dial
+
+| # | Visual | Fields | Formatting / what to look for |
+|---|---|---|---|
+| 1 | **Scatter chart** | X `grades[carbon_wt]` (*Don't summarize*), Y `grades[tensile_strength_mpa]` (*Don't summarize*), Details `grades[grade_name]` | filter pane: `grades[family]` = `carbon`. *Analytics → Trend line → On*. Title *Carbon steels: about +43 MPa per 0.1 % C* (slope 428.6 MPa per wt% C, R² 0.51 in notebook 02/03) |
+| 2 | **Scatter chart** | same, without the family filter, Legend `families[family_group]` | pooled over all steels the cloud has no trend (Spearman ρ = −0.03): Simpson's paradox |
+| 3 | **Clustered bar chart** | Y `grades[weldability_band]`, X `Grades` | filter: `weldability_band` is not *Not applicable*. Readily weldable 173, preheat advised 163, difficult 247 |
+| 4 | **Card** | `Readily weldable share (plain steels)` | 29.7 % |
+
+## 6 · Page 4 · Chemistry map
+
+| # | Visual | Fields | Formatting / what to look for |
+|---|---|---|---|
+| 1 | **Scatter chart** | X `grades[pc1]`, Y `grades[pc2]` (both *Don't summarize*), Legend `families[family_group]`, Tooltips `grades[grade_name]` | title *The chemistry map*; axis titles *PC1 (15.0 % of variance)*, *PC2 (11.8 %)*. Stainless stretches along PC1, tool steels up PC2, plain steels cluster in the middle |
+| 2 | **Matrix** (heatmap) | Rows `families[family_group]`, Columns `elements[element]`, Values `Average wt %` | filter: `elements[element]` in C, Mn, Si, Cr, Ni, Mo, V, W, Co, Cu. *Cell elements → Background color → Gradient* (white → `#104281`). Cr and Ni light up for stainless, W, V, Mo and Co for tool steels, C and Si for cast iron |
+
+## 7 · Page 5 · Grade inspector (drillthrough)
+
+1. New page **Grade inspector**. In the Visualizations pane, under **Drill through**, drag `grades[grade_name]`.
+2. Visuals on the page:
+
+| Visual | Fields |
+|---|---|
+| **Card** ×5 | `Median strength (MPa)` (= the grade's strength), `grades[strength_class]` (*First*), `Median carbon equivalent`, `grades[liquidus_c]` (*First*), `grades[weldability_band]` (*First*) |
+| **Clustered bar chart** | Y `composition[element]`, X `composition[wt_pct]` (*Sum*); filter `element` is not `Fe`; sort by wt% descending; title *Alloying elements (wt%)* |
+| **Table** | `grades[grade_name]`, `families[family_label]`, `grades[product_form]`, `grades[designation_standard]`, `grades[liquidus_is_placeholder]` |
+
+3. On any other page, right-click a grade (scatter point, table row) → **Drill through → Grade inspector**.
+   The *Back* button top-left returns.
+
+## 8 · Page 6 · Target finder
+
+| # | Visual | Fields | Settings |
+|---|---|---|---|
+| 1 | **Slicer** (between) | `grades[tensile_strength_mpa]` | e.g. 800–1200 |
+| 2 | **Slicer** (between) | `grades[liquidus_c]` | e.g. 1400–1500 |
+| 3 | **Slicer** (list) | `grades[liquidus_is_placeholder]` | select **False** to ignore the 524 grades whose liquidus is the 1460 °C placeholder |
+| 4 | **Card** | `Measured grades` | title *Matching grades* (94 for 800–1200 MPa, 1400–1500 °C, placeholder excluded, same as the web app's target designer) |
+| 5 | **Clustered bar chart** | Y `families[family_group]`, X `Measured grades` | *Which families deliver it?* Stainless dominates the default target |
+| 6 | **Table** | `grades[grade_name]`, `families[family_label]`, `grades[product_form]`, `grades[tensile_strength_mpa]`, `grades[liquidus_c]`, `grades[carbon_equivalent]` | sort by strength descending |
+
+## 9 · Finish
+
+1. **Tooltips:** on scatter charts add `grades[grade_name]`, `families[family_label]` and
+   `grades[tensile_strength_mpa]` to *Tooltips*.
+2. **Page navigation:** *Insert → Buttons → Navigator → Page navigator* on page 1 for a tab bar.
+3. **Save** as `powerbi/SteelScope.pbix` (next to this guide).
+4. **Publish (optional):** *Home → Publish* to your Power BI workspace, or *File → Export → PDF* for the report.
+
+## 10 · Checklist
+
+| Page | Check | Expected |
+|---|---|---|
+| Model | Grades / Measured grades | 1,389 / 1,382 |
+| Overview | Median / middle 50 % / median CE | 610 MPa / 510–720 MPa / 2.53 |
+| Families | low-strength grades that are cast iron | 22 of 23 |
+| Carbon | weldability bands (plain steels) | 173 / 163 / 247 |
+| Chemistry | PCA axes | PC1 15.0 %, PC2 11.8 % |
+| Target finder | 800–1200 MPa, 1400–1500 °C, placeholder off | 94 grades |

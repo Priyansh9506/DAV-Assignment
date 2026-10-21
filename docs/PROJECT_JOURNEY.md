@@ -256,3 +256,17 @@ over `exports/` and `docs/`. Everything for one tool now sits in one folder.
 Notebook 03 now writes its exports to `tableau/data/` and `knime/data/`. Earlier phases above keep their original
 paths as a record of what happened at the time.
 
+---
+
+## Phase 11: more circular visuals in the app, and Power BI
+
+- **Web app Explorer:** a two-ring **sunburst** (group → family) replaces the donut, a **treemap** of the 17
+  families (area = grades, label = median strength) and a **chord diagram** of family group → strength class are
+  added. All three follow the Explorer filters. The chord and sunburst are hand-drawn SVG; their coordinates are
+  rounded so the server-rendered and browser-rendered paths match exactly (no hydration mismatch).
+- **Power BI (`powerbi/`):** `build_powerbi_data.py` writes a star schema (grades fact, composition, families,
+  elements) from the cleaned data, with the same PCA coordinates as notebook 03 and the app. The folder ships the
+  Power Query code, DAX measures with expected values (1,389 grades, median 610 MPa, quartiles 510–720 MPa, median
+  CE 2.53, weldability 173 / 163 / 247), a theme with the project's colours, and a six-page build guide. The
+  `.pbix` itself is saved from Power BI Desktop.
+

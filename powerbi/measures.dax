@@ -1,0 +1,59 @@
+// SteelScope measures. In Power BI Desktop: select the `grades` table → Modeling → New measure, paste one
+// definition at a time (everything after the `=` belongs to the measure). Expected values are for "no filter".
+
+Grades = COUNTROWS ( grades )
+// expected 1,389
+
+Measured grades = CALCULATE ( [Grades], grades[has_measured_strength] = TRUE () )
+// expected 1,382
+
+Median strength (MPa) = MEDIAN ( grades[tensile_strength_mpa] )
+// expected 610
+
+Mean strength (MPa) = AVERAGE ( grades[tensile_strength_mpa] )
+// expected 651.6
+
+Q1 strength (MPa) =
+PERCENTILEX.INC (
+    FILTER ( grades, NOT ISBLANK ( grades[tensile_strength_mpa] ) ),
+    grades[tensile_strength_mpa],
+    0.25
+)
+// expected 510
+
+Q3 strength (MPa) =
+PERCENTILEX.INC (
+    FILTER ( grades, NOT ISBLANK ( grades[tensile_strength_mpa] ) ),
+    grades[tensile_strength_mpa],
+    0.75
+)
+// expected 720
+
+Middle 50 % (MPa) = FORMAT ( [Q1 strength (MPa)], "0" ) & "–" & FORMAT ( [Q3 strength (MPa)], "0" )
+// expected "510–720"
+
+Median carbon equivalent = MEDIAN ( grades[carbon_equivalent] )
+// expected 2.53
+
+Share of grades = DIVIDE ( [Grades], CALCULATE ( [Grades], ALLSELECTED ( grades ) ) )
+// format as percentage
+
+High-strength share =
+DIVIDE (
+    CALCULATE ( [Measured grades], grades[strength_class_order] = 2 ),
+    [Measured grades]
+)
+// expected 51.4 % (711 of 1,382)
+
+Readily weldable share (plain steels) =
+DIVIDE (
+    CALCULATE ( [Grades], grades[weldability_band] = "Readily weldable (CE <= 0.40)" ),
+    CALCULATE ( [Grades], grades[weldability_band] <> "Not applicable" )
+)
+// expected 29.7 % (173 of 583)
+
+Average wt % = DIVIDE ( SUM ( composition[wt_pct] ), [Grades] )
+// mean weight-percent of an element across the grades in context (grades without the element count as 0)
+
+Placeholder liquidus grades = CALCULATE ( [Grades], grades[liquidus_is_placeholder] = TRUE () )
+// expected 524
