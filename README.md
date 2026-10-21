@@ -31,6 +31,8 @@ away from the plain steels in the centre.*
   treemap, radar and waterfall charts.
 - The headline findings: **family decides the strength range**, **carbon is the plain steel's strength dial**
   (+43 MPa per 0.1 %), and **more expensive alloy does not mean more strength**.
+- A **web app** ([`app/`](app/README.md)) lets anyone explore the grades, inspect one, find substitutes and search
+  for a grade that meets a requirement, in the browser.
 - Next: interactive **Tableau** dashboards, a **KNIME** workflow that holds all the machine learning, and a **DOCX** report.
 
 ---
@@ -49,6 +51,28 @@ away from the plain steels in the centre.*
 <td valign="top"><a href="reports/figures/03_25_radar_overlay_stainless.png"><img src="reports/figures/03_25_radar_overlay_stainless.png" alt="Stainless radar"></a><br><b>6 · The lesson.</b> 17-4 PH beats nickel-rich 304 and 316 on strength with less nickel: strength is not bought by the kilo.</td>
 </tr>
 </table>
+
+---
+
+## The web app: SteelScope in the browser
+
+The notebooks tell the story once; the app lets anyone ask their own question of the same data. Built with Next.js
+and shadcn/ui, light and dark mode, no installation needed to use it once deployed.
+
+<table>
+<tr>
+<td width="50%" valign="top"><a href="app/docs/screenshots/explorer.png"><img src="app/docs/screenshots/explorer.png" alt="Explorer"></a><br><b>Explorer.</b> Filter 1,389 grades by family, form and strength; the stat cards, histogram, donut, box plots and table recompute live.</td>
+<td width="50%" valign="top"><a href="app/docs/screenshots/inspector.png"><img src="app/docs/screenshots/inspector.png" alt="Grade inspector"></a><br><b>Grade inspector.</b> Any grade in context: percentile within its family, chemistry radar, composition, carbon-equivalent waterfall with the weldability verdict.</td>
+</tr>
+<tr>
+<td valign="top"><a href="app/docs/screenshots/substitutes.png"><img src="app/docs/screenshots/substitutes.png" alt="Substitute finder"></a><br><b>Substitute finder.</b> The ten grades with the closest chemistry, their strength difference, and where they sit on the PCA map.</td>
+<td valign="top"><a href="app/docs/screenshots/designer.png"><img src="app/docs/screenshots/designer.png" alt="Target designer"></a><br><b>Target designer.</b> Enter a strength and melting window; see which families deliver it and every candidate grade.</td>
+</tr>
+</table>
+
+**Why it is useful:** it turns the three project questions (drivers, substitution, target design) into tools an
+engineer or buyer can use directly, without Python, Tableau or KNIME. What each page does, how to run it and how to
+deploy it on Vercel: [app/README.md](app/README.md).
 
 ---
 
