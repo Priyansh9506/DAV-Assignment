@@ -236,3 +236,23 @@ fresh and kept free of machine learning so the "ML lives in KNIME" decision stil
 - **Verified:** `tsc`, ESLint and 7 Vitest tests pass; `next build` prerenders all pages; checked in the browser in
   light and dark mode and at phone width.
 
+---
+
+## Phase 10: one folder per tool
+
+**Why:** the Tableau workbooks and the finished KNIME workflow arrived, and Tableau and KNIME material was spread
+over `exports/` and `docs/`. Everything for one tool now sits in one folder.
+
+| Before | After |
+|---|---|
+| `exports/tableau/*.csv`, `exports/tableau/viz/` | `tableau/data/`, `tableau/data/viz/` |
+| `exports/tableau/DAV_D1–D3.twb` | `tableau/workbooks/` |
+| `docs/TABLEAU_GUIDE.md` | `tableau/TABLEAU_GUIDE.md` |
+| `exports/knime/*.csv` | `knime/data/` |
+| `exports/knime/SteelScope_Visual_Analytics.knwf` | `knime/workflow/` |
+| `docs/KNIME_GUIDE.md`, `docs/KNIME_WORKFLOW_STEP_BY_STEP.md` | `knime/` |
+| `docs/knime_python_views/` | `knime/python_views/` |
+
+Notebook 03 now writes its exports to `tableau/data/` and `knime/data/`. Earlier phases above keep their original
+paths as a record of what happened at the time.
+

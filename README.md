@@ -107,7 +107,7 @@ AWS, ACI). We answer the three questions they keep asking:
 | Tool | Role | Status |
 |---|---|---|
 | **Python notebooks** | Cleaning, statistics and every first-part visualization | Done |
-| **Tableau** | Interactive dashboards and a Story, built from `exports/tableau/` | Guide ready, workbook to build |
+| **Tableau** | Interactive dashboards and a Story, built from `tableau/data/` | Guide ready, workbook to build |
 | **KNIME** | The statistics as a node workflow, plus **all machine learning** (k-means, decision tree, k-NN, random forest) | Guide ready, workflow to build |
 | **Web app** | Explorer, grade inspector, substitute finder and target designer on the cleaned data ([`app/`](app/README.md)) | Done |
 | **DOCX report** | Final write-up of all parts | To do |
@@ -128,8 +128,8 @@ flowchart LR
     C --> E[03_visual_analytics<br/>notebook]
     D --> R2[8 figures]
     E --> R3[27 figures]
-    E --> X1[(exports/tableau)]
-    E --> X2[(exports/knime)]
+    E --> X1[(tableau/data)]
+    E --> X2[(knime/data)]
     X1 --> T[Tableau<br/>dashboards + Story]
     X2 --> K[KNIME workflow<br/>+ machine learning]
     R1 --> W[DOCX report<br/>+ faculty demo]
@@ -143,8 +143,8 @@ flowchart LR
 |---|---|---|
 | **1 · Clean** | Read the raw file, drop duplicates, merge twin listings, flag fake and placeholder values, rebuild the strength class, add engineered features | `data/processed/`, `reports/cleaning_log.md`, 4 figures |
 | **2 · Explore** | Seven questions an engineer would ask, one statistic and one chart each | 8 figures |
-| **3 · Tell the story** | A prologue, seven acts and an epilogue covering every required technique | 27 figures, `exports/` |
-| **4 · Build in Tableau / KNIME** | Follow the step-by-step guides in `docs/` | Dashboards, workflow, ML results |
+| **3 · Tell the story** | A prologue, seven acts and an epilogue covering every required technique | 27 figures, `tableau/data/`, `knime/data/` |
+| **4 · Build in Tableau / KNIME** | Follow the guides in `tableau/` and `knime/` | `tableau/workbooks/`, `knime/workflow/`, ML results |
 | **5 · Report and present** | Combine everything into the DOCX report | Report + demo |
 
 **The one rule:** data flows one way (`raw → processed → figures / exports → Tableau / KNIME / report`). Nothing
@@ -163,10 +163,16 @@ Project/
 ├── reports/
 │   ├── figures/                 ← all 39 charts as PNG
 │   └── cleaning_log.md / .json  ← rows before/after every cleaning step
-├── exports/
-│   ├── tableau/                 ← CSVs shaped for Tableau (+ viz/ with ready-made chart shapes)
-│   └── knime/                   ← CSVs shaped for KNIME
-├── docs/                        ← step-by-step guides and the decision log
+├── tableau/                     ← everything Tableau: guide, workbooks and their data
+│   ├── TABLEAU_GUIDE.md
+│   ├── workbooks/               ← DAV_D1.twb, DAV_D2.twb, DAV_D3.twb
+│   └── data/                    ← CSVs shaped for Tableau (+ viz/ with ready-made chart shapes)
+├── knime/                       ← everything KNIME: guides, workflow, data and Python View scripts
+│   ├── KNIME_GUIDE.md, KNIME_WORKFLOW_STEP_BY_STEP.md
+│   ├── workflow/                ← SteelScope_Visual_Analytics.knwf
+│   ├── data/                    ← knime_input.csv, viz_expected_values.csv
+│   └── python_views/            ← copy-paste scripts for Python View nodes
+├── docs/                        ← guide index, project journey, reusable prompt
 ├── app/                         ← the web application (Next.js + shadcn/ui), see app/README.md
 ├── requirements.txt             ← Python packages for the notebooks
 └── README.md                    ← you are here
@@ -206,7 +212,7 @@ table, so all numbers agree everywhere.
 |---|---|---|
 | [`01_cleaning.ipynb`](notebooks/01_cleaning.ipynb) | Builds the cleaning pipeline step by step and shows the evidence for each decision | `data/processed/`, `reports/cleaning_log.*`, `01_*` figures (4) |
 | [`02_eda.ipynb`](notebooks/02_eda.ipynb) | Seven engineering questions, one statistic and one chart each | `02_*` figures (8) |
-| [`03_visual_analytics.ipynb`](notebooks/03_visual_analytics.ipynb) | "The Secret Lives of 1,389 Steels": the full visual story, then the Tableau/KNIME exports | `03_*` figures (27), `exports/` |
+| [`03_visual_analytics.ipynb`](notebooks/03_visual_analytics.ipynb) | "The Secret Lives of 1,389 Steels": the full visual story, then the Tableau/KNIME exports | `03_*` figures (27), `tableau/data/`, `knime/data/` |
 
 **Self-contained by design:** the code for every step sits in the cell right above its output, so you never open
 another file to see how a number or chart was made. Functions named `plot_…` draw charts; every other function
@@ -227,20 +233,26 @@ always match the code.
 </details>
 
 <details open>
-<summary><b>🔌 <code>exports/</code>: the bridge to Tableau and KNIME</b></summary>
+<summary><b>🔌 <code>tableau/</code> and <code>knime/</code>: everything for the two tools</b></summary>
 
 | File | Rows | Used for |
 |---|---|---|
-| `tableau/steels_wide.csv` | 1,389 | One row per grade with every column: most Tableau sheets |
-| `tableau/steels_long.csv` | 41,670 | One row per (grade, element): composition charts and heatmaps |
-| `tableau/family_summary.csv` | 17 | Medians and percentiles per family |
-| `tableau/viz/*.csv` (17 files) | various | Statistics tables (five-number summary, chi-square cells, regression bands, PCA) and **ready-made x/y shapes** for chord, radar, radial-bar and waterfall charts |
-| `knime/knime_input.csv` | 1,389 | Main KNIME input with a train/test `split` column (identical chemistries never land on both sides) |
-| `knime/viz_expected_values.csv` | 85 | Every statistic KNIME should reproduce, to check the workflow against Python |
+| [`tableau/TABLEAU_GUIDE.md`](tableau/TABLEAU_GUIDE.md) | – | Build 18 sheets, 3 dashboards and a Story, step by step |
+| `tableau/workbooks/DAV_D1–D3.twb` | – | The team's Tableau workbooks (see [tableau/README.md](tableau/README.md)) |
+| `tableau/data/steels_wide.csv` | 1,389 | One row per grade with every column: most Tableau sheets |
+| `tableau/data/steels_long.csv` | 41,670 | One row per (grade, element): composition charts and heatmaps |
+| `tableau/data/family_summary.csv` | 17 | Medians and percentiles per family |
+| `tableau/data/viz/*.csv` (17 files) | various | Statistics tables (five-number summary, chi-square cells, regression bands, PCA) and **ready-made x/y shapes** for chord, radar, radial-bar and waterfall charts |
+| [`knime/KNIME_GUIDE.md`](knime/KNIME_GUIDE.md), [`KNIME_WORKFLOW_STEP_BY_STEP.md`](knime/KNIME_WORKFLOW_STEP_BY_STEP.md) | – | Node settings with expected values, and the click-by-click build sheet |
+| `knime/workflow/SteelScope_Visual_Analytics.knwf` | – | The finished KNIME workflow (see [knime/README.md](knime/README.md)) |
+| `knime/data/knime_input.csv` | 1,389 | Main KNIME input with a train/test `split` column (identical chemistries never land on both sides) |
+| `knime/data/viz_expected_values.csv` | 85 | Every statistic KNIME should reproduce, to check the workflow against Python |
+| `knime/python_views/*.py` | – | Copy-paste scripts for KNIME *Python View* nodes (radar, chord, waterfall, circular columns, treemap, chi-square heatmap) |
 
 **Why not give Tableau the processed CSV directly?** Tableau cannot draw chord, radar or waterfall charts natively,
 so Python computes the shapes and exports their coordinates; Tableau only connects the dots. KNIME gets a ready,
-fair train/test split for its models. These files are generated: never edit them by hand, rerun notebook 03.
+fair train/test split for its models. The CSVs in `tableau/data/` and `knime/data/` are generated: never edit them
+by hand, rerun notebook 03.
 </details>
 
 <details open>
@@ -248,11 +260,7 @@ fair train/test split for its models. These files are generated: never edit them
 
 | File | Purpose |
 |---|---|
-| [`GUIDE.md`](docs/GUIDE.md) | Index of the guides |
-| [`TABLEAU_GUIDE.md`](docs/TABLEAU_GUIDE.md) | Build 18 sheets, 3 interactive dashboards and a Story: which file, which shelf, which mark, which colour, and the insight each sheet shows |
-| [`KNIME_GUIDE.md`](docs/KNIME_GUIDE.md) | Build the 41-node workflow: statistics, PCA, k-means, decision tree, k-NN, random forest and a dashboard, with the value each node should output |
-| [`KNIME_WORKFLOW_STEP_BY_STEP.md`](docs/KNIME_WORKFLOW_STEP_BY_STEP.md) | Click-by-click build sheet for that workflow: which node connects to which, build order, checkpoints, troubleshooting |
-| [`knime_python_views/`](docs/knime_python_views/) | Six copy-paste scripts for KNIME *Python View* nodes (radar, chord, waterfall, circular columns, treemap, chi-square heatmap) |
+| [`GUIDE.md`](docs/GUIDE.md) | Index of every guide (Tableau and KNIME guides now live in `tableau/` and `knime/`) |
 | [`PROJECT_JOURNEY.md`](docs/PROJECT_JOURNEY.md) | The project diary: every decision and the numbers behind it, phase by phase |
 | [`CLAUDE_CODE_PROMPT.md`](docs/CLAUDE_CODE_PROMPT.md) | The reusable AI prompt used to plan and build this kind of project for any dataset |
 </details>
@@ -572,7 +580,7 @@ value the source assigned per family. We keep it and flag it.
 <summary><b>Where is the machine learning?</b></summary>
 
 In KNIME, by design: k-means clustering, a decision tree and k-NN for the strength class, and a random forest for
-tensile strength. The notebook exports a fair train/test split for it. See [docs/KNIME_GUIDE.md](docs/KNIME_GUIDE.md).
+tensile strength. The notebook exports a fair train/test split for it. See [knime/KNIME_GUIDE.md](knime/KNIME_GUIDE.md).
 </details>
 
 <details>
@@ -616,7 +624,7 @@ reproduce the same files.
 ## 12. Working on this repo
 
 - **Run notebooks in order** (01 → 02 → 03). 02 and 03 read what 01 writes.
-- **Never edit generated files by hand:** `data/processed/`, `reports/`, `exports/`. Change the notebook, rerun it.
+- **Never edit generated files by hand:** `data/processed/`, `reports/`, `tableau/data/`, `knime/data/`. Change the notebook, rerun it.
 - **Adding a chart:** write a `plot_…` function in the cell just above where you use it, call
   `show(plot_…(...), "03_28_name")`, and add a markdown takeaway built only from numbers the code printed.
 - **Keep the theme:** use the palette names from the theme cell (`SKY`, `PINK`, `FLAME`, …) instead of new colours;
@@ -660,8 +668,8 @@ Recharts (web app).
 - [x] Visual story (27 charts) and Tableau / KNIME exports
 - [x] Step-by-step Tableau and KNIME guides
 - [x] **Web app:** explorer, grade inspector, substitute finder, target designer ([app/README.md](app/README.md))
-- [ ] **Tableau:** 18 sheets, 3 dashboards and a Story ([guide](docs/TABLEAU_GUIDE.md)); publish to Tableau Public
-- [ ] **KNIME:** the statistics workflow plus k-means, decision tree, k-NN and random forest ([guide](docs/KNIME_GUIDE.md))
+- [ ] **Tableau:** 18 sheets, 3 dashboards and a Story ([guide](tableau/TABLEAU_GUIDE.md)); publish to Tableau Public
+- [ ] **KNIME:** the statistics workflow plus k-means, decision tree, k-NN and random forest ([guide](knime/KNIME_GUIDE.md))
 - [ ] **DOCX report** combining the notebooks, dashboards and KNIME results
 
 **Possible future work**

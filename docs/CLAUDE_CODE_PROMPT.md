@@ -80,22 +80,22 @@ Python stops at cleaning, statistics and notebook visuals. Machine learning (k-m
 random forest) is built in KNIME (STEP 5). Do not build a web dashboard or API (React, JS, FastAPI, ...).
 
 STEP 4 - EXPORTS
-- exports/tableau/: wide table (one row per entity + features), long table for composition-type charts,
-  summaries, and exports/tableau/viz/*.csv helper files: radar polygons,
+- tableau/data/: wide table (one row per entity + features), long table for composition-type charts,
+  summaries, and tableau/data/viz/*.csv helper files: radar polygons,
   chord ribbons/arcs, radial-bar polygons and waterfall start/end values as ready x/y coordinates
   (columns: layer, shape_id, point_order, x, y, ...) so Tableau can draw them with Polygon/Line marks.
-- exports/knime/: model-ready input with a deterministic, group-safe train/test split column sorted
+- knime/data/: model-ready input with a deterministic, group-safe train/test split column sorted
   train-first, plus a CSV of every statistic KNIME should reproduce.
 
 STEP 5 - GUIDES (step-by-step, visualization-intensive, written for students who used the tools only in labs)
-- docs/TABLEAU_GUIDE.md: which file to connect, data types/roles, every calculated field with exact formula,
+- tableau/TABLEAU_GUIDE.md: which file to connect, data types/roles, every calculated field with exact formula,
   15+ sheets (box plot with five-number reference lines, histogram with bins, quantile bins via LOD
   percentiles, stacked domain bins, chi-square residual highlight table, scatter with trend line + Describe
   Trend Model, coefficient forest plot, PCA scatter, chord via Polygon marks,
   donut, radial bars, treemap, radar via Line/Polygon marks, waterfall via Gantt bars, KPI tiles), each with
   shelves, marks, colour, filters, tooltips and the insight it shows; 3 interactive dashboards with filter and
   highlight actions; a Story; publishing to Tableau Public.
-- docs/KNIME_GUIDE.md: node-by-node workflow (exact settings, ports, what to check) covering readers, row
+- knime/KNIME_GUIDE.md: node-by-node workflow (exact settings, ports, what to check) covering readers, row
   filters, rule engine, math formulas, statistics/five-number summary, binning, crosstab chi-square,
   correlation, linear regression, PCA, k-means + silhouette loop, decision tree, k-NN and random forest
   (with a leakage warning and a majority-class baseline), colour manager and native view nodes
@@ -126,6 +126,6 @@ Step 2 and the guides:
 |---|---|
 | A–L chart suite | `notebooks/03_visual_analytics.ipynb`, figures `reports/figures/03_*.png` |
 | Statistics and figure code (theme, chord, radar, ring, treemap, waterfall…) | inside `notebooks/03_visual_analytics.ipynb`, above each chart |
-| Tableau helper CSVs, KNIME expected values | appendix of notebook 03 → `exports/tableau/viz/`, `exports/knime/viz_expected_values.csv` |
-| Tableau guide | `docs/TABLEAU_GUIDE.md` |
-| KNIME guide + Python View scripts | `docs/KNIME_GUIDE.md`, `docs/knime_python_views/*.py` |
+| Tableau helper CSVs, KNIME expected values | appendix of notebook 03 → `tableau/data/viz/`, `knime/data/viz_expected_values.csv` |
+| Tableau guide | `tableau/TABLEAU_GUIDE.md` |
+| KNIME guide + Python View scripts | `knime/KNIME_GUIDE.md`, `knime/python_views/*.py` |

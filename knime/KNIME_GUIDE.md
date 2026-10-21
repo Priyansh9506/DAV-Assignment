@@ -4,7 +4,7 @@ A node-by-node build guide for someone who has used KNIME only in lab sessions. 
 **visualization-first**: every analytical step ends in a view (native KNIME view nodes where they exist,
 Python View nodes for radar, chord, waterfall, circular-column, treemap and residual-heatmap charts), and
 everything is assembled into an interactive dashboard (a component with a composite view). Every statistic you
-should see is listed next to the node, taken from the Python notebooks (`exports/knime/viz_expected_values.csv`).
+should see is listed next to the node, taken from the Python notebooks (`knime/data/viz_expected_values.csv`).
 
 **Division of work.** Python (notebooks 01, 02, 03) cleans the data and produces the statistical visuals.
 **All machine learning (k-means clustering, decision tree, k-NN, random forest) is built here in KNIME**;
@@ -26,7 +26,7 @@ there are no Python models to compare against, so for those nodes you report KNI
    - **KNIME Statistics Nodes** (usually pre-installed; needed for Crosstab chi-square and Rank Correlation),
    - **KNIME Plotly / JavaScript Views** are optional: the 5.x built-in views are enough.
 2. **Python environment:** *Preferences → KNIME → Python* → choose **Bundled environment**. It includes
-   pandas, numpy, scipy and matplotlib, which is all the scripts in `docs/knime_python_views/` need (they
+   pandas, numpy, scipy and matplotlib, which is all the scripts in `knime/python_views/` need (they
    deliberately avoid seaborn/squarify).
 3. **Workflow:** *File → New → New KNIME Workflow* → name `SteelScope_Visual_Analytics`.
 4. Use **annotations** (right-click canvas → *New Workflow Annotation*) to label the sections below; graders
@@ -35,9 +35,9 @@ there are no Python models to compare against, so for those nodes you report KNI
 ### Data files
 | File | Rows | Use |
 |---|---|---|
-| `exports/knime/knime_input.csv` | 1389 | Main input: cleaned grades, 30 elements, family, product form, TS, class, liquidus, group-safe train/test `split` column, Python's engineered features for cross-checks |
-| `exports/tableau/viz/waterfall_cleaning.csv`, `waterfall_ce_aisi4140.csv` | 6 / 8 | Waterfall inputs |
-| `exports/knime/viz_expected_values.csv` | 85 | The numbers to reproduce (open it in a CSV Reader + Table View to keep it visible in the workflow) |
+| `knime/data/knime_input.csv` | 1389 | Main input: cleaned grades, 30 elements, family, product form, TS, class, liquidus, group-safe train/test `split` column, Python's engineered features for cross-checks |
+| `tableau/data/viz/waterfall_cleaning.csv`, `waterfall_ce_aisi4140.csv` | 6 / 8 | Waterfall inputs |
+| `knime/data/viz_expected_values.csv` | 85 | The numbers to reproduce (open it in a CSV Reader + Table View to keep it visible in the workflow) |
 
 ---
 
@@ -183,7 +183,7 @@ One Math Formula node per feature (*Append column*):
 
 ### Node 17. Python View: residual heatmap + Cramér's V
 - **Input:** Node 14 output (needs `family_group`, `strength_class`). Paste
-  `docs/knime_python_views/chi_square_residuals.py` into the script editor; change `ROW`/`COL` at the top for
+  `knime/python_views/chi_square_residuals.py` into the script editor; change `ROW`/`COL` at the top for
   other pairs.
 - **What you see:** each cell shows the count and its standardized residual; red = more grades than independence
   predicts. Cast iron × class 0 shows **22** grades with residual **+20.5**; Cramér's V in the title **0.45**.
@@ -302,32 +302,32 @@ One Math Formula node per feature (*Append column*):
 ### Node 32. GroupBy → Python View: circular column chart
 - **GroupBy:** group `family_label`, aggregation **Median** of `tensile_strength_mpa`; **Column Rename**:
   `family_label` → `label`, `Median(tensile_strength_mpa)` → `value`.
-- **Python View:** paste `docs/knime_python_views/circular_columns.py`.
+- **Python View:** paste `knime/python_views/circular_columns.py`.
 - **Expected:** Spring steel **1790**, Maraging **1085**, Nitriding **1025** at the top; Grey cast iron **260** lowest.
 
 ### Node 33. GroupBy → Python View: treemap
 - **GroupBy:** group `family_label`; aggregations *Count* (`grade_id`) and *Median* (`tensile_strength_mpa`);
   rename to `label`, `size`, `color_value`.
-- **Python View:** `docs/knime_python_views/treemap.py`.
+- **Python View:** `knime/python_views/treemap.py`.
 - **Insight:** stainless is the biggest tile (543 measured grades, median 630 MPa); spring/maraging tiles are
   small but brightest.
 
 ### Node 34. Python View: radar of family groups
 - **Input:** Node 6 output (has `family_group` and the element columns).
-- **Python View:** `docs/knime_python_views/radar_family_groups.py`.
+- **Python View:** `knime/python_views/radar_family_groups.py`.
 - **Insight:** each group's composition becomes a shape: Tool & high-speed peaks at W and V, stainless at
   Cr and Ni, cast iron at C and Si.
 
 ### Node 35. GroupBy → Python View: circular migration (chord) plot
 - **GroupBy:** groups `family_group`, `Cluster` (from Node 27); aggregation *Count*; rename columns to
   `source`, `target`, `count`.
-- **Python View:** `docs/knime_python_views/chord_migration.py`.
+- **Python View:** `knime/python_views/chord_migration.py`.
 - **Insight:** left = named family groups, right = chemistry clusters; ribbon width = grades moving from a name
   to a chemistry cluster. Stainless fans out over several clusters; plain steels collapse into one.
 
 ### Node 36. CSV Reader → Python View: waterfall
-- **CSV Reader:** `exports/tableau/viz/waterfall_cleaning.csv` (keep columns `step`, `value`, `kind`).
-- **Python View:** `docs/knime_python_views/waterfall.py`.
+- **CSV Reader:** `tableau/data/viz/waterfall_cleaning.csv` (keep columns `step`, `value`, `kind`).
+- **Python View:** `knime/python_views/waterfall.py`.
 - **Expected:** 2672 → −62 → −1221 → **1389** → −7 → **1382**.
 - Second instance with `waterfall_ce_aisi4140.csv`: C 0.405 + Mn/6 0.146 + Cr/5 0.190 + Mo/5 0.040 = **0.781**.
 

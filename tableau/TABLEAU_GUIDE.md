@@ -4,7 +4,7 @@ A step-by-step build guide for someone who has used Tableau only in lab sessions
 3 interactive dashboards and a Story**, then publish to Tableau Public. Each sheet lists *exactly* what goes on
 which shelf, which mark type to pick, how to colour/filter/tooltip it, and the **insight it shows**. Where a
 number is quoted, it was printed by the Python code (`notebooks/03_visual_analytics.ipynb` and the CSVs in
-`exports/`), so you can check your sheet against it. Machine learning (clustering, decision trees, k-NN) is not
+`tableau/data/`), so you can check your sheet against it. Machine learning (clustering, decision trees, k-NN) is not
 part of this workbook; it is built in KNIME (see the KNIME guide).
 
 > Works in **Tableau Public (free) or Tableau Desktop 2023.x / 2024.x**. Menu names below are from those versions.
@@ -15,7 +15,7 @@ part of this workbook; it is built in KNIME (see the KNIME guide).
 
 ### 0.1 Files you will use
 
-| File (in `exports/tableau/`) | Rows | What it is | Used by sheets |
+| File (in `tableau/data/`) | Rows | What it is | Used by sheets |
 |---|---|---|---|
 | `steels_wide.csv` | 1389 | One row per steel grade: names, family, strength, liquidus, 30 elements, CE, Schaeffler Cr/Ni equivalents | 1–8, 14 |
 | `steels_long.csv` | 41 670 | One row per (grade, element): wt% | 15 |
@@ -34,7 +34,7 @@ part of this workbook; it is built in KNIME (see the KNIME guide).
 
 ### 0.2 One data source per file
 
-1. Open Tableau → **Connect → To a File → Text file** → choose `exports/tableau/steels_wide.csv`.
+1. Open Tableau → **Connect → To a File → Text file** → choose `tableau/data/steels_wide.csv`.
 2. For each additional file: **Data → New Data Source → Text file**. Do **not** join or relate these
    files; each sheet uses one data source.
 3. Rename each data source (right-click its name at the top of the Data pane → *Rename*), e.g. `Wide`,

@@ -55,10 +55,10 @@ search pops up → type the next node's name → Enter. It adds the node *and* t
 3. **Put the data inside the workflow** (so the exported `.knwf` works on your faculty's PC too):
    right-click the workflow in the Explorer → *Show in File Explorer* (4.7: *Open file location*). Inside that
    folder create a folder **`data`** and copy into it:
-   - `exports/knime/knime_input.csv`
-   - `exports/knime/viz_expected_values.csv`
-   - `exports/tableau/viz/waterfall_cleaning.csv`
-   - `exports/tableau/viz/waterfall_ce_aisi4140.csv`
+   - `knime/data/knime_input.csv`
+   - `knime/data/viz_expected_values.csv`
+   - `tableau/data/viz/waterfall_cleaning.csv`
+   - `tableau/data/viz/waterfall_ce_aisi4140.csv`
 
    In every CSV Reader you then set **Read from: Relative to → Current workflow data area** and type just the
    file name.
@@ -354,7 +354,7 @@ the CE waterfall ends at **0.781**.
 
 ## Part 4. Python View nodes (Nodes 17, 32, 33, 34, 35, 36)
 
-The six scripts are in `docs/knime_python_views/`. They use only pandas, numpy, scipy and matplotlib, which
+The six scripts are in `knime/python_views/`. They use only pandas, numpy, scipy and matplotlib, which
 the bundled environment has.
 
 1. **Add** `Python View` and place it after the node named in its step.

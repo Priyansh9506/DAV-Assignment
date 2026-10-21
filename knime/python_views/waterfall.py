@@ -1,6 +1,6 @@
 # KNIME Python View — Waterfall chart.
 # Input table: columns "step" (string), "value" (number), "kind" ("total" or "delta"), in display order.
-# Example: Table Creator with the cleaning steps, or exports/tableau/viz/waterfall_ce_aisi4140.csv via CSV Reader.
+# Example: Table Creator with the cleaning steps, or tableau/data/viz/waterfall_ce_aisi4140.csv via CSV Reader.
 import knime.scripting.io as knio
 import matplotlib.pyplot as plt
 import numpy as np
