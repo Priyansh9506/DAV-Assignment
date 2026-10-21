@@ -43,7 +43,7 @@ export function SiteHeader() {
           </span>
           SteelScope
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => {
             const active = item.match ? pathname.startsWith(item.match) : pathname === item.href
             return (
@@ -51,7 +51,7 @@ export function SiteHeader() {
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+                  "whitespace-nowrap rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
                   active && "bg-muted text-foreground",
                 )}
               >
@@ -69,7 +69,7 @@ export function SiteHeader() {
           <ThemeToggle />
         </div>
       </div>
-      <nav className="flex gap-1 overflow-x-auto px-4 pb-2 md:hidden">
+      <nav className="flex gap-1 overflow-x-auto px-4 pb-2 lg:hidden">
         {NAV.map((item) => {
           const active = item.match ? pathname.startsWith(item.match) : pathname === item.href
           return (

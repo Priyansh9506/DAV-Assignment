@@ -6,9 +6,9 @@ import { fiveNumber, type FiveNumber } from "@/lib/stats"
 import { GROUP_COLOR, GROUP_ORDER } from "@/lib/steel"
 import type { GradeRow, GroupName } from "@/lib/types"
 
-const W = 640
+const W = 1000
 const ROW = 40
-const LEFT = 136
+const LEFT = 150
 const RIGHT = 16
 const TOP = 8
 const AXIS = 28
@@ -74,9 +74,6 @@ export function StrengthBoxPlot({ rows, groups }: { rows: GradeRow[]; groups: Gr
             </g>
           )
         })}
-        <text x={W - RIGHT} y={height - 10} textAnchor="end" className="fill-muted-foreground text-[11px]">
-          MPa
-        </text>
       </svg>
       {active && <BoxTooltip group={active.group} f={active.f} />}
     </div>

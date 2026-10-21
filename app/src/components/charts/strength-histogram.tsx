@@ -4,7 +4,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { histogram } from "@/lib/stats"
-import { GROUP_CHART_CONFIG, GROUP_KEY, GROUP_ORDER } from "@/lib/steel"
+import { GROUP_CHART_CONFIG, GROUP_COLOR, GROUP_KEY, GROUP_ORDER } from "@/lib/steel"
 import type { GradeRow, GroupName } from "@/lib/types"
 
 const START = 0
@@ -46,7 +46,8 @@ export function StrengthHistogram({ rows, groups }: { rows: GradeRow[]; groups: 
             key={g}
             dataKey={GROUP_KEY[g]}
             stackId="ts"
-            fill={`var(--color-${GROUP_KEY[g]})`}
+            isAnimationActive={false}
+            fill={GROUP_COLOR[g]}
             stroke="var(--card)"
             strokeWidth={1}
             radius={i === shown.length - 1 ? [3, 3, 0, 0] : 0}

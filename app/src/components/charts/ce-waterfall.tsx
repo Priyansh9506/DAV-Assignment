@@ -26,8 +26,8 @@ export function CeWaterfall({ comp, ce, color }: { comp: Record<string, number>;
         t < max ? (
           <g key={t}>
             <line x1={LEFT} x2={W - 8} y1={y(t)} y2={y(t)} className="stroke-muted-foreground" strokeDasharray="4 4" strokeWidth={1} />
-            <text x={W - 8} y={y(t) - 4} textAnchor="end" className="fill-muted-foreground text-[10px]">
-              {t === 0.4 ? "0.40 preheat threshold" : "0.60 difficult"}
+            <text x={LEFT - 6} y={y(t) + 3} textAnchor="end" className="fill-muted-foreground text-[10px]">
+              {t.toFixed(2)}
             </text>
           </g>
         ) : null,

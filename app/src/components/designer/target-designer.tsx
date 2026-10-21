@@ -139,11 +139,11 @@ export function TargetDesigner({ rows, defaultLiquidus }: { rows: GradeRow[]; de
                 <BarChart data={perGroup} layout="vertical" margin={{ left: 8, right: 36 }}>
                   <XAxis type="number" hide allowDecimals={false} />
                   <YAxis type="category" dataKey="group" tickLine={false} axisLine={false} width={130} />
-                  <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={22}>
+                  <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={22} isAnimationActive={false}>
                     {perGroup.map((d) => (
                       <Cell key={d.group} fill={GROUP_COLOR[d.group]} />
                     ))}
-                    <LabelList dataKey="count" position="right" className="fill-foreground text-xs tabular-nums" />
+                    <LabelList dataKey="count" position="right" fill="var(--foreground)" fontSize={12} />
                   </Bar>
                 </BarChart>
               </ChartContainer>

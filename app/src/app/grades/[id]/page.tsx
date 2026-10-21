@@ -160,7 +160,7 @@ async function GradeView({ params }: { params: PageProps<"/grades/[id]">["params
           <Card>
             <CardHeader>
               <CardTitle>How the carbon equivalent adds up</CardTitle>
-              <CardDescription>CE = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15 (IIW)</CardDescription>
+              <CardDescription>CE = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15 (IIW). Dashed lines: 0.40 preheat threshold, 0.60 difficult.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               <CeWaterfall comp={grade.comp} ce={grade.ce} color={color} />

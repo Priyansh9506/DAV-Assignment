@@ -20,7 +20,7 @@ export function GroupDonut({ rows }: { rows: GradeRow[] }) {
       <ChartContainer config={GROUP_CHART_CONFIG} className="mx-auto aspect-square h-[180px]">
         <PieChart>
           <ChartTooltip content={<ChartTooltipContent nameKey="key" hideLabel />} />
-          <Pie data={data} dataKey="count" nameKey="key" innerRadius="62%" outerRadius="100%" stroke="var(--card)" strokeWidth={2}>
+          <Pie data={data} isAnimationActive={false} dataKey="count" nameKey="key" innerRadius="62%" outerRadius="100%" stroke="var(--card)" strokeWidth={2}>
             {data.map((d) => (
               <Cell key={d.key} fill={GROUP_COLOR[d.group]} />
             ))}

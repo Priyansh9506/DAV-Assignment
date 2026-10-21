@@ -152,7 +152,7 @@ export function Explorer({ rows }: { rows: GradeRow[] }) {
       <Card>
         <CardHeader>
           <CardTitle>Family decides the strength range</CardTitle>
-          <CardDescription>Box = middle 50 %, line = median, whiskers = 1.5 × IQR, rings = outliers. Hover a row for its five numbers.</CardDescription>
+          <CardDescription>Tensile strength (MPa). Box = middle 50 %, line = median, whiskers = 1.5 × IQR, rings = outliers. Hover a row for its five numbers.</CardDescription>
         </CardHeader>
         <CardContent>
           <StrengthBoxPlot rows={filtered} groups={groups} />

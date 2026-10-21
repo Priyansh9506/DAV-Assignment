@@ -23,8 +23,8 @@ export function CompositionRadar({ data, gradeName, group }: { data: Point[]; gr
         <PolarGrid className="stroke-border" />
         <PolarAngleAxis dataKey="element" tick={{ className: "fill-foreground text-[12px]" }} />
         <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-        <Radar dataKey="group" stroke="var(--color-group)" fill="var(--color-group)" fillOpacity={0.25} strokeWidth={2} />
-        <Radar dataKey="grade" stroke="var(--color-grade)" fill="var(--color-grade)" fillOpacity={0.08} strokeWidth={2} dot={{ r: 3 }} />
+        <Radar isAnimationActive={false} dataKey="group" stroke={GROUP_COLOR[group]} fill={GROUP_COLOR[group]} fillOpacity={0.25} strokeWidth={2} />
+        <Radar isAnimationActive={false} dataKey="grade" stroke="var(--foreground)" fill="var(--foreground)" fillOpacity={0.08} strokeWidth={2} dot={{ r: 3 }} />
         <ChartLegend itemSorter={null} content={<ChartLegendContent />} />
       </RadarChart>
     </ChartContainer>

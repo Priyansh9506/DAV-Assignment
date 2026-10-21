@@ -34,13 +34,13 @@ export function PcaMap({
 
   return (
     <ChartContainer config={GROUP_CHART_CONFIG} className="aspect-auto h-[440px] w-full">
-      <ScatterChart margin={{ top: 8, right: 12, bottom: 24, left: 4 }}>
+      <ScatterChart margin={{ top: 8, right: 12, bottom: 28, left: 4 }}>
         <CartesianGrid strokeOpacity={0.4} />
         <XAxis type="number" dataKey="x" tickLine={false} axisLine={false} label={{ value: axisLabels[0], position: "insideBottom", offset: -14, className: "fill-muted-foreground text-[11px]" }} />
         <YAxis type="number" dataKey="y" tickLine={false} axisLine={false} width={36} label={{ value: axisLabels[1], angle: -90, position: "insideLeft", className: "fill-muted-foreground text-[11px]" }} />
         <ZAxis range={[22, 22]} />
         <ChartTooltip cursor={false} content={<PointTooltip />} />
-        <ChartLegend itemSorter={null} content={<ChartLegendContent />} />
+        <ChartLegend itemSorter={null} content={<ChartLegendContent className="flex-wrap gap-x-3 gap-y-1 [&>div]:whitespace-nowrap" />} />
         {GROUP_ORDER.map((g) => (
           <Scatter
             key={g}
