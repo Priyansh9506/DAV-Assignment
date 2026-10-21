@@ -209,3 +209,30 @@ Jupyter would be overwritten by the next rebuild.
 - **How to rerun:** open the notebooks in order 01 → 02 → 03 and use *Kernel → Restart & Run All*. Notebook 01
   writes `data/processed/`; notebook 03's appendix writes `exports/`.
 
+---
+
+## Phase 9: the web application
+
+**Why:** the faculty brief asks for *Application Development: a small application based on the selected dataset*.
+Phase 7 had removed the earlier FastAPI prototype as out of scope; this phase brings an application back, built
+fresh and kept free of machine learning so the "ML lives in KNIME" decision still holds.
+
+- **Stack:** Next.js 16 (App Router, Cache Components) + React 19 + TypeScript, shadcn/ui (Base UI primitives),
+  Tailwind CSS 4, Recharts, Vitest. Default shadcn neutral theme with light and dark mode.
+- **Data:** `app/scripts/build_data.py` turns `data/processed/steels_clean.csv` into `app/src/data/grades.json` and
+  `meta.json` (server only) plus two small browser files (`public/data/search.json`, `points.json`). It repeats
+  notebook 03's composition space (20 features, log1p, z-score) and reproduces its PCA (PC1 15.0 %, PC2 11.8 %).
+- **Pages:** Explorer (filters, stat cards, strength histogram, donut, box plots, table), Grade inspector
+  (percentiles within family and overall, composition radar, composition bars, CE waterfall, closest grades),
+  Substitute finder (ten nearest grades + PCA map), Target designer (strength × liquidus window, matches per family),
+  About (cleaning log, methods, limits).
+- **Honesty rules carried over:** strength statistics use only the 1,382 measured grades; the 1460 °C placeholder
+  liquidus (524 grades) is marked and excluded from liquidus comparisons by default; the substitute finder warns that
+  chemistry does not record heat treatment.
+- **Colour:** the family-group palette was checked with the dataviz palette validator in both modes (all hard checks
+  pass on adjacent pairs); scatter plots add a marker shape per group for colour-blind readers.
+- **Size:** the grade search list and map points are fetched once as static JSON instead of being embedded in each
+  of the 2,787 prerendered pages (a grade page went from 227 KB to 85 KB of HTML).
+- **Verified:** `tsc`, ESLint and 7 Vitest tests pass; `next build` prerenders all pages; checked in the browser in
+  light and dark mode and at phone width.
+

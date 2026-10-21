@@ -85,10 +85,11 @@ AWS, ACI). We answer the three questions they keep asking:
 | **Python notebooks** | Cleaning, statistics and every first-part visualization | Done |
 | **Tableau** | Interactive dashboards and a Story, built from `exports/tableau/` | Guide ready, workbook to build |
 | **KNIME** | The statistics as a node workflow, plus **all machine learning** (k-means, decision tree, k-NN, random forest) | Guide ready, workflow to build |
-| **DOCX report** | Final write-up of all three parts | To do |
+| **Web app** | Explorer, grade inspector, substitute finder and target designer on the cleaned data ([`app/`](app/README.md)) | Done |
+| **DOCX report** | Final write-up of all parts | To do |
 
-> There is deliberately **no machine learning in Python and no web app**. The brief is about visual analytics,
-> and the ML part belongs in KNIME.
+> There is deliberately **no machine learning in Python or in the app**. The ML part belongs in KNIME; the app
+> explores, compares and filters, it does not predict.
 
 ---
 
@@ -142,6 +143,7 @@ Project/
 │   ├── tableau/                 ← CSVs shaped for Tableau (+ viz/ with ready-made chart shapes)
 │   └── knime/                   ← CSVs shaped for KNIME
 ├── docs/                        ← step-by-step guides and the decision log
+├── app/                         ← the web application (Next.js + shadcn/ui), see app/README.md
 ├── requirements.txt             ← Python packages for the notebooks
 └── README.md                    ← you are here
 ```
@@ -610,8 +612,18 @@ jupyter lab
 Open `notebooks/` and run `01_cleaning` → `02_eda` → `03_visual_analytics`, each with **Kernel → Restart & Run All**.
 Figures, reports and exports are overwritten with the same results.
 
+**The web app** (needs Node.js 20+):
+
+```bash
+cd app
+npm install
+python scripts/build_data.py   # only if the cleaned data changed
+npm run dev                    # http://localhost:3000
+```
+
 **Tech stack:** Python 3.11+, pandas, NumPy, SciPy, scikit-learn (PCA), matplotlib, seaborn, squarify, Jupyter ·
-Tableau Public / Desktop 2023+ · KNIME Analytics Platform 5.2+.
+Tableau Public / Desktop 2023+ · KNIME Analytics Platform 5.2+ · Next.js 16, React 19, shadcn/ui, Tailwind CSS 4,
+Recharts (web app).
 
 ---
 
@@ -623,6 +635,7 @@ Tableau Public / Desktop 2023+ · KNIME Analytics Platform 5.2+.
 - [x] Exploratory analysis (7 questions, 8 charts)
 - [x] Visual story (27 charts) and Tableau / KNIME exports
 - [x] Step-by-step Tableau and KNIME guides
+- [x] **Web app:** explorer, grade inspector, substitute finder, target designer ([app/README.md](app/README.md))
 - [ ] **Tableau:** 18 sheets, 3 dashboards and a Story ([guide](docs/TABLEAU_GUIDE.md)); publish to Tableau Public
 - [ ] **KNIME:** the statistics workflow plus k-means, decision tree, k-NN and random forest ([guide](docs/KNIME_GUIDE.md))
 - [ ] **DOCX report** combining the notebooks, dashboards and KNIME results
