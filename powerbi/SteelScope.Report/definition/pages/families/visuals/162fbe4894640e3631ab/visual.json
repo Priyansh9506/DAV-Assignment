@@ -1,0 +1,144 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "162fbe4894640e3631ab",
+  "position": {
+    "x": 700,
+    "y": 172,
+    "z": 6000,
+    "height": 540,
+    "width": 564,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "decompositionTreeVisual",
+    "query": {
+      "queryState": {
+        "Analyze": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "grades"
+                    }
+                  },
+                  "Property": "Measured grades"
+                }
+              },
+              "queryRef": "grades.Measured grades",
+              "nativeQueryRef": "Measured grades"
+            }
+          ]
+        },
+        "ExplainBy": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "families"
+                    }
+                  },
+                  "Property": "family_group"
+                }
+              },
+              "queryRef": "families.family_group",
+              "nativeQueryRef": "family_group",
+              "displayName": "Family group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "families"
+                    }
+                  },
+                  "Property": "family_label"
+                }
+              },
+              "queryRef": "families.family_label",
+              "nativeQueryRef": "family_label",
+              "displayName": "Family"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "grades"
+                    }
+                  },
+                  "Property": "product_form"
+                }
+              },
+              "queryRef": "grades.product_form",
+              "nativeQueryRef": "product_form",
+              "displayName": "Product form"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "grades"
+                    }
+                  },
+                  "Property": "strength_class"
+                }
+              },
+              "queryRef": "grades.strength_class",
+              "nativeQueryRef": "strength_class",
+              "displayName": "Strength class"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Drill group → family → form → class'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Click + on a node and pick the next level'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

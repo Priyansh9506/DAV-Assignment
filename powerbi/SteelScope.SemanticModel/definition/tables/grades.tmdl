@@ -1,0 +1,315 @@
+table grades
+	lineageTag: 951ebea4-1064-5a06-a77e-a10dd9ebee49
+
+	measure Grades = COUNTROWS ( grades )
+		formatString: #,0
+		lineageTag: 8749689a-a8bc-5584-8557-113c1d393a83
+
+	measure 'Measured grades' = CALCULATE ( [Grades], grades[has_measured_strength] = TRUE () )
+		formatString: #,0
+		lineageTag: 948217b0-6e34-51c1-b1e7-c138c3aa55b8
+
+	measure 'Median strength (MPa)' = MEDIAN ( grades[tensile_strength_mpa] )
+		formatString: #,0
+		lineageTag: 63edb523-a292-5d13-b724-955cd84117c3
+
+	measure 'Mean strength (MPa)' = AVERAGE ( grades[tensile_strength_mpa] )
+		formatString: #,0.0
+		lineageTag: 65db22f2-d136-56a9-8284-002150bd1f80
+
+	measure 'Q1 strength (MPa)' =
+			PERCENTILEX.INC (
+			    FILTER ( grades, NOT ISBLANK ( grades[tensile_strength_mpa] ) ),
+			    grades[tensile_strength_mpa],
+			    0.25
+			)
+		formatString: #,0
+		lineageTag: d678576e-80f5-583e-b686-681bb106d6d5
+
+	measure 'Q3 strength (MPa)' =
+			PERCENTILEX.INC (
+			    FILTER ( grades, NOT ISBLANK ( grades[tensile_strength_mpa] ) ),
+			    grades[tensile_strength_mpa],
+			    0.75
+			)
+		formatString: #,0
+		lineageTag: cc6db3ee-c5a9-5bae-88aa-17a0752201c6
+
+	measure 'Middle 50 % (MPa)' = FORMAT ( [Q1 strength (MPa)], "0" ) & "–" & FORMAT ( [Q3 strength (MPa)], "0" )
+		lineageTag: b63551ec-2e8d-5e5e-bbaa-a3c94cb43686
+
+	measure 'Median carbon equivalent' = MEDIAN ( grades[carbon_equivalent] )
+		formatString: 0.00
+		lineageTag: 9cb96711-0ed8-5f41-b936-0cfa112e14b6
+
+	measure 'Share of grades' = DIVIDE ( [Grades], CALCULATE ( [Grades], ALLSELECTED ( grades ) ) )
+		formatString: 0.0%
+		lineageTag: cf397e01-0d88-5d4f-acee-cb0403ce883f
+
+	measure 'High-strength share' =
+			DIVIDE (
+			    CALCULATE ( [Measured grades], grades[strength_class_order] = 2 ),
+			    [Measured grades]
+			)
+		formatString: 0.0%
+		lineageTag: a4c6a3db-9c99-5fec-a53e-408d17a383ec
+
+	measure 'Readily weldable share (plain steels)' =
+			DIVIDE (
+			    CALCULATE ( [Grades], grades[weldability_band] = "Readily weldable (CE <= 0.40)" ),
+			    CALCULATE ( [Grades], grades[weldability_band] <> "Not applicable" )
+			)
+		formatString: 0.0%
+		lineageTag: d415eca0-a62b-54a3-911c-dd626447e8c2
+
+	measure 'Average wt %' = DIVIDE ( SUM ( composition[wt_pct] ), [Grades] )
+		formatString: 0.000
+		lineageTag: b2afab71-bb9c-5ed4-9646-76663d5f9acb
+
+	measure 'Element intensity' =
+			DIVIDE (
+			    [Average wt %],
+			    MAXX ( ALL ( families[family_group], families[group_order] ), [Average wt %] )
+			)
+		formatString: 0%
+		lineageTag: 2b547552-63fd-5059-aaf7-0392a8e774ca
+
+	measure 'Heatmap colour' =
+			VAR t = [Element intensity]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( t ), BLANK (),
+			        t >= 0.8, "#4a8fdc",
+			        t >= 0.6, "#7aaee6",
+			        t >= 0.4, "#a6c8ef",
+			        t >= 0.2, "#cde2fb",
+			        "#f7fafe"
+			    )
+		lineageTag: 16f64e38-d3ec-53dc-bd34-bad399dc43e4
+
+	measure 'Placeholder liquidus grades' = CALCULATE ( [Grades], grades[liquidus_is_placeholder] = TRUE () )
+		formatString: #,0
+		lineageTag: edf6394e-e78a-5e3d-9ab3-0540d91559f6
+
+	column grade_id
+		dataType: string
+		lineageTag: a0bbce8d-5d4b-5818-a0cb-076ba6b0f7e1
+		summarizeBy: none
+		sourceColumn: grade_id
+
+		annotation SummarizationSetBy = User
+
+	column grade_name
+		dataType: string
+		lineageTag: b2e26d58-ecd7-52f7-bed2-e313f2a4f10c
+		summarizeBy: none
+		sourceColumn: grade_name
+
+		annotation SummarizationSetBy = User
+
+	column family
+		dataType: string
+		lineageTag: 2489dfb4-ac32-54d2-bd2f-ed2d9a39d8b2
+		summarizeBy: none
+		sourceColumn: family
+
+		annotation SummarizationSetBy = User
+
+	column product_form
+		dataType: string
+		lineageTag: c09dda6e-597b-59da-aac9-eee7334b8c7b
+		summarizeBy: none
+		sourceColumn: product_form
+
+		annotation SummarizationSetBy = User
+
+	column designation_standard
+		dataType: string
+		lineageTag: c4a791b0-1e0f-50b6-b0c3-84cb4a5813f9
+		summarizeBy: none
+		sourceColumn: designation_standard
+
+		annotation SummarizationSetBy = User
+
+	column tensile_strength_mpa
+		dataType: double
+		formatString: 0.####
+		lineageTag: ba047b2f-e4b3-5929-b197-2bb082f53286
+		summarizeBy: none
+		sourceColumn: tensile_strength_mpa
+
+		annotation SummarizationSetBy = User
+
+	column has_measured_strength
+		dataType: boolean
+		lineageTag: 44d38603-54b0-50c9-b3d9-619bf55d1aab
+		summarizeBy: none
+		sourceColumn: has_measured_strength
+
+		annotation SummarizationSetBy = User
+
+	column strength_class
+		dataType: string
+		lineageTag: 6caa7c89-4168-5643-92f6-350fb53b0f72
+		summarizeBy: none
+		sourceColumn: strength_class
+		sortByColumn: strength_class_order
+
+		annotation SummarizationSetBy = User
+
+	column strength_class_order
+		dataType: int64
+		isHidden
+		lineageTag: 5d64ee19-12c2-54cf-8767-ccf8e7b73bde
+		summarizeBy: none
+		sourceColumn: strength_class_order
+
+		annotation SummarizationSetBy = User
+
+	column liquidus_c
+		dataType: double
+		formatString: 0.####
+		lineageTag: 61d40f78-42c0-56d0-88ad-cc439d711e5b
+		summarizeBy: none
+		sourceColumn: liquidus_c
+
+		annotation SummarizationSetBy = User
+
+	column liquidus_is_placeholder
+		dataType: boolean
+		lineageTag: fc6eeb82-6f02-5d9f-abf0-38227a84efd2
+		summarizeBy: none
+		sourceColumn: liquidus_is_placeholder
+
+		annotation SummarizationSetBy = User
+
+	column carbon_equivalent
+		dataType: double
+		formatString: 0.####
+		lineageTag: 73e5d686-2fb8-53d3-8588-ff2d114a2b20
+		summarizeBy: none
+		sourceColumn: carbon_equivalent
+
+		annotation SummarizationSetBy = User
+
+	column alloying_total_wt
+		dataType: double
+		formatString: 0.####
+		lineageTag: d871ebd6-76a0-5972-b00f-620284823e01
+		summarizeBy: none
+		sourceColumn: alloying_total_wt
+
+		annotation SummarizationSetBy = User
+
+	column cr_equivalent
+		dataType: double
+		formatString: 0.####
+		lineageTag: 1f6cd297-4261-5587-a2d1-4c57d5e30380
+		summarizeBy: none
+		sourceColumn: cr_equivalent
+
+		annotation SummarizationSetBy = User
+
+	column ni_equivalent
+		dataType: double
+		formatString: 0.####
+		lineageTag: 3c9c38ec-183b-539f-b1a0-56343555a7a9
+		summarizeBy: none
+		sourceColumn: ni_equivalent
+
+		annotation SummarizationSetBy = User
+
+	column carbon_wt
+		dataType: double
+		formatString: 0.####
+		lineageTag: 7a268577-78c4-5708-bbf7-dfeda97cf271
+		summarizeBy: none
+		sourceColumn: carbon_wt
+
+		annotation SummarizationSetBy = User
+
+	column chromium_wt
+		dataType: double
+		formatString: 0.####
+		lineageTag: 120b1fcd-d489-513e-9265-7935eb6e2d66
+		summarizeBy: none
+		sourceColumn: chromium_wt
+
+		annotation SummarizationSetBy = User
+
+	column nickel_wt
+		dataType: double
+		formatString: 0.####
+		lineageTag: 47189d17-d039-5b8a-8cc1-61cf91719609
+		summarizeBy: none
+		sourceColumn: nickel_wt
+
+		annotation SummarizationSetBy = User
+
+	column molybdenum_wt
+		dataType: double
+		formatString: 0.####
+		lineageTag: e4dd5935-aa7a-5b82-8db7-1518a603a196
+		summarizeBy: none
+		sourceColumn: molybdenum_wt
+
+		annotation SummarizationSetBy = User
+
+	column pc1
+		dataType: double
+		formatString: 0.####
+		lineageTag: 48fa86d6-6227-509b-8229-7ec10b1c5ae3
+		summarizeBy: none
+		sourceColumn: pc1
+
+		annotation SummarizationSetBy = User
+
+	column pc2
+		dataType: double
+		formatString: 0.####
+		lineageTag: 5e48d4e1-4fd6-53de-b3f4-075902b214ba
+		summarizeBy: none
+		sourceColumn: pc2
+
+		annotation SummarizationSetBy = User
+
+	column weldability_band
+		dataType: string
+		lineageTag: ff5cb8f2-6c0d-5fa4-9f60-b5f29be28ea5
+		summarizeBy: none
+		sourceColumn: weldability_band
+
+		annotation SummarizationSetBy = User
+
+	column 'tensile_strength_mpa (bins)' = IF ( NOT ISBLANK ( grades[tensile_strength_mpa] ), FLOOR ( grades[tensile_strength_mpa], 100 ) )
+		dataType: double
+		formatString: 0
+		lineageTag: 3760a8f2-ff4f-5863-990c-933da41d974c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	partition grades = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "grades.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(
+				        Promoted,
+				        {
+				            {"grade_id", type text}, {"grade_name", type text}, {"family", type text}, {"product_form", type text},
+				            {"designation_standard", type text}, {"tensile_strength_mpa", type number},
+				            {"has_measured_strength", type logical}, {"strength_class", type text}, {"strength_class_order", Int64.Type},
+				            {"liquidus_c", type number}, {"liquidus_is_placeholder", type logical}, {"carbon_equivalent", type number},
+				            {"alloying_total_wt", type number}, {"cr_equivalent", type number}, {"ni_equivalent", type number},
+				            {"carbon_wt", type number}, {"chromium_wt", type number}, {"nickel_wt", type number},
+				            {"molybdenum_wt", type number}, {"pc1", type number}, {"pc2", type number}, {"weldability_band", type text}
+				        },
+				        "en-US"
+				    )
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

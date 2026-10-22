@@ -1,0 +1,61 @@
+table families
+	lineageTag: 00839cc0-1bde-52f6-8f79-1318fc3f24b0
+
+	column family
+		dataType: string
+		lineageTag: bc0a8772-ac50-556d-b07c-3a9469ec4e51
+		summarizeBy: none
+		sourceColumn: family
+
+		annotation SummarizationSetBy = User
+
+	column family_label
+		dataType: string
+		lineageTag: e18f753a-0a13-5b4f-a63d-7daab8300a55
+		summarizeBy: none
+		sourceColumn: family_label
+
+		annotation SummarizationSetBy = User
+
+	column family_group
+		dataType: string
+		lineageTag: 3b55ab7c-b966-508d-b53e-eebe81e02bf3
+		summarizeBy: none
+		sourceColumn: family_group
+		sortByColumn: group_order
+
+		annotation SummarizationSetBy = User
+
+	column group_order
+		dataType: int64
+		isHidden
+		lineageTag: 35b29943-375c-5484-a7f0-4264cf8b0041
+		summarizeBy: none
+		sourceColumn: group_order
+
+		annotation SummarizationSetBy = User
+
+	column group_color
+		dataType: string
+		isHidden
+		lineageTag: a544a3a4-edb2-5dfa-b748-dcfd20d32340
+		summarizeBy: none
+		sourceColumn: group_color
+
+		annotation SummarizationSetBy = User
+
+	partition families = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "families.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(
+				        Promoted,
+				        {{"family", type text}, {"family_label", type text}, {"family_group", type text}, {"group_order", Int64.Type}, {"group_color", type text}},
+				        "en-US"
+				    )
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

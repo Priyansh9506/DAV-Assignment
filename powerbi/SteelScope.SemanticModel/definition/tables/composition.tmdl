@@ -1,0 +1,40 @@
+table composition
+	lineageTag: 5f7346bd-32cb-5a80-b572-f612b0953375
+
+	column grade_id
+		dataType: string
+		isHidden
+		lineageTag: bfdf31f6-6ad8-55f6-9021-d682d331bb09
+		summarizeBy: none
+		sourceColumn: grade_id
+
+		annotation SummarizationSetBy = User
+
+	column element
+		dataType: string
+		lineageTag: b2eb07d7-b3b4-5bc4-8e23-b560318bdce2
+		summarizeBy: none
+		sourceColumn: element
+
+		annotation SummarizationSetBy = User
+
+	column wt_pct
+		dataType: double
+		formatString: 0.####
+		lineageTag: d9cbb062-3a26-5f5c-9d8a-dc11888a71b2
+		summarizeBy: none
+		sourceColumn: wt_pct
+
+		annotation SummarizationSetBy = User
+
+	partition composition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "composition.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"grade_id", type text}, {"element", type text}, {"wt_pct", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

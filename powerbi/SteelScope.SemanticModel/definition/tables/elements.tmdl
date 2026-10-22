@@ -1,0 +1,38 @@
+table elements
+	lineageTag: 39e25323-7f1d-56fd-9257-1baa8af28fad
+
+	column element
+		dataType: string
+		lineageTag: 51ac355d-3425-5bf9-97ea-73cd8892f470
+		summarizeBy: none
+		sourceColumn: element
+
+		annotation SummarizationSetBy = User
+
+	column element_name
+		dataType: string
+		lineageTag: dd1b2bf7-bccc-5c07-b3a6-c790a30170ed
+		summarizeBy: none
+		sourceColumn: element_name
+
+		annotation SummarizationSetBy = User
+
+	column is_rare_trace
+		dataType: boolean
+		lineageTag: 782fd8cb-5f0d-5d29-bf4a-f0ee6fdf0ba0
+		summarizeBy: none
+		sourceColumn: is_rare_trace
+
+		annotation SummarizationSetBy = User
+
+	partition elements = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "elements.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"element", type text}, {"element_name", type text}, {"is_rare_trace", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

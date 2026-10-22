@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "994d81200d8fdf3a0760",
+  "position": {
+    "x": 16,
+    "y": 8,
+    "z": 0,
+    "height": 54,
+    "width": 640,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "SteelScope · 1,389 steel grades",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#1F1F1F",
+                      "fontFamily": "Segoe UI Semibold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "What is in the data and how strong is it?",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#6B6B6B",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -55,5 +55,28 @@ DIVIDE (
 Average wt % = DIVIDE ( SUM ( composition[wt_pct] ), [Grades] )
 // mean weight-percent of an element across the grades in context (grades without the element count as 0)
 
+Element intensity =
+DIVIDE (
+    [Average wt %],
+    MAXX ( ALL ( families[family_group], families[group_order] ), [Average wt %] )
+)
+// 0-1: the group's average wt% of this element relative to the group that uses it most, so trace carbon and
+// 18 % chromium are equally readable. family_group is sorted by group_order, so visuals filter both columns
+// and both must be removed to compare against every group
+
+Heatmap colour =
+VAR t = [Element intensity]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( t ), BLANK (),
+        t >= 0.8, "#4a8fdc",
+        t >= 0.6, "#7aaee6",
+        t >= 0.4, "#a6c8ef",
+        t >= 0.2, "#cde2fb",
+        "#f7fafe"
+    )
+// cell background of the chemistry heatmap (Format -> Cell elements -> Background color -> Field value)
+
 Placeholder liquidus grades = CALCULATE ( [Grades], grades[liquidus_is_placeholder] = TRUE () )
 // expected 524

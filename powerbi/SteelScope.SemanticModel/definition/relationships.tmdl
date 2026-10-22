@@ -1,0 +1,11 @@
+relationship 56001165-6819-561c-99f8-8874013937e0
+	fromColumn: grades.family
+	toColumn: families.family
+
+relationship 05300022-d6f2-5764-9ca7-cf1d219b9f7e
+	fromColumn: composition.grade_id
+	toColumn: grades.grade_id
+
+relationship 5f3c1bd9-f847-5423-8014-d04552433536
+	fromColumn: composition.element
+	toColumn: elements.element
